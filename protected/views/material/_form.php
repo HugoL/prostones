@@ -25,6 +25,12 @@
 		<?php echo $form->error($model,'nombre'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'imagen'); ?>
+		<?php echo $form->textField($model,'imagen',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->error($model,'imagen'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
