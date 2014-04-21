@@ -35,6 +35,7 @@ class Tipo extends CActiveRecord
 			array('nombre, id_material, id_tono', 'required'),
 			array('id_material, id_tono', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
+			array('textura', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, id_material, id_tono', 'safe', 'on'=>'search'),

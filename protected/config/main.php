@@ -69,7 +69,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'easenjo',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		
@@ -99,5 +99,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'skuder.zgz@gmail.com',
+		'imagenes'=>'/images/textura/',
 	),
 );

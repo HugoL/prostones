@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2014 a las 01:19:07
--- Versión del servidor: 5.6.14
--- Versión de PHP: 5.5.6
+-- Servidor: localhost
+-- Tiempo de generación: 21-04-2014 a las 18:54:56
+-- Versión del servidor: 5.5.35
+-- Versión de PHP: 5.3.10-1ubuntu3.11
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `ehp_clientes` (
 CREATE TABLE IF NOT EXISTS `ehp_materiales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` varchar(512) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=11 ;
 
@@ -49,16 +50,16 @@ CREATE TABLE IF NOT EXISTS `ehp_materiales` (
 -- Volcado de datos para la tabla `ehp_materiales`
 --
 
-INSERT INTO `ehp_materiales` (`id`, `nombre`) VALUES
-(2, 'Marmol'),
-(3, 'Travertino'),
-(4, 'Granito'),
-(5, 'Piedra Caliza'),
-(6, 'Piedra Arenisca'),
-(7, 'Basalto'),
-(8, 'Pizarra'),
-(9, 'Cuarcita'),
-(10, 'Superficie compacta');
+INSERT INTO `ehp_materiales` (`id`, `nombre`, `imagen`) VALUES
+(2, 'Marmol', 'marmol.jpg'),
+(3, 'Travertino', ''),
+(4, 'Granito', 'granito.jpg'),
+(5, 'Piedra Caliza', ''),
+(6, 'Piedra Arenisca', ''),
+(7, 'Basalto', ''),
+(8, 'Pizarra', ''),
+(9, 'Cuarcita', ''),
+(10, 'Superficie compacta', '');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `ehp_tamano` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `ehp_tamano`
@@ -186,6 +187,7 @@ INSERT INTO `ehp_terminaciones` (`id`, `nombre`) VALUES
 CREATE TABLE IF NOT EXISTS `ehp_tipos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
+  `textura` varchar(512) COLLATE utf8_spanish_ci NOT NULL,
   `id_material` int(11) NOT NULL,
   `id_tono` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -197,29 +199,29 @@ CREATE TABLE IF NOT EXISTS `ehp_tipos` (
 -- Volcado de datos para la tabla `ehp_tipos`
 --
 
-INSERT INTO `ehp_tipos` (`id`, `nombre`, `id_material`, `id_tono`) VALUES
-(12, 'Blanco Macael', 2, 0),
-(13, 'Blanco Ibiza', 2, 0),
-(14, 'Crema Marfil', 2, 0),
-(15, 'Crema Levante', 2, 0),
-(16, 'Beige Levante', 2, 0),
-(17, 'Emperador Claro', 2, 0),
-(18, 'Emperador Oscuro', 2, 0),
-(19, 'Rosa Zarci', 2, 0),
-(20, 'Rojo Alicate', 2, 0),
-(21, 'Romano', 3, 0),
-(22, 'Turco', 3, 0),
-(23, 'Teruel', 3, 0),
-(24, 'Amarillo', 3, 0),
-(25, 'Rojo', 3, 0),
-(26, 'Gris Atlanta', 4, 0),
-(27, 'Marron Gran Cañon', 4, 0),
-(28, 'Rosado Tunez', 4, 0),
-(29, 'Blanco Fonte', 4, 0),
-(30, 'Rosa Porriño', 4, 0),
-(31, 'Mondariz', 4, 0),
-(32, 'Gran Perla', 4, 0),
-(33, 'Gris Quintana', 4, 0);
+INSERT INTO `ehp_tipos` (`id`, `nombre`, `textura`, `id_material`, `id_tono`) VALUES
+(12, 'Blanco Macael', '', 2, 0),
+(13, 'Blanco Ibiza', '', 2, 0),
+(14, 'Crema Marfil', '', 2, 0),
+(15, 'Crema Levante', '', 2, 0),
+(16, 'Beige Levante', '', 2, 0),
+(17, 'Emperador Claro', '', 2, 0),
+(18, 'Emperador Oscuro', '', 2, 0),
+(19, 'Rosa Zarci', '', 2, 0),
+(20, 'Rojo Alicate', '', 2, 0),
+(21, 'Romano', '', 3, 0),
+(22, 'Turco', '', 3, 0),
+(23, 'Teruel', '', 3, 0),
+(24, 'Amarillo', '', 3, 0),
+(25, 'Rojo', '', 3, 0),
+(26, 'Gris Atlanta', '', 4, 0),
+(27, 'Marron Gran Cañon', '', 4, 0),
+(28, 'Rosado Tunez', '', 4, 0),
+(29, 'Blanco Fonte', '', 4, 0),
+(30, 'Rosa Porriño', '', 4, 0),
+(31, 'Mondariz', '', 4, 0),
+(32, 'Gran Perla', '', 4, 0),
+(33, 'Gris Quintana', '', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -438,8 +440,8 @@ ALTER TABLE `ehp_valorpiezas`
 -- Filtros para la tabla `ehp_valorpieza_pedido`
 --
 ALTER TABLE `ehp_valorpieza_pedido`
-  ADD CONSTRAINT `ehp_valorpieza_pedido_ibfk_6` FOREIGN KEY (`id_valorpiezas`) REFERENCES `ehp_valorpiezas` (`id`),
-  ADD CONSTRAINT `ehp_valorpieza_pedido_ibfk_5` FOREIGN KEY (`id_pedido`) REFERENCES `ehp_pedido` (`id`);
+  ADD CONSTRAINT `ehp_valorpieza_pedido_ibfk_5` FOREIGN KEY (`id_pedido`) REFERENCES `ehp_pedido` (`id`),
+  ADD CONSTRAINT `ehp_valorpieza_pedido_ibfk_6` FOREIGN KEY (`id_valorpiezas`) REFERENCES `ehp_valorpiezas` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
