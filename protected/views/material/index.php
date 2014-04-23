@@ -12,7 +12,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Materials</h1>
+<h1>Materiales</h1>
+
+<?php $this->debug($dataProvider); ?>
+
+<?php //print_r($dataProvider); ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

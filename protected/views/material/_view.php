@@ -8,6 +8,8 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
 	<?php echo CHtml::encode($data->nombre); ?>
 	<br />
-
+<?php /*foreach ($data->tipo as $key => $value) {
+	echo $value->id."<br/>";
+}*/ ?>
 
 </div>

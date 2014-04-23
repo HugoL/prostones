@@ -2,12 +2,15 @@
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
-
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
+
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Proston.es',
+
+	'theme'=>'bootstrap',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -28,6 +31,9 @@ return array(
 			'password'=>'easenjo',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'generatorPaths'=>array(
+                'bootstrap.gii',
+            ),
 		),
 		
 		'user' => array(
@@ -44,7 +50,9 @@ return array(
 
 			),
 
- 
+		'bootstrap'=>array(
+            'class'=>'bootstrap.components.Bootstrap',
+        ),
 
 		// uncomment the following to enable URLs in path-format
 		
@@ -102,6 +110,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
+		'imagenes'=>'/images/textura/',
 		'adminEmail'=>'skuder.zgz@gmail.com',
 		'imagenes'=>'/images/textura/',
 	),
