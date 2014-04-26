@@ -7,10 +7,17 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 // CWebApplication properties can be configured here.
 return array(
 
+	'theme'=>'bootstrap',
+    'modules'=>array(
+        'gii'=>array(
+            'generatorPaths'=>array(
+                'bootstrap.gii',
+            ),                      
+        ),
+    ),
+
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Proston.es',
-
-	'theme'=>'bootstrap',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
