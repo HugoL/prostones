@@ -28,7 +28,7 @@ class TipoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','verTiposMaterial'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -143,6 +143,15 @@ class TipoController extends Controller
 		));
 	}
 
+	public function actionVerTiposMaterial( $id ){
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id_material',$id);     		
+        $criteria->select = '*';
+		$tipos = Tipo::model()->findAll($criteria);
+
+		$this->render( 'verTiposMaterial',array('tipos'=>$tipos) );
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -170,4 +179,13 @@ class TipoController extends Controller
 			Yii::app()->end();
 		}
 	}
+protected function Debug($var){
+        $bt = debug_backtrace();
+        $dump = new CVarDumper();
+        $debug = '<div style="display:block;background-color:gold;border-radius:10px;border:solid 1px brown;padding:10px;z-index:10000;"><pre>';
+        $debug .= '<h4>function: '.$bt[1]['function'].'() line('.$bt[0]['line'].')'.'</h4>';
+        $debug .=  $dump->dumpAsString($var);
+        $debug .= "</pre></div>\n";
+        Yii::app()->params['debugContent'] .=$debug;
+    }
 }

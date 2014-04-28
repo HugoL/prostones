@@ -4,7 +4,7 @@
 ?>
 
 <div class="view">
-	<div class="textura"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$data->imagen; ?>"/></a></div>
+	<div class="textura"><a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verTiposMaterial/id/".$data->id; ?>"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$data->imagen; ?>"/></a></div>
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
 	<?php echo CHtml::encode($data->nombre); ?>
 	<br />

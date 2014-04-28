@@ -7,7 +7,6 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 // CWebApplication properties can be configured here.
 return array(
 
-	'theme'=>'bootstrap',
     'modules'=>array(
         'gii'=>array(
             'generatorPaths'=>array(
@@ -18,7 +17,7 @@ return array(
 
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Proston.es',
-
+	'theme'=>'blackboot',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -99,10 +98,10 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				 array(
+				 /*array(
                 	'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
                 	'ipFilters'=>array('127.0.0.1','192.168.1.215'),
-            	),
+            	),*/
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
@@ -116,6 +115,7 @@ return array(
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
+		'debugContent'=>'',
 		// this is used in contact page
 		'imagenes'=>'/images/textura/',
 		'adminEmail'=>'skuder.zgz@gmail.com',

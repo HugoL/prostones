@@ -57,6 +57,8 @@
 	</div><!-- footer -->
 
 </div><!-- page -->
-
+<?php if(!empty(Yii::app()->params['debugContent'])):?>
+                <?php echo Yii::app()->params['debugContent'];?>
+	<?php endif;?>
 </body>
 </html>
