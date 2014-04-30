@@ -7,13 +7,13 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'List Material', 'url'=>array('index')),
 	array('label'=>'Create Material', 'url'=>array('create')),
 	array('label'=>'Update Material', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Material', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Material', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>View Material #<?php echo $model->id; ?></h1>
@@ -27,8 +27,3 @@ $this->menu=array(
 	),
 ));
  ?>
-<?php $this->widget('bootstrap.widgets.TbButton', array(
-    'label'=>'Primary',
-    'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-    'size'=>'large', // null, 'large', 'small' or 'mini'
-)); ?>
