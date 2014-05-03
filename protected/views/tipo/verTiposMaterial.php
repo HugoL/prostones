@@ -1,7 +1,7 @@
 
 <h1>Ver Tipos de Material</h1>
 
-<?php $this->debug(Yii::app()->theme); ?>
+<?php $this->debug($tipos); ?>
 
 <?php foreach ($tipos as $key => $tipo):	 ?>
 

@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 );*/
 ?>
 
-<h1>View Material #<?php echo $model->id; ?></h1>
+<h1>View Materialll #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

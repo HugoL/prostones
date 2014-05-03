@@ -9,7 +9,7 @@
 	<div class="clearfix">&nbsp;</div>
 	<?php $this->widget('bootstrap.widgets.TbButton', array(
     	'label'=>'Ver Tipos',
-    	'type'=>'inverse', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+    	'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
     	'size'=>'large', // null, 'large', 'small' or 'mini'
     	'url'=>array('tipo/verTiposMaterial/id/'.$data->id),
 	)); ?>

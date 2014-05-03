@@ -3,8 +3,8 @@
 		// use it when you need it!
 		/*
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
-		->registerCoreScript( 'jquery' )
+		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )*/
+		->registerCoreScript( 'jquery' )/*
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-modal.js', CClientScript::POS_END )
@@ -143,5 +143,8 @@
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->
 	</div>
+	<?php if(!empty(Yii::app()->params['debugContent'])):?>
+                <?php echo Yii::app()->params['debugContent'];?>
+	<?php endif;?>
 </body>
 </html>

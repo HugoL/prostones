@@ -26,6 +26,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.modules.user.models.*',
+		'application.extensions.galleria.*',
 	),
 
 	'modules'=>array(
@@ -117,6 +118,7 @@ return array(
 	'params'=>array(
 		'debugContent'=>'',
 		// this is used in contact page
+		'images' => '/images/',
 		'imagenes'=>'/images/textura/',
 		'adminEmail'=>'skuder.zgz@gmail.com',
 		'imagenes'=>'/images/textura/',
