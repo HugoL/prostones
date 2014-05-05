@@ -23,7 +23,7 @@ class SimuladorController extends Controller {
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index'),
+				'actions'=>array('index','tipos'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -49,6 +49,15 @@ class SimuladorController extends Controller {
 		$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes
 		));
+	}
+
+	public function actionTipos( $id ){
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id_material',$id);     		
+        $criteria->select = '*';
+		$tipos = Tipo::model()->findAll($criteria);
+
+		$this->render( 'index',array('materiales'=>$tipos) );
 	}
 
 /* Used to debug variables*/
