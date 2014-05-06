@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-04-2014 a las 18:54:56
--- Versión del servidor: 5.5.35
+-- Tiempo de generación: 06-05-2014 a las 17:22:57
+-- Versión del servidor: 5.5.37
 -- Versión de PHP: 5.3.10-1ubuntu3.11
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -190,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `ehp_tipos` (
   `textura` varchar(512) COLLATE utf8_spanish_ci NOT NULL,
   `id_material` int(11) NOT NULL,
   `id_tono` int(11) NOT NULL,
+  `imagen` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_material` (`id_material`),
   KEY `id_tono` (`id_tono`)
@@ -199,29 +200,29 @@ CREATE TABLE IF NOT EXISTS `ehp_tipos` (
 -- Volcado de datos para la tabla `ehp_tipos`
 --
 
-INSERT INTO `ehp_tipos` (`id`, `nombre`, `textura`, `id_material`, `id_tono`) VALUES
-(12, 'Blanco Macael', '', 2, 0),
-(13, 'Blanco Ibiza', '', 2, 0),
-(14, 'Crema Marfil', '', 2, 0),
-(15, 'Crema Levante', '', 2, 0),
-(16, 'Beige Levante', '', 2, 0),
-(17, 'Emperador Claro', '', 2, 0),
-(18, 'Emperador Oscuro', '', 2, 0),
-(19, 'Rosa Zarci', '', 2, 0),
-(20, 'Rojo Alicate', '', 2, 0),
-(21, 'Romano', '', 3, 0),
-(22, 'Turco', '', 3, 0),
-(23, 'Teruel', '', 3, 0),
-(24, 'Amarillo', '', 3, 0),
-(25, 'Rojo', '', 3, 0),
-(26, 'Gris Atlanta', '', 4, 0),
-(27, 'Marron Gran Cañon', '', 4, 0),
-(28, 'Rosado Tunez', '', 4, 0),
-(29, 'Blanco Fonte', '', 4, 0),
-(30, 'Rosa Porriño', '', 4, 0),
-(31, 'Mondariz', '', 4, 0),
-(32, 'Gran Perla', '', 4, 0),
-(33, 'Gris Quintana', '', 4, 0);
+INSERT INTO `ehp_tipos` (`id`, `nombre`, `textura`, `id_material`, `id_tono`, `imagen`) VALUES
+(12, 'Blanco Macael', '', 2, 0, ''),
+(13, 'Blanco Ibiza', '', 2, 0, ''),
+(14, 'Crema Marfil', '', 2, 0, ''),
+(15, 'Crema Levante', '', 2, 0, ''),
+(16, 'Beige Levante', '', 2, 0, ''),
+(17, 'Emperador Claro', '', 2, 0, ''),
+(18, 'Emperador Oscuro', '', 2, 0, ''),
+(19, 'Rosa Zarci', '', 2, 0, ''),
+(20, 'Rojo Alicate', '', 2, 0, ''),
+(21, 'Romano', '', 3, 0, ''),
+(22, 'Turco', '', 3, 0, ''),
+(23, 'Teruel', '', 3, 0, ''),
+(24, 'Amarillo', '', 3, 0, ''),
+(25, 'Rojo', '', 3, 0, ''),
+(26, 'Gris Atlanta', '', 4, 0, ''),
+(27, 'Marron Gran Cañon', '', 4, 0, ''),
+(28, 'Rosado Tunez', '', 4, 0, ''),
+(29, 'Blanco Fonte', '', 4, 0, ''),
+(30, 'Rosa Porriño', '', 4, 0, ''),
+(31, 'Mondariz', '', 4, 0, ''),
+(32, 'Gran Perla', '', 4, 0, ''),
+(33, 'Gris Quintana', '', 4, 0, '');
 
 -- --------------------------------------------------------
 
