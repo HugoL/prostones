@@ -57,7 +57,7 @@ class SimuladorController extends Controller {
         $criteria->select = '*';
 		$tipos = Tipo::model()->findAll($criteria);
 
-		$this->render( 'index',array('materiales'=>$tipos) );
+		$this->render( 'index',array('tipos'=>$tipos) );
 	}
 
 /* Used to debug variables*/
