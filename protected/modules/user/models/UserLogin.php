@@ -3,7 +3,7 @@
 /**
  * LoginForm class.
  * LoginForm is the data structure for keeping
- * user login form data. It is used by the 'login' action of 'UserController'.
+ * user login form data. It is used by the 'login' action of 'SiteController'.
  */
 class UserLogin extends CFormModel
 {
@@ -28,19 +28,15 @@ class UserLogin extends CFormModel
 		);
 	}
 
+	/**
+	 * Declares attribute labels.
+	 */
 	public function attributeLabels()
 	{
-	if(Yii::app()->controller->module->loginType == 0)
-		$username = Yii::t("UserModule.user", "username");
-	else if(Yii::app()->controller->module->loginType == 1)
-		$username = Yii::t("UserModule.user", "email address");
-	else if(Yii::app()->controller->module->loginType == 2)
-		$username = Yii::t("UserModule.user", "username or email");
-
 		return array(
-			'username'=>$username,
-			'password'=>Yii::t("UserModule.user", "password"),
-			'rememberMe'=>Yii::t("UserModule.user", "Remember me next time"),
+			'rememberMe'=>UserModule::t("Remember me next time"),
+			'username'=>UserModule::t("username or email"),
+			'password'=>UserModule::t("password"),
 		);
 	}
 
@@ -61,19 +57,19 @@ class UserLogin extends CFormModel
 					Yii::app()->user->login($identity,$duration);
 					break;
 				case UserIdentity::ERROR_EMAIL_INVALID:
-					$this->addError("username",Yii::t("UserModule.user", "Email is incorrect."));
+					$this->addError("username",UserModule::t("Email is incorrect."));
 					break;
 				case UserIdentity::ERROR_USERNAME_INVALID:
-					$this->addError("username",Yii::t("UserModule.user", "Username is incorrect."));
+					$this->addError("username",UserModule::t("Username is incorrect."));
 					break;
 				case UserIdentity::ERROR_STATUS_NOTACTIV:
-					$this->addError("status",Yii::t("UserModule.user", "You account is not activated."));
+					$this->addError("status",UserModule::t("You account is not activated."));
 					break;
 				case UserIdentity::ERROR_STATUS_BAN:
-					$this->addError("status",Yii::t("UserModule.user", "You account is blocked."));
+					$this->addError("status",UserModule::t("You account is blocked."));
 					break;
 				case UserIdentity::ERROR_PASSWORD_INVALID:
-					$this->addError("password",Yii::t("UserModule.user", "Password is incorrect."));
+					$this->addError("password",UserModule::t("Password is incorrect."));
 					break;
 			}
 		}

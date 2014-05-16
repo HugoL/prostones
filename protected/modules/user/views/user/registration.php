@@ -1,10 +1,10 @@
-<?php $this->pageTitle=Yii::app()->name . ' - '.Yii::t("user", "Registration");
+<?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Registration");
 $this->breadcrumbs=array(
-	Yii::t("UserModule.user", "Registration"),
+	UserModule::t("Registration"),
 );
 ?>
 
-<h1><?php echo Yii::t("UserModule.user", "Registration"); ?></h1>
+<h1><?php echo UserModule::t("Registration"); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('registration')): ?>
 <div class="success">
@@ -13,72 +13,85 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <div class="form">
-<?php echo CHtml::beginForm(); ?>
+<?php $form=$this->beginWidget('UActiveForm', array(
+	'id'=>'registration-form',
+	'enableAjaxValidation'=>true,
+	'disableAjaxValidationAttributes'=>array('RegistrationForm_verifyCode'),
+	'htmlOptions' => array('enctype'=>'multipart/form-data'),
+)); ?>
 
-	<p class="note"><?php echo Yii::t("UserModule.user", 'Fields with <span class="required">*</span> are required.'); ?></p>
+	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 	
-	<?php echo CHtml::errorSummary($form); ?>
-	<?php echo CHtml::errorSummary($profile); ?>
+	<?php echo $form->errorSummary(array($model,$profile)); ?>
 	
 	<div class="row">
-	<?php echo CHtml::activeLabelEx($form,'username'); ?>
-	<?php echo CHtml::activeTextField($form,'username'); ?>
+	<?php echo $form->labelEx($model,'username'); ?>
+	<?php echo $form->textField($model,'username'); ?>
+	<?php echo $form->error($model,'username'); ?>
 	</div>
 	
 	<div class="row">
-	<?php echo CHtml::activeLabelEx($form,'password'); ?>
-	<?php echo CHtml::activePasswordField($form,'password'); ?>
+	<?php echo $form->labelEx($model,'password'); ?>
+	<?php echo $form->passwordField($model,'password'); ?>
+	<?php echo $form->error($model,'password'); ?>
 	<p class="hint">
-	<?php echo Yii::t("UserModule.user", "Minimal password length 4 symbols."); ?>
+	<?php echo UserModule::t("Minimal password length 4 symbols."); ?>
 	</p>
 	</div>
 	
 	<div class="row">
-	<?php echo CHtml::activeLabelEx($form,'verifyPassword'); ?>
-	<?php echo CHtml::activePasswordField($form,'verifyPassword'); ?>
+	<?php echo $form->labelEx($model,'verifyPassword'); ?>
+	<?php echo $form->passwordField($model,'verifyPassword'); ?>
+	<?php echo $form->error($model,'verifyPassword'); ?>
 	</div>
 	
 	<div class="row">
-	<?php echo CHtml::activeLabelEx($form,'email'); ?>
-	<?php echo CHtml::activeTextField($form,'email'); ?>
+	<?php echo $form->labelEx($model,'email'); ?>
+	<?php echo $form->textField($model,'email'); ?>
+	<?php echo $form->error($model,'email'); ?>
 	</div>
 	
 <?php 
-		$profileFields=ProfileField::model()->forRegistration()->sort()->findAll();
+		$profileFields=$profile->getFields();
 		if ($profileFields) {
 			foreach($profileFields as $field) {
 			?>
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($profile,$field->varname); ?>
+		<?php echo $form->labelEx($profile,$field->varname); ?>
 		<?php 
-		if ($field->field_type=="TEXT") {
-			echo CHtml::activeTextArea($profile,$field->varname,array('rows'=>6, 'cols'=>50));
+		if ($field->widgetEdit($profile)) {
+			echo $field->widgetEdit($profile);
+		} elseif ($field->range) {
+			echo $form->dropDownList($profile,$field->varname,Profile::range($field->range));
+		} elseif ($field->field_type=="TEXT") {
+			echo$form->textArea($profile,$field->varname,array('rows'=>6, 'cols'=>50));
 		} else {
-			echo CHtml::activeTextField($profile,$field->varname,array('size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
+			echo $form->textField($profile,$field->varname,array('size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
 		}
 		 ?>
-		<?php echo CHtml::error($profile,$field->varname); ?>
+		<?php echo $form->error($profile,$field->varname); ?>
 	</div>	
 			<?php
 			}
 		}
 ?>
-	<?php if(extension_loaded('gd')): ?>
+	<?php if (UserModule::doCaptcha('registration')): ?>
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($form,'verifyCode'); ?>
-		<div>
+		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		
 		<?php $this->widget('CCaptcha'); ?>
-		<?php echo CHtml::activeTextField($form,'verifyCode'); ?>
-		</div>
-		<p class="hint"><?php echo Yii::t("UserModule.user","Please enter the letters as they are shown in the image above."); ?>
-		<br/><?php echo Yii::t("UserModule.user","Letters are not case-sensitive."); ?></p>
+		<?php echo $form->textField($model,'verifyCode'); ?>
+		<?php echo $form->error($model,'verifyCode'); ?>
+		
+		<p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
+		<br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
 	</div>
 	<?php endif; ?>
 	
 	<div class="row submit">
-		<?php echo CHtml::submitButton(Yii::t("UserModule.user", "Registration")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Register")); ?>
 	</div>
 
-<?php echo CHtml::endForm(); ?>
+<?php $this->endWidget(); ?>
 </div><!-- form -->
 <?php endif; ?>

@@ -1,12 +1,25 @@
 <?php
 
-class DefaultController extends Controller 
+class DefaultController extends Controller
 {
-
-	public function actionIndex() 
+	
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
 	{
-		$this->redirect(array('/user/user/profile'));
-	}
-}
+		$dataProvider=new CActiveDataProvider('User', array(
+			'criteria'=>array(
+		        'condition'=>'status>'.User::STATUS_BANED,
+		    ),
+			'pagination'=>array(
+				'pageSize'=>Yii::app()->controller->module->user_page_size,
+			),
+		));
 
-?>
+		$this->render('/user/index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+}

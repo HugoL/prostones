@@ -25,8 +25,11 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'application.modules.user.models.*',
 		'application.extensions.galleria.*',
+		'application.modules.user.models.*',
+        'application.modules.user.components.*',
+        'application.modules.rights.*',
+        'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
@@ -42,20 +45,79 @@ return array(
                 'bootstrap.gii',
             ),
 		),
+
+		'user'=>array(
+            'tableUsers' => 'ehp_users',
+            'tableProfiles' => 'ehp_profiles',
+            'tableProfileFields' => 'ehp_profiles_fields',
+            'hash' => 'md5',
+ 
+            # send activation email
+            'sendActivationMail' => true,
+ 
+            # allow access for non-activated users
+            'loginNotActiv' => false,
+ 
+            # activate user on registration (only sendActivationMail = false)
+            'activeAfterRegister' => false,
+ 
+            # automatically login from registration
+            'autoLogin' => true,
+ 
+            # registration path
+            //'registrationUrl' => array('/user/registration'),
 		
-		'user' => array(
-     		'debug' => true
-    	),
+			//'registrationCompanyUrl' => array('/user/registrationcompany'),
+ 
+            # recovery password path
+            'recoveryUrl' => array('/user/recovery'),
+ 
+            # login form path
+            'loginUrl' => array('/user/login'),
+ 
+            # page after login
+            'returnUrl' => array('/user/profile'),
+ 
+            # page after logout
+            'returnLogoutUrl' => array('/user/login'),
+        ),
+
+        'rights'=>array(
+            'superuserName'=>'Admin', // Name of the role with super user privileges. 
+           'authenticatedName'=>'Authenticated',  // Name of the authenticated user role. 
+           'userIdColumn'=>'id', // Name of the user id column in the database. 
+           'userNameColumn'=>'username',  // Name of the user name column in the database. 
+           'enableBizRule'=>true,  // Whether to enable authorization item business rules. 
+           'enableBizRuleData'=>true,   // Whether to enable data for business rules. 
+           'displayDescription'=>true,  // Whether to use item description instead of name. 
+           'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages. 
+           'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages. 
+           'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested. 
+           'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights. 
+           'appLayout'=>'application.views.layouts.main', // Application layout. 
+           'cssFile'=>'rights.css', // Style sheet file to use for Rights. 
+           'install'=>false,  // Whether to enable installer. 
+           'debug'=>false, 
+		),
+		
 	),
 
 	// application components
 	'components'=>array(
-		'User'=>array(
-			'class' => 'User',
-			'allowAutoLogin'=>true,
-			'loginUrl' => array('/user/user/login'),
-
-			),
+		'user'=>array(
+                'class'=>'RWebUser',
+                // enable cookie-based authentication
+                'allowAutoLogin'=>true,
+                'loginUrl'=>array('/user/login'),
+        ),
+        'authManager'=>array(
+            'class'=>'RDbAuthManager',
+            'connectionID'=>'db',
+            'itemTable'=>'authitem',
+            'itemChildTable'=>'authitemchild',
+            'assignmentTable'=>'authassignment',
+            'rightsTable'=>'rights',
+        ),
 
 		'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
@@ -67,8 +129,8 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'gii'=>'gii',
-            'gii/<controller:\w+>'=>'gii/<controller>',
-            'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+            	'gii/<controller:\w+>'=>'gii/<controller>',
+            	'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -86,6 +148,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'tablePrefix' => 'ehp_',
 		),
 		
 		'errorHandler'=>array(

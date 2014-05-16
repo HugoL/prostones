@@ -1,65 +1,56 @@
 <?php
 
+/**
+ * UserIdentity represents the data needed to identity a user.
+ * It contains the authentication method that checks if the provided
+ * data can identity the user.
+ */
 class UserIdentity extends CUserIdentity
 {
-	private $id;
+	private $_id;
 	const ERROR_EMAIL_INVALID=3;
-	const ERROR_STATUS_NOTACTIVE=4;
-	const ERROR_STATUS_BANNED=5;
-
+	const ERROR_STATUS_NOTACTIV=4;
+	const ERROR_STATUS_BAN=5;
+	/**
+	 * Authenticates a user.
+	 * The example implementation makes sure if the username and password
+	 * are both 'demo'.
+	 * In practical applications, this should be changed to authenticate
+	 * against some persistent user identity storage (e.g. database).
+	 * @return boolean whether authentication succeeds.
+	 */
 	public function authenticate()
 	{
-		$loginType = Yii::app()->controller->module->loginType; 
-
-		if ($loginType == 0) // Only check for username
-		{
-			$user = User::model()->findByAttributes(array('username'=>$this->username));
+		if (strpos($this->username,"@")) {
+			$user=User::model()->notsafe()->findByAttributes(array('email'=>$this->username));
+		} else {
+			$user=User::model()->notsafe()->findByAttributes(array('username'=>$this->username));
 		}
-		else if ($loginType == 1) // Only check for E-Mail address
-		{
-			$user = User::model()->findByAttributes(array('email'=>$this->username));
-		}
-		else if ($loginType == 2) // Check for E-Mail address or username
-		{
-			$user=User::model()->findByAttributes(array('username'=>$this->username));
-			if(!is_object($user)) 
-				$user=User::model()->findByAttributes(array('email'=>$this->username));
-		}
-
 		if($user===null)
-			if ($logintype == 1) 
-			{
+			if (strpos($this->username,"@")) {
 				$this->errorCode=self::ERROR_EMAIL_INVALID;
-			}
-			else 
-			{
+			} else {
 				$this->errorCode=self::ERROR_USERNAME_INVALID;
 			}
-		else if(User::encrypt($this->password)!==$user->password)
+		else if(Yii::app()->getModule('user')->encrypting($this->password)!==$user->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else if($user->status == 0 && Yii::app()->user->loginNotActive==false)
-			$this->errorCode=self::ERROR_STATUS_NOTACTIVE;
+		else if($user->status==0&&Yii::app()->getModule('user')->loginNotActiv==false)
+			$this->errorCode=self::ERROR_STATUS_NOTACTIV;
 		else if($user->status==-1)
-			$this->errorCode=self::ERROR_STATUS_BANNED;
+			$this->errorCode=self::ERROR_STATUS_BAN;
 		else {
-			$this->id=$user->id;
-			$this->setState('id', $user->id);
+			$this->_id=$user->id;
 			$this->username=$user->username;
 			$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
 	}
-
-	/**
-	 * @return integer the ID of the user record
-	 */
+    
+    /**
+    * @return integer the ID of the user record
+    */
 	public function getId()
 	{
-		return $this->id;
+		return $this->_id;
 	}
-
-	public function getRoles() {
-		return $this->Role;
-	}
-
 }

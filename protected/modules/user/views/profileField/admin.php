@@ -1,15 +1,17 @@
 <?php
 $this->breadcrumbs=array(
-	Yii::t("UserModule.user", 'Profile Fields')=>array('admin'),
-	Yii::t("UserModule.user", 'Manage'),
+	UserModule::t('Profile Fields')=>array('admin'),
+	UserModule::t('Manage'),
 );
 ?>
-<h1><?php echo Yii::t("UserModule.user", 'Manage Profile Fields'); ?></h1>
+<h1><?php echo UserModule::t('Manage Profile Fields'); ?></h1>
 
-<ul class="actions">
-	<li><?php echo CHtml::link(Yii::t("UserModule.user", 'Manage User'),array('user/admin')); ?></li>
-	<li><?php echo CHtml::link(Yii::t("UserModule.user", 'Create Profile Field'),array('create')); ?></li>
-</ul><!-- actions -->
+<?php echo $this->renderPartial('_menu', array(
+		'list'=> array(
+			CHtml::link(UserModule::t('Create Profile Field'),array('create')),
+		),
+	));
+?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$dataProvider,
@@ -18,7 +20,7 @@ $this->breadcrumbs=array(
 		'varname',
 		array(
 			'name'=>'title',
-			'value'=>'Yii::t("UserModule.user", $data->title)',
+			'value'=>'UserModule::t($data->title)',
 		),
 		'field_type',
 		'field_size',
