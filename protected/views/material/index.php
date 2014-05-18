@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Materials',
+	'Materiales',
 );
 
 /*$this->menu=array(
@@ -14,13 +14,15 @@ $this->breadcrumbs=array(
 
 <h1>Materiales</h1>
 
+
 <?php //$this->debug($dataProvider); ?>
 
 <?php //print_r($dataProvider); ?>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); 
-?>
+	<?php $this->widget('zii.widgets.CListView', array(
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view',
+	)); 
+	?>
+
 <div class="clearfix">&nbsp;</div>

@@ -3,7 +3,7 @@
 /* @var $model Material */
 
 $this->breadcrumbs=array(
-	'Materials'=>array('index'),
+	'Materiales'=>array('index'),
 	'Manage',
 );
 
