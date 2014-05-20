@@ -38,6 +38,8 @@
 </head>
 
 <body>
+
+
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -48,9 +50,9 @@
 				</a>
 				</div>
 				<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
+				
 				<div class="nav-collapse">
-
+<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
 						'activeCssClass'	=> 'active',
@@ -67,6 +69,9 @@
 					)); ?>
 					
 				</div><!--/.nav-collapse -->
+
+
+
 			</div>
 		</div>
 	</div>
