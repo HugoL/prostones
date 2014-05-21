@@ -25,3 +25,4 @@ $this->pageTitle=Yii::app()->name;
 Simuldor 3D </h2>span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4
 span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4span4 span4 span4 span4 span4</div>
 <div class="divHome span7"><h2>span8</h2></div> 
+<div class="clearfix">&nbsp;</div>
