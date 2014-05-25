@@ -35,6 +35,54 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/ehpestilos.css" />
 <!-- Le fav and touch icons -->
+
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js"></script>
+
+<!--slider configuracion-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		jQuery.noConflict();
+	    $("#myController").jFlow({
+
+			controller: ".jFlowControl", // must be class, use . sign
+
+			slideWrapper : "#jFlowSlider", // must be id, use # sign
+
+			slides: "#mySlides",  // the div where all your sliding divs are nested in
+
+			selectedWrapper: "jFlowSelected",  // just pure text, no sign
+			
+			effect: "flow", //this is the slide effect (rewind or flow)
+
+			width: "940px",  // this is the width for the content-slider
+
+			height: "200px",  // this is the height for the content-slider
+
+			duration: 400,  // time in milliseconds to transition one slide
+			
+			pause: 5000, //time between transitions
+
+			prev: ".jFlowPrev", // must be class, use . sign
+
+			next: ".jFlowNext", // must be class, use . sign
+
+			auto: true	
+
+    });
+
+
+});
+
+</script>
+
+
 </head>
 
 <body>
@@ -50,9 +98,9 @@
 				</a>
 				</div>
 				<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-				
+				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
+
 				<div class="nav-collapse">
-<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
 						'activeCssClass'	=> 'active',
@@ -60,6 +108,7 @@
 							array('label'=>'Home', 'url'=>array('/site/index')),
 							array('label'=>'Catalogo', 'url'=>array('/material/index')),
 							array('label'=>'Simulador 3D', 'url'=>array('/simulador/index')),
+							array('label'=>'Presupuesto online', 'url'=>array('/site/presupuesto2')),
 							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Contact', 'url'=>array('/site/contact')),
 							
@@ -67,7 +116,7 @@
 							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
 					)); ?>
-					
+					<!--IMPLEMENTAR BUSCADOR-->
 				</div><!--/.nav-collapse -->
 
 
