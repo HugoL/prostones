@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <code><?php echo __FILE__; ?></code>.</p>
-<div class="clearfix">
-</div>
+
+
 <div class="divHome span4">
 <h2>Empresa</h2>
 Texto introductorio de la empresa.
@@ -45,7 +43,7 @@ proSton.es centraliza el control de la “plataforma” y la gestión del sitio 
 
 </div> 
 
-
+<div class="clearfix"></div>
 
 
 
