@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "{{presupuestos}}".
+ * This is the model class for table "ehp_pedido".
  *
- * The followings are the available columns in table '{{presupuestos}}':
+ * The followings are the available columns in table 'ehp_pedido':
  * @property integer $id
  * @property string $nombre
  * @property integer $id_cliente
@@ -13,26 +13,16 @@
  * The followings are the available model relations:
  * @property Clientes $idCliente
  * @property Provincias $idProvincia
- * @property Valorpiezas[] $valorpiezases
+ * @property ValorpiezaPedido[] $valorpiezaPedidos
  */
-class Presupuesto extends CActiveRecord
+class Pedido extends CActiveRecord
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Presupuesto the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{presupuestos}}';
+		return 'ehp_presupuesto';
 	}
 
 	/**
@@ -47,7 +37,7 @@ class Presupuesto extends CActiveRecord
 			array('id_cliente, id_provincia', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
 			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, id_cliente, id_provincia, fecha', 'safe', 'on'=>'search'),
 		);
 	}
@@ -62,7 +52,7 @@ class Presupuesto extends CActiveRecord
 		return array(
 			'idCliente' => array(self::BELONGS_TO, 'Clientes', 'id_cliente'),
 			'idProvincia' => array(self::BELONGS_TO, 'Provincias', 'id_provincia'),
-			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'id_pedido'),
+			'valorpiezaPedidos' => array(self::HAS_MANY, 'ValorpiezaPedido', 'id_pedido'),
 		);
 	}
 
@@ -82,12 +72,19 @@ class Presupuesto extends CActiveRecord
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -100,5 +97,16 @@ class Presupuesto extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Pedido the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
 	}
 }

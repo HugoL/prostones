@@ -37,25 +37,10 @@ $imageArray = array(
     </div>
 </div><!-- row -->
 
-
-
-<?php if( !empty($materiales) ){ ?>
-     <div class="well">
-    <?php foreach ( $materiales as $key => $material ){ ?>
-        <li class="span2">
-            <a href="presupuesto/tipos/id/<?php echo $material->id; ?>" class="thumbnail" rel="tooltip" data-title="Tooltip">
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen; ?>" alt="<?php echo $material->nombre; ?>"><center><?php echo $material->nombre; ?></center>
-            </a>
-        </li>
-    <?php } ?>
-    <div class="clearfix">&nbsp;</div>
-    </div>
-<?php } ?>
-
 <?php if( !empty($tipos) ){ ?>
-    <div class="well">
+    <div class="well span11">
     <?php foreach ( $tipos as $key => $tipo ){ ?>    
-        <li class="span1">
+        <li class="span2">
             <div class="thumbnail tipos">
             <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            

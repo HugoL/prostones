@@ -28,11 +28,11 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view','tipos'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -122,10 +122,26 @@ class PresupuestoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Presupuesto');
+		$materiales = Material::model()->findAll();
+		$imagenes = array();
+		$i = 0;
+		foreach ($materiales as $key => $material) {
+				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
+				$imagenes[$i] = $array;
+				$i++;
+			}	
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'materiales'=>$materiales,'imagenes'=>$imagenes
 		));
+	}
+
+	public function actionTipos( $id ){
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id_material',$id);     		
+        $criteria->select = '*';
+		$tipos = Tipo::model()->findAll($criteria);
+
+		$this->render( 'tipos',array('tipos'=>$tipos) );
 	}
 
 	/**
