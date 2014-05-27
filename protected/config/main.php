@@ -16,7 +16,7 @@ return array(
     ),
 
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Proston.es',
+	'name'=>'proSton.es',
 	'theme'=>'blackboot',
 	// preloading 'log' component
 	'preload'=>array('log'),
