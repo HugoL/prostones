@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-05-2014 a las 19:22:12
+-- Tiempo de generación: 29-05-2014 a las 01:25:42
 -- Versión del servidor: 5.5.37
 -- Versión de PHP: 5.3.10-1ubuntu3.11
 
@@ -256,7 +256,8 @@ CREATE TABLE IF NOT EXISTS `ehp_valorpiezas` (
   `id_pieza` int(11) NOT NULL,
   `id_tamano` int(11) NOT NULL,
   `id_terminacion` int(11) NOT NULL,
-  `precio` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL COMMENT 'Cuantas piezas con esta configuración',
+  `precio` float NOT NULL,
   `id_pedido` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_tipo` (`id_tipo`),
