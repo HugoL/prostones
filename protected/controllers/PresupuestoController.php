@@ -6,7 +6,7 @@ class PresupuestoController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -120,18 +120,40 @@ class PresupuestoController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex( $idMaterial = null )
 	{
 		$materiales = Material::model()->findAll();
 		$imagenes = array();
 		$i = 0;
+
 		foreach ($materiales as $key => $material) {
 				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
 				$imagenes[$i] = $array;
 				$i++;
-			}	
+		}
+
+		if( !isset($idMaterial) ){ 
+			$tipos = null;
+		}else{ //si llega un idMaterial coge los tipos de ese material
+			$criteria=new CDbCriteria;               		
+        	$criteria->compare('id_material',$idMaterial);	
+        	$criteria->select = '*';
+			$tipos = Tipo::model()->findAll($criteria);
+		}
+
+		$piezas = Pieza::model()->findAll();
+
+		$valorPieza = new Valorpieza;
+
+
+		if(isset($_POST['Valorpieza'])){
+			$valorPieza->attributes=$_POST['Valorpieza'];
+			if($valorPieza->save())
+				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+		}
+
 		$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza
 		));
 	}
 

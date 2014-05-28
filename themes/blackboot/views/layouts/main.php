@@ -108,9 +108,9 @@
 							array('label'=>'Home', 'url'=>array('/site/index')),
 							array('label'=>'Catalogo', 'url'=>array('/material/index')),
 							array('label'=>'Simulador 3D', 'url'=>array('/simulador/index')),
-							array('label'=>'Presupuesto online', 'url'=>array('/site/presupuesto2')),
-							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-							array('label'=>'Contact', 'url'=>array('/site/contact')),	
+							array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
+							array('label'=>'Quiénes somos', 'url'=>array('/site/page', 'view'=>'about')),
+							array('label'=>'Contacto', 'url'=>array('/site/contact')),	
 							array('label'=>'Acceso', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),

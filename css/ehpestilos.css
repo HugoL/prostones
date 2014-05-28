@@ -127,3 +127,13 @@
 .jFlowControl:hover { background-position: -32px 0px; cursor: pointer; }
 
 .jFlowSelected, .jFlowSelected:hover {background-position: -15px 0px;   }
+
+.panel{
+  margin-bottom: 20px;
+  background-color: #FFF;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-color: #DDD;
+  padding: 20px;
+}
