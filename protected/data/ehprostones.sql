@@ -1,13 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
+<<<<<<< HEAD
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 27-05-2014 a las 21:25:45
 -- Versión del servidor: 5.6.14
 -- Versión de PHP: 5.5.6
+=======
+-- Servidor: localhost
+-- Tiempo de generación: 29-05-2014 a las 01:25:42
+-- Versión del servidor: 5.5.37
+-- Versión de PHP: 5.3.10-1ubuntu3.11
+>>>>>>> 2860b587954f6ccdd934cef0d0c06bfa35177900
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -169,6 +176,7 @@ CREATE TABLE IF NOT EXISTS `ehp_terminaciones` (
 --
 
 INSERT INTO `ehp_terminaciones` (`id`, `nombre`, `tipo`) VALUES
+<<<<<<< HEAD
 (1, 'En Bruto', 1),
 (2, 'Apomazado', 1),
 (3, 'Apomazado + Biselado', 1),
@@ -178,6 +186,17 @@ INSERT INTO `ehp_terminaciones` (`id`, `nombre`, `tipo`) VALUES
 (7, 'Abujardado', 1),
 (8, 'Arenado', 1),
 (9, 'Granallado', 1);
+=======
+(1, 'En Bruto', 0),
+(2, 'Apomazado', 0),
+(3, 'Apomazado + Biselado', 0),
+(4, 'Pulido', 0),
+(5, 'Pulido + Biselado', 0),
+(6, 'Envejecido', 0),
+(7, 'Abujardado', 0),
+(8, 'Arenado', 0),
+(9, 'Granallado', 0);
+>>>>>>> 2860b587954f6ccdd934cef0d0c06bfa35177900
 
 -- --------------------------------------------------------
 
@@ -256,7 +275,12 @@ CREATE TABLE IF NOT EXISTS `ehp_valorpiezas` (
   `id_pieza` int(11) NOT NULL,
   `id_tamano` int(11) NOT NULL,
   `id_terminacion` int(11) NOT NULL,
+<<<<<<< HEAD
   `precio` int(11) NOT NULL,
+=======
+  `cantidad` int(11) NOT NULL COMMENT 'Cuantas piezas con esta configuración',
+  `precio` float NOT NULL,
+>>>>>>> 2860b587954f6ccdd934cef0d0c06bfa35177900
   `id_pedido` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_tipo` (`id_tipo`),
