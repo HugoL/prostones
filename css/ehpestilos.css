@@ -93,9 +93,30 @@
   padding: 5px;
 }
 
-#sliderContainer { width: 940px; height: 200px; position: relative; border-top: 5px solid #999; border-bottom: 5px solid #999; margin: 0 auto; }
 
-.slideContent {  background:url("../images/contentBg.png") repeat scroll 0 0 transparent; position: absolute; bottom:0px; right:0px; padding: 10px; width: 920px; }
+.imgtophome{
+color:white;
+
+}
+
+.imgtophome img{
+
+ width:150px;
+ heigth:30px; 
+}
+
+/* controller lider pagination */
+
+#sliderContainer {
+ width: 640px; 
+ height: 200px; 
+ position: relative; 
+ border-top: 5px solid #999;
+  border-bottom: 5px solid #999;
+ margin: 0 auto;
+  }
+
+.slideContent {  background:url("../images/contentBg.png") repeat scroll 0 0 transparent; position: absolute; bottom:0px; right:0px; padding: 10px; width: 620px; }
 
 .slide h3 {  font: 26px/1em 'Rokkitt', serif; color: #FFF;  margin: 0 0 5px 0; }
 

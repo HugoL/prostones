@@ -16,7 +16,7 @@ return array(
     ),
 
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Proston.es',
+	'name'=>'proSton.es',
 	'theme'=>'blackboot',
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -184,7 +184,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'easenjo',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),
