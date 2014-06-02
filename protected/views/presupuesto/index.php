@@ -33,7 +33,7 @@ $imageArray = array(
 <?php if( !empty($materiales) ){ ?>    
     <?php foreach ( $materiales as $key => $material ){ ?>
         <li class="span12">
-            <a href="presupuesto/index/idMaterial/<?php echo $material->id; ?>" class="thumbnail" rel="tooltip" data-title="Tooltip">
+            <a href="presupuesto/index/idMaterial/<?php echo $material->id; ?>" class="thumbnail mate" rel="tooltip" data-title="Tooltip">
            <center><?php echo $material->nombre; ?></center>
             </a>
         </li>
@@ -48,8 +48,8 @@ $imageArray = array(
    
     <?php foreach ( $tipos as $key => $tipo ){ ?>    
         <li class="span2">
-            <div class="thumbnail tipos">
-            <img class="tipos" id="<?php echo $tipo->id; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
+            <div class="thumbnail tipos" id="<?php echo $tipo->id; ?>">
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            
         </li>
     <?php } ?>
@@ -64,14 +64,28 @@ $imageArray = array(
     <?php if( !empty($piezas) ){ ?>
         <?php foreach ( $piezas as $key => $pieza ){ ?>    
         <li class="span1">
-            <div class="piezas" id="<?php echo $pieza->id; ?>">
-                <center><?php echo $pieza->nombre; ?></center>
+            <div class="piezas" style="display:none" id="<?php echo $pieza->id; ?>">
+                <center><a href="#"><?php echo $pieza->nombre; ?></a></center>
             </div>            
         </li>
         <?php } ?>
      <?php } ?>
 </div><!-- /piezas -->
 </div><!-- /row -->
+
+  <div class="row">
+        <div class="well span12" id="terminaciones" style="display:none">
+            <?php if( !empty($terminaciones) ){ ?>
+        <?php foreach ( $terminaciones as $key => $terminacion ){ ?>    
+        <li class="span1">
+            <div class="terminacion" id="<?php echo $pieza->id; ?>">
+                <center><a href="#"><?php echo $terminacion->nombre; ?></a></center>
+            </div>            
+        </li>
+        <?php } ?>
+     <?php } ?>
+        </div>
+    </div>
 
 <div class="row">
    <?php $form=$this->beginWidget('CActiveForm', array(
@@ -89,12 +103,11 @@ $imageArray = array(
     </div>
                
     <div class="row">
-        <?php echo $form->hiddenField($valorpieza,'id_tipo'); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_pieza'); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_tamano'); ?>
-        <?php echo $form->hiddenField($valorpieza,'precio'); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
-        <?php echo $form->textField($valorpieza,'id_pieza',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'id_pedido'); ?>
     </div>
 
@@ -107,10 +120,17 @@ $imageArray = array(
 </div><!-- /row -->
 <script>
 $(".tipos").click(function(){
+    $("#Valorpieza_id_tipo").val($(this).attr("id"));
+    $(".piezas").show();
    //$("#Valorpieza_id_pieza").value("1");
 });
 $(".piezas").click(function(){
-    alert("hola: "+$(this).attr("id"));
+    //alert("hola: "+$(this).attr("id"));
    $("#Valorpieza_id_pieza").val($(this).attr("id"));
+   $("#terminaciones").show();
+});
+$(".terminacion").click(function(){
+    //alert("hola: "+$(this).attr("id"));
+   $("#Valorpieza_id_terminacion").val($(this).attr("id"));
 });
 </script>

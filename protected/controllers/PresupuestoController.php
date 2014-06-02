@@ -144,7 +144,7 @@ class PresupuestoController extends Controller
 		$piezas = Pieza::model()->findAll();
 
 		$valorPieza = new Valorpieza;
-
+		$terminaciones = Terminacion::model()->findAll();
 
 		if(isset($_POST['Valorpieza'])){
 			$valorPieza->attributes=$_POST['Valorpieza'];
@@ -153,7 +153,7 @@ class PresupuestoController extends Controller
 		}
 
 		$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones
 		));
 	}
 
