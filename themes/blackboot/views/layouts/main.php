@@ -48,7 +48,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		jQuery.noConflict();
+		
 	    $("#myController").jFlow({
 
 			controller: ".jFlowControl", // must be class, use . sign
@@ -61,7 +61,7 @@
 			
 			effect: "flow", //this is the slide effect (rewind or flow)
 
-			width: "940px",  // this is the width for the content-slider
+			width: "840px",  // this is the width for the content-slider
 
 			height: "200px",  // this is the height for the content-slider
 
@@ -109,9 +109,11 @@
 							array('label'=>'Catalogo', 'url'=>array('/material/index')),
 							array('label'=>'Simulador 3D', 'url'=>array('/simulador/index')),
 							array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
-							array('label'=>'Quiénes somos', 'url'=>array('/site/page', 'view'=>'about')),
+
+							array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),	
-							array('label'=>'Acceso', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
+
+							array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
 					)); ?>
