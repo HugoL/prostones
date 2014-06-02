@@ -15,29 +15,33 @@ $this->pageTitle=Yii::app()->name;
 </p>
 -->
 
-<div class="clearfix">&nbsp</div>
-<div class="span11 offset1 row">  
+
+<div class="span12">  
 
 	<div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
-		<div>Rehabilitación y reformas</div>
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg">
+		
 	</div>  
 
 	<div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
-		<div>Pisos y casas unifamiliares</div>
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg">
+		
 	</div>  
  <div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></img>
-		<div>Cocinas y baños</div>
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg"></img>
+		
 	</div>  
    <div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
-		<div>Construcción y edificacion</div>
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg">
+		
 	</div> 
 	 <div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
-		<div>Paisajismos y Jardineria</div>
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg">
+		
+	</div>
+	 <div class="span2">  
+		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg">
+		
 	</div>
 </div>
 
@@ -52,17 +56,19 @@ Slider principal
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
 
+<div class="span12">
+<div class="span9">
 <div id="sliderContainer">
 
     <div id="mySlides">
 
         <div id="slide1" class="slide">    
     
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
+            <img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
     
             <div class="slideContent">
-                <h3>You Asked, jFlow Delivered</h3>
-                <p>It's all about giving back to the development community.</p>
+                <h3>Catalogo de materiales</h3>
+                <p>Completa selección de los mejores materiales </p>
            
             </div>
     
@@ -70,31 +76,31 @@ Slider principal
     
         <div id="slide2" class="slide">
     
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
+            <img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
     
             <div class="slideContent">
-                <h3>W3C Valid</h3>
-                <p>Are you a stickler for writing valid code?  So is jFlow.</p>
+                <h3>Simulador</h3>
+                <p>Nuestro simulador le ayudara a tomar decisiones</p>
              </div>
     
         </div>   
     
         <div id="slide3" class="slide">
     
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
+            <img  width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
     
-            <div class="slideContent"><h3>Frequent Code Updates</h3>
-            <p>This slider is actively developed and used by thousands of websites</p></div>
+            <div class="slideContent"><h3>Presupuestos a medida</h3>
+            <p>Consgiga los meores precios del mercado llevandose la máxima calidad</p></div>
     
         </div>
         
         <div id="slide4" class="slide">
     
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 3 jFlow Plus" />
+            <img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 3 jFlow Plus" />
     
             <div class="slideContent">
-                <h3>Notice the Pagination?</h3>
-                <p>Click on the paging buttons below to navigate.</p>
+                <h3>Envio a cualquier punto de España</h3>
+                <p>Transporte nacional</p>
             </div>
     
         </div>
@@ -105,13 +111,13 @@ Slider principal
 
 <div id="myController">
 
-   <span class="jFlowControl">1</span>
+   <span class="jFlowControl"></span>
 
-   <span class="jFlowControl">2</span>
+   <span class="jFlowControl"></span>
 
-   <span class="jFlowControl">3</span>
+   <span class="jFlowControl"></span>
    
-   <span class="jFlowControl">4</span>
+   <span class="jFlowControl"></span>
 
 </div>
 
@@ -129,12 +135,13 @@ Slider principal
 Fin slider principal
 *********************************
 -->
+</div>
+<div class="span1"></div>
+<div class="span2" style="margin-left:0"> shf asf asfoas fas faf ag sog jgo gds sdgs dogsj gsdgsdg sd sdg gs sd osj gjosdgjsog</div>
+</div>
 
 
-
-<div class="clearfix"></div>
-
-
+<div class="clearfix">&nbsp</div>
 
 
 
@@ -144,11 +151,11 @@ Fin slider principal
 
 	<div class=" span6">
 		<div class="clearfix"></div>
-		<div class="divHome span12 gris"><h3>Simulador</h3></div>
+		<div class="divHome span6 gris"><h3>Simulador</h3></div>
 		<div class="divHome span12 gris"><h3>Stock</h3></div>
 		<div class="divHome span12 gris"><h3>Ofertas</h3></div>
 		<div class="divHome span12 gris"><h3>Recomendaciones</h3></div>
-		<div class="divHome span12 gris"><h3>Asesoramiento</h3></div>
+		<div class="divHome span12 gris"><h3>Informacion tecnologica</h3></div>
 		
 	</div>
 
@@ -165,31 +172,48 @@ Fin slider principal
 
 </div>
 
-
+<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp</div>
 <div class="titulo span11">Plataforma Proston</div>
 
 
 
-<div class=" span10 row">  
+<div class=" span11 row">  
 
-	<div class=" span2" >  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	<div class=" span1" >  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
 	</div>  
-	<div class=" span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
+	<div class=" span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
 	</div>  
-	<div class=" span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	<div class=" span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
 	</div>  
-	<div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	<div class="span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
 	</div>  
-	<div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"> 
+	<div class="span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"> 
 	</div>  
-	<div class="span2">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	<div class="span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
 	</div>  
+	<div class=" span1" >  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	</div>  
+	<div class=" span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
+	</div>  
+	<div class=" span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	</div>  
+	<div class="span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	</div>  
+	<div class="span1">  
+		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"> 
+	</div>  
+	
   
 </div>
 		
