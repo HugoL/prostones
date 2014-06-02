@@ -49,7 +49,7 @@ $imageArray = array(
     <?php foreach ( $tipos as $key => $tipo ){ ?>    
         <li class="span2">
             <div class="thumbnail tipos">
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
+            <img class="tipos" id="<?php echo $tipo->id; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            
         </li>
     <?php } ?>
@@ -64,7 +64,7 @@ $imageArray = array(
     <?php if( !empty($piezas) ){ ?>
         <?php foreach ( $piezas as $key => $pieza ){ ?>    
         <li class="span1">
-            <div class="piezas">
+            <div class="piezas" id="<?php echo $pieza->id; ?>">
                 <center><?php echo $pieza->nombre; ?></center>
             </div>            
         </li>
@@ -87,19 +87,15 @@ $imageArray = array(
         <?php echo $form->textField($valorpieza,'cantidad'); ?>
         <?php echo $form->error($valorpieza,'cantidad'); ?>
     </div>
-
-
-    <div class="row">
-        <?php echo $form->labelEx($valorpieza,'precio'); ?>
-        <?php echo $form->textField($valorpieza,'precio'); ?>
-        <?php echo $form->error($valorpieza,'precio'); ?>
-    </div>
-
+               
     <div class="row">
         <?php echo $form->hiddenField($valorpieza,'id_tipo'); ?>
         <?php echo $form->hiddenField($valorpieza,'id_pieza'); ?>
         <?php echo $form->hiddenField($valorpieza,'id_tamano'); ?>
+        <?php echo $form->hiddenField($valorpieza,'precio'); ?>
         <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
+        <?php echo $form->textField($valorpieza,'id_pieza',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_pedido'); ?>
     </div>
 
     <div class="row buttons">
@@ -111,6 +107,10 @@ $imageArray = array(
 </div><!-- /row -->
 <script>
 $(".tipos").click(function(){
-   //$("#zonas").fadeIn("slow");
+   //$("#Valorpieza_id_pieza").value("1");
+});
+$(".piezas").click(function(){
+    alert("hola: "+$(this).attr("id"));
+   $("#Valorpieza_id_pieza").val($(this).attr("id"));
 });
 </script>
