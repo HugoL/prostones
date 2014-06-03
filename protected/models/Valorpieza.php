@@ -36,7 +36,7 @@ class Valorpieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad', 'required'),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion, cantidad', 'required'),
 			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

@@ -90,6 +90,7 @@ $imageArray = array(
 <div class="row">
    <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'valorpieza-form',
+    'action'=>Yii::app()->createUrl('/valorPieza/calcular'),
     'enableAjaxValidation'=>false,
 )); ?>
 <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>

@@ -28,7 +28,7 @@ class ValorpiezaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'calcular'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -76,6 +76,29 @@ class ValorpiezaController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+		));
+	}
+
+	public function actionCalcular(){
+		$model=new Valorpieza;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Valorpieza']))
+		{
+			$model->attributes=$_POST['Valorpieza'];
+			//CALCULAR EL PRECIO DE LA PIEZA
+			$model->precio = 100;
+
+			if($model->save()){
+				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+				$this->render(array('presupuesto/index','valorpieza'=>$model));
+			}
+		}
+
+		$this->render('presupuesto/index',array(
+			'valorpieza'=>$model,
 		));
 	}
 
