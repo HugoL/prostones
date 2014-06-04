@@ -79,7 +79,7 @@ class ValorpiezaController extends Controller
 		));
 	}
 
-	public function actionCalcular(){
+	public function actionCalcular( ){		
 		$model=new Valorpieza;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -91,15 +91,23 @@ class ValorpiezaController extends Controller
 			//CALCULAR EL PRECIO DE LA PIEZA
 			$model->precio = 100;
 
+			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
+			if( empty($model->id_presupuesto) ){
+				$presupuesto = new Presupuesto;
+				if( !$presupuesto->save() ){
+					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
+					$this->render(array('presupuesto/index','valorpieza'=>$model));
+				}
+				$model->id_presupuesto = $presupuesto->getPrimaryKey();
+			}
+
+			}
+
 			if($model->save()){
 				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
 				$this->render(array('presupuesto/index','valorpieza'=>$model));
 			}
-		}
-
-		$this->render('presupuesto/index',array(
-			'valorpieza'=>$model,
-		));
+			$this->render(array('presupuesto/index','valorpieza'=>$model));
 	}
 
 	/**

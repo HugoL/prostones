@@ -1,30 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "ehp_valorpiezas".
+ * This is the model class for table "ehp_valorpieza_pedido".
  *
- * The followings are the available columns in table 'ehp_valorpiezas':
+ * The followings are the available columns in table 'ehp_valorpieza_pedido':
  * @property integer $id
- * @property integer $id_tipo
- * @property integer $id_pieza
- * @property integer $id_tamano
- * @property integer $id_terminacion
- * @property integer $precio
+ * @property integer $id_pedido
+ * @property integer $id_valorpiezas
  *
  * The followings are the available model relations:
- * @property Terminaciones $idTerminacion
- * @property Tamano $idTamano
- * @property Tipos $idTipo
- * @property Piezas $idPieza
+ * @property Valorpiezas $idValorpiezas
+ * @property Pedido $idPedido
  */
-class Valorpieza extends CActiveRecord
+class ValorpiezaPedido extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'ehp_valorpiezas';
+		return 'ehp_valorpieza_pedido';
 	}
 
 	/**
@@ -35,11 +30,11 @@ class Valorpieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, cantidad', 'required'),
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad', 'numerical', 'integerOnly'=>true),
+			array('id_pedido, id_valorpiezas', 'required'),
+			array('id_pedido, id_valorpiezas', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_tipo, id_pieza, id_tamano, id_terminacion, precio', 'safe', 'on'=>'search'),
+			array('id, id_pedido, id_valorpiezas', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,11 +46,8 @@ class Valorpieza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idPresupuesto' => array(self::BELONGS_TO, 'Presupuesto', 'id_presupuesto'),	
-			'idTerminacion' => array(self::BELONGS_TO, 'Terminaciones', 'id_terminacion'),
-			'idTamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
-			'idTipo' => array(self::BELONGS_TO, 'Tipos', 'id_tipo'),
-			'idPieza' => array(self::BELONGS_TO, 'Piezas', 'id_pieza'),
+			'idValorpiezas' => array(self::BELONGS_TO, 'Valorpiezas', 'id_valorpiezas'),
+			'idPedido' => array(self::BELONGS_TO, 'Pedido', 'id_pedido'),
 		);
 	}
 
@@ -66,12 +58,8 @@ class Valorpieza extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_tipo' => 'Id Tipo',
-			'id_pieza' => 'Id Pieza',
-			'id_tamano' => 'Id Tamano',
-			'id_terminacion' => 'Id Terminacion',
-			'precio' => 'Precio',
-			'cantidad'=>'Cantidad',
+			'id_pedido' => 'Id Pedido',
+			'id_valorpiezas' => 'Id Valorpiezas',
 		);
 	}
 
@@ -94,11 +82,8 @@ class Valorpieza extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_tipo',$this->id_tipo);
-		$criteria->compare('id_pieza',$this->id_pieza);
-		$criteria->compare('id_tamano',$this->id_tamano);
-		$criteria->compare('id_terminacion',$this->id_terminacion);
-		$criteria->compare('precio',$this->precio);
+		$criteria->compare('id_pedido',$this->id_pedido);
+		$criteria->compare('id_valorpiezas',$this->id_valorpiezas);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -109,7 +94,7 @@ class Valorpieza extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Valorpieza the static model class
+	 * @return ValorpiezaPedido the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_pedido')); ?>:</b>
-	<?php echo CHtml::encode($data->id_pedido); ?>
+	<?php echo CHtml::encode($data->id_presupuesto); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_valorpiezas')); ?>:</b>

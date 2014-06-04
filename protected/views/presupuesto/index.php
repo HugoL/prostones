@@ -28,6 +28,12 @@ $imageArray = array(
     </div>
 <?php endif; ?>
 
+<?php if(Yii::app()->user->hasFlash('danger')):?>
+    <div class="alert alert-error">
+        <?php echo Yii::app()->user->getFlash('danger'); ?>
+    </div>
+<?php endif; ?>
+
 <div class="row">
  <div class="well span2">
 <?php if( !empty($materiales) ){ ?>    
@@ -90,7 +96,7 @@ $imageArray = array(
 <div class="row">
    <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'valorpieza-form',
-    'action'=>Yii::app()->createUrl('/valorPieza/calcular'),
+    'action'=>Yii::app()->createUrl('/valorpieza/calcular'),
     'enableAjaxValidation'=>false,
 )); ?>
 <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
@@ -109,7 +115,7 @@ $imageArray = array(
         <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
         <?php echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_pedido'); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$valorpieza->id)); ?>
     </div>
 
     <div class="row buttons">

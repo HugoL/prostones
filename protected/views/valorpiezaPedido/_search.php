@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_pedido'); ?>
-		<?php echo $form->textField($model,'id_pedido'); ?>
+		<?php echo $form->label($model,'id_presupuesto'); ?>
+		<?php echo $form->textField($model,'id_presupuesto'); ?>
 	</div>
 
 	<div class="row">
