@@ -98,7 +98,7 @@
 				</a>
 				</div>
 				<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
+				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo2.jpg" /></div>
 
 				<div class="nav-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
@@ -106,13 +106,12 @@
 						'activeCssClass'	=> 'active',
 						'items'=>array(
 							array('label'=>'Home', 'url'=>array('/site/index')),
-							array('label'=>'Catalogo', 'url'=>array('/material/index')),
-							array('label'=>'Simulador 3D', 'url'=>array('/simulador/index')),
 							array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
-
+							array('label'=>'Simulador', 'url'=>array('/simulador/index')),
+							array('label'=>'Catalogo', 'url'=>array('/material/index')),
 							array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),	
-
+                            array('label'=>'Novedades', 'url'=>array('#')),	
 							array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
@@ -147,44 +146,61 @@
 	</div><!--/.fluid-container-->
 	</div>
 	
+
+
+
+
+
+
+
+
 	<div class="extra">
 	  <div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<h4>Heading 1</h4>
+		<div class="span4">
+				<h4>Encuentranos en:</h4>
+				<ul>
+					<li><a href="#">F</a><a href="#">R</a><a href="#">R</a><a href="#">R</a><a href="#">R</a></li>
+				</ul>
+				<h4>Recibe nuestras novedades:</h4>
+				asdasdasda
+			</div> 
+		
+			<div class="span2">
+				<h4>Proston.es</h4>
 				<ul>
 					<li><a href="#">Subheading 1.1</a></li>
 					<li><a href="#">Subheading 1.2</a></li>
 					<li><a href="#">Subheading 1.3</a></li>
 					<li><a href="#">Subheading 1.4</a></li>
 				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 2</h4>
+			</div> 
+			<div class="span2">
+				<h4>Plataforma Proston</h4>
+				<ul>
+					<li><a href="#">Subheading 1.1</a></li>
+					<li><a href="#">Subheading 1.2</a></li>
+					<li><a href="#">Subheading 1.3</a></li>
+					<li><a href="#">Subheading 1.4</a></li>
+				</ul>
+			</div> 
+			<div class="span2">
+				<h4>Comprar</h4>
 				<ul>
 					<li><a href="#">Subheading 2.1</a></li>
 					<li><a href="#">Subheading 2.2</a></li>
 					<li><a href="#">Subheading 2.3</a></li>
 					<li><a href="#">Subheading 2.4</a></li>
 				</ul>
-			</div> <!-- /span3 -->
+			</div> 
 			
-			<div class="col-md-3">
-				<h4>Heading 3</h4>	
-				<ul>
-					<li><a href="#">Subheading 3.1</a></li>
-					<li><a href="#">Subheading 3.2</a></li>
-					<li><a href="#">Subheading 3.3</a></li>
-					<li><a href="#">Subheading 3.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
 			
-			<div class="col-md-3">
-				<h4>Heading 4</h4>
+			
+			<div class="span2">
+				<h4>Ayuda</h4>
 				<ul>
-					<li><a href="#">Subheading 4.1</a></li>
-					<li><a href="#">Subheading 4.2</a></li>
+					<li><a href="#">Servicio al cliente</a></li>
+					<li><a href="#">FAQ general</a></li>
 					<li><a href="#">Subheading 4.3</a></li>
 					<li><a href="#">Subheading 4.4</a></li>
 				</ul>
@@ -200,7 +216,7 @@
 				About us | Contact us | Terms & Conditions
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
-				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
+				<!--© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.-->
 			</div> <!-- /.span6 -->
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->

@@ -22,7 +22,7 @@
  /*margin-bottom: 20px;*/
   margin-top: 10px;
   background-color: #f5f5f5;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -35,8 +35,11 @@
    line-height:20px; 
 }
 .divHome h3{
-  font-size: 14px;
+  font-size: 18px;
   line-height:20px;
+}
+.divHome img{
+ height:60px; 
 }
 .divmenuHome blockquote {
   border-color: #ddd;
@@ -149,6 +152,31 @@ color:white;
 .jFlowControl:hover { background-position: -32px 0px; cursor: pointer; }
 
 .jFlowSelected, .jFlowSelected:hover {background-position: -15px 0px;   }
+
+.enl img:hover{
+  border: 2px  #eb7e13 solid;
+}
+
+.enl img:active{
+  border: 2px  #b0cce9 solid;
+}
+
+.plat{
+   display: block;
+  padding: 2px;
+  line-height: 20px;
+  /*border: 1px solid #134263;*/
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
 
 .panel{
   margin-bottom: 20px;
