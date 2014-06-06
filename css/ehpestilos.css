@@ -162,10 +162,17 @@ color:white;
 }
 
 .plat{
+  margin-left:5px;
+  font-size:10px;
+  
+  line-height:0px;
+  width: 90px;
+  height:80px;
+  float: left;
    display: block;
   padding: 2px;
   line-height: 20px;
-  /*border: 1px solid #134263;*/
+  border: 1px solid #bbbbbb;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -176,8 +183,16 @@ color:white;
      -moz-transition: all 0.2s ease-in-out;
        -o-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
-}
 
+}
+.plat img{
+  height:60px;
+}
+.plat p{
+  line-height:12px; 
+  font-size:10px;
+  font-weight: bold;
+}
 .panel{
   margin-bottom: 20px;
   background-color: #FFF;

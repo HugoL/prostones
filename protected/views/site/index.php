@@ -153,28 +153,28 @@ Fin slider principal
 		<div class="clearfix"></div>
 
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Suministro</font><br><font style="color:#969696"> de materiales</font></h3></div>
-			<div class="span5">Marmoles, granitos, piedras Calizas,etc con medidas estandar o bajo pedido.</div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;">Marmoles, granitos, piedras Calizas,etc con medidas estandar o bajo pedido.</p></div>
 		</div>
 
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Presupuesto online</font><br><font style="color:#969696"> Simulador de ambientes</font></h3></div>
-			<div class="span5"> Ponemos a su disposicion herramientas digitales...</div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Ponemos a su disposicion herramientas digitales...</p></div>
 		</div>
 		
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Transporte<br>a domicilio</h3></div>
-			<div class="span5"> Envio de pedidos a cualquier punto de España</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Transporte</font><br><font style="color:#969696">a domicilio</font></h3></div>
+			<div class="span5"> <p style="margin-top:10px; font-size:10px;"> Envio de pedidos a cualquier punto de España</p></div>
 		</div>
 
 		
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Colocación<br>de materiales</h3></div>
-			<div class="span5">Todos los materiales adquiridos en la web pueden ser colocados por nuestro equipo</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/colocacion.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Colocación</font><br><font style="color:#969696">de materiale</font></h3></div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Todos los materiales adquiridos en la web pueden ser colocados por nuestro equipo</p></div>
 		</div>
 
 	
@@ -185,28 +185,28 @@ Fin slider principal
 		<div class="clearfix"></div>
 
 			<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Stock<br>Material</h3></div>
-			<div class="span5">asdafs    jjdsad aslkdj alksdj djsa.</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Stock</font><br><font style="color:#969696">Material</font></h3></div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;"> asdafs    jjdsad aslkdj alksdj djsa.</p></div>
 		</div>
 
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Catalago <br>de materiales</h3></div>
-			<div class="span5"> Ponemos a su disposicion herramientas digitales...</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Catalago</font> <br><font style="color:#969696">de materiales</font></h3></div>
+			<div class="span5"> <p style="margin-top:10px; font-size:10px;"> Ponemos a su disposicion herramientas digitales...</p></div>
 		</div>
 		
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Asesoramiento<br></h3></div>
-			<div class="span5">Información para que compre aquello que resuelva sus necesidades.</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br></h3></div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Información para que compre aquello que resuelva sus necesidades.</p></div>
 		</div>
 
 		
 		<div class="divHome span12 gris">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"></div>
-			<div class="span4"><h3>Atención<br>personalizada</h3></div>
-			<div class="span5">Todos los talleres pertenecientes</div>
+			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.jpg"></div>
+			<div class="span4"><h3><font style="color:#134263">Atención</font><br><font style="color:#969696">personalizada</font></h3></div>
+			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Todos los talleres pertenecientes</p></div>
 		</div>
 
 		
@@ -223,59 +223,62 @@ Fin slider principal
 <div class="clearfix">&nbsp</div>
 <div class="titulo span11">Plataforma Proston</div>
 
+<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp</div>
+
 
 
 <div class=" span12 ">  
 
-	<div class=" span1 plat" style="background-color:black" >  
+	<div class="plat" style="background-color:#134263" >  
 		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
-		GALICIA
+		<p style="color:white;">GALICIA</p>
 	</div>  
-	<div class=" span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
-	ASTURIAS
-	CASTILLA LEON
+	<div class=" plat" style="background-color:#b0cce9;">  
+		<img   alt=""  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
+	<p>ASTURIAS
+	CASTILLA LEON</p>
 	</div>  
-	<div class=" span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
-	CANTABRIA
-	PAIS VASCO
+	<div class=" plat" style="background-color:#134263">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	<p style="color:white;">CANTABRIA
+	PAIS VASCO</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
-	LA RIOJA
-	NAVARRA
+	<div class="plat" style="background-color:#b0cce9">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	<p>LA RIOJA
+	NAVARRA</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"> CATALUÑA
+	<div class="plat" style="background-color:#134263;">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"> <p style="color:white;">CATALUÑA</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
-	EXTREMADURA
+	<div class="plat" style="background-color:#b0cce9">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	<p >EXTREMADURA</p>
 	</div>  
-	<div class=" span1" >  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
-	MADRID
-	CASTILLA LA MANCHA
+	<div class=" plat" style="background-color:#134263;">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	<p style="color:white;">MADRID<br>
+	CASTILLA LA MANCHA</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">ARAGON 
+	<div class="plat" style="background-color:#b0cce9">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"><p>ARAGON </p>
 	</div>  
-	<div class=" span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
-	COMUNIDAD VALENCIANA
+	<div class="plat" style="background-color:#134263;">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">
+	<p style="color:white;">COMUNIDAD<br> VALENCIANA</p>
 	</div>  
-	<div class=" span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
-	ANDALUCIA ORIENTAL
+	<div class="plat" style="background-color:#b0cce9">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+	<p>ANDALUCIA <br> ORIENTAL</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
-	ANDALUCIA OCCIDENTAL
+	<div class="plat" style="background-color:#134263;">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg">
+	<p style="color:white;">ANDALUCIA <br> OCCIDENTAL</p>
 	</div>  
-	<div class="span1">  
-		<img   alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg">ALBACETE
-		MURCIA 
+	<div class="plat" style="background-color:#b0cce9">  
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg"><p style="color:white;">ALBACETE<br>
+		MURCIA </p>
 	</div>  
 	
   
