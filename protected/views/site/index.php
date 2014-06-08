@@ -14,34 +14,40 @@ $this->pageTitle=Yii::app()->name;
 )); ?>
 </p>
 -->
+<div class="clearfix">&nbsp</div>
 
+<div class="span12" >  
 
-<div class="span12" style="margin-top:10px;margin-left:10px;">  
-
-	<div class="span2 enl" style="margin-left:0px;">  
-		<a href="#"><img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg"></a>
+	<div class="span2 enl" >  
 		
+<a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+
 	</div>  
 
-	<div class="span2 enl" style="margin-left:15px;">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg">
-		
+	<div class="span2 enl" style="margin-left:1.4%;">  
+<a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
+
+				
 	</div>  
- <div class="span2 enl" style="margin-left:15px;">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg"></img>
-		
+ <div class="span2 enl" style=" margin-left:1.4%;">  
+ <a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
+
+				
 	</div>  
-   <div class="span2 enl" style="margin-left:15px;">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg">
+   <div class="span2 enl" style=" margin-left:1.4%;">  
+		
+		<img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
 		
 	</div> 
-	 <div class="span2 enl" style="margin-left:15px;">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg">
+	 <div class="span2 enl" style=" margin-left:1.4%;">  
+	 <img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg';"/>
+		
 		
 	</div>
-	 <div class="span2 enl" style="margin-left:15px;">  
-		<img  width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg">
-		
+	 <div class="span2 enl" style=" margin-left:1.4%;">  
+	 	<img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg';"/>
+
+				
 	</div>
 </div>
 
@@ -136,8 +142,8 @@ Fin slider principal
 *********************************
 -->
 </div>
-<div class="span1"></div>
-<div class="span2" style="margin-left:0">¿No encuentra lo que necesita? Consultanos... Podemos suministrale todas sus ideas o proyectos</div>
+
+<div class="span2" style="margin-left:70px">¿No encuentra lo que necesita? Consultanos... Podemos suministrale todas sus ideas o proyectos</div>
 </div>
 
 
@@ -145,36 +151,37 @@ Fin slider principal
 
 
 
-<div class="titulo span12">Servicios</div>
+<div class="titulo span12" >Servicios</div>
 
 <div class="row span12"> 
 
-	<div class=" span6">
+	<div class="span6">
 		<div class="clearfix"></div>
 
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
+		
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Suministro</font><br><font style="color:#969696"> de materiales</font></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;">Marmoles, granitos, piedras Calizas,etc con medidas estandar o bajo pedido.</p></div>
+			<div class="span6 parr"><p>Marmoles, granitos, piedras Calizas,etc con medidas estandar o bajo pedido.</p></div>
 		</div>
 
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Presupuesto online</font><br><font style="color:#969696"> Simulador de ambientes</font></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Ponemos a su disposicion herramientas digitales...</p></div>
+			<div class="span4"><h3><font style="color:#134263">Presupuesto online</font><br><font style="color:#969696"> Simulador</font></h3></div>
+			<div class="span6 parr"><p>Ponemos a su disposicion herramientas digitales... Crea tu idea con nuestro <a href="#">simulador</a>  y obten un presupuesto a tu medida con nuestra<a href="#">aplicación</a>.</p></div>
 		</div>
 		
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Transporte</font><br><font style="color:#969696">a domicilio</font></h3></div>
-			<div class="span5"> <p style="margin-top:10px; font-size:10px;"> Envio de pedidos a cualquier punto de España</p></div>
+			<div class="span6 parr"> <p> Envio de pedidos a cualquier punto de España</p></div>
 		</div>
 
 		
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/colocacion.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Colocación</font><br><font style="color:#969696">de materiale</font></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Todos los materiales adquiridos en la web pueden ser colocados por nuestro equipo</p></div>
+			<div class="span4"><h3><font style="color:#134263">Colocación</font><br><font style="color:#969696">de materiales</font></h3></div>
+			<div class="span6 parr"><p> Todos los materiales adquiridos en la web pueden ser colocados por nuestro equipo</p></div>
 		</div>
 
 	
@@ -184,29 +191,29 @@ Fin slider principal
 	<div class=" span6">
 		<div class="clearfix"></div>
 
-			<div class="divHome span12 gris">
+			<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Stock</font><br><font style="color:#969696">Material</font></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;"> asdafs    jjdsad aslkdj alksdj djsa.</p></div>
+			<div class="span6 parr"><p> asdafs    jjdsad aslkdj alksdj djsa.</p></div>
 		</div>
 
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Catalago</font> <br><font style="color:#969696">de materiales</font></h3></div>
-			<div class="span5"> <p style="margin-top:10px; font-size:10px;"> Ponemos a su disposicion herramientas digitales...</p></div>
+			<div class="span6 parr" > <p> Ponemos a su disposicion herramientas digitales...<a href="#" >Consulta el catálogo</a></p></div>
 		</div>
 		
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Información para que compre aquello que resuelva sus necesidades.</p></div>
+			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br><font style="color:#969696">técnico</font></h3></div>
+			<div class="span6 parr"><p> Información para que compre aquello que resuelva sus necesidades.</p></div>
 		</div>
 
 		
-		<div class="divHome span12 gris">
+		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Atención</font><br><font style="color:#969696">personalizada</font></h3></div>
-			<div class="span5"><p style="margin-top:10px; font-size:10px;"> Todos los talleres pertenecientes</p></div>
+			<div class="span6 parr"><p> Todos los talleres pertenecientes</p></div>
 		</div>
 
 		
@@ -221,7 +228,7 @@ Fin slider principal
 
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
-<div class="titulo span11">Plataforma Proston</div>
+<div class="titulo span11" style="color:#b0cce9">Plataforma proSton</div>
 
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>

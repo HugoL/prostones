@@ -159,20 +159,19 @@
 		<div class="row">
 		<div class="span4">
 				<h4>Encuentranos en:</h4>
-				<ul>
-					<li><a href="#">F</a><a href="#">R</a><a href="#">R</a><a href="#">R</a><a href="#">R</a></li>
-				</ul>
+				<img width="150px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/redes.png">
 				<h4>Recibe nuestras novedades:</h4>
-				asdasdasda
+				<input type="text" >
+				              
 			</div> 
 		
 			<div class="span2">
 				<h4>Proston.es</h4>
 				<ul>
-					<li><a href="#">Subheading 1.1</a></li>
-					<li><a href="#">Subheading 1.2</a></li>
-					<li><a href="#">Subheading 1.3</a></li>
-					<li><a href="#">Subheading 1.4</a></li>
+					<li><a href="#">Aviso legal</a></li>
+					<li><a href="#">Condiciones de uso y venta</a></li>
+					<li><a href="#">Politica de privacidad</a></li>
+					<li><a href="#">politica de uso</a></li>
 				</ul>
 			</div> 
 			<div class="span2">
@@ -187,8 +186,8 @@
 			<div class="span2">
 				<h4>Comprar</h4>
 				<ul>
-					<li><a href="#">Subheading 2.1</a></li>
-					<li><a href="#">Subheading 2.2</a></li>
+					<li><a href="#">Preguntas frecuentes</a></li>
+					<li><a href="#">Comprar en tres pasos</a></li>
 					<li><a href="#">Subheading 2.3</a></li>
 					<li><a href="#">Subheading 2.4</a></li>
 				</ul>
@@ -201,8 +200,7 @@
 				<ul>
 					<li><a href="#">Servicio al cliente</a></li>
 					<li><a href="#">FAQ general</a></li>
-					<li><a href="#">Subheading 4.3</a></li>
-					<li><a href="#">Subheading 4.4</a></li>
+					
 				</ul>
 				</div> <!-- /span3 -->
 			</div> <!-- /row -->
