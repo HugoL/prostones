@@ -25,5 +25,6 @@ $this->menu=array(
 		'nombre',
 		'id_material',
 		'id_tono',
+		'imagen,'
 	),
 )); ?>

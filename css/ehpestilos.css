@@ -17,8 +17,27 @@ src: url("../fonts/ERASDEMI.TTF") format("truetype");
 
 }
 
+.divSeccion {
+  min-height: 20px;
+  width:300px;
+  padding: 5px;
+ /*margin-bottom: 20px;*/
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid transparent;
+   border-right: 2px solid transparent;
 
-
+  /*-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.divSeccion img{
+  width:90px;
+   height:90px;
+}
 .divHome {
   min-height: 20px;
   width:300px;
@@ -49,7 +68,7 @@ src: url("../fonts/ERASDEMI.TTF") format("truetype");
 }
 .divHome:hover{
 border-bottom: 1px solid #fe7902;
-border-right:2px solid black;
+border-right:2px solid #124162;
 }
 .parr p{
  margin-top:10px; 
@@ -58,6 +77,26 @@ border-right:2px solid black;
  font-weight:bold;
 
 }
+.parr2 p{
+
+ font-size:12px; 
+ line-height:17px;
+ }
+ #menu-top ul { list-style: none; margin: 0; padding: 0; position: relative; height: 40px; }
+ 
+#menu-top ul li { display: block; height: 28px; float: left; overflow: visible; }
+#menu-top ul li:hover > ul { display: block; }
+ 
+#menu-top ul li a { float: left; display: block; }
+ 
+#menu-top ul li ul { display: none; position: absolute; top: 100%;
+                    background: #134263; color: #fff; height: auto;
+}
+ 
+#menu-top ul li ul li a { color: #ccc; padding: 4px 14px; display: block; }
+ 
+#menu-top ul li ul li.active a,
+#menu-top ul li ul li a:hover { color: #fff; }
 #sidebar{
   background-color: #fff;
   border: 1px solid black;
@@ -185,6 +224,11 @@ border-bottom: 1px solid black;
   line-height:12px; 
   font-size:10px;
   font-weight: bold;
+}
+
+
+.iconofoot{
+  width:30px;
 }
 .panel{
   margin-bottom: 20px;

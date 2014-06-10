@@ -1,7 +1,7 @@
 
-<h1>Ver Tipos de Material</h1>
+<h1>Caracterist</h1>
 
-<?php $this->debug($tipos); ?>
+
 
 <?php foreach ($tipos as $key => $tipo):	 ?>
 
@@ -15,7 +15,7 @@
     	'label'=>'Ver carac',
     	'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
     	'size'=>'mini', // null, 'large', 'small' or 'mini'
-    	'url'=>array('tipo/verCaracteristicas/id/'.$tipo->id),
+    	'url'=>array('tipo/verTiposMaterial/id/'.$tipo->id),
 	)); ?>
 	</div>
 

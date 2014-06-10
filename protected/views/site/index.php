@@ -20,7 +20,7 @@ $this->pageTitle=Yii::app()->name;
 
 	<div class="span2 enl" >  
 		
-<a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+<a href="http://localhost/yii/prostones/index.php/site/page?view=reformas"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
 
 	</div>  
 
@@ -143,7 +143,15 @@ Fin slider principal
 -->
 </div>
 
-<div class="span2" style="margin-left:70px">¿No encuentra lo que necesita? Consultanos... Podemos suministrale todas sus ideas o proyectos</div>
+<div class="span2 parr2" style="margin-left:70px;"><p align="justify"><b>¿No encuentra lo que necesita? </b>
+Consultenos... podemos suministrarle todas sus <a href="#"><font color="#fe7902">ideas y proyectos</font></a>.
+<br><br>
+<b>¿Ha encontrado en otra WEB lo que busca...., pero no se atreve a comprarlo?</b>
+Aproveche nuestra profesionalidad y logistica para garantizarse la mejor relación <a href="#"><font color="#fe7902">calidad-precio y una eficiente entrega en su domicilio</font></a>.
+</p>
+	<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/lineadoble.png">
+
+</div>
 </div>
 
 
@@ -161,26 +169,26 @@ Fin slider principal
 		<div class="divHome span11">
 		
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Suministro</font><br><font style="color:#969696"> de materiales</font></h3></div>
+			<div class="span4"><h3><font style="color:#134263">Elaboración</font><br><font style="color:#969696">y suministro</font></h3></div>
 			<div class="span6 parr"><p>Marmoles, granitos, piedras Calizas,etc con medidas estandar o bajo pedido.</p></div>
 		</div>
 
 		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Presupuesto online</font><br><font style="color:#969696"> Simulador</font></h3></div>
-			<div class="span6 parr"><p>Ponemos a su disposicion herramientas digitales... Crea tu idea con nuestro <a href="#">simulador</a>  y obten un presupuesto a tu medida con nuestra<a href="#">aplicación</a>.</p></div>
+			<div class="span4"><h3><font style="color:#134263">Presupuesto online</font><br><font style="color:#969696"> Diseñador virtual</font></h3></div>
+			<div class="span6 parr"><p>Ponemos a su disposicion herramientas digitales... Crea tu idea con nuestro <a href="#"><font color="#fe7902">simulador</font></a>  y obten un presupuesto a tu medida con nuestra <a href="#">aplicación</a>.</p></div>
 		</div>
 		
 		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Transporte</font><br><font style="color:#969696">a domicilio</font></h3></div>
+			<div class="span4"><h3><font style="color:#134263">Transporte hasta </font><br><font style="color:#969696"> su domicilio</font></h3></div>
 			<div class="span6 parr"> <p> Envio de pedidos a cualquier punto de España</p></div>
 		</div>
 
 		
 		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/colocacion.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Colocación</font><br><font style="color:#969696">de materiales</font></h3></div>
+			<div class="span4"><h3><font style="color:#134263">Colocación de</font><br><font style="color:#969696"> materiales adquiridos</font></h3></div>
 			<div class="span6 parr"><p> Todos los materiales adquiridos en la web pueden ser colocados por nuestro equipo</p></div>
 		</div>
 
@@ -193,19 +201,19 @@ Fin slider principal
 
 			<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Stock</font><br><font style="color:#969696">Material</font></h3></div>
-			<div class="span6 parr"><p> asdafs    jjdsad aslkdj alksdj djsa.</p></div>
+			<div class="span5"><h3><font style="color:#134263">Ofertas para el Stock</font><br><font style="color:#969696">Empresas del sector.</font></h3></div>
+			<div class="span5 parr"><p> asdafs    jjdsad aslkdj alksdj djsa.</p></div>
 		</div>
 
 		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Catalago</font> <br><font style="color:#969696">de materiales</font></h3></div>
+			<div class="span4"><h3><font style="color:#134263">Catalago de</font> <br><font style="color:#969696">nuestros materiales</font></h3></div>
 			<div class="span6 parr" > <p> Ponemos a su disposicion herramientas digitales...<a href="#" >Consulta el catálogo</a></p></div>
 		</div>
 		
 		<div class="divHome span11">
 			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.jpg"></div>
-			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br><font style="color:#969696">técnico</font></h3></div>
+			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br><font style="color:#969696"> Ayuda técnica</font></h3></div>
 			<div class="span6 parr"><p> Información para que compre aquello que resuelva sus necesidades.</p></div>
 		</div>
 
