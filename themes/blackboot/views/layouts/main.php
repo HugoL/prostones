@@ -98,7 +98,7 @@
 				</a>
 				</div>
 				<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo2.jpg" /></div>
+				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
 
 				<div class="nav-collapse" id="menu-top">
 					<?php $this->widget('zii.widgets.CMenu',array(
@@ -165,11 +165,12 @@
 	  <div class="container">
 		<div class="row">
 		<div class="span4">
-		<h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/redes.png">
-				Encuentranos en:</h4>
-				<img style="margin-left:20px" width="150px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/redes.png"><br>
-				<h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/correo.png">
-				Recibe nuestras novedades:</h4>
+		<h4>Encuentranos en:</h4>
+				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/fb.png">
+				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/youtube.png">
+				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/twitter.png">
+				<br>
+				<h4>Recibe nuestras novedades:</h4>
 				<input type="text" ><?php $this->widget('bootstrap.widgets.TbButton', array(
     	'label'=>'>',
     	'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
@@ -184,7 +185,8 @@
           border-radius: 4px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);">
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          ">
 			<div class="span2">
 				<h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/info.png"> proSton.es</h4>
 				<ul>
@@ -195,7 +197,7 @@
 					<li><span class="dot">•</span><a href="#">Protección de datos <br>personales</a></li>
 				</ul>
 			</div> 
-			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/mi cuenta.png"> 
+			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/envio.png"> 
 				Envios</h4>
 				<ul>
 					<li><span class="dot">•</span><a href="#">Envíos y plazos entrega</a></li>
@@ -204,7 +206,7 @@
 					
 				</ul>
 			</div> 
-			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/envio.png"> 
+			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/comprar.png"> 
 				Comprar</h4>
 				<ul>
 					<li><span class="dot">•</span><a href="#">Preguntas frecuentes</a></li>

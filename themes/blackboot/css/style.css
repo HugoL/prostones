@@ -520,6 +520,7 @@ p.hint { float:left; display:block;}
   margin-bottom: .6em;
   margin-left: 30px;
   list-style: none;
+  line-height: 15px;
 }
 /*------------------------------------------------------------------
 [ Footer/ .footer ]

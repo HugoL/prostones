@@ -8,7 +8,7 @@ src: url("../fonts/ERASDEMI.TTF") format("truetype");
 
   width:180px;
   height:40px;
-  padding: 10px;
+ margin-top:10px;
   
   
 }
@@ -37,8 +37,10 @@ src: url("../fonts/ERASDEMI.TTF") format("truetype");
 .divSeccion img{
   width:90px;
    height:90px;
+
 }
 .divHome {
+  text-align:justify;
   min-height: 20px;
   width:300px;
   padding: 5px;
@@ -120,13 +122,24 @@ border-right:2px solid #124162;
 
 .titulo{
   color: #b0cce9;
-  
   padding: 5px;
+  font: 25px eras;
+   margin:-32px 0px 0px 0px;
+   background-color: white;
+
+    /*border:1px solid #d2d2d2;*/
+    color:#b0cce9;
+    cursor:context-menu;
+}
+.titulo p{
+  font: 25px eras;
+}
+.titulo p:hover{
+  color:#0d3c5e;
   font: 25px eras;
 }
 
-
-.imgtophome{
+.imgtophome{0d3c5e
 color:white;
 
 }
@@ -196,10 +209,11 @@ border-bottom: 1px solid black;
 .plat{
   margin-left:5px;
   font-size:10px;
-  
+  background-color:#134263;
+  color:white;
   line-height:0px;
   width: 90px;
-  height:80px;
+  height:90px;
   float: left;
    display: block;
   padding: 2px;
@@ -219,11 +233,15 @@ border-bottom: 1px solid black;
 }
 .plat img{
   height:60px;
+  width:90px;
 }
 .plat p{
+  padding-top:5px;
   line-height:12px; 
-  font-size:10px;
+  font-size:9px;
   font-weight: bold;
+  text-align:center;
+  
 }
 
 

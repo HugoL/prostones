@@ -1,14 +1,15 @@
 
-<h1>Caracterist</h1>
+<h1>Caracteristicas de <?php echo $tipo->nombre; ?></h1>
 
 
 
-<?php foreach ($tipos as $key => $tipo):	 ?>
 
-	<div class="span2">
+
+	<div class="span6">
 
 	<?php echo $tipo->nombre; ?>
-
+<?php echo $tipo->imagen; ?>
+<?php echo $tipo->descripcion; ?>
 <img style="width:200px; height:200px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->imagen; ?>"/>
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
@@ -19,6 +20,6 @@
 	)); ?>
 	</div>
 
-<?php endforeach; ?>
+
 <div class="clearfix">&nbsp</div>
 

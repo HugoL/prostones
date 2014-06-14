@@ -28,7 +28,7 @@ class TipoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','verTiposMaterial'),
+				'actions'=>array('index','view','verTiposMaterial','verCaracteristicas'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -150,6 +150,15 @@ class TipoController extends Controller
 		$tipos = Tipo::model()->findAll($criteria);
 
 		$this->render( 'verTiposMaterial',array('tipos'=>$tipos) );
+	}
+
+	public function actionVerCaracteristicas( $id ){
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id',$id);     		
+        $criteria->select = '*';
+		$tipo = Tipo::model()->find($criteria);
+
+		$this->render( 'verCaracteristicas',array('tipo'=>$tipo) );
 	}
 
 	/**
