@@ -20,32 +20,33 @@ $this->pageTitle=Yii::app()->name;
 
 	<div class="span2 enl" >  
 		
-<a href="http://localhost/yii/prostones/index.php/site/page?view=reformas"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+<a href="http://localhost/yii/prostones/index.php/site/page?view=reformas"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
 
 	</div>  
 
 	<div class="span2 enl" style="margin-left:1.4%;">  
-<a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
+<a href="#"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
 
 				
 	</div>  
  <div class="span2 enl" style=" margin-left:1.4%;">  
- <a href="#"><img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
+ <a href="#"><img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
 
 				
 	</div>  
    <div class="span2 enl" style=" margin-left:1.4%;">  
 		
-		<img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
+		<img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
 		
 	</div> 
 	 <div class="span2 enl" style=" margin-left:1.4%;">  
-	 <img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg';"/>
+	 <img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg';"/>
 		
 		
 	</div>
-	 <div class="span2 enl" style=" margin-left:1.4%;">  
-	 	<img width="250" height="35" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg';"/>
+	 <div class="span2 enl" style=" margin-left:4.2%;">
+	 <img style="border:0" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barratop.png">  
+	 	<img style="height:70px;margin-top:5px;" width="250" height="25" alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg';"/>
 
 				
 	</div>
@@ -143,12 +144,12 @@ Fin slider principal
 -->
 </div>
 
-<div class="span2 parr2" style="margin-left:70px;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>
- proSton.es puede suministrar todas sus <a href="#"><font color="#fe7902">ideas y proyectos</font></a>.
+<div class="span2 parr2" style=" margin-left:8%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>
+ proSton.es puede suministrar todas sus <a href="#">ideas y proyectos</a>.
 <br><br>
 Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación  <b>calidad-precio</b> y una <b>eficiente</b> entrega en su domicilio.
 </p>
-	<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/lineadoble.png">
+	<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">
 
 </div>
 </div>
@@ -160,7 +161,7 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 
 
 
-<div class=" span12 " style="padding:10px;width:98%; border: 4px solid #134263;
+<div class=" span12 " style="padding:10px;width:98%; border: 1px solid #134263;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;">  
@@ -171,7 +172,7 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 
 		<div class="divHome span12">
 		
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.png"></div>
 			<div class="span4"><h3><font style="color:#134263; ">Elaboración</font><br><font style="color:#969696">y suministro</font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Trabajamos con todas las rocas ornamentales: mármoles, granitos, calizas, areniscas, travertinos, pizarras, cuarcitas, etc...
 			<br>
@@ -179,23 +180,23 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 		</div>
 
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Diseñador virtual</font><br><font style="color:#969696">Presupuesto online</font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Conviertase en su propio decorador... utilice nuestros "<a href="#">escenarios</a>" para comparar los materiales seleccionando la combinación que mas le guste.<br>
-			<span class="dot">•</span>  Obtenga el <a href="#">presupuesto online</a> de todas ellas.</p></div>
+			<span class="dot">•</span>  Obtenga el <a href="#">presupuesto online</a> de todas ellas. jaosds soa daod asdaosd</p></div>
 		</div>
 		
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Transporte  </font><br><font style="color:#969696"> a 
 			 domicilio</font></h3></div>
 			<div class="span6 parr"> <p><span class="dot">•</span>proSton.es tiene el objetivo de ofrecer rapidez en el suministro.<br>
-<span class="dot">•</span>Con su compra, facilitamos el numero de seguimiento de su pedido; manteniendo su material bajo control.</p></div>
+<span class="dot">•</span>Con su compra, facilitamos el numero de seguimiento de su pedido; manteniendo su material bajo control. asidhas asd aosda dasd asd as</p></div>
 		</div>
 
 		
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/colocacion.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/colocacion.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Colocación</font><br><font style="color:#969696">de materiales </font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Si no dispone de un profesional que le instale nuestros materiales, facilitamos colocadores con experiencia.<br><span class="dot">•</span>La plataforma proSton posee equipos de colocación cerca de su domicilio.</p></div>
 		</div>
@@ -208,21 +209,21 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 		<div class="clearfix"></div>
 
 			<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.jpg"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.jpg"></div>
 			<div class="span4"><h3><font style="color:#134263">Proveedores</font><br><font style="color:#969696">Stock y Ofertas</font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Ponemos a su disposición el stock de diferentes fábricas, ofertaremos algunas partidas a los precios mas baratos del mercado.<br>
 <span class="dot">•</span>Informaremos a nuestros visitantes sobre las empresas del sector.</p></div>
 		</div>
 
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Catalago</font> <br><font style="color:#969696">de materiales</font></h3></div>
 			<div class="span6 parr" > <p><span class="dot">•</span>Nuestro catalogo incluye las fotografias y las caracteristicas fisico-mecánicas de todos los materiales que vendemos.<br>
 <span class="dot">•</span>Solo incluimos en el catalogo las rocas que tengan la mejor relación calidad-precio.</p></div>
 		</div>
 		
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Asesoramiento</font><br><font style="color:#969696"> Ayuda técnica</font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Solicitenos sin ningún compromiso información sobre los materiales y sus acabados; podrá elegir lo mas adecuado para su obra.<br><span class="dot">•</span>Poseemos un cualificado departamento técnico, capacitado para realizar sus proyectos.
 </p></div>
@@ -230,7 +231,7 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 
 		
 		<div class="divHome span12">
-			<div class="span2"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.png"></div>
+			<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.png"></div>
 			<div class="span4"><h3><font style="color:#134263">Atención</font><br><font style="color:#969696">personalizada</font></h3></div>
 			<div class="span6 parr"><p><span class="dot">•</span>Disponemos de talleres en todas las regiones de España.<br>
 <span class="dot">•</span>Será atendido por profesionales que podrán enseñarle los materiales a suministrar, medir su obra, colocar lo que nos compre, etc</p></div>
@@ -252,56 +253,56 @@ Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación 
 
 
 
-<div class=" span12 " style="padding:10px;width:98%; border: 4px solid #134263;
+<div class=" span12 " style="padding:10px;width:98%; border: 1px solid #134263;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;">  
 <div class="titulo " style="width:20%;">Plataforma proSton</div>
 <div class="clearfix">&nbsp</div>
 	<div class="plat"  >  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/orense.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/orense.jpg">
 		<p style="color:white;">Galicia</p>
 	</div>  
 	<div class=" plat">  
-		<img   alt=""  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/leon.jpg">
+		<img   alt=""  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/leon.jpg">
 	<p>Asturias <br>Castilla Leon</p>
 	</div>  
 	<div class=" plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/3.jpg">
 	<p style="color:white;">Cantabria<br>Pais Vasco</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/logroño.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logroño.jpg">
 	<p>La Rioja<br>Navarra</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg"> <p style="color:white;">Cataluña</p>
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/3.jpg"> <p style="color:white;">Cataluña</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/mataro.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/mataro.jpg">
 	<p >Extremadura</p>
 	</div>  
 	<div class=" plat" >  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
-	<p style="color:white; align="justify";">Madrid<br>Castilla la Mancha</p>
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/3.jpg">
+	<p style="color:white; align="justify";">Madrid<br>Castilla la mancha</p>
 	</div>  
 	<div class="plat" >  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/madrid.jpg"><p>Aragón</p>
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/madrid.jpg"><p>Aragón</p>
 	</div>  
 	<div class="plat" >  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/3.jpg">
 	<p style="color:white;">Comunidad Valenciana</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/sevilla.jpg"><p>
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/sevilla.jpg"><p>
 	Andalucia oriental</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/almeria.jpg">
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/almeria.jpg">
 	<p style="color:white;">Andalucía occidental</p>
 	</div>  
 	<div class="plat">  
-		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/murcia.jpg"><p style="color:white;"> Albacete<br>Murcia</p>
+		<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/murcia.jpg"><p style="color:white;"> Albacete<br>Murcia</p>
 	</div>  
 	
   <div class="clearfix">&nbsp</div>          

@@ -4,6 +4,11 @@
  font-family: "eras"; 
 src: url("../fonts/ERASDEMI.TTF") format("truetype");
   }
+ @font-face { 
+ font-family: "superficial"; 
+src: url("../fonts/superficial_book.otf") format("truetype");
+  }
+
 .logo{
 
   width:180px;
@@ -65,9 +70,7 @@ src: url("../fonts/ERASDEMI.TTF") format("truetype");
   font-size: 18px;
   line-height:20px;
 }
-.divHome img{
- height:60px; 
-}
+
 .divHome:hover{
 border-bottom: 1px solid #fe7902;
 border-right:2px solid #124162;
@@ -76,7 +79,7 @@ border-right:2px solid #124162;
  margin-top:10px; 
  font-size:11px; 
  line-height:14px;
- font-weight:bold;
+ /*font-weight:bold;*/
 
 }
 .parr2 p{
@@ -84,7 +87,7 @@ border-right:2px solid #124162;
  font-size:12px; 
  line-height:17px;
  }
- #menu-top ul { list-style: none; margin: 0; padding: 0; position: relative; height: 40px; }
+ #menu-top ul { list-style: none; margin: 0; padding: 0; position: relative; height: 40px;   font-family: "eras";}
  
 #menu-top ul li { display: block; height: 28px; float: left; overflow: visible; }
 #menu-top ul li:hover > ul { display: block; }
@@ -99,6 +102,12 @@ border-right:2px solid #124162;
  
 #menu-top ul li ul li.active a,
 #menu-top ul li ul li a:hover { color: #fff; }
+
+
+#menu-bot {
+  font-family:"eras";
+}
+
 #sidebar{
   background-color: #fff;
   border: 1px solid black;
@@ -132,14 +141,14 @@ border-right:2px solid #124162;
     cursor:context-menu;
 }
 .titulo p{
-  font: 25px eras;
+ font-size: 25px;
 }
 .titulo p:hover{
   color:#0d3c5e;
-  font: 25px eras;
+font-size: 25px;
 }
 
-.imgtophome{0d3c5e
+.imgtophome{
 color:white;
 
 }
@@ -208,8 +217,9 @@ border-bottom: 1px solid black;
 
 .plat{
   margin-left:5px;
-  font-size:10px;
-  background-color:#134263;
+  font-size:9px;
+  background-color: #191919;
+  /*background-color:#134263;*/
   color:white;
   line-height:0px;
   width: 90px;
@@ -239,11 +249,16 @@ border-bottom: 1px solid black;
   padding-top:5px;
   line-height:12px; 
   font-size:9px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-align:center;
+
   
 }
 
+.iconoser img{
+  width:60px;
+  
+}
 
 .iconofoot{
   width:30px;

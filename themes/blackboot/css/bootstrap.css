@@ -223,7 +223,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "superficial","Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -231,12 +231,12 @@ body {
 }
 
 a {
-  color: #0088cc;
+  color: #fe7902;
   text-decoration: none;
 }
 
 a:hover {
-  color: #005580;
+  color: #feae02;
   text-decoration: underline;
 }
 

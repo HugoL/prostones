@@ -108,7 +108,7 @@
 							array('label'=>'Home', 'url'=>array('/site/index')),
 							array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
 							array('label'=>'Diseñador', 'url'=>array('/simulador/index')),
-							array('label'=>'Catalogo', 'url'=>array('/material/index')),
+							array('label'=>'Catálogo', 'url'=>array('/material/index')),
 							array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Segmentos', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
        								 array('label'=>'Reformas', 'url'=>array('/site/page','view'=>'reformas')),
@@ -161,11 +161,11 @@
 
 
 
-	<div class="extra">
+	<div class="extra" id="menu-bot">
 	  <div class="container">
 		<div class="row">
 		<div class="span4">
-		<h4>Encuentranos en:</h4>
+		<h4>Siguenos en:</h4>
 				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/fb.png">
 				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/youtube.png">
 				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/twitter.png">
@@ -209,7 +209,7 @@
 			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/comprar.png"> 
 				Comprar</h4>
 				<ul>
-					<li><span class="dot">•</span><a href="#">Preguntas frecuentes</a></li>
+					<li><a href="#"><span class="dot">•</span>Preguntas frecuentes</a></li>
 					<li><span class="dot">•</span><a href="#">Comprar en tres pasos</a></li>
 					<li><span class="dot">•</span><a href="#">Subheading 2.3</a></li>
 					<li><span class="dot">•</span><a href="#">Subheading 2.4</a></li>
