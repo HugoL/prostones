@@ -74,6 +74,10 @@ class SiteController extends Controller
 		$this->render('contact',array('model'=>$model));
 	}
 
+	public function actionMaintenance(){
+		$this->render("maintenance");
+	}
+
 	/**
 	 * Displays the login page
 	 */

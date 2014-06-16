@@ -79,6 +79,7 @@ $imageArray = array(
 </div><!-- /piezas -->
 </div><!-- /row -->
 
+<!-- terminaciones -->
   <div class="row">
         <div class="well span12" id="terminaciones" style="display:none">
             <?php if( !empty($terminaciones) ){ ?>
@@ -92,6 +93,7 @@ $imageArray = array(
      <?php } ?>
         </div>
     </div>
+    <!-- /terminaciones -->   
 
 <div class="row">
    <?php $form=$this->beginWidget('CActiveForm', array(
@@ -104,10 +106,20 @@ $imageArray = array(
     <?php echo $form->errorSummary($valorpieza); ?>
 
     <div class="row">
-        <?php echo $form->labelEx($valorpieza,'cantidad'); ?>
+    <div class="span6">
+        <?php echo $form->labelEx($valorpieza,'cantidad')." (m2)"; ?>
         <?php echo $form->textField($valorpieza,'cantidad'); ?>
         <?php echo $form->error($valorpieza,'cantidad'); ?>
     </div>
+
+     <!-- tamaños -->
+     <div class="span6">
+    <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
+    <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', 
+                           CHtml::listData($tamanos,'id', 'nombre')); ?>
+    </div>
+    <!-- /tamaños -->
+    </div><!-- /row -->
                
     <div class="row">
         <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>

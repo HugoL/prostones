@@ -184,7 +184,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'easenjo',
+			'password' => '',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),
@@ -224,4 +224,6 @@ return array(
 		'adminEmail'=>'skuder.zgz@gmail.com',
 		'imagenes'=>'/images/textura/',
 	),
+    'catchAllRequest'=>file_exists(dirname(__FILE__).'/.maintenance')
+        ? array('site/maintenance') : null,    
 );

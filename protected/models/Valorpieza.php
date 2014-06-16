@@ -66,10 +66,10 @@ class Valorpieza extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_tipo' => 'Id Tipo',
-			'id_pieza' => 'Id Pieza',
-			'id_tamano' => 'Id Tamano',
-			'id_terminacion' => 'Id Terminacion',
+			'id_tipo' => 'Tipo',
+			'id_pieza' => 'Pieza',
+			'id_tamano' => 'Tamaño',
+			'id_terminacion' => 'Terminacion',
 			'precio' => 'Precio',
 			'cantidad'=>'Cantidad',
 		);

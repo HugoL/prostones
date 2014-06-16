@@ -145,15 +145,23 @@ class PresupuestoController extends Controller
 
 		$valorPieza = new Valorpieza;
 		$terminaciones = Terminacion::model()->findAll();
+		$tamanos = Tamano::model()->findAll();
 
-		if(isset($_POST['Valorpieza'])){
+		if( isset($_POST['Valorpieza']) ){
 			$valorPieza->attributes=$_POST['Valorpieza'];
-			if($valorPieza->save())
-				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+			//calculo el precio
+			$precio = calcularPrecioUnitarioPieza( $valorPieza->id_tipo, $valorpieza->id_pieza, $valorpieza->id_tamano );
+			if( !empty($precio) ){
+				if($valorPieza->save()){
+					Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+				}
+			}else{
+				Yii::app()->user->setFlash('error', "No se ha podido calcular el precio");
+			}
 		}
 
 		$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
 		));
 	}
 
@@ -194,6 +202,26 @@ class PresupuestoController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+	protected function calcularPrecioUnitarioPieza( $tipomaterial, $pieza, $medida, $cantidad ){
+		$precio = 0;
+		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
+
+		//ejemplo: $precio = tabla_preciosMedidas('Where id_tipomaterial = X AND id_medida = Y' );
+
+		//si tenemos fórmula calculo el precio:
+
+		//Valor del metro cuadrado del material
+		$metrocua = 10;
+
+		//Cojo el coeficiente del precio de la medida
+		$coeficiente = 0.6;
+
+		$precio = $metrocua * $coeficiente;
+
+		return $precio;
+
 	}
 
 	/**
