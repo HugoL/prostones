@@ -29,7 +29,7 @@ class Tamano extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre', 'required'),
+			array('nombre,id_pieza', 'required'),
 			array('nombre', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -47,6 +47,7 @@ class Tamano extends CActiveRecord
 		return array(
 			'piezases' => array(self::HAS_MANY, 'Piezas', 'id_tamano'),
 			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'id_tamano'),
+			'idPieza' => array(self::BELONGS_TO, 'Pieza', 'id_pieza'),
 		);
 	}
 
@@ -58,6 +59,8 @@ class Tamano extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
+			'id_pieza' => 'Pieza',
+
 		);
 	}
 
@@ -81,6 +84,7 @@ class Tamano extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('id_pieza',$this->id_pieza);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -31,12 +31,12 @@ class Pieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, descripcion, id_tamano', 'required'),
+			array('nombre, descripcion', 'required'),
 			array('id_tamano', 'numerical', 'integerOnly'=>true),
 			array('nombre, descripcion', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, descripcion, id_tamano', 'safe', 'on'=>'search'),
+			array('id, nombre, descripcion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,9 +47,9 @@ class Pieza extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-			'idTamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
+		return array(			
 			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'id_pieza'),
+			'tamanos' => array(self::HAS_MANY, 'Tamano', 'id_pieza'),
 		);
 	}
 
@@ -62,7 +62,6 @@ class Pieza extends CActiveRecord
 			'id' => 'ID',
 			'nombre' => 'Nombre',
 			'descripcion' => 'Descripcion',
-			'id_tamano' => 'Id Tamano',
 		);
 	}
 
@@ -87,8 +86,7 @@ class Pieza extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('id_tamano',$this->id_tamano);
-
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
