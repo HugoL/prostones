@@ -148,8 +148,8 @@ class TipoController extends Controller
         $criteria->compare('id_material',$id);     		
         $criteria->select = '*';
 		$tipos = Tipo::model()->findAll($criteria);
-
-		$this->render( 'verTiposMaterial',array('tipos'=>$tipos) );
+		$material=Material::model()->find('id='.$id);
+		$this->render( 'verTiposMaterial',array('tipos'=>$tipos,'material'=>$material) );
 	}
 
 	public function actionVerCaracteristicas( $id ){

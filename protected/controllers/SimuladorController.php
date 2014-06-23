@@ -23,7 +23,7 @@ class SimuladorController extends Controller {
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','tipos'),
+				'actions'=>array('index','tipos','caracteristicas'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -52,12 +52,39 @@ class SimuladorController extends Controller {
 	}
 
 	public function actionTipos( $id ){
+		$materiales = Material::model()->findAll();
+		$imagenes = array();
+		$i = 0;
+		foreach ($materiales as $key => $material) {
+				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
+				$imagenes[$i] = $array;
+				$i++;
+			}	
+
 		$criteria=new CDbCriteria;               		
         $criteria->compare('id_material',$id);     		
         $criteria->select = '*';
 		$tipos = Tipo::model()->findAll($criteria);
+        
+		$this->render( 'index',array('tipos'=>$tipos,'materiales'=>$materiales,'imagenes'=>$imagenes) );
+	}
 
-		$this->render( 'index',array('tipos'=>$tipos) );
+	public function actionCaracteristicas( $id ){
+		$materiales = Material::model()->findAll();
+		$imagenes = array();
+		$i = 0;
+		foreach ($tipos as $key => $material) {
+				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
+				$imagenes[$i] = $array;
+				$i++;
+			}	
+
+		$tipos = Tipo::model()->find('id='.$id);
+
+        
+
+
+		$this->render( 'index',array('tipos'=>$tipos,'materiales'=>$materiales,'imagenes'=>$imagenes) );
 	}
 
 /* Used to debug variables*/

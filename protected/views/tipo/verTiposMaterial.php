@@ -1,6 +1,6 @@
 
 
-<h1>Catálogo de materiales</h1>
+<h1>Catálogo de materiales <?php echo $material->nombre?></h1>  
 <?php $this->debug($tipos); ?>
 
 <?php foreach ($tipos as $key => $tipo):	 ?>
@@ -9,6 +9,7 @@
 
 	<?php echo $tipo->nombre; ?>
 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verCaracteristicas/id/".$tipo->id; ?>">
+
 <img style="width:200px; height:200px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->imagen; ?>"/>
 </a>
 <?php $this->widget('bootstrap.widgets.TbButton', array(
