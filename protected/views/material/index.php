@@ -16,11 +16,18 @@ $this->breadcrumbs=array(
 
 
 
-
+<div class="span12">
+<div class="span6">
 	<?php $this->widget('zii.widgets.CListView', array(
 		'dataProvider'=>$dataProvider,
 		'itemView'=>'_view',
 	)); 
 	?>
+</div>
+
+	<div class=" span5">
+	asd asd as das
+	</div>
+</div>
 
 <div class="clearfix">&nbsp;</div>

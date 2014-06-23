@@ -1,5 +1,5 @@
 <?php
-	Yii::app()->clientscript
+Yii::app()->clientscript
 		// use it when you need it!
 		/*
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
@@ -18,14 +18,14 @@
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
 		*/
-?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-<meta name="language" content="en" />
-<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		?>
+		<!DOCTYPE html>
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+			<meta name="language" content="en" />
+			<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -49,7 +49,7 @@
 
 	$(document).ready(function(){
 		
-	    $("#myController").jFlow({
+		$("#myController").jFlow({
 
 			controller: ".jFlowControl", // must be class, use . sign
 
@@ -75,10 +75,10 @@
 
 			auto: true	
 
-    });
+		});
 
 
-});
+	});
 
 </script>
 
@@ -96,63 +96,65 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				</div>
-				<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-				<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
+			</div>
+			<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
+			<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
 
-				<div class="nav-collapse" id="menu-top">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'htmlOptions' => array( 'class' => 'nav' ),
-						'activeCssClass'	=> 'active',
-						'items'=>array(
-							array('label'=>'Home', 'url'=>array('/site/index')),
-							array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
-							array('label'=>'Diseñador', 'url'=>array('/simulador/index')),
-							array('label'=>'Catálogo', 'url'=>array('/material/index')),
-							array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
-							array('label'=>'Segmentos', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
-       								 array('label'=>'Reformas', 'url'=>array('/site/page','view'=>'reformas')),
-     					 			  array('label'=>'About Us', 'url'=>array('/company/aboutUs')),
-     							   array('label'=>'Careers', 'url'=>array('/company/careers')),
-        							array('label'=>'Contact Us', 'url'=>array('/company/contactUs')),
-     							   array('label'=>'Store Locator', 'url'=>array('/company/storeLocator')),
-      ),),
-							array('label'=>'Contacto', 'url'=>array('/site/contact')),	
-                            array('label'=>'Novedades', 'url'=>array('#')),	
-							array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			<div class="nav-collapse" id="menu-top">
+				<?php $this->widget('zii.widgets.CMenu',array(
+					'htmlOptions' => array( 'class' => 'nav' ),
+					'activeCssClass'	=> 'active',
+					'items'=>array(
+						array('label'=>'Inicio', 'url'=>array('/site/index')),
+						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
+						array('label'=>'Diseñador', 'url'=>array('/simulador/index')),
+						array('label'=>'Catálogo', 'url'=>array('/material/index'),'items'=>array(
+							array('label'=>'Marmóles', 'url'=>array('tipo/verTiposMaterial/id/2')),
+							array('label'=>'Granitos', 'url'=>array('tipo/verTiposMaterial/id/4')),
+							
+							),),
+						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
+							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
+							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),
+							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/company/careers')),
+							array('label'=>'Edificación - Urbanización', 'url'=>array('/company/contactUs')),
+							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/company/storeLocator')),
+							),),
+						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
+						array('label'=>'Novedades', 'url'=>array('#')),	
+						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
+						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
-					)); ?>
-					<!--IMPLEMENTAR BUSCADOR-->
-				</div><!--/.nav-collapse -->
+						)); ?>
+						<!--IMPLEMENTAR BUSCADOR-->
+					</div><!--/.nav-collapse -->
 
 
 
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div class="cont">
-	<div class="container-fluid">
-	  <?php if(isset($this->breadcrumbs)):?>
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-				'links'=>$this->breadcrumbs,
-				'homeLink'=>false,
-				'tagName'=>'ul',
-				'separator'=>'',
-				'activeLinkTemplate'=>'<li><a href="{url}">{label}</a> <span class="divider">/</span></li>',
-				'inactiveLinkTemplate'=>'<li><span>{label}</span></li>',
-				'htmlOptions'=>array ('class'=>'breadcrumb')
-			)); ?>
-		<!-- breadcrumbs -->
-	  <?php endif?>
-	
-	<?php echo $content ?>
-	
-	
-	</div><!--/.fluid-container-->
-	</div>
-	
+
+		<div class="cont">
+			<div class="container-fluid">
+				<?php if(isset($this->breadcrumbs)):?>
+					<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+						'links'=>$this->breadcrumbs,
+						'homeLink'=>false,
+						'tagName'=>'ul',
+						'separator'=>'',
+						'activeLinkTemplate'=>'<li><a href="{url}">{label}</a> <span class="divider">/</span></li>',
+						'inactiveLinkTemplate'=>'<li><span>{label}</span></li>',
+						'htmlOptions'=>array ('class'=>'breadcrumb')
+						)); ?>
+						<!-- breadcrumbs -->
+					<?php endif?>
+
+					<?php echo $content ?>
+
+
+				</div><!--/.fluid-container-->
+			</div>
 
 
 
@@ -161,87 +163,85 @@
 
 
 
-	<div class="extra" id="menu-bot">
-	  <div class="container">
-		<div class="row">
-		<div class="span4">
-		<h4>Siguenos en:</h4>
-				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/fb.png">
-				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/youtube.png">
-				<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/twitter.png">
-				<br>
-				<h4>Recibe nuestras novedades:</h4>
-				<input type="text" ><?php $this->widget('bootstrap.widgets.TbButton', array(
-    	'label'=>'>',
-    	'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-    	'size'=>'mini', // null, 'large', 'small' or 'mini'
-    	
-	)); ?>
-				              
-			</div> 
-			<div class="span8" style="border:1px solid black;border: 1px solid #bbbbbb;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-          ">
-			<div class="span2">
-				<h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/info.png"> proSton.es</h4>
-				<ul>
-					<li><span class="dot">•</span><a href="#">Aviso legal</a></li>
-					<li><span class="dot">•</span><a href="#">Condiciones de uso</a></li>
-					<li><span class="dot">•</span><a href="#">Politica de privacidad </a></li>
-					<li><span class="dot">•</span><a href="#">Politica de  uso</a></li>
-					<li><span class="dot">•</span><a href="#">Protección de datos <br>personales</a></li>
-				</ul>
-			</div> 
-			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/envio.png"> 
-				Envios</h4>
-				<ul>
-					<li><span class="dot">•</span><a href="#">Envíos y plazos entrega</a></li>
-					<li><span class="dot">•</span><a href="#">Política de devoluciones</a></li>
-					<li><span class="dot">•</span><a href="#">Forma de pago</a></li>
-					
-				</ul>
-			</div> 
-			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/comprar.png"> 
-				Comprar</h4>
-				<ul>
-					<li><a href="#"><span class="dot">•</span>Preguntas frecuentes</a></li>
-					<li><span class="dot">•</span><a href="#">Comprar en tres pasos</a></li>
-					<li><span class="dot">•</span><a href="#">Subheading 2.3</a></li>
-					<li><span class="dot">•</span><a href="#">Subheading 2.4</a></li>
-				</ul>
-			</div> 
-			
-			
-			
-			<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/ayuda.png">
-				Ayuda</h4>
-				<ul>
-					<li><span class="dot">•</span><a href="#">Servicio al cliente</a></li>
-					<li><span class="dot">•</span><a href="#">FAQ general</a></li>
-					
-				</ul>
-				</div> <!-- /span3 -->
-				</div>
-			</div> <!-- /row -->
-		</div> <!-- /container -->
-	</div>
-	
-	<div class="footer">
-	  <div class="container">
-		<div class="row">
-			
-			<div id="footer-terms" class="col-md-6">
-				© 2014  proSton.es . Todos los derechos reservados.<!--<a href="http://nachi.me.pn" target="_blank">Nachi</a>.-->
-		 </div> <!-- /row -->
-	  </div> <!-- /container -->
-	</div>
-	<?php if(!empty(Yii::app()->params['debugContent'])):?>
-                <?php echo Yii::app()->params['debugContent'];?>
-	<?php endif;?>
-</body>
-</html>
+
+			<div class="extra" id="menu-bot">
+				<div class="container">
+					<div class="row">
+						<div class="span4">
+							<h4>Siguenos en:</h4>
+							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/fb.png">
+							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/youtube.png">
+							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/twitter.png">
+							<br>
+
+							<h4>Recibe nuestras novedades:</h4>
+							<input type="text" >
+
+
+
+						</div> 
+						<div class="span8" style="border:1px solid black;border: 1px solid #bbbbbb;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;
+						-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+						-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+						box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+						">
+						<div class="span2">
+							<h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/info.png"> proSton.es</h4>
+							<ul>
+								<li><span class="dot">•</span><a href="#">Aviso legal</a></li>
+								<li><span class="dot">•</span><a href="#">Condiciones de uso</a></li>
+								<li><span class="dot">•</span><a href="#">Politica de privacidad </a></li>
+								<li><span class="dot">•</span><a href="#">Politica de  uso</a></li>
+								<li><span class="dot">•</span><a href="#">Protección de datos <br>personales</a></li>
+							</ul>
+						</div> 
+						<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/envio.png"> 
+							Envios</h4>
+							<ul>
+								<li><span class="dot">•</span><a href="#">Envíos y plazos entrega</a></li>
+								<li><span class="dot">•</span><a href="#">Política de devoluciones</a></li>
+								<li><span class="dot">•</span><a href="#">Forma de pago</a></li>
+
+							</ul>
+						</div> 
+						<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/comprar.png"> 
+							Comprar</h4>
+							<ul>
+								<li><a href="#"><span class="dot">•</span>Preguntas frecuentes</a></li>
+								<li><span class="dot">•</span><a href="#">Comprar en tres pasos</a></li>
+								
+							</ul>
+						</div> 
+
+
+
+						<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/ayuda.png">
+							Ayuda</h4>
+							<ul>
+								<li><span class="dot">•</span><a href="#">Servicio al cliente</a></li>
+								<li><span class="dot">•</span><a href="#">FAQ general</a></li>
+
+							</ul>
+						</div> <!-- /span3 -->
+					</div>
+				</div> <!-- /row -->
+			</div> <!-- /container -->
+		</div>
+
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+
+					<div id="footer-terms" class="col-md-6">
+						© 2014  proSton.es . Todos los derechos reservados.<!--<a href="http://nachi.me.pn" target="_blank">Nachi</a>.-->
+					</div> <!-- /row -->
+				</div> <!-- /container -->
+			</div>
+			<?php if(!empty(Yii::app()->params['debugContent'])):?>
+				<?php echo Yii::app()->params['debugContent'];?>
+			<?php endif;?>
+		</body>
+		</html>
