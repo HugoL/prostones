@@ -81,10 +81,7 @@ class SimuladorController extends Controller {
 
 		$tipos = Tipo::model()->find('id='.$id);
 
-        
-
-
-		$this->render( 'index',array('tipos'=>$tipos,'materiales'=>$materiales,'imagenes'=>$imagenes) );
+        $this->render( 'index',array('tipos'=>$tipos,'materiales'=>$materiales,'imagenes'=>$imagenes) );
 	}
 
 /* Used to debug variables*/
