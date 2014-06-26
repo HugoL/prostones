@@ -96,7 +96,7 @@ class ValorpiezaController extends Controller
 				if( !$presupuesto->save() ){
 					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
 					echo "No se guarda";
-					$this->render('presupuesto/index',array('valorpieza'=>$model));
+					$this->render('/presupuesto/index',array('valorpieza'=>$model));
 				}
 				$model->id_presupuesto = $presupuesto->getPrimaryKey();
 			}
@@ -105,9 +105,9 @@ class ValorpiezaController extends Controller
 
 			if($model->save()){
 				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
-				$this->render('presupuesto/index',array('valorpieza'=>$model));
+				$this->render('/presupuesto/index',array('valorpieza'=>$model));
 			}
-			$this->render('presupuesto/index',array('valorpieza'=>$model));
+			$this->render('/presupuesto/index',array('valorpieza'=>$model));
 			
 	}
 

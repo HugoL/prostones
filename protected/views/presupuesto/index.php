@@ -98,7 +98,7 @@ $imageArray = array(
 <div class="row">
    <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'valorpieza-form',
-    'action'=>Yii::app()->createUrl('/valorpieza/calcular'),
+    'action'=>Yii::app()->createUrl('presupuesto/index'),
     'enableAjaxValidation'=>false,
 )); ?>
 <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
@@ -123,11 +123,18 @@ $imageArray = array(
                
     <div class="row">
         <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
+        <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
         <?php echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$valorpieza->id)); ?>
+        <?php 
+            //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
+            if( isset($presupuesto) ){
+                $idPresupuesto = $presupuesto->id;
+            }else{
+                $idPresupuesto = 0;
+            }
+            echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
     </div>
 
     <div class="row buttons">

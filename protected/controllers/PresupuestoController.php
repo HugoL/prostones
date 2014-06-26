@@ -148,19 +148,14 @@ class PresupuestoController extends Controller
 		$tamanos = Tamano::model()->findAll();
 
 		if( isset($_POST['Valorpieza']) ){
-			//$valorPieza->attributes=$_POST['Valorpieza'];
-			//calculo el precio
-			/*$precio = calcularPrecioUnitarioPieza( $valorPieza->id_tipo, $valorpieza->id_pieza, $valorpieza->id_tamano );
-			if( !empty($precio) ){
-				if($valorPieza->save()){
-					Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
-				}
-			}else{
-				Yii::app()->user->setFlash('error', "No se ha podido calcular el precio");
-			}*/
-			/*$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
-			));*/
+			//$pieza = new Valorpieza;			
+			$valorPieza->attributes=$_POST['Valorpieza'];
+			//Debug($valorpieza);
+			$presupuesto = calcular( $valorPieza );
+
+			$this->render('index',array(
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupueseto'=>$presupuesto
+			));
 		}else{
 			$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
@@ -177,6 +172,37 @@ class PresupuestoController extends Controller
 		$tipos = Tipo::model()->findAll($criteria);
 
 		$this->render( 'tipos',array('tipos'=>$tipos) );
+	}
+
+	public function calcular( $model ){		
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+			
+			//CALCULAR EL PRECIO DE LA PIEZA
+			$model->precio = 100;
+
+			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
+			if( empty($model->id_presupuesto) || $model->id_presupuesto == 0 ){
+				$presupuesto = new Presupuesto;
+				if( !$presupuesto->save() ){
+					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
+					return $presupuesto;
+					//$this->render('/presupuesto/index',array('valorpieza'=>$model));
+				}
+				$model->id_presupuesto = $presupuesto->getPrimaryKey();
+			}
+
+			
+
+			if($model->save()){
+				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+				//$this->render('/presupuesto/index',array('valorpieza'=>$model));
+				return $presupuesto;
+			}
+			return $presupuesto;
+			//$this->render('/presupuesto/index',array('valorpieza'=>$model));
+			
 	}
 
 	/**
@@ -209,6 +235,7 @@ class PresupuestoController extends Controller
 		return $model;
 	}
 
+	
 	protected function calcularPrecioUnitarioPieza( $tipomaterial, $pieza, $medida, $cantidad ){
 		$precio = 0;
 		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
@@ -240,5 +267,16 @@ class PresupuestoController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	/* Used to debug variables*/
+	protected function Debug($var){
+		$bt = debug_backtrace();
+		$dump = new CVarDumper();
+		$debug = '<div style="display:block;background-color:gold;border-radius:10px;border:solid 1px brown;padding:10px;z-index:10000;"><pre>';
+		$debug .= '<h4>function: '.$bt[1]['function'].'() line('.$bt[0]['line'].')'.'</h4>';
+		$debug .=  $dump->dumpAsString($var);
+		$debug .= "</pre></div>\n";
+		Yii::app()->params['debugContent'] .=$debug;
 	}
 }
