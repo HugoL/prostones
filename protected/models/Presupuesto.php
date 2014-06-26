@@ -43,7 +43,7 @@ class Presupuesto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, id_cliente, id_provincia, fecha', 'required'),
+			//array('nombre, id_cliente, id_provincia, fecha', 'required'),
 			array('id_cliente, id_provincia', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
 			// The following rule is used by search().

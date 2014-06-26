@@ -85,8 +85,7 @@ class ValorpiezaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Valorpieza']))
-		{
+		if(isset($_POST['Valorpieza'])){
 			$model->attributes=$_POST['Valorpieza'];
 			//CALCULAR EL PRECIO DE LA PIEZA
 			$model->precio = 100;
@@ -96,7 +95,8 @@ class ValorpiezaController extends Controller
 				$presupuesto = new Presupuesto;
 				if( !$presupuesto->save() ){
 					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
-					$this->render(array('presupuesto/index','valorpieza'=>$model));
+					echo "No se guarda";
+					$this->render('presupuesto/index',array('valorpieza'=>$model));
 				}
 				$model->id_presupuesto = $presupuesto->getPrimaryKey();
 			}
@@ -105,9 +105,10 @@ class ValorpiezaController extends Controller
 
 			if($model->save()){
 				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
-				$this->render(array('presupuesto/index','valorpieza'=>$model));
+				$this->render('presupuesto/index',array('valorpieza'=>$model));
 			}
-			$this->render(array('presupuesto/index','valorpieza'=>$model));
+			$this->render('presupuesto/index',array('valorpieza'=>$model));
+			
 	}
 
 	/**

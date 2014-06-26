@@ -148,21 +148,26 @@ class PresupuestoController extends Controller
 		$tamanos = Tamano::model()->findAll();
 
 		if( isset($_POST['Valorpieza']) ){
-			$valorPieza->attributes=$_POST['Valorpieza'];
+			//$valorPieza->attributes=$_POST['Valorpieza'];
 			//calculo el precio
-			$precio = calcularPrecioUnitarioPieza( $valorPieza->id_tipo, $valorpieza->id_pieza, $valorpieza->id_tamano );
+			/*$precio = calcularPrecioUnitarioPieza( $valorPieza->id_tipo, $valorpieza->id_pieza, $valorpieza->id_tamano );
 			if( !empty($precio) ){
 				if($valorPieza->save()){
 					Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
 				}
 			}else{
 				Yii::app()->user->setFlash('error', "No se ha podido calcular el precio");
-			}
+			}*/
+			/*$this->render('index',array(
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
+			));*/
+		}else{
+			$this->render('index',array(
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
+			));
 		}
 
-		$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
-		));
+		
 	}
 
 	public function actionTipos( $id ){
