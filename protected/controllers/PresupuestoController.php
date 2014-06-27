@@ -151,7 +151,30 @@ class PresupuestoController extends Controller
 			//$pieza = new Valorpieza;			
 			$valorPieza->attributes=$_POST['Valorpieza'];
 			//Debug($valorpieza);
-			$presupuesto = calcular( $valorPieza );
+
+			// CALCULAR //
+			//CALCULAR EL PRECIO DE LA PIEZA
+			$valorPieza->precio = 100;
+
+			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
+			if( empty($valorPieza->id_presupuesto) || $valorPieza->id_presupuesto == 0 ){
+				$presupuesto = new Presupuesto;
+				if( !$presupuesto->save() ){
+					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
+					//$this->render('/presupuesto/index',array('valorpieza'=>$model));
+				}
+				$valorPieza->id_presupuesto = $presupuesto->getPrimaryKey();
+			}
+
+			
+
+			if($valorPieza->save()){
+				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+				//$this->render('/presupuesto/index',array('valorpieza'=>$model));				
+			}
+
+			// ******* //
+			//$presupuesto = calcular( $valorPieza );
 
 			$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupueseto'=>$presupuesto
