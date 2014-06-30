@@ -228,7 +228,7 @@
   display: block;
   padding: 2px;
   line-height: 20px;
-  border: 1px solid #bbbbbb;
+  border: 1px solid black;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -243,7 +243,8 @@
 }
 .plat img{
   height:60px;
-  width:90px;
+  width:88px;
+  border:1px solid black;
 }
 .plat p{
   padding-top:5px;
@@ -252,9 +253,22 @@
   /*font-weight: bold;*/
   text-align:center;
 
+
   
 }
 
+.galemat img{
+margin-bottom: 5px;
+border: 1px solid black;
+width:50px;
+height:50px;
+}
+
+.imgacabados img{
+ width:120px;
+height:80px;
+ border:1px solid black;
+}
 .iconoser img{
   width:60px;
   

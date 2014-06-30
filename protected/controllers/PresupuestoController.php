@@ -177,7 +177,7 @@ class PresupuestoController extends Controller
 			//$presupuesto = calcular( $valorPieza );
 
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupueseto'=>$presupuesto
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupueswto'=>$presupuesto
 			));
 		}else{
 			$this->render('index',array(

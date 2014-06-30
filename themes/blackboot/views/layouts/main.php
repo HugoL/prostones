@@ -37,7 +37,7 @@ Yii::app()->clientscript
 <!-- Le fav and touch icons -->
 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
-<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js"></script>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>
 
 <!--slider configuracion-->
 
@@ -82,7 +82,8 @@ Yii::app()->clientscript
 
 </script>
 
-
+<!--<script type="text/javascript" src="jquery.js"></script>-->
+ <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
 </head>
 
 <body>
@@ -107,12 +108,9 @@ Yii::app()->clientscript
 					'items'=>array(
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
-						array('label'=>'Diseñador', 'url'=>array('/simulador/index')),
-						array('label'=>'Catálogo', 'url'=>array('/material/index'),'items'=>array(
-							array('label'=>'Marmóles', 'url'=>array('tipo/verTiposMaterial/id/2')),
-							array('label'=>'Granitos', 'url'=>array('tipo/verTiposMaterial/id/4')),
-							
-							),),
+						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
+						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/')),
+														
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),

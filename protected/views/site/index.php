@@ -20,7 +20,7 @@ $this->pageTitle=Yii::app()->name;
 
 	<div class="span2 enl" >  
 		
-		<a href="http://localhost/yii/prostones/index.php/site/page?view=reformas"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
 
 	</div>  
 
@@ -103,10 +103,10 @@ Slider
 					
 					<div id="slide4" class="slide">
 						
-						<img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 3 jFlow Plus" />
+						<img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Slide 3 jFlow Plus" />
 						
 						<div class="slideContent">
-							<h3>Envios de materiales</h3>
+							<h3>Transporte a domicilio</h3>
 							<p>Rápido transporte a todo el territorio nacional</p>
 						</div>
 						
@@ -147,6 +147,8 @@ Fin slider
 <div class="span2 parr2" style=" margin-left:6.5%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <a href="#">ideas<font style="color:black"> o</font> proyectos</a>.
 	<br><br>
 	Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación  <b>calidad-precio</b>, con una <b>eficiente</b> entrega.
+<br><br>
+	Rellene el formulario que le adjuntamos o llamenos al nº. 607 212 080, será atendido con rapidez y profesionalidad.
 </p>
 <!--<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">-->
 
@@ -256,7 +258,7 @@ border-radius: 4px;">
 						-webkit-border-radius: 4px;
 						-moz-border-radius: 4px;
 						border-radius: 4px;">  
-						<div class="titulo " style="width:20%;">Plataforma proSton</div>
+						<div class="titulo " style="width:20%;"><p>Plataforma proSton</p></div>
 						<div class="clearfix">&nbsp</div>
 						<div class="plat"  >  
 							<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/orense.jpg">

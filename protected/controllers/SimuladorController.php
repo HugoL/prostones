@@ -36,19 +36,26 @@ class SimuladorController extends Controller {
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionIndex()
+	public function actionIndex($id)
 	{
-		$materiales = Material::model()->findAll();
-		$imagenes = array();
-		$i = 0;
-		foreach ($materiales as $key => $material) {
-				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
-				$imagenes[$i] = $array;
-				$i++;
-			}	
-		$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes
-		));
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id',$id);     		
+        $criteria->select = '*';
+		$tipo = Tipo::model()->find($criteria);
+		
+		$criteria2=new CDbCriteria;  
+
+        $criteria2->select = '*';
+        $criteria2->addInCondition('id_material',array(':id_material'=>'2')); 
+		$tipos = Tipo::model()->findAll($criteria2);
+		$criteria3=new CDbCriteria; 
+		$criteria3->select = '*';
+        $criteria3->addInCondition('id_material',array(':id_material'=>'4')); 
+		$tipos2 = Tipo::model()->findAll($criteria3);
+
+
+
+		$this->render( 'index',array('tipo'=>$tipo,'tipos'=>$tipos,'tipos2'=>$tipos2) );
 	}
 
 	public function actionTipos( $id ){
@@ -70,18 +77,24 @@ class SimuladorController extends Controller {
 	}
 
 	public function actionCaracteristicas( $id ){
-		$materiales = Material::model()->findAll();
-		$imagenes = array();
-		$i = 0;
-		foreach ($tipos as $key => $material) {
-				$array = array(Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$material->imagen, 'alt'=>$material->nombre);
-				$imagenes[$i] = $array;
-				$i++;
-			}	
+		$criteria=new CDbCriteria;               		
+        $criteria->compare('id',$id);     		
+        $criteria->select = '*';
+		$tipo = Tipo::model()->find($criteria);
+		
+		$criteria2=new CDbCriteria;  
 
-		$tipos = Tipo::model()->find('id='.$id);
+        $criteria2->select = '*';
+        $criteria2->addInCondition('id_material',array(':id_material'=>'2')); 
+		$tipos = Tipo::model()->findAll($criteria2);
+		$criteria3=new CDbCriteria; 
+		$criteria3->select = '*';
+        $criteria3->addInCondition('id_material',array(':id_material'=>'4')); 
+		$tipos2 = Tipo::model()->findAll($criteria3);
 
-        $this->render( 'index',array('tipos'=>$tipos,'materiales'=>$materiales,'imagenes'=>$imagenes) );
+
+
+		$this->render( 'verCaracteristicas',array('tipo'=>$tipo,'tipos'=>$tipos,'tipos2'=>$tipos2) );
 	}
 
 /* Used to debug variables*/
