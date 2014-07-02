@@ -36,61 +36,61 @@ $imageArray = array(
 
 <div class="row">
  <div class="well span2">
-<?php if( !empty($materiales) ){ ?>    
-    <?php foreach ( $materiales as $key => $material ){ ?>
+<?php if( !empty($materiales) ):?>    
+    <?php foreach ( $materiales as $key => $material ): ?>
         <li class="span12">
-            <a href="presupuesto/index/idMaterial/<?php echo $material->id; ?>" class="thumbnail mate" rel="tooltip" data-title="Tooltip">
-           <center><?php echo $material->nombre; ?></center>
-            </a>
+            <a href="#" id="material<? echo $material->id; ?>" onclick="vermaterial(<? echo $material->id; ?>);"><? echo $material->nombre; ?></a>
+            <?php //echo CHtml::link($material->nombre,array('presupuesto/index/idMaterial/'.$material->id),array('class'=>'thumbnail mate','rel'=>'tooltip','data-title'=>'Tooltip')); ?>
+            
         </li>
-    <?php } ?>
+    <?php endforeach; ?>
     <div class="clearfix">&nbsp;</div>    
-<?php } ?>
+<?php endif; ?>
 </div><!-- /well span2 -->
 
 <!-- div central -->
 <div class="span10 panel">
-    <?php if( !empty($tipos) ){ ?>
+    <?php if( !empty($tipos) ): ?>
    
-    <?php foreach ( $tipos as $key => $tipo ){ ?>    
+    <?php foreach ( $tipos as $key => $tipo ): ?>    
         <li class="span2">
-            <div class="thumbnail tipos" id="<?php echo $tipo->id; ?>">
+            <div class="thumbnail tipos tipo<? echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
             <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            
         </li>
-    <?php } ?>
+    <?php endforeach; ?>
     <div class="clearfix">&nbsp;</div>
-    <?php } ?>
+    <?php endif; ?>
 </div>
 </div><!-- /row -->
 <!-- ------------- -->
 
 <div class="row">
 <div class="well span12"><!-- piezas -->
-    <?php if( !empty($piezas) ){ ?>
-        <?php foreach ( $piezas as $key => $pieza ){ ?>    
+    <?php if( !empty($piezas) ): ?>
+        <?php foreach ( $piezas as $key => $pieza ): ?>    
         <li class="span1">
             <div class="piezas" style="display:none" id="<?php echo $pieza->id; ?>">
                 <center><a href="#"><?php echo $pieza->nombre; ?></a></center>
             </div>            
         </li>
-        <?php } ?>
-     <?php } ?>
+        <?php endforeach; ?>
+     <?php endif; ?>
 </div><!-- /piezas -->
 </div><!-- /row -->
 
 <!-- terminaciones -->
   <div class="row">
         <div class="well span12" id="terminaciones" style="display:none">
-            <?php if( !empty($terminaciones) ){ ?>
-        <?php foreach ( $terminaciones as $key => $terminacion ){ ?>    
+            <?php if( !empty($terminaciones) ): ?>
+        <?php foreach ( $terminaciones as $key => $terminacion ): ?>    
         <li class="span1">
-            <div class="terminacion" id="<?php echo $pieza->id; ?>">
+            <div class="terminacion" id="<?php echo $terminacion->id; ?>">
                 <center><a href="#"><?php echo $terminacion->nombre; ?></a></center>
             </div>            
         </li>
-        <?php } ?>
-     <?php } ?>
+        <?php endforeach; ?>
+     <?php endif; ?>
         </div>
     </div>
     <!-- /terminaciones -->   
@@ -129,34 +129,57 @@ $imageArray = array(
         <?php echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
         <?php 
             //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
-            if( isset($presupuesto) ){
+            if( isset($presupuesto) ):
                 $idPresupuesto = $presupuesto->id;
-            }else{
+            else:
                 $idPresupuesto = 0;
-            }
+            endif;
             echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
     </div>
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Save'); ?>
+        <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
     </div>
 
 <?php $this->endWidget(); ?>
 
+<!-- piezas guardadas -->
+<div class="span12">
+    <? if( $idPresupuesto != 0 ):
+        $criteria=new CDbCriteria;                      
+        $criteria->compare('id_presupuesto',$idPresupuesto);  
+        $criteria->select = '*';
+        $piezas = Valorpieza::model()->findAll($criteria); ?>
+        <span>Pieza:</span>
+        <? foreach ($piezas as $key => $pieza): ?>
+            <div class="well well-small">Tipo: <? echo $pieza->id_tipo; ?>, Terminación: <? echo $pieza->id_terminacion; ?> , precio: <? echo $pieza->precio; ?>, Cantidad: <? echo $pieza->cantidad; ?>, SubTotal: <? echo $pieza->precio * $pieza->cantidad;?></div>
+        <? endforeach; ?>
+    <? endif; ?>
+</div>
+<!-- ---------------- -->
 </div><!-- /row -->
 <script>
-$(".tipos").click(function(){
-    $("#Valorpieza_id_tipo").val($(this).attr("id"));
-    $(".piezas").show();
-   //$("#Valorpieza_id_pieza").value("1");
+$(document).ready(function($) {
+    $(".tipos").fadeOut();
+    $(".tipos").click(function(){
+        $("#Valorpieza_id_tipo").val($(this).attr("id"));
+        $(".piezas").show();
+       //$("#Valorpieza_id_pieza").value("1");
+    });
+    $(".piezas").click(function(){
+        //alert("hola: "+$(this).attr("id"));
+       $("#Valorpieza_id_pieza").val($(this).attr("id"));
+       $("#terminaciones").show();
+    });
+    $(".terminacion").click(function(){
+        //alert("hola: "+$(this).attr("id"));
+       $("#Valorpieza_id_terminacion").val($(this).attr("id"));
+    });
+
 });
-$(".piezas").click(function(){
-    //alert("hola: "+$(this).attr("id"));
-   $("#Valorpieza_id_pieza").val($(this).attr("id"));
-   $("#terminaciones").show();
-});
-$(".terminacion").click(function(){
-    //alert("hola: "+$(this).attr("id"));
-   $("#Valorpieza_id_terminacion").val($(this).attr("id"));
-});
+</script>
+<script type="text/javascript">
+function vermaterial( idmaterial ){
+    $(".tipo"+idmaterial).fadeIn('slow');
+}
 </script>

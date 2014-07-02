@@ -36,10 +36,10 @@ class Valorpieza extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_tipo, id_pieza, id_tamano, id_terminacion, cantidad', 'required'),
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad', 'numerical', 'integerOnly'=>true),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad, id_presupuesto', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_tipo, id_pieza, id_tamano, id_terminacion, precio', 'safe', 'on'=>'search'),
+			array('id, id_tipo, id_pieza, id_tamano, id_terminacion, precio, id_presupuesto', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +70,7 @@ class Valorpieza extends CActiveRecord
 			'id_pieza' => 'Pieza',
 			'id_tamano' => 'Tamaño',
 			'id_terminacion' => 'Terminacion',
+			'id_presupuesto' => 'Presupuesto',
 			'precio' => 'Precio',
 			'cantidad'=>'Cantidad',
 		);
@@ -98,6 +99,7 @@ class Valorpieza extends CActiveRecord
 		$criteria->compare('id_pieza',$this->id_pieza);
 		$criteria->compare('id_tamano',$this->id_tamano);
 		$criteria->compare('id_terminacion',$this->id_terminacion);
+		$criteria->compare('id_presupuesto',$this->id_presupuesto);
 		$criteria->compare('precio',$this->precio);
 
 		return new CActiveDataProvider($this, array(
