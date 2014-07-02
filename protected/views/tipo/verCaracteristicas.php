@@ -1,7 +1,9 @@
+<?php
+/* @var $this SiteController */
 
-<?php $this->debug($tipo); ?>
+$this->pageTitle=Yii::app()->name . ' - Catálogo';
+?>
 
-<?php $this->debug($tipos); ?>
 <h1><?php echo $tipo->nombre; ?>.<font style="font-size:12px; color:grey;"> </font></h1> 
 
 
@@ -15,7 +17,7 @@
 
 
 
-<img style="border:1px solid black; width:200px; height:200px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
+<img style="border:1px solid black; width:200px; height:250px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
 
 <br />
 
@@ -37,7 +39,7 @@ zoomWindowFadeOut: 750
 
             <br>
             <strong>Características</strong> <br>
-            Procedencia: <?php echo $tipo->procedencia; ?><br>
+          
 
             Masa volumica: <?php echo $tipo->masa_volumica; ?> g/cm<sup>3</sup><br>
             Coeficiente de absorción: <?php echo $tipo->absorcion; ?> %<br>
