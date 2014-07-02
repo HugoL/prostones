@@ -180,6 +180,6 @@ $(document).ready(function($) {
 </script>
 <script type="text/javascript">
 function vermaterial( idmaterial ){
-    $(".tipo"+idmaterial).fadeIn('slow');
+    $(".tipo"+idmaterial).toggle();
 }
 </script>
