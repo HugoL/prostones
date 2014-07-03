@@ -39,7 +39,7 @@ $imageArray = array(
 <?php if( !empty($materiales) ):?>    
     <?php foreach ( $materiales as $key => $material ): ?>
         <li class="span12">
-            <a href="#" id="material<? echo $material->id; ?>" onclick="vermaterial(<? echo $material->id; ?>);"><? echo $material->nombre; ?></a>
+            <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);"><?php echo $material->nombre; ?></a>
             <?php //echo CHtml::link($material->nombre,array('presupuesto/index/idMaterial/'.$material->id),array('class'=>'thumbnail mate','rel'=>'tooltip','data-title'=>'Tooltip')); ?>
             
         </li>
@@ -54,7 +54,7 @@ $imageArray = array(
    
     <?php foreach ( $tipos as $key => $tipo ): ?>    
         <li class="span2">
-            <div class="thumbnail tipos tipo<? echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
+            <div class="thumbnail tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
             <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            
         </li>
@@ -145,16 +145,16 @@ $imageArray = array(
 
 <!-- piezas guardadas -->
 <div class="span12">
-    <? if( $idPresupuesto != 0 ):
+    <?php if( $idPresupuesto != 0 ):
         $criteria=new CDbCriteria;                      
         $criteria->compare('id_presupuesto',$idPresupuesto);  
         $criteria->select = '*';
         $piezas = Valorpieza::model()->findAll($criteria); ?>
         <span>Pieza:</span>
-        <? foreach ($piezas as $key => $pieza): ?>
-            <div class="well well-small">Tipo: <? echo $pieza->id_tipo; ?>, Terminación: <? echo $pieza->id_terminacion; ?> , precio: <? echo $pieza->precio; ?>, Cantidad: <? echo $pieza->cantidad; ?>, SubTotal: <? echo $pieza->precio * $pieza->cantidad;?></div>
-        <? endforeach; ?>
-    <? endif; ?>
+        <?php foreach ($piezas as $key => $pieza): ?>
+            <div class="well well-small">Tipo: <?php echo $pieza->id_tipo; ?>, Terminación: <?php echo $pieza->id_terminacion; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </div>
 <!-- ---------------- -->
 </div><!-- /row -->
