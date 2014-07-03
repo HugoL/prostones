@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos'),
+				'actions'=>array('index','view','tipos','generar'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -187,8 +187,33 @@ class PresupuestoController extends Controller
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
 			));
 		}
-
 		
+	}
+
+	public function actionGenerar(  ){
+		if( isset($_POST['Presupuesto']) ){
+			$presupuesto = new Presupuesto;
+			$presupuesto->attributes = $_POST['Presupuesto'];
+
+			$criteria = new CDbCriteria;
+			$criteria->compare('id',$presupuesto->id);
+			$presupuesto = Presupuesto::model()->find($criteria);			
+
+			//calcular precio total de todas las piezas
+			$criteria=new CDbCriteria;                      
+       		$criteria->compare('id_presupuesto',$presupuesto->id);  
+        	$criteria->select = '*';
+        	$piezas = Valorpieza::model()->findAll($criteria);
+        	$total = 0;
+            foreach ($piezas as $key => $pieza){
+          		$total = $total + ($pieza->precio * $pieza->cantidad);
+          		//si hay que añadir algo al precio total, sobre el total del presupuesto, se añade aquí          		
+            }
+            $presupuesto->total = $total;
+
+            //Generar el PDF
+            $this->creaPdf($presupuesto);	
+		}	
 	}
 
 	public function actionTipos( $id ){
@@ -280,6 +305,35 @@ class PresupuestoController extends Controller
 
 		return $precio;
 
+	}
+
+	public function creaPdf( $presupuesto ){
+		# mPDF
+		$mPDF1 = Yii::app()->ePdf->mpdf();
+
+		# You can easily override default constructor's params
+		$mPDF1 = Yii::app()->ePdf->mpdf('', 'A4');
+		
+		$mPDF1->SetCreator('Proston.es');
+		$title = 'Proston.es';
+
+		# Load a stylesheet
+		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
+		$mPDF1->WriteHTML($stylesheet, 1);
+
+		# Renders image
+		$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
+
+		# render (full page)
+		$mPDF1->WriteHTML($this->renderPartial('pdf', array('model'=>$presupuesto),true));		
+		
+		//ALMACENAR EL CÓDIGO EN LA BD PARA RELACIONARLO CON EL USUARIO QUE COMPRA LA PROMOCIÓN
+		//$model->referencia = $clave;
+		//$model->save();
+		# Outputs ready PDF
+		$mPDF1->Output();		
+		//$this->render('enviadopdf',array('model'=>$mPDF1));
+		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 
 	/**

@@ -138,7 +138,7 @@ return array(
 		),
 		//Yii-PDF
 		 'ePdf' => array(
-        'class'         => 'ext.yii-pdf.EYiiPdf',
+        'class'         => 'application.extensions.yii_pdf.EYiiPdf',
         'params'        => array(
             'mpdf'     => array(
                 'librarySourcePath' => 'application.vendors.mpdf.*',

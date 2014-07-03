@@ -113,10 +113,9 @@ $imageArray = array(
     </div>
 
      <!-- tamaños -->
-     <div class="span6">
-    <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
-    <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', 
-                           CHtml::listData($tamanos,'id', 'nombre')); ?>
+     <div class="span4">
+        <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
     </div>
     <!-- /tamaños -->
     </div><!-- /row -->
@@ -144,7 +143,7 @@ $imageArray = array(
 <?php $this->endWidget(); ?>
 
 <!-- piezas guardadas -->
-<div class="span12">
+<div class="span7">
     <?php if( $idPresupuesto != 0 ):
         $criteria=new CDbCriteria;                      
         $criteria->compare('id_presupuesto',$idPresupuesto);  
@@ -154,6 +153,25 @@ $imageArray = array(
         <?php foreach ($piezas as $key => $pieza): ?>
             <div class="well well-small">Tipo: <?php echo $pieza->id_tipo; ?>, Terminación: <?php echo $pieza->id_terminacion; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
         <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+<div class="span4 well">
+    <?php if (isset($presupuesto) ): ?>
+        <?php $form2=$this->beginWidget('CActiveForm', array(
+        'id'=>'presupuesto-form',
+        'action'=>Yii::app()->createUrl('presupuesto/generar'),
+        'enableAjaxValidation'=>true,
+        )); ?>
+
+        <?php echo $form2->hiddenField($presupuesto,'id',array('value'=>$presupuesto->id)); ?>
+        <?php echo $form2->labelEx($presupuesto,'email');
+            echo $form2->textField($presupuesto,'email'); ?>
+        <?php echo $form2->labelEx($presupuesto,'id_provincia');
+            echo $form2->textField($presupuesto,'id_provincia'); ?>
+        <?php echo $form2->labelEx($presupuesto,'nombre');
+            echo $form2->textField($presupuesto,'nombre'); ?>
+         <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
+        <?php $this->endWidget(); ?>
     <?php endif; ?>
 </div>
 <!-- ---------------- -->

@@ -44,11 +44,12 @@ class Presupuesto extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('nombre, id_cliente, id_provincia, fecha', 'required'),
-			array('id_cliente, id_provincia', 'numerical', 'integerOnly'=>true),
+			array('id_cliente, id_provincia, total', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
+			array('email', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, id_cliente, id_provincia, fecha', 'safe', 'on'=>'search'),
+			array('id, nombre, id_cliente, id_provincia, fecha, email, total', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,9 +73,11 @@ class Presupuesto extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
-			'id_cliente' => 'Id Cliente',
-			'id_provincia' => 'Id Provincia',
+			'id_cliente' => 'Cliente',
+			'id_provincia' => 'Provincia',
 			'fecha' => 'Fecha',
+			'email' => 'Email',
+			'total' => ' Total',
 		);
 	}
 
@@ -94,6 +97,8 @@ class Presupuesto extends CActiveRecord
 		$criteria->compare('id_cliente',$this->id_cliente);
 		$criteria->compare('id_provincia',$this->id_provincia);
 		$criteria->compare('fecha',$this->fecha,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('total',$this->total);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
