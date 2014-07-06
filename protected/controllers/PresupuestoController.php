@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar'),
+				'actions'=>array('index','view','tipos'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -155,6 +155,40 @@ class PresupuestoController extends Controller
 			//CALCULAR EL PRECIO DE LA PIEZA
 			$valorPieza->precio = 100;
 
+
+		//$precio = 0;
+
+		//*****^ PRECIO DEL PEDIDO
+
+		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
+		
+		//$precio = 22.5;//  tabla : "ehp_precios unitarios,  y el dato en "precio"
+
+							//ehp_preciosUnitarios('Where id_tipo = $tipomaterial AND id_tamano = $medida' );
+
+
+        //$tamanopieza = 0.18;  //  tabla : "ehp_tamano",  y el dato en "tamanopieza"
+
+        //$numeropiezas =  $cantidad % $tamanopieza;// (tiene que ser division perfecta  , se redondea hacia arriba)
+
+        //$tamanoreal = $numeropiezas * $tamanopieza;
+
+		//$pvalorPieza= $tamanoreal * $precio;
+
+
+		//*****^ PESO DEL PEDIDO
+    //$peso = 0;
+	//	$tamanocubico = 0.0036;//  tabla : "ehp_tamano",  y el dato en "tamanocubico"
+
+	//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
+
+	//	$pesopieza = $tamanocubico * $masavolumica * 1000;
+
+	//	$peso = $pesopieza * $numeropiezas;
+
+
+
+
 			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
 			if( $valorPieza->id_presupuesto == 0 ){
 				$presupuesto = new Presupuesto;				
@@ -187,33 +221,8 @@ class PresupuestoController extends Controller
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
 			));
 		}
+
 		
-	}
-
-	public function actionGenerar(  ){
-		if( isset($_POST['Presupuesto']) ){
-			$presupuesto = new Presupuesto;
-			$presupuesto->attributes = $_POST['Presupuesto'];
-
-			$criteria = new CDbCriteria;
-			$criteria->compare('id',$presupuesto->id);
-			$presupuesto = Presupuesto::model()->find($criteria);			
-
-			//calcular precio total de todas las piezas
-			$criteria=new CDbCriteria;                      
-       		$criteria->compare('id_presupuesto',$presupuesto->id);  
-        	$criteria->select = '*';
-        	$piezas = Valorpieza::model()->findAll($criteria);
-        	$total = 0;
-            foreach ($piezas as $key => $pieza){
-          		$total = $total + ($pieza->precio * $pieza->cantidad);
-          		//si hay que añadir algo al precio total, sobre el total del presupuesto, se añade aquí          		
-            }
-            $presupuesto->total = $total;
-
-            //Generar el PDF
-            $this->creaPdf($presupuesto);	
-		}	
 	}
 
 	public function actionTipos( $id ){
@@ -287,54 +296,7 @@ class PresupuestoController extends Controller
 	}
 
 	
-	protected function calcularPrecioUnitarioPieza( $tipomaterial, $pieza, $medida, $cantidad ){
-		$precio = 0;
-		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
-
-		//ejemplo: $precio = tabla_preciosMedidas('Where id_tipomaterial = X AND id_medida = Y' );
-
-		//si tenemos fórmula calculo el precio:
-
-		//Valor del metro cuadrado del material
-		$metrocua = 10;
-
-		//Cojo el coeficiente del precio de la medida
-		$coeficiente = 0.6;
-
-		$precio = $metrocua * $coeficiente;
-
-		return $precio;
-
-	}
-
-	public function creaPdf( $presupuesto ){
-		# mPDF
-		$mPDF1 = Yii::app()->ePdf->mpdf();
-
-		# You can easily override default constructor's params
-		$mPDF1 = Yii::app()->ePdf->mpdf('', 'A4');
-		
-		$mPDF1->SetCreator('Proston.es');
-		$title = 'Proston.es';
-
-		# Load a stylesheet
-		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
-		$mPDF1->WriteHTML($stylesheet, 1);
-
-		# Renders image
-		$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
-
-		# render (full page)
-		$mPDF1->WriteHTML($this->renderPartial('pdf', array('model'=>$presupuesto),true));		
-		
-		//ALMACENAR EL CÓDIGO EN LA BD PARA RELACIONARLO CON EL USUARIO QUE COMPRA LA PROMOCIÓN
-		//$model->referencia = $clave;
-		//$model->save();
-		# Outputs ready PDF
-		$mPDF1->Output();		
-		//$this->render('enviadopdf',array('model'=>$mPDF1));
-		//$this->redirect(Yii::app()->request->urlReferrer);
-	}
+	
 
 	/**
 	 * Performs the AJAX validation.
