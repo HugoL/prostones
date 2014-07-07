@@ -8,8 +8,8 @@
 
     <div class="container-narrow-pdf">
 
-      <div class="well">
-        <h3><center>Presupuesto</center></h3><br/>
+      <div class="well span12">
+        <h3><center>Presupuesto <?php echo $presupuesto->id; ?></center></h3><br/>
         <p >Presupuesto de Proston.es</p>
       </div>
       

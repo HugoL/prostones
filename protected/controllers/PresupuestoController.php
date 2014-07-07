@@ -108,7 +108,7 @@ class PresupuestoController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete( $id )
 	{
 		$this->loadModel($id)->delete();
 
@@ -308,6 +308,9 @@ class PresupuestoController extends Controller
 	}
 
 	public function creaPdf( $presupuesto ){
+		$presupuestoPdf = new Presupuesto;
+
+		$presupuestoPdf = $presupuesto;
 		# mPDF
 		$mPDF1 = Yii::app()->ePdf->mpdf();
 
@@ -325,14 +328,15 @@ class PresupuestoController extends Controller
 		$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
 
 		# render (full page)
-		$mPDF1->WriteHTML($this->renderPartial('pdf', array('model'=>$presupuesto),true));		
+		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));		
 		
 		//ALMACENAR EL CÓDIGO EN LA BD PARA RELACIONARLO CON EL USUARIO QUE COMPRA LA PROMOCIÓN
 		//$model->referencia = $clave;
 		//$model->save();
 		# Outputs ready PDF
-		$mPDF1->Output();		
-		//$this->render('enviadopdf',array('model'=>$mPDF1));
+		//$mPDF1->Output(); DESCOMENTAR PARA GENERAR EL PDF		
+		$this->debug($presupuestoPdf);
+		$this->render('pdf',array('presupuesto'=>$presupuestoPdf));
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 
