@@ -49,13 +49,13 @@ $imageArray = array(
 </div><!-- /well span2 -->
 
 <!-- div central -->
-<div class="span10 panel">
+<div class="span8 panel">
     <?php if( !empty($tipos) ): ?>
    
     <?php foreach ( $tipos as $key => $tipo ): ?>    
         <li class="span2">
             <div class="thumbnail tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes'].$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
             </div>            
         </li>
     <?php endforeach; ?>

@@ -20,43 +20,50 @@ $this->breadcrumbs=array(
     
         <div class="span3">
         <div class="span12 well">
-           Escenarios.
-            <br>
-           - Portal<br>
-           - Escalera<br>
-           - Habitación
+           Escenarios
+            <br><br>
+          <strong><span class="dot">•</span> Portal</strong><br>
+           <span class="dot">•</span> Escalera (prox.)<br>
+           <span class="dot">•</span> Habitación (prox.)
 </div>
-qwe wq qw qff eoefjwefjwoefjwe wg wgww gowgo wodjdog gogr g gorer rg egre odd d sdfojgr h lfjfg h e ffg g re ge 
-               <img style="width:200px; height:280px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
+               <img style="width:150px; height:210px; border:1px solid black;margin-left:20px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
+               <font size="1" style="margin-left:50px;">Boceto sin material</font>
         </div>
           <div class="span3" style="text-align:right">
            
             <br>
 
-            <?php echo $tipo->nombre; ?><br>
-            Procedencia: <?php echo $tipo->procedencia; ?><br>
-            Precio:
-
+           <font size="3"> <strong><?php echo $tipo->nombre; ?></strong></font><br>
+            <div style="margin-top:250px;">
+            <?php $this->widget('bootstrap.widgets.TbButton', array(
+               'label'=>'info del material',
+        'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+        'size'=>'mini', // null, 'large', 'small' or 'mini'
+        'url'=>array('tipo/verCaracteristicas/id/'.$tipo->id),
+       )); ?>
+<div class="clearfix">&nbsp;</div>  
+            <?php $this->widget('bootstrap.widgets.TbButton', array(
+               'label'=>'Comparar materiales',
+        'type'=>'success', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+        'size'=>'mini', // null, 'large', 'small' or 'mini'
+        'url'=>array('presupuesto/'.$tipo->id),
+       )); ?>
+<div class="clearfix">&nbsp;</div>  
+ <?php $this->widget('bootstrap.widgets.TbButton', array(
+               'label'=>'Pedir presupuesto',
+        'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+        'size'=>'mini', // null, 'large', 'small' or 'mini'
+        'url'=>array('presupuesto/'.$tipo->id),
+       )); ?>
+</div>
             <br>
             
         </div>
         <div class="span6">
 
-         <img style="width:80%; height:80%;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
+         <img style="width:80%; height:80%; border:1px solid black" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
            
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
-               'label'=>'ver info del material',
-        'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('tipo/verCaracteristicas/id/'.$tipo->id),
-       )); ?>
 
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
-               'label'=>'Pedir',
-        'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('presupuesto/'.$tipo->id),
-       )); ?>
         </div>
       
     </div>
