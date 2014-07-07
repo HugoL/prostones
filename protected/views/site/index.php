@@ -64,14 +64,14 @@ Slider
 
 
 <div class="span12">
-	<div class="span9" style="margin-left:2%">
+	<div class="span7" style="">
 		<div id="sliderContainer">
 
 			<div id="mySlides">
 
 				<div id="slide1" class="slide">    
 					
-					<img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
+					<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
 					
 					<div class="slideContent">
 						<h3>Catalogo de materiales</h3>
@@ -83,7 +83,7 @@ Slider
 				
 				<div id="slide2" class="slide">
 					<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">
-					<img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
+					<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
 					</a>
 					<div class="slideContent">
 						<h3>Diseñador virtual <font style="float:right; margin-right:70px;"> Comparador</font></h3>
@@ -94,7 +94,7 @@ Slider
 				
 				<div id="slide3" class="slide">
 					
-					<img  width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
+					<img  width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
 					
 					<div class="slideContent"><h3>Presupuesto online</h3>
 						<p>Valora rapidamente tus proyectos.</p></div>
@@ -103,7 +103,7 @@ Slider
 					
 					<div id="slide4" class="slide">
 						
-						<img width="940" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Slide 3 jFlow Plus" />
+						<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Slide 3 jFlow Plus" />
 						
 						<div class="slideContent">
 							<h3>Transporte a domicilio</h3>
@@ -143,8 +143,14 @@ Fin slider
 *********************************
 -->
 </div>
+<div class="span2 parr2" style=" margin-left:7%;"><img height="240px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/promocion.jpg">
+<!--<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">-->
 
-<div class="span2 parr2" style=" margin-left:6.5%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <a href="#">ideas<font style="color:black"> o</font> proyectos</a>.
+</div>
+
+
+
+<div class="span2 parr2" style=" margin-left:4%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <a href="#">ideas<font style="color:black"> o</font> proyectos</a>.
 	<br><br>
 	Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación  <b>calidad-precio</b>, con una <b>eficiente</b> entrega.
 	<br><br>

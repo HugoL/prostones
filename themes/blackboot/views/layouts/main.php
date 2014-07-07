@@ -61,9 +61,9 @@ Yii::app()->clientscript
 			
 			effect: "flow", //this is the slide effect (rewind or flow)
 
-			width: "840px",  // this is the width for the content-slider
+			width: "726x",  // this is the width for the content-slider
 
-			height: "200px",  // this is the height for the content-slider
+			height: "170px",  // this is the height for the content-slider
 
 			duration: 400,  // time in milliseconds to transition one slide
 			
@@ -119,14 +119,13 @@ Yii::app()->clientscript
 							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/company/storeLocator')),
 							),),
 						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
-						array('label'=>'Novedades', 'url'=>array('#')),	
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
-						),
-						)); ?>
+						),)); ?>
 						<!--IMPLEMENTAR BUSCADOR-->
 					</div><!--/.nav-collapse -->
 
+					<div style="margin-left:1000px;"> <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
 
 
 				</div>

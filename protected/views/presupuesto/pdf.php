@@ -7,7 +7,7 @@
 ?>
 
     <div class="container-narrow-pdf">
-
+    <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
       <div class="well">
         <h3><center>Presupuesto</center></h3><br/>
         <p >Presupuesto de Proston.es</p>
@@ -62,17 +62,17 @@
             </tr>
             <tr>
               <td>CIF</td>
-              <td>Proston.es</td>
+              <td>proSton.es</td>
               <td>Dirección</td>    
               <td>6XX XXX XXX</td>  
-              <td>www.proston.es</td>           
+              <td>www.proSton.es</td>           
             </tr>
           </table>
         </div> 
       </div>
 
       <div class="footer">
-        <p>&copy; Proston.es</p>
+        <p>&copy; proSton.es</p>
       </div>
 
     </div> <!-- /container -->
