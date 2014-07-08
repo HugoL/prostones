@@ -34,16 +34,15 @@ Yii::app()->clientscript
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/ehpestilos.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/jquery.jqzoom.css" type="text/css">
 <!-- Le fav and touch icons -->
 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
-<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>
+<!--<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>-->
 
 <!--slider configuracion-->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
-<script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
@@ -82,8 +81,12 @@ Yii::app()->clientscript
 
 </script>
 
+
+
+
+
 <!--<script type="text/javascript" src="jquery.js"></script>-->
- <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
+
 </head>
 
 <body>
@@ -107,10 +110,11 @@ Yii::app()->clientscript
 					'activeCssClass'	=> 'active',
 					'items'=>array(
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
+						array('label'=>'Tarifas', 'url'=>array('/tarifas')),
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/')),
-														
+						
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),
@@ -240,5 +244,13 @@ Yii::app()->clientscript
 			<?php if(!empty(Yii::app()->params['debugContent'])):?>
 				<?php echo Yii::app()->params['debugContent'];?>
 			<?php endif;?>
+
+
+
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
+			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
+			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.jqzoom-core-pack.js?>" type="text/javascript"></script>
 		</body>
 		</html>

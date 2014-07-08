@@ -154,7 +154,7 @@ Fin slider
 	<br><br>
 	Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación  <b>calidad-precio</b>, con una <b>eficiente</b> entrega.
 	<br><br>
-	Rellene el formulario que le adjuntamos o llamenos al nº. <strong>607 212 080</strong>, será atendido con rapidez y profesionalidad.
+	Rellene este <a href=""> formulario</a>.
 </p>
 <!--<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">-->
 
@@ -162,7 +162,6 @@ Fin slider
 </div>
 
 
-<div class="clearfix">&nbsp</div>
 
 <div class="clearfix">&nbsp</div>
 
@@ -239,9 +238,9 @@ border-radius: 4px;">
 						<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=proveedoresyofertas">
 							<div class="divHome span12">
 								<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/stock.png"></div>
-								<div class="span4"><h3><font style="color:#134263">Proveedores</font><br><font style="color:#969696">Stock y Ofertas</font></h3></div>
-								<div class="span6 parr"><p><span class="dot">•</span>Informaremos a nuestros visitantes sobre las empresas del sector.<br>
-									<span class="dot">•</span>Ponemos a su disposición el stock de diferentes fábricas, ofertaremos algunas partidas a los precios mas baratos del mercado.</p></div>
+								<div class="span4"><h3><font style="color:#134263">Tarifas - Ofertas</font><br><font style="color:#969696">Empresas del sector</font></h3></div>
+								<div class="span6 parr"><p><span class="dot">•</span>Ponemos a su disposición el stock de diferentes fábricas, ofertaremos algunas partidas a los precios mas baratos del mercado.<br>
+									<span class="dot">•</span>Informaremos a nuestros visitantes sobre las empresas del sector.</p></div>
 								</div>
 							</a>
 							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php//tipo/verCaracteristicas/id">
