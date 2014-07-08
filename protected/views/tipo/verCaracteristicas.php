@@ -21,16 +21,6 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 
 <br />
 
-<script>
-    $('#zoom_01').elevateZoom({
-    zoomType: "inner",
-cursor: "crosshair",
-zoomWindowFadeIn: 500,
-zoomWindowFadeOut: 750
-   }); 
-</script>
-
-
 
 
 
@@ -48,22 +38,32 @@ zoomWindowFadeOut: 750
             Res. al desgaste: <?php echo $tipo->desgaste; ?> mm.<br>
             Res. al impacto: <?php echo $tipo->impacto; ?> cm.<br>
         </div>
-        <div class="span6">
+        <div class="span7">
             <div class="span12" >
-                <?php echo $tipo->descripcion; ?>
+               <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 <br>
 
                 PRECIO:  € m<sup>2</sup>
                 <br>
             </div>
+
             <div class="span12 imgacabados">
+           
             Acabados:<br>
-            <img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->acabado1; ?>"/>
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->acabado2; ?>"/>
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->acabado3; ?>"/>
+            <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" class="jqzoom"   title="triumph" >
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>"  title="triumph" >
+        </a>
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/<?php echo $tipo->acabado2; ?>"/>
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/<?php echo $tipo->acabado3; ?>"/>
+
 
 
         </div>
+
+
+
+
+
         <?php $this->widget('bootstrap.widgets.TbButton', array(
          'label'=>'ver en el simulador',
     	'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
@@ -121,3 +121,32 @@ zoomWindowFadeOut: 750
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
 
+<script>
+    $('#zoom_01').elevateZoom({
+    zoomType: "inner",
+cursor: "crosshair",
+zoomWindowFadeIn: 500,
+zoomWindowFadeOut: 750
+
+   }); 
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.jqzoom').jqzoom({
+            zoomType: 'standard',
+            lens:true,
+            preloadImages: false,
+            alwaysOn:false,
+            zoomWidth: 300,
+            zoomHeight: 200,
+            xOffset:90,
+            yOffset:100,
+            position:'top'
+        });
+    //$('.jqzoom').jqzoom();
+});
+
+
+</script>

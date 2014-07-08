@@ -166,7 +166,7 @@
 /* controller lider pagination */
 
 #sliderContainer {
- width: 726px; 
+ /*width: 726px; */
  height: 170px; 
  position: relative; 
  border-top: 5px solid #134263;
@@ -176,11 +176,11 @@ margin-left:35px;
 margin-top:25px;
 }
 
-.slideContent {  background:url("../images/contentBg.png") repeat scroll 0 0 transparent; position: absolute; bottom:0px; right:0px; padding: 10px; width: 706px; }
+.slideContent {  background:url("../images/contentBg.png") repeat scroll 0 0 transparent; position: absolute; bottom:0px; right:0px; padding: 10px; width: 100%; }
 
-.slide h3 {  font: 26px/1em 'Rokkitt', serif; color: #FFF;  margin: 0 0 5px 0; }
+.slide h3 {  font: 26px/1em 'Rokkitt', serif; color: #FFF;  margin: 0 0 5px 10px; }
 
-.slide p { font-size: 14px; color: #FFF; margin: 0; }
+.slide p { font-size: 14px; color: #FFF; margin: 0 0 0 10px; }
 
 .jFlowSlideContainer { overflow: hidden; }
 
