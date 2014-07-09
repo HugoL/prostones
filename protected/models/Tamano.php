@@ -46,7 +46,7 @@ class Tamano extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'piezases' => array(self::HAS_MANY, 'Piezas', 'id_tamano'),
-			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'id_tamano'),
+			'valorpiezas' => array(self::HAS_MANY, 'Valorpiezas', 'id_tamano'),
 			'idPieza' => array(self::BELONGS_TO, 'Pieza', 'id_pieza'),
 		);
 	}

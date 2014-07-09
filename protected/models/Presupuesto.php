@@ -61,7 +61,7 @@ class Presupuesto extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(						
-			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'id_presupuesto'),
+			'valorpiezas' => array(self::HAS_MANY, 'Valorpiezas', 'id_presupuesto'),
 		);
 	}
 

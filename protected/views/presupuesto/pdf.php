@@ -3,19 +3,13 @@
 /* @var $model Compra */
 ?>
 <?php 
-  Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/bootstrap.css');
+  Yii::app()->clientScript->registerCssFile(Yii::getPathOfAlias('webroot.themes')."blackboot/css/bootstrap.css");
 ?>
 
     <div class="container-narrow-pdf">
-<<<<<<< HEAD
-
-      <div class="well span12">
-        <h3><center>Presupuesto <?php echo $presupuesto->id; ?></center></h3><br/>
-=======
     <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
       <div class="well">
         <h3><center>Presupuesto</center></h3><br/>
->>>>>>> 61100c63c756cdeae350c60721704462d30bd00f
         <p >Presupuesto de Proston.es</p>
       </div>
       
@@ -38,6 +32,10 @@
             </tr>
             
             <? if( isset($presupuesto) && $presupuesto->id != 0 ):
+            echo "<h1>Presupuesto id: ".$presupuesto->id."</h1>";
+              /*foreach ($presupuesto->valorpieza as $key => $pieza) {
+                echo $pieza->nombre."<br/>";
+              }*/
               $criteria=new CDbCriteria;                      
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';

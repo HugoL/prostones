@@ -120,8 +120,8 @@ class PresupuestoController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex( $idMaterial = null )
-	{
+	public function actionIndex( $idMaterial = null ){
+
 		$materiales = Material::model()->findAll();
 		$imagenes = array();
 		$i = 0;
@@ -152,42 +152,27 @@ class PresupuestoController extends Controller
 			//$pieza = new Valorpieza;			
 			$valorPieza->attributes=$_POST['Valorpieza'];
 
+			$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);		
+
+			//número de piezas necesarias
+        	$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano->tamanopieza);
+        	//precio de la pieza del tamaño dado:
+			$preciounitario = Preciounitario::model()->find('id_tipo = '.$valorPieza->id.' AND id_tamano = '.$valorPieza->id_tamano );
+
+        	//tamaño en metros de todas las piezas
+        	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
+
+        	//precio de los metros correspondientes
+			$precio = $tamanoreal * $preciounitario->precio;
+
+
 			//CALCULAR EL PRECIO DE LA PIEZA
-			$valorPieza->precio = 100;
+
+			//CALCULAR EL PESO
+			$peso = $this->calcularPesoPiezas( $valorPieza, $numeropiezas);
 
 
-		//$precio = 0;
-
-		//*****^ PRECIO DEL PEDIDO
-
-		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
-		
-		//$precio = 22.5;//  tabla : "ehp_precios unitarios,  y el dato en "precio"
-
-							//ehp_preciosUnitarios('Where id_tipo = $tipomaterial AND id_tamano = $medida' );
-
-
-        //$tamanopieza = 0.18;  //  tabla : "ehp_tamano",  y el dato en "tamanopieza"
-
-        //$numeropiezas =  $cantidad % $tamanopieza;// (tiene que ser division perfecta  , se redondea hacia arriba)
-
-        //$tamanoreal = $numeropiezas * $tamanopieza;
-
-		//$pvalorPieza= $tamanoreal * $precio;
-
-
-		//*****^ PESO DEL PEDIDO
-    //$peso = 0;
-	//	$tamanocubico = 0.0036;//  tabla : "ehp_tamano",  y el dato en "tamanocubico"
-
-	//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
-
-	//	$pesopieza = $tamanocubico * $masavolumica * 1000;
-
-	//	$peso = $pesopieza * $numeropiezas;
-
-
-
+			$preciofinal = $precio * $peso; // ???? esto no sé si sierá así
 
 			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
 			if( $valorPieza->id_presupuesto == 0 ){
@@ -220,12 +205,10 @@ class PresupuestoController extends Controller
 			$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
 			));
-		}
-
-		
+		}		
 	}
 
-public function actionGenerar(  ){
+	public function actionGenerar(  ){
 		if( isset($_POST['Presupuesto']) ){
 			$presupuesto = new Presupuesto;
 			$presupuesto->attributes = $_POST['Presupuesto'];
@@ -250,6 +233,7 @@ public function actionGenerar(  ){
             $this->creaPdf($presupuesto);	
 		}	
 	}
+
 	public function actionTipos( $id ){
 		$criteria=new CDbCriteria;               		
         $criteria->compare('id_material',$id);     		
@@ -257,37 +241,6 @@ public function actionGenerar(  ){
 		$tipos = Tipo::model()->findAll($criteria);
 
 		$this->render( 'tipos',array('tipos'=>$tipos) );
-	}
-
-	public function calcular( $model ){		
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-			
-			//CALCULAR EL PRECIO DE LA PIEZA
-			$model->precio = 100;
-
-			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
-			if( empty($model->id_presupuesto) || $model->id_presupuesto == 0 ){
-				$presupuesto = new Presupuesto;
-				if( !$presupuesto->save() ){
-					Yii::app()->user->setFlash('danger', "¡Error al crear el presupuesto!");
-					return $presupuesto;
-					//$this->render('/presupuesto/index',array('valorpieza'=>$model));
-				}
-				$model->id_presupuesto = $presupuesto->getPrimaryKey();
-			}
-
-			
-
-			if($model->save()){
-				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
-				//$this->render('/presupuesto/index',array('valorpieza'=>$model));
-				return $presupuesto;
-			}
-			return $presupuesto;
-			//$this->render('/presupuesto/index',array('valorpieza'=>$model));
-			
 	}
 
 	/**
@@ -320,31 +273,53 @@ public function actionGenerar(  ){
 		return $model;
 	}
 	
-	protected function calcularPrecioUnitarioPieza( $tipomaterial, $pieza, $medida, $cantidad ){
+	protected function calcularPrecioUnitarioPieza( $valorPieza, $numeropiezas ){
 		$precio = 0;
-		//si tenemos una tabla con los precios que corresponden con el tipo de material, la pieza y el tamaño, lo consulto
 
-		//ejemplo: $precio = tabla_preciosMedidas('Where id_tipomaterial = X AND id_medida = Y' );
+		//precio de la pieza del tamaño dado:
+		$preciounitario = Preciounitario::model()->find('id_tipo = '.$valorPieza->id.' AND id_tamano = '.$valorPieza->id_tamano );
 
-		//si tenemos fórmula calculo el precio:
+        //tamaño en metros de todas las piezas
+        $tamanoreal = $numeropiezas * $tamano->tamanopieza;
 
-		//Valor del metro cuadrado del material
-		$metrocua = 10;
-
-		//Cojo el coeficiente del precio de la medida
-		$coeficiente = 0.6;
-
-		$precio = $metrocua * $coeficiente;
+        //precio de los metros correspondientes
+		$precio = $tamanoreal * $preciounitario->precio;
 
 		return $precio;
 
 	}
 
-	public function creaPdf( $presupuesto ){
+	protected function calcularPesoPiezas( $valorPieza, $numeropiezas ){
+		/*****^ PESO DEL PEDIDO +++*/
+
+		$tipo = Tipo::model()->find('id ='.$valorPieza->id_tipo);
+
+		$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);
+
+    	//$peso = 0;
+		//	$tamanocubico = 0.0036;//  tabla : "ehp_tamano",  y el dato en "tamanocubico"
+
+		//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
+
+
+		$pesopieza = $tamano->tamanocubico * $tipo->masavolumica * 1000;
+
+		return $pesopieza * $numeropiezas;
+
+	}
+
+	protected function calcularNumeroPiezas( $cantidad, $tamano ){
+		return $cantidad % $tamano;
+	}
+
+
+	public function creaPdf( $idpresupuesto ){
 		$presupuestoPdf = new Presupuesto;
 
-		$presupuestoPdf = $presupuesto;
-		
+		$presupuestoPdf = Presupuesto::model()->find('id = '.$idpresupuesto);
+		/*
+		$presupuestoPdf = $presupuesto;*/
+
 		# mPDF
 		$mPDF1 = Yii::app()->ePdf->mpdf();
 

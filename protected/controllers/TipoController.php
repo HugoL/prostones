@@ -174,7 +174,7 @@ class TipoController extends Controller
 		$criteria4=new CDbCriteria; 
 		$criteria4->compare('id_tipo',$id);     		
         $criteria4->select = '*'; 
-		$precios = PrecioUnitario::model()->findAll($criteria4);
+		$precios = Preciounitario::model()->findAll($criteria4);
 
 		$this->render( 'verCaracteristicas',array('tipo'=>$tipo,'tipos'=>$tipos,'tipos2'=>$tipos2,'precios'=>$precios) );
 	}
