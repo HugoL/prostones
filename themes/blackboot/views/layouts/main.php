@@ -136,11 +136,10 @@ $(document).ready(function() {
 					'activeCssClass'	=> 'active',
 					'items'=>array(
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
-						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/')),
-														
+							array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),

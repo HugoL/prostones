@@ -5,7 +5,7 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 ?>
 
 <h1><?php echo $tipo->nombre; ?>.<font style="font-size:12px; color:grey;"> </font></h1> 
-
+<?php $this->debug($precios); ?>
 
 
 
@@ -30,15 +30,24 @@ zoomWindowFadeOut: 750
 
    }); 
 </script>
+ <?php $this->widget('bootstrap.widgets.TbButton', array(
+         'label'=>'Ver en el simulador',
+        'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+        'size'=>'mini', // null, 'large', 'small' or 'mini'
+        'url'=>array('simulador/index/id/'.$tipo->id),
+     )); ?>
+
+        <?php $this->widget('bootstrap.widgets.TbButton', array(
+         'label'=>'Presupuesto',
+        'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+        'size'=>'mini', // null, 'large', 'small' or 'mini'
+        'url'=>array('presupuesto/'.$tipo->id),
+     )); ?>
 
 
 
 
-
-
-
-
-            <br>
+            <br><br>
             <strong>Características</strong> <br>
           
             <table>
@@ -73,19 +82,40 @@ zoomWindowFadeOut: 750
         <div class="span7">
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
-                <br>
+                
+               <strong>Tarifas</strong><br>
+               <table>
+               <tr>
+ <?php foreach ($precios as $key => $id_tipo):     ?>
+            <!--<div class="span2">-->
+            <td>
+                Tam. <?php echo $id_tipo->id_tamano ?></td>
+             </td>
+            <!--</div>-->
+        <?php endforeach; ?>
 
-                Tabla precios con medidas  € m<sup>2</sup>
+               </tr>
+               <tr>
+                <?php foreach ($precios as $key => $id_tipo):     ?>
+            <!--<div class="span2">-->
+            <td>
+                 <?php echo $id_tipo->precio ?>€ m<sup>2</sup></td>
+            <!--</div>-->
+        <?php endforeach; ?>
+        </tr>
+</table>
+                
                 <br>
             </div>
 
-            
+          <strong> Acabados</strong><br> 
            <div class="span12 imgacabados" id="content" >
-            Acabados:<br>
+            
             
  
                
               <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado1" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>"/></a>
+
            <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado2;?>" title="Cool bike!" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado2;?>"/></a>
           
 
@@ -97,23 +127,6 @@ zoomWindowFadeOut: 750
 
         </div>
 
-
-
-
-
-        <?php $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'ver en el simulador',
-    	'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-    	'size'=>'mini', // null, 'large', 'small' or 'mini'
-    	'url'=>array('simulador/index/id/'.$tipo->id),
-     )); ?>
-
-        <?php $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'Pedir',
-    	'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-    	'size'=>'mini', // null, 'large', 'small' or 'mini'
-    	'url'=>array('presupuesto/'.$tipo->id),
-     )); ?>
  </div>
 </div>
 
