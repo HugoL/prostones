@@ -29,21 +29,30 @@ Yii::app()->clientscript
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<!-- Le styles -->
+<!-- styles -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/ehpestilos.css" />
-<link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/jquery.jqzoom.css" type="text/css">
+<link href="<?php echo Yii::app()->baseUrl; ?>/css/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
+
 <!-- Le fav and touch icons -->
 
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
+
+
 <!--<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>-->
 
 <!--slider configuracion-->
 
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 
-
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.jqzoom-core-pack.js?>" type="text/javascript"></script>
+    <!-- link to magiczoomplus.js file -->
+        <script src="<?php echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 	$(document).ready(function(){
@@ -81,12 +90,29 @@ Yii::app()->clientscript
 
 </script>
 
+  
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.jqzoom').jqzoom({
+            zoomType: 'standard',
+            lens:true,
+            preloadImages: false,
+            alwaysOn:false,
+            zoomWidth: 300,
+            zoomHeight: 200,
+            xOffset:90,
+            yOffset:100,
+            position:'top'
+        });
+	//$('.jqzoom').jqzoom();
+});
 
 
-
+</script>
 
 <!--<script type="text/javascript" src="jquery.js"></script>-->
-
+ 
 </head>
 
 <body>
@@ -110,11 +136,10 @@ Yii::app()->clientscript
 					'activeCssClass'	=> 'active',
 					'items'=>array(
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
-						array('label'=>'Tarifas', 'url'=>array('/tarifas')),
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/')),
-						
+							array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),
@@ -126,7 +151,7 @@ Yii::app()->clientscript
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),)); ?>
-						<!--IMPLEMENTAR BUSCADOR-->
+						
 					</div><!--/.nav-collapse -->
 
 					<div style="margin-left:1000px;"> <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
@@ -244,13 +269,5 @@ Yii::app()->clientscript
 			<?php if(!empty(Yii::app()->params['debugContent'])):?>
 				<?php echo Yii::app()->params['debugContent'];?>
 			<?php endif;?>
-
-
-
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
-			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
-			<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.jqzoom-core-pack.js?>" type="text/javascript"></script>
 		</body>
 		</html>

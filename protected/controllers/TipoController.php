@@ -163,14 +163,20 @@ class TipoController extends Controller
         $criteria2->select = '*';
         $criteria2->addInCondition('id_material',array(':id_material'=>'2')); 
 		$tipos = Tipo::model()->findAll($criteria2);
-$criteria3=new CDbCriteria; 
+		
+
+
+		$criteria3=new CDbCriteria; 
 		$criteria3->select = '*';
         $criteria3->addInCondition('id_material',array(':id_material'=>'4')); 
 		$tipos2 = Tipo::model()->findAll($criteria3);
 
+		$criteria4=new CDbCriteria; 
+		$criteria4->compare('id_tipo',$id);     		
+        $criteria4->select = '*'; 
+		$precios = PrecioUnitario::model()->findAll($criteria4);
 
-
-		$this->render( 'verCaracteristicas',array('tipo'=>$tipo,'tipos'=>$tipos,'tipos2'=>$tipos2) );
+		$this->render( 'verCaracteristicas',array('tipo'=>$tipo,'tipos'=>$tipos,'tipos2'=>$tipos2,'precios'=>$precios) );
 	}
 
 	/**
