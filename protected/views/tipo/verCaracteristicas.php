@@ -21,6 +21,17 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 
 <br />
 
+<script>
+    $('#zoom_01').elevateZoom({
+    zoomType: "inner",
+cursor: "crosshair",
+zoomWindowFadeIn: 500,
+zoomWindowFadeOut: 750
+
+   }); 
+</script>
+
+
 
 
 
@@ -30,33 +41,59 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
             <br>
             <strong>Características</strong> <br>
           
+            <table>
+                <tr>
+                    <td><font size="1">Masa volumica:</strong></td>
+                    <td><?php echo $tipo->masa_volumica; ?> g/cm<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Coeficiente absorción:</td>
+                    <td><?php echo $tipo->absorcion; ?> %</td>
+                </tr>
+                <tr>
+                    <td>R. a la compresión: </td>
+                    <td><?php echo $tipo->compresion; ?> Mpa</td>
+                </tr>
+                <tr>
+                    <td>R. a la flexión: </td>
+                    <td><?php echo $tipo->flexion; ?> Mpa</td>
+                </tr>
+                <tr>
+                    <td>R. al desgaste: </td>
+                    <td><?php echo $tipo->desgaste; ?> mm.</td>
+                </tr>
+                <tr>
+                    <td>R. al impacto:</td>
+                    <td> <?php echo $tipo->impacto; ?> cm.</td>
+                </tr>
 
-            Masa volumica: <?php echo $tipo->masa_volumica; ?> g/cm<sup>3</sup><br>
-            Coeficiente de absorción: <?php echo $tipo->absorcion; ?> %<br>
-            Res. a a la compresión: <?php echo $tipo->compresion; ?> Mpa<br>
-            Res. a la flexión: <?php echo $tipo->flexion; ?> Mpa<br>
-            Res. al desgaste: <?php echo $tipo->desgaste; ?> mm.<br>
-            Res. al impacto: <?php echo $tipo->impacto; ?> cm.<br>
+            </table>
+            
         </div>
         <div class="span7">
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 <br>
 
-                PRECIO:  € m<sup>2</sup>
+                Tabla precios con medidas  € m<sup>2</sup>
                 <br>
             </div>
 
-            <div class="span12 imgacabados">
-           
+            
+           <div class="span12 imgacabados" id="content" >
             Acabados:<br>
-            <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" class="jqzoom"   title="triumph" >
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>"  title="triumph" >
-        </a>
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/<?php echo $tipo->acabado2; ?>"/>
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/<?php echo $tipo->acabado3; ?>"/>
+            
+ 
+               
+              <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado1" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>"/></a>
+           <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado2;?>" title="Cool bike!" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado2;?>"/></a>
+          
 
-
+       <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado3;?>" title="Cool bike!" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado3;?>"/></a>
+        
+      
+       
+    
 
         </div>
 
@@ -121,32 +158,6 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
 
-<script>
-    $('#zoom_01').elevateZoom({
-    zoomType: "inner",
-cursor: "crosshair",
-zoomWindowFadeIn: 500,
-zoomWindowFadeOut: 750
-
-   }); 
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.jqzoom').jqzoom({
-            zoomType: 'standard',
-            lens:true,
-            preloadImages: false,
-            alwaysOn:false,
-            zoomWidth: 300,
-            zoomHeight: 200,
-            xOffset:90,
-            yOffset:100,
-            position:'top'
-        });
-    //$('.jqzoom').jqzoom();
-});
-
-
-</script>
+ 
+    
+       
