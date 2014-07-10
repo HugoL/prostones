@@ -45,7 +45,7 @@ class Cliente extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'pedidos' => array(self::HAS_MANY, 'Pedido', 'id_cliente'),
+			'pedido' => array(self::HAS_MANY, 'Pedido', 'id_cliente'),
 		);
 	}
 

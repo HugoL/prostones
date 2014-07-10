@@ -50,10 +50,11 @@ class Tipo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'material' => array(self::BELONGS_TO, 'Material', 'id_material'),
+
+			'material' => array(self::BELONGS_TO, 'Materiale', 'id_material'),
 			'tono' => array(self::BELONGS_TO, 'Tono', 'id_tono'),
 			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'id_tipo'),
-			
+
 		);
 	}
 

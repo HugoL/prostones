@@ -150,29 +150,7 @@ class PresupuestoController extends Controller
 		if( isset($_POST['Valorpieza']) ){			
 
 			//$pieza = new Valorpieza;			
-			$valorPieza->attributes=$_POST['Valorpieza'];
-
-			$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);		
-
-			//número de piezas necesarias
-        	$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano->tamanopieza);
-        	//precio de la pieza del tamaño dado:
-			$preciounitario = Preciounitario::model()->find('id_tipo = '.$valorPieza->id.' AND id_tamano = '.$valorPieza->id_tamano );
-
-        	//tamaño en metros de todas las piezas
-        	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
-
-        	//precio de los metros correspondientes
-			$precio = $tamanoreal * $preciounitario->precio;
-
-
-			//CALCULAR EL PRECIO DE LA PIEZA
-
-			//CALCULAR EL PESO
-			$peso = $this->calcularPesoPiezas( $valorPieza, $numeropiezas);
-
-
-			$preciofinal = $precio * $peso; // ???? esto no sé si sierá así
+			$valorPieza->attributes=$_POST['Valorpieza'];			
 
 			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
 			if( $valorPieza->id_presupuesto == 0 ){
@@ -187,13 +165,46 @@ class PresupuestoController extends Controller
     			$criteria->compare('id',$valorPieza->id_presupuesto);	
     			$criteria->select = '*';
 				$presupuesto = Presupuesto::model()->find($criteria);
-				}
+			}
 
 			if( $valorPieza->save() ){
-
+				$valorPieza->id = $valorPieza->getPrimaryKey();
 				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
 				//$this->render('/presupuesto/index',array('valorpieza'=>$model));				
+			}else{
+
 			}
+
+			$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);	
+
+			//número de piezas necesarias
+        	$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano->tamanopieza);
+
+        	//precio de la pieza del tamaño dado:
+			$criteria=new CDbCriteria;        
+        	$criteria->compare('id_tipo',$valorPieza->id_tipo);
+        	$criteria->addCondition( 'id_tamano >= '.$valorPieza->id_tamano );	
+        	$criteria->select = '*';
+			$preciounitario = Preciounitario::model()->find( $criteria );
+
+			//$preciounitario->precio = 17.0;
+
+        	//tamaño en metros de todas las piezas
+        	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
+
+        	//precio de los metros correspondientes
+			$precio = $tamanoreal * $preciounitario->precio;
+
+			$valorPieza->precio = $precio;
+
+			$valorPieza->update();
+			
+			//CALCULAR EL PRECIO DE LA PIEZA
+
+			//CALCULAR EL PESO
+			$peso = $this->calcularPesoPiezas( $valorPieza, $numeropiezas);
+
+			//$this->debug($peso);
 
 			// ******* //
 			//$presupuesto = calcular( $valorPieza );
@@ -302,21 +313,22 @@ class PresupuestoController extends Controller
 		//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
 
 
-		$pesopieza = $tamano->tamanocubico * $tipo->masavolumica * 1000;
+		$pesopieza = $tamano->tamanocubico * $tipo->masa_volumica * 1000;
 
 		return $pesopieza * $numeropiezas;
 
 	}
 
 	protected function calcularNumeroPiezas( $cantidad, $tamano ){
-		return $cantidad % $tamano;
+		$piezas = $cantidad / $tamano;		
+		return round($piezas, 0, PHP_ROUND_HALF_UP);
 	}
 
 
-	public function creaPdf( $idpresupuesto ){
-		$presupuestoPdf = new Presupuesto;
+	public function creaPdf( $presupuestoPdf ){
+		//$presupuestoPdf = new Presupuesto;
 
-		$presupuestoPdf = Presupuesto::model()->find('id = '.$idpresupuesto);
+		//$presupuestoPdf = Presupuesto::model()->find('id = '.$idpresupuesto);
 		/*
 		$presupuestoPdf = $presupuesto;*/
 

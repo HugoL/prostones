@@ -51,11 +51,11 @@ class Valorpieza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idPresupuesto' => array(self::BELONGS_TO, 'Presupuesto', 'id_presupuesto'),	
-			'idTerminacion' => array(self::BELONGS_TO, 'Terminaciones', 'id_terminacion'),
-			'idTamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
-			'idTipo' => array(self::BELONGS_TO, 'Tipos', 'id_tipo'),
-			'idPieza' => array(self::BELONGS_TO, 'Piezas', 'id_pieza'),
+			'presupuesto' => array(self::BELONGS_TO, 'Presupuesto', 'id_presupuesto'),	
+			'terminacion' => array(self::BELONGS_TO, 'Terminacion', 'id_terminacion'),
+			'tamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
+			'tipo' => array(self::BELONGS_TO, 'Tipo', 'id_tipo'),
+			'pieza' => array(self::BELONGS_TO, 'Pieza', 'id_pieza'),
 		);
 	}
 
