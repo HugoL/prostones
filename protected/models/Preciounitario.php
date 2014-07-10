@@ -58,8 +58,8 @@ class Preciounitario extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idTipo' => array(self::BELONGS_TO, 'Tipos', 'id_tipo'),
-			'idTamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
+			'tipo' => array(self::BELONGS_TO, 'Tipo', 'id_tipo'),
+			'tamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
 		);
 	}
 

@@ -5,7 +5,7 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 ?>
 
 <h1><?php echo $tipo->nombre; ?>.<font style="font-size:12px; color:grey;"> </font></h1> 
-<?php $this->debug($precios); ?>
+
 
 
 
@@ -86,20 +86,23 @@ zoomWindowFadeOut: 750
                <strong>Tarifas</strong><br>
                <table>
                <tr>
- <?php foreach ($precios as $key => $id_tipo):     ?>
+               
+
+             <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
             <!--<div class="span2">-->
             <td>
-                Tam. <?php echo $id_tipo->id_tamano ?></td>
+                Tam. <?php echo $preciounitario->tamano->nombre; ?></td>
+
              </td>
             <!--</div>-->
         <?php endforeach; ?>
 
                </tr>
                <tr>
-                <?php foreach ($precios as $key => $id_tipo):     ?>
+                <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
             <!--<div class="span2">-->
             <td>
-                 <?php echo $id_tipo->precio ?>€ m<sup>2</sup></td>
+                 <?php echo $preciounitario->precio ?>€ m<sup>2</sup></td>
             <!--</div>-->
         <?php endforeach; ?>
         </tr>
@@ -136,7 +139,7 @@ zoomWindowFadeOut: 750
 
 
 <div class="span3">
-    <h3 style="font-size:15px;">Marmoles</h3>
+    <h3 style="font-size:15px;"><span class="dot">•</span>Marmoles</h3>
     <div class="span12 galemat">
         <div class="clearfix"></div>
 
@@ -150,7 +153,7 @@ zoomWindowFadeOut: 750
         <?php endforeach; ?>
     </div>
 
-    <h3 style="font-size:15px;">Granitos</h3>
+    <h3 style="font-size:15px;"><span class="dot">•</span>Granitos</h3>
     <div class="span12 galemat">
         <div class="clearfix"></div>
         <?php foreach ($tipos2 as $key => $tipo):     ?>
