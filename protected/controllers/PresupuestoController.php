@@ -219,13 +219,16 @@ class PresupuestoController extends Controller
 		}		
 	}
 
-	public function actionGenerar(  ){
-		if( isset($_POST['Presupuesto']) ){
-			$presupuesto = new Presupuesto;
+	public function actionGenerar( $id ){
+		$presupuesto = new Presupuesto;
+		if( isset($_POST['Presupuesto']) ){			
 			$presupuesto->attributes = $_POST['Presupuesto'];
+			//$presupuesto->id = $id;
+
+			$presupuesto->update();
 
 			$criteria = new CDbCriteria;
-			$criteria->compare('id',$presupuesto->id);
+			$criteria->addCondition( 'id = '.$presupuesto->id );	
 			$presupuesto = Presupuesto::model()->find($criteria);			
 
 			//calcular precio total de todas las piezas

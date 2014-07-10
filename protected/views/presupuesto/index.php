@@ -152,7 +152,7 @@ $imageArray = array(
         $this->debug($piezas); ?>
         <span>Pieza:</span>
         <?php foreach ($piezas as $key => $pieza): ?>
-            <div class="well well-small">Tipo: <?php echo $pieza->pepito->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
+            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
@@ -160,7 +160,7 @@ $imageArray = array(
     <?php if (isset($presupuesto) ): ?>
         <?php $form2=$this->beginWidget('CActiveForm', array(
         'id'=>'presupuesto-form',
-        'action'=>Yii::app()->createUrl('presupuesto/generar'),
+        'action'=>Yii::app()->createUrl('presupuesto/generar/id/'.$presupuesto->id),
         'enableAjaxValidation'=>true,
         )); ?>
 
