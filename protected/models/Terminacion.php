@@ -44,7 +44,7 @@ class Terminacion extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'valorpiezas' => array(self::HAS_MANY, 'Valorpiezas', 'id_terminacion'),
+			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'id_terminacion'),
 		);
 	}
 

@@ -148,10 +148,11 @@ $imageArray = array(
         $criteria=new CDbCriteria;                      
         $criteria->compare('id_presupuesto',$idPresupuesto);  
         $criteria->select = '*';
-        $piezas = Valorpieza::model()->findAll($criteria); ?>
+        $piezas = Valorpieza::model()->findAll($criteria); 
+        $this->debug($piezas); ?>
         <span>Pieza:</span>
         <?php foreach ($piezas as $key => $pieza): ?>
-            <div class="well well-small">Tipo: <?php echo $pieza->id_tipo; ?>, Terminación: <?php echo $pieza->id_terminacion; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
+            <div class="well well-small">Tipo: <?php echo $pieza->pepito->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>

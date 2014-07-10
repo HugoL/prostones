@@ -48,8 +48,8 @@ class Pieza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(			
-			'valorpiezas' => array(self::HAS_MANY, 'Valorpiezas', 'id_pieza'),
-			'tamanos' => array(self::HAS_MANY, 'Tamano', 'id_pieza'),
+			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'id_pieza'),
+			'tamano' => array(self::HAS_MANY, 'Tamano', 'id_pieza'),
 		);
 	}
 
