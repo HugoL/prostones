@@ -150,8 +150,8 @@ class PresupuestoController extends Controller
 		if( isset($_POST['Valorpieza']) ){			
 
 			//$pieza = new Valorpieza;			
-			$valorPieza->attributes=$_POST['Valorpieza'];			
-
+			$valorPieza->attributes=$_POST['Valorpieza'];	
+			
 			//ANTES DE PODER ALMACENAR LA PIEZA HAY QUE CREAR EL PRESUPUESTO, PORQUE NO SE PUEDE CREAR UNA PIEZA QUE NO PERTENEZCA A UN PRESUPUESTO
 			if( $valorPieza->id_presupuesto == 0 ){
 				$presupuesto = new Presupuesto;				
@@ -219,20 +219,35 @@ class PresupuestoController extends Controller
 		}		
 	}
 
-	public function actionGenerar(  ){
-		if( isset($_POST['Presupuesto']) ){
-			$presupuesto = new Presupuesto;
+	public function actionGenerar( $id ){		
+		$presupuesto = new Presupuesto;
+		if( isset($_POST['Presupuesto']) ){		
+			$presuspuesto = $this->loadModel($id);	
 			$presupuesto->attributes = $_POST['Presupuesto'];
+			//$this->debug($presupuesto);
+			//$presupuesto->id = $id;
+			 if($presupuesto->validate()) {
+                try {
+                    if ($presupuesto->save()){
+                        Yii::app()->user->setFlash('success',UserModule::t("Changes is saved."));
+                    }else{
+                        print_r( $presupuesto->getErrors());
+                        Yii::app()->user->setFlash('error',UserModule::t("Error saving the changes."));
+                    }                    
+               	}catch (CException $e){
+                        echo $e;
+                }
+            }
 
-			$criteria = new CDbCriteria;
-			$criteria->compare('id',$presupuesto->id);
-			$presupuesto = Presupuesto::model()->find($criteria);			
+			/*$criteria = new CDbCriteria;
+			$criteria->addCondition( 'id = '.$presupuesto->id );	
+			$presupuesto = Presupuesto::model()->find($criteria); */			
 
 			//calcular precio total de todas las piezas
-			$criteria=new CDbCriteria;                      
-       		$criteria->compare('id_presupuesto',$presupuesto->id);  
-        	$criteria->select = '*';
-        	$piezas = Valorpieza::model()->findAll($criteria);
+			$criteria2=new CDbCriteria;                      
+       		$criteria2->compare('id_presupuesto',$presupuesto->id);  
+        	$criteria2->select = '*';
+        	$piezas = Valorpieza::model()->findAll($criteria2);
         	$total = 0;
             foreach ($piezas as $key => $pieza){
           		$total = $total + ($pieza->precio * $pieza->cantidad);
