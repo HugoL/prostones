@@ -152,7 +152,7 @@ $imageArray = array(
         $this->debug($piezas); ?>
         <span>Pieza:</span>
         <?php foreach ($piezas as $key => $pieza): ?>
-            <div class="well well-small">Tipo: <?php echo $pieza->pepito->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
+            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>

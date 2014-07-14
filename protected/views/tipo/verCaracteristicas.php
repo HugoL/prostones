@@ -12,12 +12,12 @@ $this->pageTitle=Yii::app()->name . ' - Catálogo';
 
 <div class="span8">
     <div class="span12">
-        <div class="span4" >
+        <div class="span3" >
           
 
 
 
-<img style="border:1px solid black; width:200px; height:250px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
+<img style="border:1px solid black; width:200px; height:230px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
 
 <br />
 
@@ -31,7 +31,7 @@ zoomWindowFadeOut: 750
    }); 
 </script>
  <?php $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'Ver en el simulador',
+         'label'=>'Ver en simulador',
         'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
         'size'=>'mini', // null, 'large', 'small' or 'mini'
         'url'=>array('simulador/index/id/'.$tipo->id),
@@ -49,60 +49,74 @@ zoomWindowFadeOut: 750
 
             <br><br>
             <strong>Características</strong> <br>
+       
+</table>
           
-            <table>
-                <tr>
-                    <td><font size="1">Masa volumica:</strong></td>
-                    <td><?php echo $tipo->masa_volumica; ?> g/cm<sup>3</sup></td>
+            <table  style=" border-collapse:separate;
+    border-spacing:0px 3px; ">
+                            <tr  >
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Masa volúmica:</font></td>
+                    <td style="border:1px solid #8f8c8c;" align="center"><font style=" font-size: 12px;" ><?php echo $tipo->masa_volumica; ?></font> </td>
+                    <td bgcolor="#e8e8e8"><font size="1" >g/cm<sup>3</sup></font></td>
+                </tr>
+               
+                <tr  >
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Coeficiente absorción:</font></td>
+                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->absorcion; ?></font> </td>
+                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >%</font></td>
+                </tr>
+                <tr >
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia a compresión: </font></td>
+                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->compresion; ?></font></td>
+                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >Mpa</font></td>
                 </tr>
                 <tr>
-                    <td>Coeficiente absorción:</td>
-                    <td><?php echo $tipo->absorcion; ?> %</td>
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia a la flexión:</font> </td>
+                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->flexion; ?></font></td>
+                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >Mpa</font></td>
                 </tr>
                 <tr>
-                    <td>R. a la compresión: </td>
-                    <td><?php echo $tipo->compresion; ?> Mpa</td>
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia al desgaste</font></td>
+                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->desgaste; ?></font></td>
+                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >mm.</font></td>
                 </tr>
                 <tr>
-                    <td>R. a la flexión: </td>
-                    <td><?php echo $tipo->flexion; ?> Mpa</td>
-                </tr>
-                <tr>
-                    <td>R. al desgaste: </td>
-                    <td><?php echo $tipo->desgaste; ?> mm.</td>
-                </tr>
-                <tr>
-                    <td>R. al impacto:</td>
-                    <td> <?php echo $tipo->impacto; ?> cm.</td>
+                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia al impacto:</font></td>
+                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" > <?php echo $tipo->impacto; ?></font></td>
+                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >cm.</font></td>
                 </tr>
 
             </table>
             
         </div>
-        <div class="span7">
+        <div class="span8" style="margin-left:40px;">
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 
                <strong>Tarifas</strong><br>
-               <table>
+               <table style=" border-collapse:separate;
+    border-spacing:3px 0px;">
                <tr>
+               <td ><font style=" font-size: 10px;" >Tamaño:</font></td>
                
 
              <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
             <!--<div class="span2">-->
-            <td>
-                Tam. <?php echo $preciounitario->tamano->nombre; ?></td>
+            <td align="center" style="border:1px solid #8f8c8c;">
+                 <?php echo $preciounitario->tamano->nombre; ?></td>
 
-             </td>
+             
             <!--</div>-->
         <?php endforeach; ?>
 
                </tr>
                <tr>
+               <td><font style=" font-size: 10px;" >Precio:</font></td>
+
                 <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
             <!--<div class="span2">-->
-            <td>
-                 <?php echo $preciounitario->precio ?>€ m<sup>2</sup></td>
+            <td  align="center" bgcolor="#e8e8e8" style="border-bottom:1px solid #c4c4c4;"><strong style="color:#125171;">
+                 <?php echo $preciounitario->precio ?></strong> <font style=" font-size: 10px;" >€/m<sup>2</sup></font></td>
             <!--</div>-->
         <?php endforeach; ?>
         </tr>
@@ -119,7 +133,8 @@ zoomWindowFadeOut: 750
                
               <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado1" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>"/></a>
 
-           <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado2;?>" title="Cool bike!" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado2;?>"/></a>
+<a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado2;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado1" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado2;?>"/></a>
+
           
 
        <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado3;?>" title="Cool bike!" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado3;?>"/></a>

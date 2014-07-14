@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
 
 		</div>
 </div>
-<div class="span5">
+<div class="span7">
 
 A pesar de la profunda crisis inmobiliaria, el parque de viviendas 
 
@@ -32,9 +32,9 @@ que hace que la reforma (más ligada a la actual capacidad del gasto familiar
 
 que la adquisición de una vivienda nueva), sea un segmento estable donde 
 
-refugiarse en estos tiempos de crisis.
+refugiarse en estos tiempos de crisis.<br>
 
-los espacios que componen una vivienda o edificio y solo se realizan obras 
+Los espacios que componen una vivienda o edificio y solo se realizan obras 
 
 de mantenimiento (cambio de solados, aplacados de las paredes, sustitución 
 
@@ -46,7 +46,7 @@ años, y será mayor para aquellas empresas que trabajen con profesionalidad,
 
 que oferten precios accesibles y que sepan relacionarse con sus clientes 
 
-utilizando las nuevas “armas” que nos brinda Internet.
+utilizando las nuevas “armas” que nos brinda Internet.<br>
 
 En proSton denominamos REFORMA cuando no se transforman 
 
@@ -54,7 +54,7 @@ La necesidad de realizar reformas en el parque de viviendas que</div>
 </div>
 <div>
 <div class="clearfix">&nbsp</div>
-<div class="span6 divSeccion">
+<div class="span11 divSeccion">
 	
 <div class="span7">
 La REHABILITACIÓN de viviendas son acciones constructivas o 
@@ -65,7 +65,7 @@ accesibilidad (eliminación de barreras arquitectónicas), la habitabilidad, la 
 
 contra la presencia de humedades, etc. Estas acciones se pueden realizar tanto en el 
 
-interior de las viviendas como en las zonas comunes de los edificios residenciales.
+interior de las viviendas como en las zonas comunes de los edificios residenciales.<br>
 
 La plataforma proSton va a aportar, a precios muy competitivos, sus 
 
@@ -73,7 +73,7 @@ servicios de elaboración, medición y colocación de unos materiales de calidad
 
 belleza y con un comportamiento a las exigencias que reciba, muy superior a otros 
 
-productos de la construcción.
+productos de la construcción.<br>
 
 Confie sus refirmas y rehabilitaciones a proSton, es una organización con 
 
@@ -83,7 +83,7 @@ clientes), que prestan sus servicios con rapidez, profesionalidad y a unos preci
 
 competitivos.
 </div>
-<div class="span5">
+<div class="span4">
 		<div class="span16">
 			<h2>REHABILITACIÓN</h2>
 		</div>

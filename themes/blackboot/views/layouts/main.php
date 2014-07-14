@@ -138,7 +138,7 @@ $(document).ready(function() {
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
-						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/')),
+						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12')),
 							array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
@@ -227,7 +227,7 @@ $(document).ready(function() {
 						<div class="span2"><h4><img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/iconos/envio.png"> 
 							Envios</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="#">Envíos y plazos entrega</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=envios">+Envíos y plazos entrega</a></li>
 								<li><span class="dot">•</span><a href="#">Política de devoluciones</a></li>
 								<li><span class="dot">•</span><a href="#">Forma de pago</a></li>
 
@@ -238,6 +238,7 @@ $(document).ready(function() {
 							<ul>
 								<li><a href="#"><span class="dot">•</span>Preguntas frecuentes</a></li>
 								<li><span class="dot">•</span><a href="#">Comprar en tres pasos</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciondesuministro">+Condiciones de suministro</a></li>
 								
 							</ul>
 						</div> 
