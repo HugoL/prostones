@@ -36,10 +36,10 @@ class Valorpieza extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_tipo, id_pieza, id_tamano, id_terminacion, cantidad', 'required'),
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad, id_presupuesto', 'numerical', 'integerOnly'=>true),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion, precio, cantidad, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_tipo, id_pieza, id_tamano, id_terminacion, precio, id_presupuesto', 'safe', 'on'=>'search'),
+			array('id, id_tipo, id_pieza, id_tamano, id_terminacion, precio, id_presupuestotamanoreal, numeropiezas, peso, destino', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +56,9 @@ class Valorpieza extends CActiveRecord
 			'tamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
 			'tipo' => array(self::BELONGS_TO, 'Tipo', 'id_tipo'),
 			'pieza' => array(self::BELONGS_TO, 'Pieza', 'id_pieza'),
+			'provincia' => array(self::BELONGS_TO, 'Provincia', 'destino'),
+			'biselado' => array(self::BELONGS_TO, 'Biselado', 'id_biselado'),
+			'pale' => array(self::BELONGS_TO, 'Pale', 'id_pale'),
 		);
 	}
 

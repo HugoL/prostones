@@ -180,6 +180,8 @@ class PresupuestoController extends Controller
 			//número de piezas necesarias
         	$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano->tamanopieza);
 
+        	$valorPieza->numeropiezas = $numeropiezas;
+
         	//precio de la pieza del tamaño dado:
 			$criteria=new CDbCriteria;        
         	$criteria->compare('id_tipo',$valorPieza->id_tipo);
@@ -187,27 +189,22 @@ class PresupuestoController extends Controller
         	$criteria->select = '*';
 			$preciounitario = Preciounitario::model()->find( $criteria );
 
-			//$preciounitario->precio = 17.0;
-
         	//tamaño en metros de todas las piezas
         	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
+
+        	$valorPieza->tamanoreal = $tamanoreal;
 
         	//precio de los metros correspondientes
 			$precio = $tamanoreal * $preciounitario->precio;
 
-			$valorPieza->precio = $precio;
-
-			$valorPieza->update();
-			
-			//CALCULAR EL PRECIO DE LA PIEZA
+			$valorPieza->precio = $precio;			
 
 			//CALCULAR EL PESO
 			$peso = $this->calcularPesoPiezas( $valorPieza, $numeropiezas);
 
-			//$this->debug($peso);
+			$valorPieza->peso = $peso;
 
-			// ******* //
-			//$presupuesto = calcular( $valorPieza );
+			$valorPieza->update();
 
 			$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto
@@ -220,28 +217,22 @@ class PresupuestoController extends Controller
 	}
 
 	public function actionGenerar( $id ){		
-		$presupuesto = new Presupuesto;
+		//$presupuesto = new Presupuesto;
 		if( isset($_POST['Presupuesto']) ){		
-			$presuspuesto = $this->loadModel($id);	
+			$presupuesto = $this->loadModel($id);			
 			$presupuesto->attributes = $_POST['Presupuesto'];
-			//$this->debug($presupuesto);
-			//$presupuesto->id = $id;
-			 if($presupuesto->validate()) {
+			$this->debug($presupuesto);
+			if( $presupuesto->validate() ) {
                 try {
                     if ($presupuesto->save()){
-                        Yii::app()->user->setFlash('success',UserModule::t("Changes is saved."));
+                       
                     }else{
-                        print_r( $presupuesto->getErrors());
-                        Yii::app()->user->setFlash('error',UserModule::t("Error saving the changes."));
+                        print_r( $presupuesto->getErrors());  
                     }                    
                	}catch (CException $e){
                         echo $e;
                 }
-            }
-
-			/*$criteria = new CDbCriteria;
-			$criteria->addCondition( 'id = '.$presupuesto->id );	
-			$presupuesto = Presupuesto::model()->find($criteria); */			
+            }		
 
 			//calcular precio total de todas las piezas
 			$criteria2=new CDbCriteria;                      
@@ -254,6 +245,8 @@ class PresupuestoController extends Controller
           		//si hay que añadir algo al precio total, sobre el total del presupuesto, se añade aquí          		
             }
             $presupuesto->total = $total;
+
+            $presupuesto->update();
 
             //Generar el PDF
             $this->creaPdf($presupuesto);	
@@ -336,7 +329,7 @@ class PresupuestoController extends Controller
 
 	protected function calcularNumeroPiezas( $cantidad, $tamano ){
 		$piezas = $cantidad / $tamano;		
-		return round($piezas, 0, PHP_ROUND_HALF_UP);
+		return ceil($piezas);
 	}
 
 
@@ -370,9 +363,7 @@ class PresupuestoController extends Controller
 		//$model->referencia = $clave;
 		//$model->save();
 		# Outputs ready PDF
-		//$mPDF1->Output(); DESCOMENTAR PARA GENERAR EL PDF		
-		$this->debug($presupuestoPdf);
-		$this->render('pdf',array('presupuesto'=>$presupuestoPdf));
+		$mPDF1->Output(); //DESCOMENTAR PARA GENERAR EL PDF				
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 	

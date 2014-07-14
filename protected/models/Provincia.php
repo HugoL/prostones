@@ -45,6 +45,11 @@ class Provincia extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'pedido' => array(self::HAS_MANY, 'Pedido', 'id_provincia'),
+			'tipo' => array(self::HAS_MANY, 'Tipo', 'procedencia'),
+			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'destino'),
+			'zona' => array(self::BELONGS_TO, 'Zona', 'id_zona'),
+			'zona_destino' => array(self::BELONGS_TO, 'Preciotransporte', 'id_zona_destino'),
+			'zona_procedencia' => array(self::BELONGS_TO, 'Preciotransporte', 'id_zona_procedencia'),
 		);
 	}
 
