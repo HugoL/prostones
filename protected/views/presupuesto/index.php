@@ -36,7 +36,8 @@ $imageArray = array(
 
 <div class="row">
  <div class="well span2">
-<?php if( !empty($materiales) ):?>    
+<?php if( !empty($materiales) ):?> 
+    <ul>   
     <?php foreach ( $materiales as $key => $material ): ?>
         <li class="span12">
             <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);"><?php echo $material->nombre; ?></a>
@@ -44,12 +45,13 @@ $imageArray = array(
             
         </li>
     <?php endforeach; ?>
+    </ul>
     <div class="clearfix">&nbsp;</div>    
 <?php endif; ?>
 </div><!-- /well span2 -->
 
 <!-- div central -->
-<div class="span8 panel">
+<div class="span7 panel">
     <?php if( !empty($tipos) ): ?>
    
     <?php foreach ( $tipos as $key => $tipo ): ?>    
@@ -62,21 +64,22 @@ $imageArray = array(
     <div class="clearfix">&nbsp;</div>
     <?php endif; ?>
 </div>
-</div><!-- /row -->
-<!-- ------------- -->
-
-<div class="row">
-<div class="well span12"><!-- piezas -->
+<div class="well span3" id="piezas"><!-- piezas -->
     <?php if( !empty($piezas) ): ?>
         <?php foreach ( $piezas as $key => $pieza ): ?>    
-        <li class="span1">
+        <li>
             <div class="piezas" style="display:none" id="<?php echo $pieza->id; ?>">
-                <center><a href="#"><?php echo $pieza->nombre; ?></a></center>
+                <a href="#"><?php echo $pieza->nombre; ?></a>
             </div>            
         </li>
         <?php endforeach; ?>
      <?php endif; ?>
 </div><!-- /piezas -->
+</div><!-- /row -->
+<!-- ------------- -->
+
+<div class="row">
+
 </div><!-- /row -->
 
 <!-- terminaciones -->
@@ -113,7 +116,7 @@ $imageArray = array(
     </div>
 
      <!-- tamaños -->
-     <div class="span4">
+     <div class="span4" id="tamanos" style="display:none">
         <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
         <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
     </div>
@@ -143,7 +146,7 @@ $imageArray = array(
 <?php $this->endWidget(); ?>
 
 <!-- piezas guardadas -->
-<div class="span7">
+<div class="span7" id="piezas">
     <?php if( $idPresupuesto != 0 ):
         $criteria=new CDbCriteria;                      
         $criteria->compare('id_presupuesto',$idPresupuesto);  
@@ -152,7 +155,7 @@ $imageArray = array(
         $this->debug($piezas); ?>
         <span>Pieza:</span>
         <?php foreach ($piezas as $key => $pieza): ?>
-            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?>, SubTotal: <?php echo $pieza->precio * $pieza->cantidad;?></div>
+            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?></div>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
@@ -178,23 +181,25 @@ $imageArray = array(
 <!-- ---------------- -->
 </div><!-- /row -->
 <script>
-$(document).ready(function($) {
+$(document).ready(function($){
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $(".piezas").show();
+        $(document).scrollTop( $("#piezas").offset().top );  
        //$("#Valorpieza_id_pieza").value("1");
     });
     $(".piezas").click(function(){
         //alert("hola: "+$(this).attr("id"));
        $("#Valorpieza_id_pieza").val($(this).attr("id"));
        $("#terminaciones").show();
+       $(document).scrollTop( $("#terminaciones").offset().top );  
     });
     $(".terminacion").click(function(){
         //alert("hola: "+$(this).attr("id"));
        $("#Valorpieza_id_terminacion").val($(this).attr("id"));
+       $("#tamanos").show('slow');
     });
-
 });
 </script>
 <script type="text/javascript">
