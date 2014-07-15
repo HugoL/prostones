@@ -146,6 +146,8 @@ class PresupuestoController extends Controller
 		$valorPieza = new Valorpieza;
 		$terminaciones = Terminacion::model()->findAll();
 		$tamanos = Tamano::model()->findAll();
+		$biselados = Biselado::model()->findAll();
+
 
 		if( isset($_POST['Valorpieza']) ){			
 
@@ -207,11 +209,11 @@ class PresupuestoController extends Controller
 			$valorPieza->update();
 
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados
 			));
 		}else{
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'biselados'=>$biselados
 			));
 		}		
 	}
@@ -309,7 +311,7 @@ class PresupuestoController extends Controller
 	}
 
 	protected function calcularPesoPiezas( $valorPieza, $numeropiezas ){
-		/*****^ PESO DEL PEDIDO +++*/
+		/***** PESO DEL PEDIDO *****/
 
 		$tipo = Tipo::model()->find('id ='.$valorPieza->id_tipo);
 
@@ -319,7 +321,6 @@ class PresupuestoController extends Controller
 		//	$tamanocubico = 0.0036;//  tabla : "ehp_tamano",  y el dato en "tamanocubico"
 
 		//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
-
 
 		$pesopieza = $tamano->tamanocubico * $tipo->masa_volumica * 1000;
 

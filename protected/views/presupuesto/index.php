@@ -64,7 +64,8 @@ $imageArray = array(
     <div class="clearfix">&nbsp;</div>
     <?php endif; ?>
 </div>
-<div class="well span3" id="piezas"><!-- piezas -->
+<div class="span3">
+<div class="well" id="piezas"><!-- piezas -->
     <?php if( !empty($piezas) ): ?>
         <?php foreach ( $piezas as $key => $pieza ): ?>    
         <li>
@@ -75,6 +76,23 @@ $imageArray = array(
         <?php endforeach; ?>
      <?php endif; ?>
 </div><!-- /piezas -->
+<!-- piezas guardadas -->
+<div id="piezasguardadas">
+    <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
+        $criteria=new CDbCriteria;                      
+        $criteria->compare('id_presupuesto',$presupuesto->id);  
+        $criteria->select = '*';
+        $piezas = Valorpieza::model()->findAll($criteria); 
+        $this->debug($piezas); ?>
+        <span>Pieza:</span>
+        <?php foreach ($piezas as $key => $pieza): ?>
+
+            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?></div>
+
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+</div>
 </div><!-- /row -->
 <!-- ------------- -->
 
@@ -110,7 +128,7 @@ $imageArray = array(
 
     <div class="row">
     <div class="span6">
-        <?php echo $form->labelEx($valorpieza,'cantidad')." (m2)"; ?>
+       <?php echo $form->labelEx($valorpieza,'cantidad'); ?> <span id="medida"></span>
         <?php echo $form->textField($valorpieza,'cantidad'); ?>
         <?php echo $form->error($valorpieza,'cantidad'); ?>
     </div>
@@ -119,6 +137,20 @@ $imageArray = array(
      <div class="span4" id="tamanos" style="display:none">
         <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
         <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
+    </div>
+    <!-- /tamaños -->
+    </div><!-- /row -->
+
+    <div class="row">
+    <div class="span6">
+       <label>Biselado</label><input type="checkbox" id="biselados" />
+    </div>
+
+     <!-- biselados -->
+     <div class="span4" id="biselados">
+        <?php echo $form->labelEx($valorpieza,'id_biselado'); ?>
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
+        <?php $this->debug($biselados); ?>
     </div>
     <!-- /tamaños -->
     </div><!-- /row -->
@@ -145,22 +177,6 @@ $imageArray = array(
 
 <?php $this->endWidget(); ?>
 
-<!-- piezas guardadas -->
-<div class="span7" id="piezas">
-    <?php if( $idPresupuesto != 0 ):
-        $criteria=new CDbCriteria;                      
-        $criteria->compare('id_presupuesto',$idPresupuesto);  
-        $criteria->select = '*';
-        $piezas = Valorpieza::model()->findAll($criteria); 
-        $this->debug($piezas); ?>
-        <span>Pieza:</span>
-        <?php foreach ($piezas as $key => $pieza): ?>
-
-            <div class="well well-small">Tipo: <?php echo $pieza->pieza->nombre; ?>, Terminación: <?php echo $pieza->terminacion->nombre; ?> , precio: <?php echo $pieza->precio; ?>, Cantidad: <?php echo $pieza->cantidad; ?></div>
-
-        <?php endforeach; ?>
-    <?php endif; ?>
-</div>
 <div class="span4 well">
     <?php if (isset($presupuesto) ): ?>
         <?php $form2=$this->beginWidget('CActiveForm', array(
@@ -189,13 +205,18 @@ $(document).ready(function($){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $(".piezas").show();
         $(document).scrollTop( $("#piezas").offset().top );  
-       //$("#Valorpieza_id_pieza").value("1");
+       //$("#Valorpieza_id_pieza").value("1");        
     });
     $(".piezas").click(function(){
         //alert("hola: "+$(this).attr("id"));
        $("#Valorpieza_id_pieza").val($(this).attr("id"));
        $("#terminaciones").show();
-       $(document).scrollTop( $("#terminaciones").offset().top );  
+       $(document).scrollTop( $("#terminaciones").offset().top );
+       if( $("#Valorpieza_id_pieza").val() == 1 ){
+            $("#medida").html("m2.");
+        }else{
+            $("#medida").html("m.");
+        }  
     });
     $(".terminacion").click(function(){
         //alert("hola: "+$(this).attr("id"));

@@ -55,8 +55,8 @@ class Biselado extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'tiposes' => array(self::HAS_MANY, 'Tipos', 'procedencia'),
-			'valorpiezases' => array(self::HAS_MANY, 'Valorpiezas', 'destino'),
+			'tipo' => array(self::HAS_MANY, 'Tipo', 'procedencia'),
+			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'destino'),
 		);
 	}
 
