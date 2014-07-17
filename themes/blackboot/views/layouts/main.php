@@ -128,18 +128,17 @@ $(document).ready(function() {
 				</a>
 			</div>
 			<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
-			<div > <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></div>
+			<div > <a href="<?php echo Yii::app()->request->baseUrl?>/index.php"><img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
 
 			<div class="nav-collapse" id="menu-top">
 				<?php $this->widget('zii.widgets.CMenu',array(
 					'htmlOptions' => array( 'class' => 'nav' ),
 					'activeCssClass'	=> 'active',
 					'items'=>array(
-						array('label'=>'Inicio', 'url'=>array('/site/index')),
-						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto')),
-						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id')),
-						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12')),
-							array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
+						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto'), 'active'=> Yii::app()->controller->id == "presupuesto"),
+						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id'),'active'=> Yii::app()->controller->id == "simulador"),
+						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
+						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),

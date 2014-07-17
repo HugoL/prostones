@@ -154,7 +154,7 @@ zoomWindowFadeOut: 750
 
 
 <div class="span3">
-    <h3 style="font-size:15px;"><span class="dot">•</span>Marmoles</h3>
+   <div class="span12"> <style="font-size:15px;"><span class="dot">•</span></style="font-size:15px;"><strong>Marmoles </strong>( Más decorativos)</div>
     <div class="span12 galemat">
         <div class="clearfix"></div>
 

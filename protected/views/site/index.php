@@ -150,11 +150,11 @@ Fin slider
 
 
 
-<div class="span2 parr2" style=" margin-left:4%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <a href="#">ideas<font style="color:black"> o</font> proyectos</a>.
+<div class="span2 parr2" style=" margin-left:4%;"><p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <strong>ideas</strong> o <strong> proyectos</strong>.
 	<br><br>
-	Utilice nuestra profesionalidad y logistica, le garantizamos la mejor relación  <b>calidad-precio</b>, con una <b>eficiente</b> entrega.
+	Utilice nuestra profesionalidad y logistica. Garantizamos la mejor relación  <b>calidad-precio</b>, con una <b>eficiente</b> entrega.
 	<br><br>
-	Rellene este <a href=""> formulario</a>.
+	Indiquenos <a href="#"> aquí</a> que necesita y nuestro equipo analizara su propuesta.
 </p>
 <!--<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">-->
 
