@@ -3,12 +3,12 @@
 /* @var $dataProvider CActiveDataProvider */
 
 /*$this->breadcrumbs=array(
-	'Presupuesto',
+    'Presupuesto',
 );*/
 
 /*$this->menu=array(
-	array('label'=>'Create Material', 'url'=>array('create')),
-	array('label'=>'Manage Material', 'url'=>array('admin')),
+    array('label'=>'Create Material', 'url'=>array('create')),
+    array('label'=>'Manage Material', 'url'=>array('admin')),
 );*/
 ?>
 
@@ -22,15 +22,22 @@ $imageArray = array(
 );
 ?>
 
+ <?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'valorpieza-form',
+    'action'=>Yii::app()->createUrl('presupuesto/index'),
+    'enableAjaxValidation'=>false,
+)); ?>
+
 
 
 <div class="row">
- <!-- /well span2 -->
+
+
 
 <!-- div central -->
 <div class="span8 panel">
 
-    <div class="span12 row">
+ <div class="span12 row"><!-- PASO 1 MATERIAL-->
         <div class="span2">Paso 1</div>
 
         <div class="well span10">
@@ -47,12 +54,14 @@ $imageArray = array(
                 <div class="clearfix">&nbsp;</div>    
             <?php endif; ?>
         </div>
-    </div>
+    </div><!--FIN PASO 1-->
 
-    <div class="span12 row" id="tipos" style="display:none">
+
+<div class="span12 row" id="tipos" style="display:none"><!--PASO2 TIPO DE MATERIAL: Blanco macael...-->
 
         <div class="span2">Paso 2</div>
         <div class="well span10">
+        
             <?php if( !empty($tipos) ): ?>
            
         
@@ -67,74 +76,95 @@ $imageArray = array(
             <div class="clearfix">&nbsp;</div>
             <?php endif; ?>
         </div>
-    </div>
+    </div><!-- FIN PASO2-->
 
-
-     <div class="span12 row" id="piezas" style="display:none">
-
-       <?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'valorpieza-form',
-    'action'=>Yii::app()->createUrl('presupuesto/index'),
-    'enableAjaxValidation'=>false,
-)); ?>
-
-    <?php echo $form->errorSummary($valorpieza); ?>
-            <div class="span2">Paso 3</div>
-
-        <div class="well span10" ><!-- piezas -->
-         
-        <?php if( !empty($piezas) ): ?>
-
-<?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
+<div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 3 TIPO DE PIEZA: Baldosa, rodapie...-->
+    <div class="span2">Paso 3</div>
+        <div class="well span10">
+    <?php if( !empty($piezas) ): ?>
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
         array('class'=>'piezas','prompt'=>'Selecciona tipo de pieza'));?>
+     <?php endif; ?>
+</div>
+</div><!-- FIN PASO 3-->
 
-            
-
-
-
-            <!--<?php foreach ( $piezas as $key => $pieza ): ?>    
-            <li>
-                <div class="piezas" style="display:none" id="<?php echo $pieza->id; ?>">
-                    <a href="#"><?php echo $pieza->nombre; ?></a>
-                </div>            
-            </li>
-            <?php endforeach; ?>-->
-
-         <?php endif; ?>
-        </div><!-- /piezas -->
-    </div>
-    
-   
-  
-    <div class="span12 row" id="terminaciones" style="display:none">
-         <div class="span2">Paso 4</div>
-<?php $this->debug($valorpieza); ?>
-         <div class="well span10" > <!-- terminaciones -->
+<div class="span12" id="terminaciones" style="display:none"><!--PASO 4-->
+<div class="span2">Paso 4</div>
+<div class="well span10">
             <?php if( !empty($terminaciones) ): ?>
-
-               <!-- <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre')); ?>-->
-
-                <?php foreach ( $terminaciones as $key => $terminacion ): ?>    
+        <?php foreach ( $terminaciones as $key => $terminacion ): ?>    
         <li class="span2">
             <div class="terminacion" id="<?php echo $terminacion->id; ?>">
                 <center><a href="#"><?php echo $terminacion->nombre; ?></a></center>
             </div>            
         </li>
         <?php endforeach; ?>
-        
-         <?php endif; ?>
-        </div><!-- /terminaciones --> 
+     <?php endif; ?>
 
-
+<!-- tamaños -->
+     <div class="span4" id="tamanos" style="display:none">
+        <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
     </div>
+    <!-- /tamaños -->
+  <div class="span6">
+       <label>Biselado</label><input type="checkbox" id="biselados" />
+    </div>
+
+     <!-- biselados -->
+     <div class="span4" id="biselados">
+        <?php echo $form->labelEx($valorpieza,'id_biselado'); ?>
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
+        <?php $this->debug($biselados); ?>
+    </div>
+    <!-- /biselados -->
+
+        </div>
+    </div><!--FIN PASO 4-->
+
+<div class="span12" ><!--PASO 5-->
+<div class="span2">Paso 5</div>
+<div class="well span10">
+  
+<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
+
+    <?php echo $form->errorSummary($valorpieza); ?>
+
     
-   
+    
+       <?php echo $form->labelEx($valorpieza,'cantidad'); ?> <span id="medida"></span>
+        <?php echo $form->textField($valorpieza,'cantidad'); ?>
+        <?php echo $form->error($valorpieza,'cantidad'); ?>
+    </div>
+
+     <div class="row">
+        <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
+        <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
+        <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
+        <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
+        <?php 
+            //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
+            if( isset($presupuesto) ):
+                $idPresupuesto = $presupuesto->id;
+            else:
+                $idPresupuesto = 0;
+            endif;
+            echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
+    </div>
+
+    <div class="row buttons">
+        <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
+    </div>
+
+<?php $this->endWidget(); ?>
+    </div><!--FIN PASO 5-->
 
 
-</div><!-- /Div central -->
+</div><!--FIN DIV CENTRAL-->
 
+<div class="span3"><!--LISTA DE PIEZAS EN EL PRESUPUESTO-->
 
-<div class="span3"> <!-- Div  lista del presupuesto -->
 <?php if(Yii::app()->user->hasFlash('success')):?>
     <div class="alert alert-success">
         <?php echo Yii::app()->user->getFlash('success'); ?>
@@ -146,19 +176,19 @@ $imageArray = array(
         <?php echo Yii::app()->user->getFlash('danger'); ?>
     </div>
 <?php endif; ?>
+
 <!-- piezas guardadas -->
-<div class="well" id="piezasguardadas">
-Lista de piezas del presupuesto.<br><br>
+<div id="piezasguardadas">
     <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
         $criteria=new CDbCriteria;                      
         $criteria->compare('id_presupuesto',$presupuesto->id);  
         $criteria->select = '*';
         $piezas = Valorpieza::model()->findAll($criteria); 
         $this->debug($piezas); ?>
-        <span>Piezas:</span>
-       
+        <span>Pieza:</span>
         <?php foreach ($piezas as $key => $pieza): ?>
-             <div class="well">
+
+              <div class="well">
                 <div class="clearfix"></div>    
                 <div class="span12">
                     <?php echo $pieza->tamanoreal; ?> 
@@ -187,7 +217,6 @@ Lista de piezas del presupuesto.<br><br>
 </div>
 
         <?php endforeach; ?>
-        
     <?php endif; ?>
 </div>
 
@@ -210,97 +239,28 @@ Lista de piezas del presupuesto.<br><br>
         <?php $this->endWidget(); ?>
     <?php endif; ?>
 </div>
-</div><!-- /Div  lista del presupuesto -->
-
+</div><!-- FIN LISTA DE PIEZAS EN EL PRESUPUESTO-->
 
 </div><!-- /row -->
 <!-- ------------- -->
 
 
-
-<div class="row">
- 
-
-    <div class="row">
-  
-     <!-- tamaños y biselado -->
-         <div class="span4" id="tamanos" style="display:none">
-            <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
-            <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
-
-
-             <label>Biselado</label><input type="checkbox" id="biselados" />
-
-            <div class="span4" id="biselados">
-                <?php echo $form->labelEx($valorpieza,'id_biselado'); ?>
-                <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
-                <?php $this->debug($biselados); ?>
-            </div>
-
-        </div>
-    <!-- /tamaños y biselado -->
-    </div><!-- /row -->
-
-    <div class="row">
-    
-
-      <div class="span6">
-       <?php echo $form->labelEx($valorpieza,'cantidad'); ?> <span id="medida"></span>
-        <?php echo $form->textField($valorpieza,'cantidad'); ?>
-        <?php echo $form->error($valorpieza,'cantidad'); ?>
-    </div>
-    </div><!-- /row -->
-               
-    <div class="row">
-        <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
-        <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
-        <?php 
-            //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
-            if( isset($presupuesto) ):
-                $idPresupuesto = $presupuesto->id;
-            else:
-                $idPresupuesto = 0;
-            endif;
-            echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
-    </div>
-
-    <div class="row buttons">
-        <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-
-<!-- ---------------- -->
-</div><!-- /row -->
-
-
-
 <script>
 $(document).ready(function($){
-
-     
-
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
-        $("#piezas").show('slow');
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
-        $(".piezas").show();
-        $(document).scrollTop( $("#piezas").offset().top );  
-
+        $("#tipo_piezas").show();
+        //$(document).scrollTop( $("#piezas").offset().top );  
        //$("#Valorpieza_id_pieza").value("1");        
     });
-
     $("#Valorpieza_id_pieza").change(function(){
         //alert("hola: "+$(this).attr("id"));
-       $("#Valorpieza_id_pieza").val($(this).attr("id"));
+       //$("#Valorpieza_id_pieza").val($(this).attr("id"));
        $("#terminaciones").show();
-       $(document).scrollTop( $("#terminaciones").offset().top );//para que se mueva a la altura del siguiente paso
+       //$(document).scrollTop( $("#terminaciones").offset().top );
        if( $("#Valorpieza_id_pieza").val() == 1 ){
-            $("#medida").html("m<sup>2</sup>.");
+            $("#medida").html("m2.");
         }else{
             $("#medida").html("m.");
         }  
@@ -312,10 +272,8 @@ $(document).ready(function($){
     });
 });
 </script>
-
 <script type="text/javascript">
 function vermaterial( idmaterial ){
-    
     $(".tipo"+idmaterial).toggle();
     $("#tipos").show('slow');
 }
