@@ -37,12 +37,23 @@ $imageArray = array(
 <!-- div central -->
 <div class="span8 panel">
 
- <div class="span12 row"><!-- PASO 1 MATERIAL-->
-        <div class="span2">Paso 1</div>
+<div>
+    
+Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material al presupuesto. A la derecha aparecera la pieza cuando le des a "Añadir a presupuesto" y luego en la parte derecha debajo de las piezas a "generar presupuesto" para crear el archivo pdf del mismo.
+
+</div>
+<div id="inicio">
+<a href="#">Empezar</a>
+</div>
+ <div class="span12 row" id="material" style="display:none"><!-- PASO 1 MATERIAL-->
+        <div class="span2">Paso 1<br>Seleccione el tipo de material que desea.
+
+        </div>
 
         <div class="well span10">
             <?php if( !empty($materiales) ):?> 
-                <ul>   
+     
+ <ul>   
                 <?php foreach ( $materiales as $key => $material ): ?>
                     <li class="span2">
                         <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);"><?php echo $material->nombre; ?></a>
@@ -51,21 +62,14 @@ $imageArray = array(
                     </li>
                 <?php endforeach; ?>
                 </ul>
+
+               
                 <div class="clearfix">&nbsp;</div>    
             <?php endif; ?>
-        </div>
-    </div><!--FIN PASO 1-->
-
-
-<div class="span12 row" id="tipos" style="display:none"><!--PASO2 TIPO DE MATERIAL: Blanco macael...-->
-
-        <div class="span2">Paso 2</div>
-        <div class="well span10">
+<div class="span10" id="tipos" style="display:none">
         
             <?php if( !empty($tipos) ): ?>
            
-        
-
             <?php foreach ( $tipos as $key => $tipo ): ?>    
                 <li class="span2">
                     <div class="tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
@@ -76,37 +80,50 @@ $imageArray = array(
             <div class="clearfix">&nbsp;</div>
             <?php endif; ?>
         </div>
-    </div><!-- FIN PASO2-->
 
-<div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 3 TIPO DE PIEZA: Baldosa, rodapie...-->
-    <div class="span2">Paso 3</div>
+
+        </div>
+ 
+        
+    </div><!--FIN PASO 1-->
+
+
+
+
+<div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
+    <div class="span2">Paso 2<br>Tipo de pieza y tamaño que desea utilizar
+    </div>
         <div class="well span10">
     <?php if( !empty($piezas) ): ?>
         <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
         array('class'=>'piezas','prompt'=>'Selecciona tipo de pieza'));?>
      <?php endif; ?>
-</div>
-</div><!-- FIN PASO 3-->
 
-<div class="span12" id="terminaciones" style="display:none"><!--PASO 4-->
-<div class="span2">Paso 4</div>
+     <div class="span4" id="tamanos" style="display:none">
+        <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre'),array('prompt'=>'Selecciona tamaño'));?>
+    </div>
+    <!-- tamaños -->
+   
+<input type="text" id="cajatexto">
+
+</div>
+
+
+    
+</div><!-- FIN PASO 2-->
+
+<div class="span12" id="terminaciones" style="display:none"><!--PASO 3-->
+<div class="span2">Paso 3</div>
 <div class="well span10">
             <?php if( !empty($terminaciones) ): ?>
-        <?php foreach ( $terminaciones as $key => $terminacion ): ?>    
-        <li class="span2">
-            <div class="terminacion" id="<?php echo $terminacion->id; ?>">
-                <center><a href="#"><?php echo $terminacion->nombre; ?></a></center>
-            </div>            
-        </li>
-        <?php endforeach; ?>
+
+  <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre'),
+        array('prompt'=>'Selecciona terminacion'));?>
+
+       
      <?php endif; ?>
 
-<!-- tamaños -->
-     <div class="span4" id="tamanos" style="display:none">
-        <?php echo $form->labelEx($valorpieza,'id_tamano'); ?>
-        <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre')); ?>
-    </div>
-    <!-- /tamaños -->
+
   <div class="span6">
        <label>Biselado</label><input type="checkbox" id="biselados" />
     </div>
@@ -114,16 +131,19 @@ $imageArray = array(
      <!-- biselados -->
      <div class="span4" id="biselados">
         <?php echo $form->labelEx($valorpieza,'id_biselado'); ?>
-        <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
-        <?php $this->debug($biselados); ?>
+        
     </div>
+<div class="span4" id="tamañobiselados" style="display:none">
+    <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
+        <?php $this->debug($biselados); ?>
+        </div>
     <!-- /biselados -->
 
         </div>
-    </div><!--FIN PASO 4-->
+    </div><!--FIN PASO 3-->
 
-<div class="span12" ><!--PASO 5-->
-<div class="span2">Paso 5</div>
+<div class="span12" id="cantidad"  style="display:none" ><!--PASO 4-->
+<div class="span2">Paso 4</div>
 <div class="well span10">
   
 <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
@@ -141,7 +161,7 @@ $imageArray = array(
         <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
         <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
+        <?php //echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
         <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
         <?php 
             //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
@@ -222,6 +242,7 @@ $imageArray = array(
 
 <div class="span4 well">
     <?php if (isset($presupuesto) ): ?>
+
         <?php $form2=$this->beginWidget('CActiveForm', array(
         'id'=>'presupuesto-form',
         'action'=>Yii::app()->createUrl('presupuesto/generar/id/'.$presupuesto->id),
@@ -247,17 +268,30 @@ $imageArray = array(
 
 <script>
 $(document).ready(function($){
+    $("#Valorpieza_cantidad").val(" ");
+    $("#Valorpieza_id_pieza").val("");
+    $("#Valorpieza_id_tamano").val("");
+
+
+    $("#inicio").click(function(){
+        
+        $("#material").show('slow');
+        $("#inicio").hide('slow');
+        //$(document).scrollTop( $("#piezas").offset().top );  
+       //$("#Valorpieza_id_pieza").value("1");        
+    });
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
-        $("#tipo_piezas").show();
+        $("#tipo_piezas").show('slow');
         //$(document).scrollTop( $("#piezas").offset().top );  
        //$("#Valorpieza_id_pieza").value("1");        
     });
     $("#Valorpieza_id_pieza").change(function(){
         //alert("hola: "+$(this).attr("id"));
        //$("#Valorpieza_id_pieza").val($(this).attr("id"));
-       $("#terminaciones").show();
+       $("#tamanos").show('slow');
+       
        //$(document).scrollTop( $("#terminaciones").offset().top );
        if( $("#Valorpieza_id_pieza").val() == 1 ){
             $("#medida").html("m2.");
@@ -265,10 +299,24 @@ $(document).ready(function($){
             $("#medida").html("m.");
         }  
     });
-    $(".terminacion").click(function(){
+
+    $("#tamanos").change(function(){
+        $("#terminaciones").show('slow');
+
+    });
+
+   
+
+     $("#biselados").click(function(){
+         $("#tamañobiselados").show('slow');
+
+    });
+
+    $("#Valorpieza_id_terminacion").change(function(){
         //alert("hola: "+$(this).attr("id"));
-       $("#Valorpieza_id_terminacion").val($(this).attr("id"));
-       $("#tamanos").show('slow');
+       $("#Valorpieza_id_terminacion").val($(this).attr("value"));
+       $("#cantidad").show('slow');
+       
     });
 });
 </script>
