@@ -1,0 +1,1 @@
+<div class="alert alert-success">Mierda pa tu boca <?php echo $precioajax; ?></div>

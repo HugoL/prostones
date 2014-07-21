@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar'),
+				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -268,16 +268,22 @@ class PresupuestoController extends Controller
 		$this->render( 'tipos',array('tipos'=>$tipos) );
 	}
 
-public function actionAjaxPreciounitario($id_pieza,$id_tamano){
+	public function actionAjaxPreciounitario(){
+		$id_tipo = strip_tags($_POST['id_tipo']);
+		$id_tamano = strip_tags($_POST['id_tamano']);
 		$criteria=new CDbCriteria;        
-        $criteria->compare('id_pieza',$id_pieza);//no se
-        $criteria->addCondition( 'id_tamano >= '.$id_tamano );	//no se
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+        $criteria->addCondition( 'id_tamano = '.$id_tamano .' AND id_tipo = '.$id_tipo);	//no se
         $criteria->select = '*';
 		$preciounitario = Preciounitario::model()->find( $criteria );
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
-		$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
+		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
-}
+		echo $this->renderPartial('_ajaxPreciounitario', array(
+					'precioajax' => $preciounitario->precio), true, false);
+
+		Yii::app()->end();
+	}
 	/**
 	 * Manages all models.
 	 */
