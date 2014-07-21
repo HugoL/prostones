@@ -28,7 +28,7 @@ class Biselado extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{provincias}}';
+		return '{{biselados}}';
 	}
 
 	/**

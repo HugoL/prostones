@@ -147,7 +147,7 @@ class PresupuestoController extends Controller
 		$terminaciones = Terminacion::model()->findAll();
 		$tamanos = Tamano::model()->findAll();
 		$biselados = Biselado::model()->findAll();
-
+		$provincias = Provincia::model()->findAll();
 
 		if( isset($_POST['Valorpieza']) ){			
 
@@ -206,14 +206,18 @@ class PresupuestoController extends Controller
 
 			$valorPieza->peso = $peso;
 
+
+
+			
+
 			$valorPieza->update();
 
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados,'provincias'=>$provincias
 			));
 		}else{
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'biselados'=>$biselados
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'biselados'=>$biselados,'provincias'=>$provincias
 			));
 		}		
 	}
@@ -264,6 +268,16 @@ class PresupuestoController extends Controller
 		$this->render( 'tipos',array('tipos'=>$tipos) );
 	}
 
+public function actionAjaxPreciounitario($id_pieza,$id_tamano){
+		$criteria=new CDbCriteria;        
+        $criteria->compare('id_pieza',$id_pieza);//no se
+        $criteria->addCondition( 'id_tamano >= '.$id_tamano );	//no se
+        $criteria->select = '*';
+		$preciounitario = Preciounitario::model()->find( $criteria );
+		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
+		$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
+
+}
 	/**
 	 * Manages all models.
 	 */

@@ -37,23 +37,26 @@ $imageArray = array(
 <!-- div central -->
 <div class="span8 panel">
 
-<div>
+<div class="span12">
     
-Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material al presupuesto. A la derecha aparecera la pieza cuando le des a "Añadir a presupuesto" y luego en la parte derecha debajo de las piezas a "generar presupuesto" para crear el archivo pdf del mismo.
-
+Para iniciar la creación de un nuevo presupuesto haga click en <strong>Añadir pieza al presupuesto</strong>. Se le solicitara la informacion en 4 pasos, al terminar, haga click en <strong>Añadir</strong> para introducir la pieza al presupuesto.Esta pieza y las que añadas, aparecera en el lado derecho  de la pantalla. Cuando acabe de añadir piezas, haga click justo debajo en <strong> Generar presupuesto</strong> para crear el archivo pdf del mismo.<br><br>
+<br>
 </div>
-<div id="inicio">
-<a href="#">Empezar</a>
+<div id="inicio" class="span4 offset4"><p align="center" >
+<a href="#">Añadir pieza al presupuesto</a>
 </div>
  <div class="span12 row" id="material" style="display:none"><!-- PASO 1 MATERIAL-->
-        <div class="span2">Paso 1<br>Seleccione el tipo de material que desea.
+        <div class="span2 pasos" ><strong style="color:#134263;">Paso 1</strong><br>
+        <p align="justify" style="font-size:10px">Seleccione el tipo de material que desea entre nuestro catálogo de materiales.</p>
 
         </div>
 
         <div class="well span10">
+
+<div class="span8">
             <?php if( !empty($materiales) ):?> 
      
- <ul>   
+                <ul>   
                 <?php foreach ( $materiales as $key => $material ): ?>
                     <li class="span2">
                         <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);"><?php echo $material->nombre; ?></a>
@@ -62,11 +65,16 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
                     </li>
                 <?php endforeach; ?>
                 </ul>
-
+<?php endif; ?>
+</div>
+<div class="span4">
+   <font size="0.8">  Consulte la  información de los materiales y sus caracteristicas técnicas.<a href="#">Ver catálogo.</a></font>
+</div>
                
                 <div class="clearfix">&nbsp;</div>    
-            <?php endif; ?>
-<div class="span10" id="tipos" style="display:none">
+            
+            
+<div class="span12" id="tipos" style="display:none">
         
             <?php if( !empty($tipos) ): ?>
            
@@ -91,8 +99,12 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
 
 
 <div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
-    <div class="span2">Paso 2<br>Tipo de pieza y tamaño que desea utilizar
-    </div>
+    
+<div class="span2 pasos" ><strong style="color:#134263;">Paso 2</strong><br>
+        <p align="justify" style="font-size:10px">Seleccione el tipo de pieza y el tamaño que se adapte a su idea.</p>
+
+        </div>
+
         <div class="well span10">
     <?php if( !empty($piezas) ): ?>
         <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
@@ -103,9 +115,11 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
         <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre'),array('prompt'=>'Selecciona tamaño'));?>
     </div>
     <!-- tamaños -->
-   
-<input type="text" id="cajatexto">
+<!--METER PRECIO UITARIO-->
+Precio por m2 de esta pieza...
 
+
+<!--fin precio unitario-->
 </div>
 
 
@@ -113,7 +127,10 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
 </div><!-- FIN PASO 2-->
 
 <div class="span12" id="terminaciones" style="display:none"><!--PASO 3-->
-<div class="span2">Paso 3</div>
+<div class="span2 pasos" ><strong style="color:#134263;">Paso 3</strong><br>
+        <p align="justify" style="font-size:10px">Seleccione el tipo de acabado de la pieza, así como alguna característica especial.</p>
+
+        </div>
 <div class="well span10">
             <?php if( !empty($terminaciones) ): ?>
 
@@ -135,7 +152,7 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
     </div>
 <div class="span4" id="tamañobiselados" style="display:none">
     <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
-        <?php $this->debug($biselados); ?>
+        
         </div>
     <!-- /biselados -->
 
@@ -143,7 +160,10 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
     </div><!--FIN PASO 3-->
 
 <div class="span12" id="cantidad"  style="display:none" ><!--PASO 4-->
-<div class="span2">Paso 4</div>
+<div class="span2 pasos" ><strong style="color:#134263;">Paso 4</strong><br>
+        <p style="font-size:10px">Seleccione la cantidad de material que necesita y el lugar donde le gustaria recibirla (transporte opcional).</p>
+
+        </div>
 <div class="well span10">
   
 <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
@@ -155,9 +175,15 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
        <?php echo $form->labelEx($valorpieza,'cantidad'); ?> <span id="medida"></span>
         <?php echo $form->textField($valorpieza,'cantidad'); ?>
         <?php echo $form->error($valorpieza,'cantidad'); ?>
+
+
+        Destino:
+
+                 <?php //echo CHtml::activeDropDownList($valorpieza, 'id_provincia', CHtml::listData($provincias,'id', 'nombre'),array('prompt'=>'Selecciona destino'));?>
     </div>
 
      <div class="row">
+
         <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
         <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
         <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
@@ -178,7 +204,7 @@ Para crar un nuevo presupuesto haga click en "Nuevo" para introducir un material
     </div>
 
 <?php $this->endWidget(); ?>
-    </div><!--FIN PASO 5-->
+    </div><!--FIN PASO 4-->
 
 
 </div><!--FIN DIV CENTRAL-->
@@ -271,12 +297,12 @@ $(document).ready(function($){
     $("#Valorpieza_cantidad").val(" ");
     $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
-
+    $("#Valorpieza_id_terminacion").val("");
 
     $("#inicio").click(function(){
-        
+        $("#inicio").hide();
         $("#material").show('slow');
-        $("#inicio").hide('slow');
+        
         //$(document).scrollTop( $("#piezas").offset().top );  
        //$("#Valorpieza_id_pieza").value("1");        
     });
@@ -284,7 +310,10 @@ $(document).ready(function($){
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $("#tipo_piezas").show('slow');
-        //$(document).scrollTop( $("#piezas").offset().top );  
+        //$(document).scrollTop( $("#tipo_piezas")().offset().top);
+        $('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -100 }, 'slow');
+       
+       // $('#tipo_piezas').scrollView();
        //$("#Valorpieza_id_pieza").value("1");        
     });
     $("#Valorpieza_id_pieza").change(function(){
@@ -301,6 +330,7 @@ $(document).ready(function($){
     });
 
     $("#tamanos").change(function(){
+        
         $("#terminaciones").show('slow');
 
     });
