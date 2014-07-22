@@ -22,11 +22,10 @@
                 url: '$url_action', type: 'post', 
                 data: { id_tipo: idtipo, id_tamano: idtamano },
                 success: function(response){
-                    alert('correcto');
-                    $('#logger').html(response);
+                    $('#preciounitario').html(response);
                 },
                 error: function(e){
-                    $('#logger').html(e.responseText);
+                    $('#preciounitario').html(e.responseText);
                 }
             });
     $('#terminaciones').show('slow');
@@ -51,8 +50,6 @@ $imageArray = array(
         'enableAjaxValidation'=>false,
         )); ?>
 
-
-        <div class="alert alert-info" id="logger"></div>
         <div class="row">
 
             <!-- div central -->
@@ -136,8 +133,7 @@ $imageArray = array(
     </div>
     <!-- tamaños -->
     <!--METER PRECIO UITARIO-->
-    Precio por m2 de esta pieza...
-
+    <div id="preciounitario" class="span6"></div>
 
     <!--fin precio unitario-->
 </div>

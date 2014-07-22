@@ -1,1 +1,5 @@
-<div class="alert alert-success">Mierda pa tu boca <?php echo $precioajax; ?></div>
+<div class="label label-warning">Precio unitario: <strong>
+	<?php 	$precioajax = round($precioajax,2);
+			echo preg_replace('/\./', ',', $precioajax);
+	?>
+€</strong></div>
