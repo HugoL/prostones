@@ -53,7 +53,7 @@ class Tipo extends CActiveRecord
 
 			'material' => array(self::BELONGS_TO, 'Material', 'id_material'),
 			'tono' => array(self::BELONGS_TO, 'Tono', 'id_tono'),
-			'provincia' => array(self::BELONGS_TO, 'Provincia', 'procendencia'),
+			'provincia' => array(self::BELONGS_TO, 'Provincia', 'procedencia'),
 			'valorpieza' => array(self::HAS_MANY, 'Valorpieza', 'id_tipo'),
 
 		);

@@ -47,7 +47,7 @@ $imageArray = array(
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'valorpieza-form',
         'action'=>Yii::app()->createUrl('presupuesto/index'),
-        'enableAjaxValidation'=>false,
+        'enableAjaxValidation'=>true,
         )); ?>
 
         <div class="row">
@@ -93,16 +93,17 @@ $imageArray = array(
          <div class="clearfix">&nbsp;</div>    
 
 
-         <div class="span12" id="tipos" style="display:none">
+         <div class="span12" id="tipos">
 
             <?php if( !empty($tipos) ): ?>
-
             <?php foreach ( $tipos as $key => $tipo ): ?>    
-            <li class="span2">
-                <div class="tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
-                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center>
-                </div>            
-            </li>
+            
+                <div class="span2 tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
+                    <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>" style="cursor: hand;" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center></a>
+                </div>   
+
+
+                        
         <?php endforeach; ?>
         <div class="clearfix">&nbsp;</div>
     <?php endif; ?>
@@ -124,19 +125,25 @@ $imageArray = array(
 
     <div class="well span10">
         <?php if( !empty($piezas) ): ?>
-        <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
-        array('class'=>'piezas','prompt'=>'Selecciona tipo de pieza'));?>
-    <?php endif; ?>
+            <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
+            array('class'=>'piezas','prompt'=>'Selecciona tipo de pieza'));?>
+        <?php endif; ?>
 
-    <div class="span4" id="tamanos" style="display:none">
-        <?php echo CHtml::activeDropDownList($valorpieza, 'id_tamano', CHtml::listData($tamanos,'id', 'nombre'),array('prompt'=>'Selecciona tamaño'));?>
+
+        <div class="span4" id="tamanos" style="display:none">
+            <select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
+                <option value="">Selecciona tamaño</option>
+                <?php foreach ($tamanos as $key => $tamano) : ?>
+                    <option class="optiontamano <?php echo "tamano".$tamano->id_pieza; ?>" value="<?php echo $tamano->id ?>" style="display:none"><?php echo $tamano->nombre; ?></option>
+                <?php endforeach; ?>                
+            </select>            
+        </div>
+        <!-- tamaños -->
+        <!--METER PRECIO UITARIO-->
+        <div id="preciounitario" class="span6"></div>
+
+        <!--fin precio unitario-->
     </div>
-    <!-- tamaños -->
-    <!--METER PRECIO UITARIO-->
-    <div id="preciounitario" class="span6"></div>
-
-    <!--fin precio unitario-->
-</div>
 
 
 
@@ -195,7 +202,7 @@ $imageArray = array(
 
         Destino:
 
-        <?php //echo CHtml::activeDropDownList($valorpieza, 'id_provincia', CHtml::listData($provincias,'id', 'nombre'),array('prompt'=>'Selecciona destino'));?>
+       <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData($provincias,'id', 'nombre'),array('prompt'=>'Selecciona destino'));?>
     </div>
 
     <div class="row">
@@ -334,7 +341,8 @@ $(document).ready(function($){
         //alert("hola: "+$(this).attr("id"));
        //$("#Valorpieza_id_pieza").val($(this).attr("id"));
        $("#tamanos").show('slow');
-       
+       $(".optiontamano").attr('style','display:none');
+       $(".tamano"+$("#Valorpieza_id_pieza").val()).attr('style','display:block');
        //$(document).scrollTop( $("#terminaciones").offset().top );
        if( $("#Valorpieza_id_pieza").val() == 1 ){
         $("#medida").html("m2.");
@@ -359,7 +367,9 @@ $(document).ready(function($){
 </script>
 <script type="text/javascript">
 function vermaterial( idmaterial ){
-    $(".tipo"+idmaterial).toggle();
-    $("#tipos").show('slow');
+$(".tipos").attr("style","display:none;");
+
+    $(".tipo"+idmaterial).attr("style","display:block;");
+   
 }
 </script>
