@@ -21,9 +21,9 @@
             $.ajax({
                 url: '$url_action', type: 'post', 
                 data: { id_tipo: idtipo, id_tamano: idtamano },
-                success: function(e){
+                success: function(response){
                     alert('correcto');
-                    $('#logger').html(data.body);
+                    $('#logger').html(response);
                 },
                 error: function(e){
                     $('#logger').html(e.responseText);
