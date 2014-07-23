@@ -403,7 +403,42 @@ class PresupuestoController extends Controller
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 	
+	public function creaPdf2( $presupuestoPdf ){
+		# PDF
+		$html2pd = Yii::app()->ePdf->HTML2PDF();
+
+		# You can easily override default constructor's params
+		$html2pd = Yii::app()->ePdf->mpdf('', 'A4');
+		$title = 'Proston.es';
+
+		# Load a stylesheet
+		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
+		$html2pd->WriteHTML($stylesheet, 1);
+
+		# Renders image
+		$html2pd->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
+
+		# render (full page)
+		$html2pd->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));			
+
+		# Outputs ready PDF
+		$html2pd->Output(); //DESCOMENTAR PARA 
+
+		enviarEmail2( $html2pdf );
+	}
 	
+	protected function enviarEmail2( $html2pdf ){
+		# Example from HTML2PDF wiki: Send PDF by email
+        $content_PDF = $html2pdf->Output('', EYiiPdf::OUTPUT_TO_STRING);
+        require_once(dirname(__FILE__).'/pjmail/pjmail.class.php');
+        $mail = new PJmail();
+        $mail->setAllFrom('webmaster@my_site.net', "My personal site");
+        $mail->addrecipient('mail_user@my_site.net');
+        $mail->addsubject("Example sending PDF");
+        $mail->text = "This is an example of sending a PDF file";
+        $mail->addbinattachement("my_document.pdf", $content_PDF);
+        $res = $mail->sendmail();
+	}
 
 	/**
 	 * Performs the AJAX validation.
