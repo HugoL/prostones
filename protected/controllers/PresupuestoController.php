@@ -199,6 +199,9 @@ class PresupuestoController extends Controller
         	//precio de los metros correspondientes
 			$precio = $tamanoreal * $preciounitario->precio;
 
+			//guardo las variables desglosadas
+			$preciopieza =$precio;
+			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
 			//sumo el precio de la terminación
 			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
 
@@ -209,10 +212,15 @@ class PresupuestoController extends Controller
 
 			$valorPieza->peso = $peso;	
 
-			$pesotransporte = $peso + (20*$peso/100); 			
+			$pesotransporte = $peso + (20*$peso/100); 	
+			//DEPURAR: Si el peso es mayor que el pesomaximo del pale mas grande, hay que dividir para ver cuantos pales necesitamos.		
 
 			$criteria2 = new CdbCriteria;
-			$criteria2->addCondition( 'id_zona_destino = '.$valorPieza->provincia->zona->id. ' AND id_zona_procedencia = '.$valorPieza->tipo->provincia->zona->id.' AND pesomaximo <= '.$pesotransporte );
+			$criteria2->addCondition( 'id_zona_destino = '.$valorPieza->provincia->zona->id. ' AND id_zona_procedencia = '.$valorPieza->tipo->provincia->zona->id.' AND pesomaximo >= '.$pesotransporte );
+
+			
+
+
 			$preciotransporte = Preciotransporte::model()->find( $criteria2 );		
 			
 			$valorPieza->precio = $precio + $preciotransporte->precio;
@@ -220,7 +228,7 @@ class PresupuestoController extends Controller
 			$valorPieza->update();
 
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados,'provincias'=>$provincias
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados,'provincias'=>$provincias,'precioterminacion'=>$precioterminacion,'preciopieza'=>$preciopieza,'preciotransporte'=>$preciotransporte
 			));
 		}else{
 			$this->render('index',array(

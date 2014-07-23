@@ -88,7 +88,7 @@ $imageArray = array(
                 <div class="span4">
                  <font size="0.8">  Consulte la  información de los materiales y sus caracteristicas técnicas.<a href="#">Ver catálogo.</a></font>
              </div>
-         </div>
+         
 
          <div class="clearfix">&nbsp;</div>    
 
@@ -109,7 +109,7 @@ $imageArray = array(
     <?php endif; ?>
 </div>
 
-
+</div>
 </div>
 <!--FIN PASO 1-->
 
@@ -259,6 +259,7 @@ $imageArray = array(
     <div class="well">
         <div class="clearfix"></div>    
         <div class="span12">
+        
             <?php echo $pieza->tamanoreal; ?> 
 
             <?php if( $pieza->id_pieza == 1 ){
@@ -266,22 +267,34 @@ $imageArray = array(
             }else{
                 echo "m.";
             }  ?>  de <?php echo $pieza->tipo->nombre; ?>. <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>.<br>
-            Nº de piezas: <?php echo $pieza->numeropiezas; ?>. 
-            Terminación: <?php echo $pieza->terminacion->nombre; ?>.
+            Nº de piezas: <?php echo $pieza->numeropiezas; ?>. <br>
+            Precio= <?php echo $preciopieza; ?> 
+            <br>
+            Terminación: <?php echo $pieza->terminacion->nombre; ?>.<?php echo $pieza->terminacion->precio; ?> €/ 
+            <?php if( $pieza->id_pieza == 1 ){
+                echo "m<sup>2</sup>";
+            }else{
+                echo "m.";
+            }  ?> , Precio:<?php echo $precioterminacion; ?> 
         </div>
-        <div class="span4 offset8">
-            Precio: <?php echo $pieza->precio; ?>€.
+        <div class="span6 offset4">
+            Subtotal pieza : <?php echo $precioterminacion + $preciopieza; ?> 
         </div>
 
         <div class="span12">
            TRANSPORTE (opcional)<br>
-           Peso: <?php echo $pieza->peso; ?>Kg. De <?php echo $pieza->tipo->procedencia; ?>  a <?php echo $pieza->destino; ?>.
+          Peso: <?php echo $pieza->peso; ?>Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>.Subtotal transporte:
+          <?php echo $preciotransporte->precio; ?>
+           <?php $this->debug($tipo); ?>
 
        </div>
-       <div class="span4 offset8">
-           Precio: _ €.
+       <div class="span6 offset4">
+           subTotal: <?php echo $pieza->precio; ?>€.<br>
+           IVA:21%: <?php echo (21*$pieza->precio/100); ?><br>
+           Total: <?php echo $pieza->precio+(21*$pieza->precio/100); ?>
+
        </div>
-       Total: 
+       <div class="clearfix"></div>
    </div>
 
 <?php endforeach; ?>
@@ -316,7 +329,7 @@ $imageArray = array(
 <script>
 $(document).ready(function($){
     $("#Valorpieza_cantidad").val(" ");
-    $("#Valorpieza_id_pieza").val("");
+   $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
     $("#Valorpieza_id_terminacion").val("");
 
@@ -332,7 +345,7 @@ $(document).ready(function($){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $("#tipo_piezas").show('slow');
         //$(document).scrollTop( $("#tipo_piezas")().offset().top);
-        $('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -100 }, 'slow');
+        $('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
 
        // $('#tipo_piezas').scrollView();
        //$("#Valorpieza_id_pieza").value("1");        
@@ -340,6 +353,7 @@ $(document).ready(function($){
     $("#Valorpieza_id_pieza").change(function(){
         //alert("hola: "+$(this).attr("id"));
        //$("#Valorpieza_id_pieza").val($(this).attr("id"));
+       $("#Valorpieza_id_tamano").val("");
        $("#tamanos").show('slow');
        $(".optiontamano").attr('style','display:none');
        $(".tamano"+$("#Valorpieza_id_pieza").val()).attr('style','display:block');
@@ -367,6 +381,7 @@ $(document).ready(function($){
 </script>
 <script type="text/javascript">
 function vermaterial( idmaterial ){
+    $(".tipos").show('slow');
 $(".tipos").attr("style","display:none;");
 
     $(".tipo"+idmaterial).attr("style","display:block;");
