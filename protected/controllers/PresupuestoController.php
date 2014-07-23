@@ -199,16 +199,23 @@ class PresupuestoController extends Controller
         	//precio de los metros correspondientes
 			$precio = $tamanoreal * $preciounitario->precio;
 
+			//sumo el precio de la terminación
+			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
+
 			$valorPieza->precio = $precio;			
 
 			//CALCULAR EL PESO
 			$peso = $this->calcularPesoPiezas( $valorPieza, $numeropiezas);
 
-			$valorPieza->peso = $peso;
+			$valorPieza->peso = $peso;	
 
+			$pesotransporte = $peso + (20*$peso/100); 			
 
-
+			$criteria2 = new CdbCriteria;
+			$criteria2->addCondition( 'id_zona_destino = '.$valorPieza->provincia->zona->id. ' AND id_zona_procedencia = '.$valorPieza->tipo->provincia->zona->id.' AND pesomaximo <= '.$pesotransporte );
+			$preciotransporte = Preciotransporte::model()->find( $criteria2 );		
 			
+			$valorPieza->precio = $precio + $preciotransporte->precio;
 
 			$valorPieza->update();
 
