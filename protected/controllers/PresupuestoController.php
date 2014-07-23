@@ -410,6 +410,21 @@ class PresupuestoController extends Controller
 		}
 	}
 
+	protected function enviarEmail( $email, $path ){
+		$message = 'Le enviamos el presupuesto que ha solicitado en Proston.es';
+		Yii::app()->mailer->Host = 'mail.proston.es';
+		Yii::app()->mailer->IsSMTP();
+		Yii::app()->mailer->From = 'info@proston.es';
+		Yii::app()->mailer->FromName = 'Proston.es';
+		Yii::app()->mailer->AddReplyTo('info@proston.es');
+		Yii::app()->mailer->AddAddress( $email );
+		Yii::app()->mailer->Subject = 'Presupuesto Proston.es';
+		Yii::app()->mailer->Body = $message;
+		//adjunto el pdf
+		AddAttachment($path, $name = "Presupuesto", $encoding = "base64",$type = "application/octet-stream");
+		Yii::app()->mailer->Send();
+	}
+
 	/* Used to debug variables*/
 	protected function Debug($var){
 		$bt = debug_backtrace();

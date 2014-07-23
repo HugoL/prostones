@@ -122,6 +122,12 @@ return array(
 		'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
+      
+        'mailer' => array(
+            'class' => 'application.extensions.mailer.EMailer',
+            'pathViews' => 'application.views.email',
+            'pathLayouts' => 'application.views.email.layouts'
+        ),
 
 		// uncomment the following to enable URLs in path-format
 		
@@ -184,7 +190,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'easenjo',
+			'password' => '',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),
