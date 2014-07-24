@@ -284,7 +284,7 @@ $imageArray = array(
         <div class="span12">
            TRANSPORTE (opcional)<br>
           Peso: <?php echo $pieza->peso; ?>Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>.Subtotal transporte:
-          <?php echo $preciotransporte->precio; ?>
+          <?php echo $preciotransporte; ?>
            <?php $this->debug($tipo); ?>
 
        </div>
