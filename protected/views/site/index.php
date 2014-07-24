@@ -17,7 +17,7 @@ $this->pageTitle=Yii::app()->name;
 <div class="clearfix">&nbsp</div>
 <div class="span11 offset1" style="margin-bottom:20px" >
      <div class="span9">
-<strong><p  style="font-size:20px;">Tu tienda en internet para comprar mármoles, granitos y otras rocas ornamentales.</p></strong>
+<strong><p  style="font-size:20px;">Tu portal en internet para adquirir mármoles, granitos y otras rocas ornamentales.</p></strong>
 </div>
 <!--<div class="span3" style="margin-left:10px;">
  <?php/* $this->widget('bootstrap.widgets.TbButton', array(
