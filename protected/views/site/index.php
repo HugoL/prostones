@@ -19,14 +19,7 @@ $this->pageTitle=Yii::app()->name;
      <div class="span9">
 <strong><p  style="font-size:20px;">Tu tienda en internet para comprar mármoles, granitos y otras rocas ornamentales.</p></strong>
 </div>
-<!--<div class="span3" style="margin-left:10px;">
- <?php/* $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'Comprar ahora',
-        'type'=>'danger', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'small', // null, 'large', 'small' or 'mini'
-        'url'=>array('presupuesto/'),
-     )); */?>
-     </div>-->
+
 </div>
 <div class="span12" >  
 

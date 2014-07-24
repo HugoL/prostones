@@ -212,19 +212,46 @@ class PresupuestoController extends Controller
 
 			$valorPieza->peso = $peso;	
 
+			//se añade el 20%
 			$pesotransporte = $peso + (20*$peso/100); 	
-			//DEPURAR: Si el peso es mayor que el pesomaximo del pale mas grande, hay que dividir para ver cuantos pales necesitamos.		
 
-			$criteria2 = new CdbCriteria;
-			$criteria2->addCondition( 'id_zona_destino = '.$valorPieza->provincia->zona->id. ' AND id_zona_procedencia = '.$valorPieza->tipo->provincia->zona->id.' AND pesomaximo >= '.$pesotransporte );
+			//Se suma el precio del transporte (por palés)	
+			$criteria3 = new CdbCriteria;
+			$criteria3->select='max(pesomaximo) AS pesomaximo';
+			$pale = Pale::model()->find( $criteria3 );		
 
-			
+			$pesomaximo = $pale['pesomaximo'];
 
+			$this->debug($pesomaximo);
+			$this->debug($pesotransporte);
+			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
+			if( $pesotransporte > $pesomaximo ){
+				$entero = floor( $pesotransporte / $pesomaximo );
+				$decimal = $pesotransporte % $pesomaximo;
+				
+				$kilosdecimal = $decimal * $pesomaximo;
+				$pesotransporte = $kilosdecimal;
 
-			$preciotransporte = Preciotransporte::model()->find( $criteria2 );		
-			
-			$valorPieza->precio = $precio + $preciotransporte->precio;
+				//CALCULO DEL ENTERO
+				$precioindividual = 0;
+				for ($i = 1; $i <= $entero; $i++) {		    
+					$precioindividual = $precioindividual + $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesomaximo );
+				}
 
+				$preciotransporte = $precioindividual;
+
+				//CALCULO DEL DECIMAL
+				//$precioultimo = damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
+			}
+
+			$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
+
+			$this->debug( $preciotransporte );
+
+			$this->debug( $valorPieza->tipo->provincia->zona->id );
+			$this->debug( $valorPieza->provincia->zona->id );
+
+			$valorPieza->precio = $precio + $preciotransporte;			
 			$valorPieza->update();
 
 			$this->render('index',array(
@@ -270,7 +297,7 @@ class PresupuestoController extends Controller
             $presupuesto->update();
 
             //Generar el PDF
-            $this->creaPdf($presupuesto);	
+            $this->creaPdf( $presupuesto );	
 		}	
 	}
 
@@ -394,12 +421,11 @@ class PresupuestoController extends Controller
 
 		# render (full page)
 		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));			
+		
+		$mPDF1->Output();
 
-		//ALMACENAR EL CÓDIGO EN LA BD PARA RELACIONARLO CON EL USUARIO QUE COMPRA LA PROMOCIÓN
-		//$model->referencia = $clave;
-		//$model->save();
 		# Outputs ready PDF
-		$mPDF1->Output(); //DESCOMENTAR PARA GENERAR EL PDF				
+		$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF				
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 	
@@ -426,32 +452,6 @@ class PresupuestoController extends Controller
 
 		enviarEmail2( $html2pdf );
 	}
-	
-	protected function enviarEmail2( $html2pdf ){
-		# Example from HTML2PDF wiki: Send PDF by email
-        $content_PDF = $html2pdf->Output('', EYiiPdf::OUTPUT_TO_STRING);
-        require_once(dirname(__FILE__).'/pjmail/pjmail.class.php');
-        $mail = new PJmail();
-        $mail->setAllFrom('webmaster@my_site.net', "My personal site");
-        $mail->addrecipient('mail_user@my_site.net');
-        $mail->addsubject("Example sending PDF");
-        $mail->text = "This is an example of sending a PDF file";
-        $mail->addbinattachement("my_document.pdf", $content_PDF);
-        $res = $mail->sendmail();
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Presupuesto $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='presupuesto-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
 
 	protected function enviarEmail( $email, $path ){
 		$message = 'Le enviamos el presupuesto que ha solicitado en Proston.es';
@@ -467,6 +467,46 @@ class PresupuestoController extends Controller
 		AddAttachment($path, $name = "Presupuesto", $encoding = "base64",$type = "application/octet-stream");
 		Yii::app()->mailer->Send();
 	}
+	
+	protected function enviarEmail2( $html2pdf ){
+		# Example from HTML2PDF wiki: Send PDF by email
+        $content_PDF = $html2pdf->Output('', EYiiPdf::OUTPUT_TO_STRING);
+        require_once(dirname(__FILE__).'/pjmail/pjmail.class.php');
+        $mail = new PJmail();
+        $mail->setAllFrom('webmaster@my_site.net', "My personal site");
+        $mail->addrecipient('mail_user@my_site.net');
+        $mail->addsubject("Example sending PDF");
+        $mail->text = "This is an example of sending a PDF file";
+        $mail->addbinattachement("my_document.pdf", $content_PDF);
+        $res = $mail->sendmail();
+	}
+
+	protected function damePrecioPale( $procedencia, $destino, $peso ){
+		$criteria2 = new CdbCriteria;
+		$criteria2->addCondition( 'id_zona_destino = '.$destino. ' AND id_zona_procedencia = '.$procedencia.' AND pesomaximo >= '.$peso );
+
+		$preciotransporte = Preciotransporte::model()->find( $criteria2 );
+
+		if( empty($preciotransporte->precio) ){
+			$preciotransporte->precio = 1;
+		}
+
+		return $preciotransporte->precio;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param Presupuesto $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='presupuesto-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+
 
 	/* Used to debug variables*/
 	protected function Debug($var){
