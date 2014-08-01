@@ -93,7 +93,7 @@ zoomWindowFadeOut: 750
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 
-               <strong>Tarifas</strong><br>
+               <strong>Tarifas </strong><font style=" font-size: 10px;" >(Los materiales son en bruto y sus precios no incluyen el IVA)</font><br>
                <table style=" border-collapse:separate;
     border-spacing:3px 0px;">
                <tr>

@@ -22,7 +22,11 @@ Yii::app()->clientscript
 		<!DOCTYPE html>
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
 		<head>
+
+
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			 <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
+
 			<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 			<meta name="language" content="en" />
 			<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -69,9 +73,9 @@ Yii::app()->clientscript
 			
 			effect: "flow", //this is the slide effect (rewind or flow)
 
-			width: "726x",  // this is the width for the content-slider
+			width: "800x",  // this is the width for the content-slider
 
-			height: "170px",  // this is the height for the content-slider
+			height: "200px",  // this is the height for the content-slider
 
 			duration: 400,  // time in milliseconds to transition one slide
 			
@@ -141,10 +145,10 @@ $(document).ready(function() {
 						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
 						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
-							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/company/aboutUs')),
-							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/company/careers')),
-							array('label'=>'Edificación - Urbanización', 'url'=>array('/company/contactUs')),
-							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/company/storeLocator')),
+							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/site/page','view'=>'pisos_unifamiliares')),
+							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/site/page','view'=>'interiorismo_cocinas')),
+							array('label'=>'Edificación - Urbanización', 'url'=>array('/site/page','view'=>'edificacion_urbanizacion')),
+							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/site/page','view'=>'paisajismo_mamposteria')),
 							),),
 						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -153,7 +157,7 @@ $(document).ready(function() {
 						
 					</div><!--/.nav-collapse -->
 
-					<div style="margin-left:1000px;"> <img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
+					<div class="offset9"> <img  class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
 
 
 				</div>

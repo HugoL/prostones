@@ -11,6 +11,16 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
     ?>
+    <script type="text/javascript"> 
+$(document).ready(function(){
+    $(".ejemplo_img").mouseenter(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'31px' },{ queue:false, duration:300 });
+    });
+    $(".ejemplo_img").mouseleave(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'48px' },{ queue:false, duration:300 });
+    });
+});
+</script>
     <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
     <?php Yii::app()->getClientScript()->registerScript("ejemplo_ajax",
         "
@@ -63,7 +73,9 @@ $imageArray = array(
                 <div id="inicio" class="span4 offset4"><p align="center" >
                     <a href="#">Añadir pieza al presupuesto</a>
                 </div>
-                <div class="span12 row" id="material" style="display:none"><!-- PASO 1 MATERIAL-->
+                
+                <div class="span12 row" id="material" style="
+                display:none"><!-- PASO 1 MATERIAL-->
                     <div class="span2 pasos" ><strong style="color:#134263;">Paso 1</strong><br>
                         <p align="justify" style="font-size:10px">Seleccione el tipo de material que desea entre nuestro catálogo de materiales.</p>
 
@@ -71,16 +83,19 @@ $imageArray = array(
 
                     <div class="well span10">
 
-                        <div class="span8">
+                        <div class="span8 bordepresu">
                             <?php if( !empty($materiales) ):?> 
 
                             <ul>   
                                 <?php foreach ( $materiales as $key => $material ): ?>
-                                <li class="span2">
-                                    <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);"><?php echo $material->nombre; ?></a>
+                                 <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);">   
+                                <li class="span2 offset1 color<?php echo $material->id; ?>">
+                                    <?php echo $material->nombre; ?>
+                                </li>
+                                    </a>
                                     <?php //echo CHtml::link($material->nombre,array('presupuesto/index/idMaterial/'.$material->id),array('class'=>'thumbnail mate','rel'=>'tooltip','data-title'=>'Tooltip')); ?>
 
-                                </li>
+                                
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
@@ -96,20 +111,21 @@ $imageArray = array(
          <div class="span12" id="tipos">
 
             <?php if( !empty($tipos) ): ?>
-            <?php foreach ( $tipos as $key => $tipo ): ?>    
-            
-                <div class="span2 tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
-                    <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>" style="cursor: hand;" alt="<?php echo $tipo->nombre; ?>"><center><?php echo $tipo->nombre; ?></center></a>
-                </div>   
+                 <div class="ejemplo span12">
+                 <div class="clearfix"></div>
+                        <?php foreach ( $tipos as $key => $tipo ): ?>  
+               
+
+            <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>" width="100" height="50" /></a><div class="ejemplo_img_cont"><?php echo $tipo->nombre; ?></div></div>
 
 
-                        
-        <?php endforeach; ?>
-        <div class="clearfix">&nbsp;</div>
-    <?php endif; ?>
-</div>
+            <?php endforeach; ?>
+            </div>
+                    <div class="clearfix">&nbsp;</div>
+                <?php endif; ?>
+        </div>
 
-</div>
+    </div>
 </div>
 <!--FIN PASO 1-->
 
@@ -202,7 +218,11 @@ $imageArray = array(
 
         Destino:
 
-       <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData($provincias,'id', 'nombre'),array('prompt'=>'Selecciona destino'));?>
+      
+
+        <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
+
+
     </div>
 
     <div class="row">
@@ -230,6 +250,8 @@ $imageArray = array(
 </div><!--FIN PASO 4-->
 
 
+
+
 </div><!--FIN DIV CENTRAL-->
 
 <div class="span3"><!--LISTA DE PIEZAS EN EL PRESUPUESTO-->
@@ -253,45 +275,59 @@ $imageArray = array(
     $criteria->compare('id_presupuesto',$presupuesto->id);  
     $criteria->select = '*';
     $piezas = Valorpieza::model()->findAll($criteria);  ?>
-    <span>Pieza:</span>
+    
     <?php foreach ($piezas as $key => $pieza): ?>
 
     <div class="well">
         <div class="clearfix"></div>    
-        <div class="span12">
+        <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
         
+           1 - <font style="text-decoration: underline">Partida:</font> <br>
             <?php echo $pieza->tamanoreal; ?> 
 
             <?php if( $pieza->id_pieza == 1 ){
                 echo "m<sup>2</sup>";
             }else{
                 echo "m.";
-            }  ?>  de <?php echo $pieza->tipo->nombre; ?>. <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>.<br>
-            Nº de piezas: <?php echo $pieza->numeropiezas; ?>. <br>
-            Precio= <?php echo $preciopieza; ?> 
-            <br>
-            Terminación: <?php echo $pieza->terminacion->nombre; ?>.<?php echo $pieza->terminacion->precio; ?> €/ 
+            }  ?>  de <?php echo $pieza->tipo->nombre; ?>.<br> 
+            <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. <?php echo $pieza->numeropiezas; ?> piezas. <br>
+            <div class="span6 offset5" align="right">
+            Precio= <?php echo $preciopieza; ?> €.
+        </div>
+           
+            <br><br>
+           1.1 - <font style="text-decoration: underline">Terminación:</font><br>
+            <?php echo $pieza->terminacion->nombre; ?>.<?php echo $pieza->terminacion->precio; ?> €/ 
             <?php if( $pieza->id_pieza == 1 ){
                 echo "m<sup>2</sup>";
             }else{
                 echo "m.";
-            }  ?> , Precio:<?php echo $precioterminacion; ?> 
-        </div>
-        <div class="span6 offset4">
-            Subtotal pieza : <?php echo $precioterminacion + $preciopieza; ?> 
-        </div>
+            }  ?> .<br>
 
-        <div class="span12">
-           TRANSPORTE (opcional)<br>
-          Peso: <?php echo $pieza->peso; ?>Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>.Subtotal transporte:
-          <?php echo $preciotransporte; ?>
-           <?php $this->debug($tipo); ?>
+        <div class="span5 offset6" align="right">
+            Precio:<?php echo $precioterminacion; ?> €.
+        </div>
+  <div class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263; ">
+            Precio material : <strong><?php echo $precioterminacion + $preciopieza; ?>  €.</strong>
+        </div>
+        </div>
+      
 
+        <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
+          2 - Transporte (opcional)<br>
+          Peso: <?php echo $pieza->peso; ?> Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?><br><?php echo $entero + 1; ?> pales.
+
+
+        <div align="right" class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263;">
+           Precio transporte:
+          <strong><?php echo $preciotransporte; ?> €. </strong>
+        </div>
+          
        </div>
-       <div class="span6 offset4">
-           subTotal: <?php echo $pieza->precio; ?>€.<br>
-           IVA:21%: <?php echo (21*$pieza->precio/100); ?><br>
-           Total: <?php echo $pieza->precio+(21*$pieza->precio/100); ?>
+       <div class="span12" align="right" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
+           Material + transporte: <?php echo $pieza->precio; ?>€.<br>
+           IVA:21%: <?php echo (21*$pieza->precio/100); ?> €.<br>
+          <font size="3"><strong> Total: <?php echo $pieza->precio+(21*$pieza->precio/100); ?> €.</strong></font>
 
        </div>
        <div class="clearfix"></div>
@@ -313,8 +349,8 @@ $imageArray = array(
         <?php echo $form2->hiddenField($presupuesto,'id',array('value'=>$presupuesto->id)); ?>
         <?php echo $form2->labelEx($presupuesto,'email');
         echo $form2->textField($presupuesto,'email'); ?>
-        <?php echo $form2->labelEx($presupuesto,'id_provincia');
-        echo $form2->textField($presupuesto,'id_provincia'); ?>
+        <?php/* echo $form2->labelEx($presupuesto,'id_provincia');
+        echo $form2->textField($presupuesto,'id_provincia'); */?>
         <?php echo $form2->labelEx($presupuesto,'nombre');
         echo $form2->textField($presupuesto,'nombre'); ?>
         <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
@@ -328,6 +364,7 @@ $imageArray = array(
 
 <script>
 $(document).ready(function($){
+
     $("#Valorpieza_cantidad").val(" ");
    $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
@@ -340,16 +377,28 @@ $(document).ready(function($){
         //$(document).scrollTop( $("#piezas").offset().top );  
        //$("#Valorpieza_id_pieza").value("1");        
    });
+
+ 
+
+
+
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $("#tipo_piezas").show('slow');
+
+
+        //id="<?php echo $tipo->id; ?>
+        $(".tipos, .id").attr("style","border:1 px solid black;");
+
+
         //$(document).scrollTop( $("#tipo_piezas")().offset().top);
         $('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
 
        // $('#tipo_piezas').scrollView();
        //$("#Valorpieza_id_pieza").value("1");        
    });
+
     $("#Valorpieza_id_pieza").change(function(){
         //alert("hola: "+$(this).attr("id"));
        //$("#Valorpieza_id_pieza").val($(this).attr("id"));
@@ -385,6 +434,8 @@ function vermaterial( idmaterial ){
 $(".tipos").attr("style","display:none;");
 
     $(".tipo"+idmaterial).attr("style","display:block;");
-   
+
 }
+   
+
 </script>

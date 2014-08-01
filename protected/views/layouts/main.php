@@ -5,7 +5,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="es" />
-
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>images/favicon.ico" type="image/x-icon" />
 	<!-- blueprint CSS framework -->
 	<?php echo Yii::app()->bootstrap->register();?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />

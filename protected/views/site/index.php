@@ -16,8 +16,8 @@ $this->pageTitle=Yii::app()->name;
 -->
 <div class="clearfix">&nbsp</div>
 <div class="span11 offset1" style="margin-bottom:20px" >
-     <div class="span9">
-<strong><p  style="font-size:20px;">Tu portal en internet para adquirir mármoles, granitos y otras rocas ornamentales.</p></strong>
+     <div class="span9 " style="margin-left:6%;">
+<strong><p  style="font-size:20px;">El portal en internet para adquirir mármoles, granitos y otras rocas ornamentales.</p></strong>
 </div>
 
 </div>
@@ -31,23 +31,24 @@ $this->pageTitle=Yii::app()->name;
 	</div>  
 
 	<div class="span2 enl" style="margin-left:1.4%;">  
-		<a href="#"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=pisos_unifamiliares"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
 
 		
 	</div>  
 	<div class="span2 enl" style=" margin-left:1.4%;">  
-		<a href="#"><img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=interiorismo_cocinas"><img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
 
 		
 	</div>  
 	<div class="span2 enl" style=" margin-left:1.4%;">  
-		
-		<img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=edificacion_urbanizacion">
+		<img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/></a>
 		
 	</div> 
 	<div class="span2 enl" style=" margin-left:1.4%;">  
+	<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=paisajismo_mamposteria">
 		<img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/paisa.jpg';"/>
-		
+	</a>	
 		
 	</div>
 	<div class="span2 enl" style=" margin-left:4.2%;">
@@ -71,14 +72,15 @@ Slider
 
 
 <div class="span12">
-	<div class="span7" style="">
+	<div class="span7" style="margin-left:1%;">
+
 		<div id="sliderContainer">
 
 			<div id="mySlides">
 
 				<div id="slide1" class="slide">    
 					
-					<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
+					<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Slide 1 jFlow Plus" />
 					
 					<div class="slideContent">
 						<h3>Catalogo de materiales</h3>
@@ -90,7 +92,7 @@ Slider
 				
 				<div id="slide2" class="slide">
 					<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">
-					<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
+					<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
 					</a>
 					<div class="slideContent">
 						<h3>Diseñador virtual <font style="float:right; margin-right:70px;"> Comparador</font></h3>
@@ -101,7 +103,7 @@ Slider
 				
 				<div id="slide3" class="slide">
 					
-					<img  width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
+					<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
 					
 					<div class="slideContent"><h3>Presupuesto online</h3>
 						<p>Valora rapidamente tus proyectos.</p></div>
@@ -110,7 +112,7 @@ Slider
 					
 					<div id="slide4" class="slide">
 						
-						<img width="740" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Slide 3 jFlow Plus" />
+						<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Slide 3 jFlow Plus" />
 						
 						<div class="slideContent">
 							<h3>Transporte a domicilio</h3>
@@ -150,7 +152,7 @@ Fin slider
 *********************************
 -->
 </div>
-<div class="span2 parr2" style=" margin-left:7%;"><img height="240px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/promocion.jpg">
+<div class="span2 parr2" style=" margin-left:6%;"><img height="240px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/promocion.jpg">
 <!--<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/barrabot.png">-->
 
 </div>
@@ -250,7 +252,7 @@ border-radius: 4px;">
 									<span class="dot">•</span>Informaremos a nuestros visitantes sobre las empresas del sector.</p></div>
 								</div>
 							</a>
-							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php//tipo/verCaracteristicas/id">
+							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php//tipo/verCaracteristicas/id/12">
 								<div class="divHome span12">
 									<div class="span2 iconoser"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.png"></div>
 									<div class="span4"><h3><font style="color:#134263">Catálago</font> <br><font style="color:#969696">de materiales</font></h3></div>

@@ -213,8 +213,8 @@ class PresupuestoController extends Controller
 			$valorPieza->peso = $peso;	
 
 			//se añade el 20%
-			$pesotransporte = $peso + (20*$peso/100); 	
-
+			$pesotransporte = $peso + (10*$peso/100); 	
+			
 			//Se suma el precio del transporte (por palés)	
 			$criteria3 = new CdbCriteria;
 			$criteria3->select='max(pesomaximo) AS pesomaximo';
@@ -227,35 +227,42 @@ class PresupuestoController extends Controller
 			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
 			if( $pesotransporte > $pesomaximo ){
 				$entero = floor( $pesotransporte / $pesomaximo );
-				$decimal = $pesotransporte % $pesomaximo;
-				
+				$decimal = $pesotransporte / $pesomaximo - $entero;
+				$this->debug($decimal);
+ 
 				$kilosdecimal = $decimal * $pesomaximo;
-				$pesotransporte = $kilosdecimal;
+				
 
+$this->debug($kilosdecimal);
 				//CALCULO DEL ENTERO
 				$precioindividual = 0;
-				for ($i = 1; $i <= $entero; $i++) {		    
+				for ($i = 1; $i <= $entero; $i++) {	
+
 					$precioindividual = $precioindividual + $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesomaximo );
 				}
 
-				$preciotransporte = $precioindividual;
+			$preciodecimal = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $kilosdecimal );
+ 
+
+				$preciotransporte = $precioindividual + $preciodecimal;
 
 				//CALCULO DEL DECIMAL
 				//$precioultimo = damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
-			}
+			}else{
 
-			$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
+	
+	$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
+}
 
-			$this->debug( $preciotransporte );
+		
 
-			$this->debug( $valorPieza->tipo->provincia->zona->id );
-			$this->debug( $valorPieza->provincia->zona->id );
+			
 
 			$valorPieza->precio = $precio + $preciotransporte;			
 			$valorPieza->update();
 
 			$this->render('index',array(
-			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados,'provincias'=>$provincias,'precioterminacion'=>$precioterminacion,'preciopieza'=>$preciopieza,'preciotransporte'=>$preciotransporte
+			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'presupuesto'=>$presupuesto, 'biselados'=>$biselados,'provincias'=>$provincias,'precioterminacion'=>$precioterminacion,'preciopieza'=>$preciopieza,'preciotransporte'=>$preciotransporte, 'entero'=>$entero
 			));
 		}else{
 			$this->render('index',array(
@@ -487,11 +494,10 @@ class PresupuestoController extends Controller
 
 		$preciotransporte = Preciotransporte::model()->find( $criteria2 );
 
-		if( empty($preciotransporte->precio) ){
-			$preciotransporte->precio = 1;
-		}
+		$this->debug($peso);
 
 		return $preciotransporte->precio;
+		
 	}
 
 	/**
