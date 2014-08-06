@@ -75,7 +75,8 @@ padding:10px;
     background-color: #f5f5f5;
     border-bottom: 1px solid transparent;
     border-right: 2px solid transparent;
-
+    border-left: 2px solid transparent;
+    border-top: 1px solid transparent;
   /*-webkit-border-radius: 4px;
      -moz-border-radius: 4px;
      border-radius: 4px;*/
@@ -84,23 +85,33 @@ padding:10px;
      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
    }
    .divHome h2{
-     font-size: 18px;
+     font-size: 24px;
      line-height:20px; 
    }
    .divHome h3{
-    font-size: 18px;
+    font-size: 26px;
     line-height:20px;
   }
 
   .divHome:hover{
-    border-bottom: 1px solid #fe7902;
-    border-right:2px solid #124162;
+    border-bottom: 1px solid #124162;
+    border-right:2px solid #fe7902;
+    border-top: 1px solid #124162;
+    border-left:2px solid #fe7902;
+  }
+  .parr{
+     padding-right:4px;
+
   }
   .parr p{
    margin-top:10px; 
    font-size:11px; 
-   line-height:14px;
-   color: black !important;
+   line-height:12px;
+   color: #134263 !important;
+   text-align: center;
+   /*background-color: #a3c7e0;*/
+   border:1px solid black;
+  
    /*font-weight:bold;*/
 
  }
@@ -233,6 +244,7 @@ margin-left:35px;
 
 .enl img:hover{
   border: 2px  #fe7902 solid;
+  
 }
 
 .enl img:active{
@@ -295,7 +307,17 @@ height:90px;
 }
 .iconoser img{
   width:60px;
+  margin-left: 10%;
+  padding:10px;
+  /*border:1px solid grey;*/
   
+}
+
+.cuatit{
+
+  background-color: white;
+  padding-right:10px;
+  border:1px solid #525455;
 }
 
 .iconofoot{
@@ -336,6 +358,30 @@ color:white;
 .bordepresu li:hover{
 color:white;
 background-color: #134263;
+}
+
+.ini{
+
+color:black;
+margin-bottom: 10px;
+
+}
+
+.ini li{
+border: 1px solid black;
+text-align: center;
+list-style:none; 
+}
+.ini a{
+color:black;
+}
+.ini a:hover{
+color:white;
+}
+.ini li:hover{
+color:white;
+background-color: #134263;
+list-style:none; 
 }
 
 
@@ -395,3 +441,5 @@ text-align: center;
 vertical-align: middle;
 border:1px solid black;
 } 
+
+

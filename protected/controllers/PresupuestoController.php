@@ -191,6 +191,8 @@ class PresupuestoController extends Controller
         	$criteria->select = '*';
 			$preciounitario = Preciounitario::model()->find( $criteria );
 
+			$valorPieza->preciounitario = $preciounitario->precio;
+
         	//tamaño en metros de todas las piezas
         	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
 
@@ -228,7 +230,7 @@ class PresupuestoController extends Controller
 			if( $pesotransporte > $pesomaximo ){
 				$entero = floor( $pesotransporte / $pesomaximo );
 				$decimal = $pesotransporte / $pesomaximo - $entero;
-				$this->debug($decimal);
+				$valorPieza->pales = $entero + 1;
  
 				$kilosdecimal = $decimal * $pesomaximo;
 				
@@ -256,7 +258,7 @@ $this->debug($kilosdecimal);
 
 		
 
-			
+			$valorPieza->preciotransporte = $preciotransporte;
 
 			$valorPieza->precio = $precio + $preciotransporte;			
 			$valorPieza->update();

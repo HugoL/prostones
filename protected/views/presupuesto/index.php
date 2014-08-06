@@ -65,13 +65,18 @@ $imageArray = array(
             <!-- div central -->
             <div class="span8 panel">
 
-                <div class="span12">
-
-                    Para iniciar la creación de un nuevo presupuesto haga click en <strong>Añadir pieza al presupuesto</strong>. Se le solicitara la informacion en 4 pasos, al terminar, haga click en <strong>Añadir</strong> para introducir la pieza al presupuesto.Esta pieza y las que añadas, aparecera en el lado derecho  de la pantalla. Cuando acabe de añadir piezas, haga click justo debajo en <strong> Generar presupuesto</strong> para crear el archivo pdf del mismo.<br><br>
+                
+                <div id="inicio" class="span12" >
+                   <a href="#"> 
+                   <div class="span2 offset3 ini">
+                   <li align="center">  Empezar</li>
+                    </div></a>
+                    <div class="span9">
+                    Haga click en <strong>Empezar</strong> para crear su presupuesto. Mediante 4 pasos, podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
                     <br>
-                </div>
-                <div id="inicio" class="span4 offset4"><p align="center" >
-                    <a href="#">Añadir pieza al presupuesto</a>
+                    </div>
+
+                     
                 </div>
                 
                 <div class="span12 row" id="material" style="
@@ -337,7 +342,7 @@ $imageArray = array(
 <?php endif; ?>
 </div>
 
-<div class="span4 well">
+<div class="span4">
     <?php if (isset($presupuesto) ): ?>
 
     <?php $form2=$this->beginWidget('CActiveForm', array(
@@ -349,8 +354,7 @@ $imageArray = array(
         <?php echo $form2->hiddenField($presupuesto,'id',array('value'=>$presupuesto->id)); ?>
         <?php echo $form2->labelEx($presupuesto,'email');
         echo $form2->textField($presupuesto,'email'); ?>
-        <?php/* echo $form2->labelEx($presupuesto,'id_provincia');
-        echo $form2->textField($presupuesto,'id_provincia'); */?>
+      
         <?php echo $form2->labelEx($presupuesto,'nombre');
         echo $form2->textField($presupuesto,'nombre'); ?>
         <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
