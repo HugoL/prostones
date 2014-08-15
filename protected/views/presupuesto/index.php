@@ -38,7 +38,10 @@ $(document).ready(function(){
                     $('#preciounitario').html(e.responseText);
                 }
             });
+      $('html, body').animate({scrollTop: $('#terminaciones').offset().top +300 }, 'slow');
     $('#terminaciones').show('slow');
+    $('#pregunta2').attr('style','display:none');
+        $('#ok2').attr('style','display:block');
 });
 
 
@@ -81,13 +84,31 @@ $imageArray = array(
                 
                 <div class="span12 row" id="material" style="
                 display:none"><!-- PASO 1 MATERIAL-->
-                    <div class="span2 pasos" ><strong style="color:#134263;">Paso 1</strong><br>
-                        <p align="justify" style="font-size:10px">Seleccione el tipo de material que desea entre nuestro catálogo de materiales.</p>
+                    <div class="span2 pasos" >
+                        <div class="span6"><font size="3">
+                        <strong style="color:#134263;">Material</strong></font>
+                        </div>
 
+                         <div class="span6" id="pregunta1">
+                             <img  style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+                         </div> 
+                          <div class="span6" id="ok1" style="display:none">
+                             <img style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+                         </div> 
+
+                         <div class="span12">
+                            <p align="left" style="font-size:12px"><strong>Paso 1</strong></p>
+                         </div>
+
+                        
                     </div>
 
-                    <div class="well span10">
+                    <div class="cuadropresu span10">
 
+                        <div class="span12">
+                            Seleccione el <strong>material</strong>.
+                        </div>
+                        <div class="span12">
                         <div class="span8 bordepresu">
                             <?php if( !empty($materiales) ):?> 
 
@@ -102,13 +123,14 @@ $imageArray = array(
 
                                 
                             <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
-                </div>
-                <div class="span4">
-                 <font size="0.8">  Consulte la  información de los materiales y sus caracteristicas técnicas.<a href="#">Ver catálogo.</a></font>
-             </div>
-         
+                             </ul>
+                             <?php endif; ?>
+                        </div>
+
+                        <div class="span4">
+                             <font size="1">  Consulte la  información de los materiales y sus caracteristicas técnicas."<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">Ver catálogo.</a></font>
+                        </div>
+            </div>
 
          <div class="clearfix">&nbsp;</div>    
 
@@ -139,19 +161,37 @@ $imageArray = array(
 
 <div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
 
-    <div class="span2 pasos" ><strong style="color:#134263;">Paso 2</strong><br>
-        <p align="justify" style="font-size:10px">Seleccione el tipo de pieza y el tamaño que se adapte a su idea.</p>
+    <div class="span2 pasos" >
+                    <div class="span6"><font size="3">
+                        <strong style="color:#134263;">Formato</strong></font><br>
+                    </div>
 
+                    <div class="span6" id="pregunta2">
+                    <img  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+                    </div> 
+                     <div class="span6" id="ok2" style="display:none">
+                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+                    </div> 
+
+                    <div class="span12">
+                        <p align="left" style="font-size:12px"><strong>Paso 2</strong></p>
+                    </div>
     </div>
 
-    <div class="well span10">
+
+    
+    <div class="cuadropresu span10">
+    <div class="span12">
+        Seleccione el <strong>formato de pieza</strong> y el <strong>tamaño</strong>.
+    </div>
+        <div class="span4 pa">
         <?php if( !empty($piezas) ): ?>
             <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
-            array('class'=>'piezas','prompt'=>'Selecciona tipo de pieza'));?>
+            array('class'=>'piezas','prompt'=>'Selecciona formato'));?>
         <?php endif; ?>
 
-
-        <div class="span4" id="tamanos" style="display:none">
+        </div>
+        <div class="span4 pa" id="tamanos" style="display:none">
             <select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
                 <option value="">Selecciona tamaño</option>
                 <?php foreach ($tamanos as $key => $tamano) : ?>
@@ -161,7 +201,7 @@ $imageArray = array(
         </div>
         <!-- tamaños -->
         <!--METER PRECIO UITARIO-->
-        <div id="preciounitario" class="span6"></div>
+        <div id="preciounitario" class="span3"></div>
 
         <!--fin precio unitario-->
     </div>
@@ -171,29 +211,47 @@ $imageArray = array(
 </div><!-- FIN PASO 2-->
 
 <div class="span12" id="terminaciones" style="display:none"><!--PASO 3-->
-    <div class="span2 pasos" ><strong style="color:#134263;">Paso 3</strong><br>
-        <p align="justify" style="font-size:10px">Seleccione el tipo de acabado de la pieza, así como alguna característica especial.</p>
 
+    <div class="span2 pasos" >
+        <div class="span6">
+            <strong style="color:#134263;"><font size="3">Acabado</font></strong><br>
+        </div>
+
+            <div class="span6" id="pregunta3">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+            </div> 
+            <div class="span6" id="ok3" style="display:none">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+            </div> 
+
+        <div class="span12">
+                        <p align="left" style="font-size:12px"><strong>Paso 3</strong></p>
+        </div>
     </div>
-    <div class="well span10">
-        <?php if( !empty($terminaciones) ): ?>
-
-        <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre'),
-        array('prompt'=>'Selecciona terminacion'));?>
 
 
-    <?php endif; ?>
+    
+    <div class="cuadropresu span10">
 
+        <div class="span12">
+            Seleccione la <strong>terminacion</strong> de la pieza.
+        </div>
 
-    <div class="span6">
-     <label>Biselado</label><input type="checkbox" id="biselados" />
+        <div class="span4 pa">
+            <?php if( !empty($terminaciones) ): ?>
+
+            <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre'),
+            array('prompt'=>'Selecciona terminacion'));?>
+
+            <?php endif; ?>
+        </div>
+
+    <div class="span2">
+     Biselado<input type="checkbox" id="biselados" />
  </div>
 
  <!-- biselados -->
- <div class="span4" id="biselados">
-    <?php echo $form->labelEx($valorpieza,'id_biselado'); ?>
 
-</div>
 <div class="span4" id="tamañobiselados" style="display:none">
     <?php echo CHtml::activeDropDownList($valorpieza, 'id_biselado', CHtml::listData($biselados,'id', 'tamano')); ?>
 
@@ -204,52 +262,74 @@ $imageArray = array(
 </div><!--FIN PASO 3-->
 
 <div class="span12" id="cantidad"  style="display:none" ><!--PASO 4-->
-    <div class="span2 pasos" ><strong style="color:#134263;">Paso 4</strong><br>
-        <p style="font-size:10px">Seleccione la cantidad de material que necesita y el lugar donde le gustaria recibirla (transporte opcional).</p>
 
-    </div>
-    <div class="well span10">
+    <div class="span2 pasos" >
+        <div class="span6">
+            <strong style="color:#134263;"><font size="3">Cantidad y destino</font></strong><br>
+        </div>
 
-        <p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
+            <div class="span6" id="pregunta4">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+            </div> 
+            <div class="span6" id="ok4" style="display:none">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+            </div> 
 
-        <?php echo $form->errorSummary($valorpieza); ?>
-
-
-
-        <?php echo $form->labelEx($valorpieza,'cantidad'); ?> <span id="medida"></span>
-        <?php echo $form->textField($valorpieza,'cantidad'); ?>
-        <?php echo $form->error($valorpieza,'cantidad'); ?>
-
-
-        Destino:
-
-      
-
-        <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
-
-
+        <div class="span12">
+                        <p align="justify" style="font-size:12px">Paso 4</p>
+        </div>
     </div>
 
-    <div class="row">
 
-        <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
-        <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
-        <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
-        <?php //echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
-        <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
-        <?php 
-            //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
-        if( isset($presupuesto) ):
-            $idPresupuesto = $presupuesto->id;
-        else:
-            $idPresupuesto = 0;
-        endif;
-        echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
+    
+    <div class="cuadropresu span10">
+     <div class="span12">
+            Seleccione la cantidad y el destino de la pieza.
+        </div>
+        <div class="span12">
+            <div class="span6">
+                   <div class="span12 po">
+
+                       <?php echo $form->errorSummary($valorpieza); ?>
+
+                        <?php /*echo $form->labelEx($valorpieza,'cantidad');*/ ?> 
+                        <?php echo $form->textField($valorpieza,'cantidad'); ?>
+                        <?php echo $form->error($valorpieza,'cantidad'); ?>
+                        <span id="medida"></span>
+                    </div>
+
+                    <div class="span12 pa" id="destino">
+                        <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
+                    </div>
+            </div>
+
+            <div class="span6" id="boton" style="display:none">
+                <div class="row">
+
+                    <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
+                    <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
+                    <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
+                    <?php //echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
+                    <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
+                    <?php 
+                        //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
+                    if( isset($presupuesto) ):
+                        $idPresupuesto = $presupuesto->id;
+                    else:
+                        $idPresupuesto = 0;
+                    endif;
+                    echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
+                </div>
+
+                <div class="row buttons">
+                    <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="row buttons">
-        <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
-    </div>
+   
 
     <?php $this->endWidget(); ?>
 </div><!--FIN PASO 4-->
@@ -259,7 +339,7 @@ $imageArray = array(
 
 </div><!--FIN DIV CENTRAL-->
 
-<div class="span3"><!--LISTA DE PIEZAS EN EL PRESUPUESTO-->
+<div class="span4"><!--LISTA DE PIEZAS EN EL PRESUPUESTO-->
 
     <?php if(Yii::app()->user->hasFlash('success')):?>
     <div class="alert alert-success">
@@ -274,7 +354,8 @@ $imageArray = array(
 <?php endif; ?>
 
 <!-- piezas guardadas -->
-<div id="piezasguardadas">
+<div id="piezasguardadas" class="span12">
+Tu presupuesto:
     <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
     $criteria=new CDbCriteria;                      
     $criteria->compare('id_presupuesto',$presupuesto->id);  
@@ -283,7 +364,7 @@ $imageArray = array(
     
     <?php foreach ($piezas as $key => $pieza): ?>
 
-    <div class="well">
+    <div class="well span11">
         <div class="clearfix"></div>    
         <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
         
@@ -294,24 +375,20 @@ $imageArray = array(
                 echo "m<sup>2</sup>";
             }else{
                 echo "m.";
-            }  ?>  de <?php echo $pieza->tipo->nombre; ?>.<br> 
-            <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. <?php echo $pieza->numeropiezas; ?> piezas. <br>
-            <div class="span6 offset5" align="right">
-            Precio= <?php echo $preciopieza; ?> €.
-        </div>
-           
-            <br><br>
-           1.1 - <font style="text-decoration: underline">Terminación:</font><br>
+            }  ?>  de <?php echo $pieza->tipo->nombre; ?>. <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. 
+            <div class="span8 offset3" align="right">
+             <?php echo $pieza->numeropiezas; ?> piezas a X . Precio= <?php echo $preciopieza; ?> €.
+           </div>
+           <div class="span12">
+            1.1 - <font style="text-decoration: underline">Terminación:</font><br>
             <?php echo $pieza->terminacion->nombre; ?>.<?php echo $pieza->terminacion->precio; ?> €/ 
             <?php if( $pieza->id_pieza == 1 ){
                 echo "m<sup>2</sup>";
             }else{
                 echo "m.";
-            }  ?> .<br>
-
-        <div class="span5 offset6" align="right">
-            Precio:<?php echo $precioterminacion; ?> €.
-        </div>
+            }  ?> . Precio:<?php echo $precioterminacion; ?> €.
+            </div>
+        
   <div class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263; ">
             Precio material : <strong><?php echo $precioterminacion + $preciopieza; ?>  €.</strong>
         </div>
@@ -391,13 +468,15 @@ $(document).ready(function($){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
         $("#tipo_piezas").show('slow');
 
+        $("#pregunta1").attr('style','display:none');
+        $("#ok1").attr('style','display:block');
 
         //id="<?php echo $tipo->id; ?>
         $(".tipos, .id").attr("style","border:1 px solid black;");
 
 
         //$(document).scrollTop( $("#tipo_piezas")().offset().top);
-        $('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
+        //$('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
 
        // $('#tipo_piezas').scrollView();
        //$("#Valorpieza_id_pieza").value("1");        
@@ -406,6 +485,7 @@ $(document).ready(function($){
     $("#Valorpieza_id_pieza").change(function(){
         //alert("hola: "+$(this).attr("id"));
        //$("#Valorpieza_id_pieza").val($(this).attr("id"));
+      
        $("#Valorpieza_id_tamano").val("");
        $("#tamanos").show('slow');
        $(".optiontamano").attr('style','display:none');
@@ -426,13 +506,21 @@ $(document).ready(function($){
 
     $("#Valorpieza_id_terminacion").change(function(){
         //alert("hola: "+$(this).attr("id"));
+         $("#pregunta3").attr('style','display:none');
+        $("#ok3").attr('style','display:block');
         $("#Valorpieza_id_terminacion").val($(this).attr("value"));
         $("#cantidad").show('slow');
 
     });
+
+     $("#destino").change(function(){
+        $("#boton").show('slow');
+    });
 });
 </script>
+
 <script type="text/javascript">
+
 function vermaterial( idmaterial ){
     $(".tipos").show('slow');
 $(".tipos").attr("style","display:none;");

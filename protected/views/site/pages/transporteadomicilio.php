@@ -2,12 +2,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Herramientas digitales';
+$this->pageTitle=Yii::app()->name . ' - Transporte a domicilio';
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/
 ?>
-
 
 
 

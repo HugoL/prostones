@@ -116,7 +116,17 @@ zoomWindowFadeOut: 750
                 <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
             <!--<div class="span2">-->
             <td  align="center" bgcolor="#e8e8e8" style="border-bottom:1px solid #c4c4c4;"><strong style="color:#125171;">
-                 <?php echo $preciounitario->precio ?></strong> <font style=" font-size: 10px;" >€/m<sup>2</sup></font></td>
+                 <?php echo $preciounitario->precio ?></strong> 
+            <font style=" font-size: 9px;" >   
+                <?php echo $this->debug($preciosunitarios);?>
+                <?php if( $preciounitario->tamano->id_pieza == 1 ){
+                echo "€ m<sup>2</sup>.";
+            }else{
+                echo "€ m.";
+            }  ?> .<br>
+   
+
+               </font></td>
             <!--</div>-->
         <?php endforeach; ?>
         </tr>

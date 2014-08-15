@@ -3,6 +3,8 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
+
+
 <!--<h1><i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 <p><?php $this->widget('bootstrap.widgets.TbButton', array(  
@@ -17,7 +19,7 @@ $this->pageTitle=Yii::app()->name;
 <div class="clearfix">&nbsp</div>
 <div class="span11 offset1" style="margin-bottom:20px" >
      <div class="span11" style="margin-left:1%;">
-<strong><p  style="font-size:20px;">El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precio de fábrica.</p></strong> 
+<strong><p  style="font-size:20px;">El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</p></strong> 
 </div>
 
 </div>
@@ -146,10 +148,11 @@ $this->pageTitle=Yii::app()->name;
 
 			<div class="span3" style="margin-left:2%"> <!--TEXTO ?-->
 				<div class="span9 enl" style=" margin-left:1.4%;">  
-					<p align="justify"><b>¿No ha encontrado lo que necesita?... </b>Consultenos, proSton.es puede suministrar todas sus <strong>ideas</strong> o <strong> proyectos</strong>.
-					<br><br>
-					Utilice nuestra profesionalidad y logistica. Garantizamos la mejor relación  <b>calidad-precio</b>, con una eficiente entrega.
-					<br><br>
+					<strong>¿No ha encontrado lo que necesita?.</strong><p align="justify"><em>Consultenos, proSton puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
+				
+
+					<strong>¿Necesita colocar un material?</strong> <p align="justify"><em>Disponemos de profesionales en toda España que le pasaran presupuestos de colocación.</em></p>
+						<br><br>
 					</p>				
 				</div>
 			</div><!--FIN TEXTO ?-->
@@ -158,50 +161,113 @@ $this->pageTitle=Yii::app()->name;
 	</div>
 
 
-	<div class="span2" style="margin-left:0px;"><!--OFERTAS-->
-		<div class="span12">
-			OFERTAS
+	<div class="span2 ofertas" style="margin-left:5px;border:1px #134263 solid;padding:5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);"><!--OFERTAS-->
+		<div class="span6 offset3" align="center" style="margin-top:-25px; background-color:white;">
+			<h4><font style="color:#134263">Ofertas</font></h4>
 		</div>
 
-		<div class="span12">
-			<div class="span5">
-				<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/negro_marquina.jpg">
+
+
+		<div class="span12" style="border: 1px solid black;margin-left:0px;">
+			
+			<div class="span8 offset2" style="margin-bottom:-10px">
+			<strong>Negro Marquina</strong>
 			</div>
 
-			<div class="span6">
+			<div class="span12">
+				<div class="span4" style="padding:5px;">
+					<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/negro_marquina.jpg">
+				</div>
 
-			Negro Macael <br>
-			5000 m<sup>2</sup><br>
-			<font size="4">19,9 €/m<sup>2</sup></font>
+				<div class="span8">
 				
+				<font size="1"> 60x40x2 Pulido</font><br>
+				<font size="1">a partir de 500 m<sup>2</sup></font><br>
+				<font size="4" style="color:#134263" >19,9 </font>€/m<sup>2</sup>
+					
+				</div>
+
 			</div>
 
 
+			
+
+
 
 		</div>
 
 		<div class="clearfix">&nbsp</div>
 
-		<div class="span12">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/blanco_macael.jpg">
+		<div class="span12" style="border: 1px solid black;margin-left:0px;">
+			
+			<div class="span8 offset2" style="margin-bottom:-10px">
+			<strong>Blanco Macael</strong>
+			</div>
+
+			<div class="span12">
+				<div class="span4" style="padding:5px;">
+					<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/blanco_macael.jpg">
+				</div>
+
+				<div class="span8">
+				
+				<font size="1"> 60x40x2 Pulido</font><br>
+				<font size="1">a partir de 500 m<sup>2</sup></font><br>
+				<font size="4" style="color:#134263" >17 </font>€/m<sup>2</sup>
+					
+				</div>
+
+			</div>
+
+
+			
+
+
+
 		</div>
+
+
 
 		<div class="clearfix">&nbsp</div>
 
-		<div class="span12">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/granito/G664.jpg">
+		
+		<div class="span12" style="border: 1px solid black;margin-left:0px;">
+			
+			<div class="span8 offset2" style="margin-bottom:-10px">
+			<strong>Rojo Coralito</strong>
+			</div>
+
+			<div class="span12">
+				<div class="span4" style="padding:5px;">
+					<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/rojo_coralito.jpg">
+				</div>
+
+				<div class="span8">
+				
+				<font size="1"> 60x40x2 Pulido</font><br>
+				<font size="1">a partir de 500 m<sup>2</sup></font><br>
+				<font size="4" style="color:#134263" >18 </font>€/m<sup>2</sup>
+					
+				</div>
+
+			</div>
 		</div>
 
+
+		
 		<div class="clearfix">&nbsp</div>
 
-		<div class="span12">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/granito/tezal.jpg">
-		</div>
 
-		<div class="clearfix">&nbsp</div>
 
-		<div class="span12">
-			<a href="">Ver mas ofertas</a>
+
+		<div class="span12" align="center">
+			<a href="" style="background-color:#134263;padding:3px;border:1px solid black;"><font size="2" color="white">Ver mas ofertas</font></a>
 		</div>
 	
 	</div><!--FIN OFERTAS-->
@@ -215,7 +281,7 @@ $this->pageTitle=Yii::app()->name;
 
 
 
-<div class="clearfix">&nbsp</div>
+
 
 
 
@@ -231,10 +297,10 @@ border-radius: 4px;">  <!--SERVICIOS-->
 <div class="span12" style="margin-left:0px;"> 
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
-					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
+					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/diseñador.png">
 				</div>
 				<div class="span9 cuatit" align="right">
 					<div>
@@ -245,7 +311,7 @@ border-radius: 4px;">  <!--SERVICIOS-->
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p>Conviertase en su propio decorador, utilice nuestros escenarios.</p>
+					<p><em>Conviertase en su decorador, utilice nuestros escenarios.</em></p>
 				</div>
 			</div>
 
@@ -253,12 +319,12 @@ border-radius: 4px;">  <!--SERVICIOS-->
 	</div>
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/presupuesto">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
 				</div>
-				<div class="span9" align="right">
+				<div class="span9 cuatit" align="right">
 					<div>
 						<h3><font style="color:#134263">Presupuesto</font></h3>
 					</div>
@@ -267,19 +333,19 @@ border-radius: 4px;">  <!--SERVICIOS-->
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p><span class="dot">•</span>Conocerá inmediatamente el coste de sus consultas.</p></div>
+					<p><em>Conocerá inmediatamente el coste de sus consultas.</em></p></div>
 				</div>
 
 		</a>	
 	</div>
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.png">
 				</div>
-				<div class="span9" align="right">
+				<div class="span9 cuatit" align="right">
 					<div>
 						<h3><font style="color:#134263">Catálogo</font></h3>
 					</div>
@@ -288,7 +354,7 @@ border-radius: 4px;">  <!--SERVICIOS-->
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p><span class="dot">•</span>Solo vendemos las rocas con la mejor relación calidad-precio.</p></div>
+					<p><em>Vendemos materiales con la mejor relación calidad-precio.</em></p></div>
 				</div>
 
 		</a>	
@@ -297,48 +363,63 @@ border-radius: 4px;">  <!--SERVICIOS-->
 <div class="span12" style="margin-left:0px;">
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=transporteadomicilio">		
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png">
 				</div>
-				<div class="span9" align="right">
-					<h3><font style="color:#134263">Transporte</font><br><font style="color:#969696">a domicilio</font></h3>
+				<div class="span9 cuatit" align="right">
+					<div>
+						<h3><font style="color:#134263">Transporte</font></h3>
+					</div>
+					<div>
+						<h3><font style="color:#969696">a domicilio</font></h3>
+					</div>
 				</div>
 				<div class="span12 parr">
-					<p><span class="dot">•</span>Facilitamos el seguimiento y el control de su material.</p></div>
+					<p><em>Facilitamos el seguimiento y el control de su material.</em></p></div>
 				</div>
 
 		</a>	
 	</div>
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/preciounitario/index">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
-					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
+					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/tarifas.png">
 				</div>
-				<div class="span9" align="right">
-					<h3><font style="color:#134263">Tarifas</font></h3>
+				<div class="span9 cuatit" align="right">
+	<div>
+						<h3><font style="color:#134263">Tarifas</font></h3>
+					</div>
+					<div>
+						<h3><font style="color:#969696"><br></font></h3>
+					</div>
 				</div>
 				<div class="span12 parr">
-					<p><span class="dot">•</span> Conozca y compare el precio de todas las elaboraciones.</p></div>
+					<p><em>Conozca y compare el precio de todas las elaboraciones.</em></p></div>
 				</div>
 
 		</a>	
 	</div>
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=herramientasdigitales">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=atencionpersonalizada">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
-					<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.png">
+					<img style="height:60px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.png">
 				</div>
-				<div class="span9" align="right">
-					<h3><font style="color:#134263">Atención</font><br><font style="color:#969696">personalizada</font></h3>
+				<div class="span9 cuatit" align="right">
+						<div>
+						<h3><font style="color:#134263">Atención</font></h3>
+					</div>
+					<div>
+						<h3><font style="color:#969696">personalizada</font></h3>
+					</div>
 				</div>
 				<div class="span12 parr">
-					<p><span class="dot">•</span> Disponemos de talleres a su servicio muy cerca de usted.</p></div>
+					<p><em>Disponemos de talleres a su servicio muy cerca de usted.</em></p></div>
 				</div>
 
 		</a>	

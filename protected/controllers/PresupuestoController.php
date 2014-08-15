@@ -335,6 +335,27 @@ $this->debug($kilosdecimal);
 
 		Yii::app()->end();
 	}
+
+	public function actionAjaxTamanos(){
+		$id_tipo = strip_tags($_POST['id_tipo']);
+		$id_pieza = strip_tags($_POST['id_pieza']);
+
+		$criteria=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+        $criteria->addCondition( 'id_pieza = '.$id_pieza );	//no se
+        $criteria->join = 'INNER JOIN preciosunitarios ON tamano.id = preciosunitarios.id AND preciosunitarios.id_tipo = '.$id_tipo.' AND preciosunitarios.precio IS NOT NULL';
+        $criteria->select = '*';
+		$tamanos = Tamano::model()->find( $criteria );
+		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
+		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
+
+		echo $this->renderPartial('_ajaxTamanos', array(
+					'tamanos' => $tamanos), true, false);
+
+		Yii::app()->end();
+
+
+	}
 	/**
 	 * Manages all models.
 	 */

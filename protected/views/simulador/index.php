@@ -10,7 +10,10 @@ $this->breadcrumbs=array(
 	array('label'=>'Create Material', 'url'=>array('create')),
 	array('label'=>'Manage Material', 'url'=>array('admin')),
 );*/
+
+$this->pageTitle=Yii::app()->name . ' - Diseñador';
 ?>
+
 
 <h1>Diseñador virtual</h1>
 

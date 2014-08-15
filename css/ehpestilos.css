@@ -105,12 +105,12 @@ padding:10px;
   }
   .parr p{
    margin-top:10px; 
-   font-size:11px; 
+   font-size:13px; 
    line-height:12px;
-   color: #134263 !important;
+   color: black !important;
    text-align: center;
-   /*background-color: #a3c7e0;*/
-   border:1px solid black;
+   /*background-color: #a3c7e0;
+   border:1px solid #5c8eb0;*/
   
    /*font-weight:bold;*/
 
@@ -442,4 +442,26 @@ vertical-align: middle;
 border:1px solid black;
 } 
 
+.cuadropresu{
 
+  min-height: 20px;
+  width:300px;
+  padding: 19px;
+  margin-bottom: 20px;
+
+  background-color: #f8f8f8;
+  border: 1px solid  #134263;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.pa select{
+  width:175px;
+}
+.po input{
+  width:70px;
+}
