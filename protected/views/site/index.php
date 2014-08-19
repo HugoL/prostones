@@ -31,25 +31,27 @@ $this->pageTitle=Yii::app()->name;
 
 		<div class="span12">
 			<div class="span9 "><!-- BOTONES PRINCIPAL-->
+
 			<div class="span3 enl" >  
 		
-			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas">
+			<img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
 
 			</div>  
 
-			<div class="span3 enl" style="margin-left:1.4%;">  
+			<div class="span3 enl" style="margin-left:2%;">  
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=pisos_unifamiliares"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
 
 			
 			</div>  
 
-			<div class="span3 enl" style=" margin-left:1.4%;">  
+			<div class="span3 enl" style=" margin-left:2%;">  
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=interiorismo_cocinas"><img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/cocinas.jpg';"/></a>
 
 			
 			</div>  
 
-			<div class="span3 enl" style=" margin-left:1.4%;">  
+			<div class="span3 enl" style=" margin-left:2%;">  
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=edificacion_urbanizacion">
 			<img alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/></a>
 			
@@ -85,19 +87,21 @@ $this->pageTitle=Yii::app()->name;
 						
 							</div>
 					
-						</div>    	
-				
+						</div>    
+
 						<div id="slide2" class="slide">
 							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Slide 2 jFlow Plus" />
 							</a>
-							<div class="slideContent">
-								<h3>Diseñador virtual <font style="float:right; margin-right:70px;"> Comparador</font></h3>
+
+							<div class="slideContent"  >
+							
+							<h3 >Diseñador virtual</h3>
 							<p>Nuestro simulador le ayudara a tomar decisiones</p>
 							</div>
-					
+											
 						</div>   
-				
+
 						<div id="slide3" class="slide">
 					
 							<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Slide 3 jFlow Plus" />
@@ -107,6 +111,11 @@ $this->pageTitle=Yii::app()->name;
 							</div>
 						
 						</div>
+
+						
+				
+								
+						
 					
 						<div id="slide4" class="slide">
 						
@@ -118,6 +127,9 @@ $this->pageTitle=Yii::app()->name;
 							</div>
 						
 						</div>
+
+
+
 
 					</div>
 

@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario'),
+				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -180,7 +180,22 @@ class PresupuestoController extends Controller
 			$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);	
 
 			//número de piezas necesarias
-        	$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano->tamanopieza);
+			switch ($valorPieza->id_pieza) {
+				case 1: //baldosas
+					$tamano2 = $tamano->tamanopieza;
+					break;
+				case 2: // rodapies
+					$tamano2 = $tamano->tamanolineal;
+					break;
+				
+				default:
+					$tamano2 = $tamano->tamanopieza;
+					break;
+			}
+			 
+            $numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano2);
+            
+        	
 
         	$valorPieza->numeropiezas = $numeropiezas;
 
@@ -193,8 +208,23 @@ class PresupuestoController extends Controller
 
 			$valorPieza->preciounitario = $preciounitario->precio;
 
-        	//tamaño en metros de todas las piezas
-        	$tamanoreal = $numeropiezas * $tamano->tamanopieza;
+        	//tamaño en metros de todas las piezas. m2 baldosa ; ml rodapies
+
+			switch ($valorPieza->id_pieza) {
+				case 1: //baldosas
+					$tamano3 = $tamano->tamanopieza;
+					break;
+				case 2: // rodapies
+					$tamano3 = $tamano->tamanolineal;
+					break;
+				
+				default:
+					$tamano3 = $tamano->tamanopieza;
+					break;
+			}
+			
+        	$tamanoreal = $numeropiezas * $tamano3;
+
 
         	$valorPieza->tamanoreal = $tamanoreal;
 
@@ -204,6 +234,7 @@ class PresupuestoController extends Controller
 			//guardo las variables desglosadas
 			$preciopieza =$precio;
 			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+
 			//sumo el precio de la terminación
 			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
 
@@ -343,9 +374,9 @@ $this->debug($kilosdecimal);
 		$criteria=new CDbCriteria;        
         //$criteria->compare('id_pieza',$id_pieza);//no se
         $criteria->addCondition( 'id_pieza = '.$id_pieza );	//no se
-        $criteria->join = 'INNER JOIN preciosunitarios ON tamano.id = preciosunitarios.id AND preciosunitarios.id_tipo = '.$id_tipo.' AND preciosunitarios.precio IS NOT NULL';
+        $criteria->join = 'INNER JOIN ehp_preciosunitarios ON t.id = ehp_preciosunitarios.id_tamano AND ehp_preciosunitarios.id_tipo = '.$id_tipo.' AND ehp_preciosunitarios.precio IS NOT NULL';
         $criteria->select = '*';
-		$tamanos = Tamano::model()->find( $criteria );
+		$tamanos = Tamano::model()->findAll( $criteria );
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
@@ -353,8 +384,6 @@ $this->debug($kilosdecimal);
 					'tamanos' => $tamanos), true, false);
 
 		Yii::app()->end();
-
-
 	}
 	/**
 	 * Manages all models.

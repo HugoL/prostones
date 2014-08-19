@@ -210,9 +210,9 @@ margin-left:35px;
 
 .slideContent {  background:url("../images/contentBg.png") repeat scroll 0 0 transparent; position: absolute; bottom:0px; right:0px; padding: 0px; width: 100%; }
 
-.slide h3 {  font: 26px/1em 'Rokkitt', serif; color: #FFF;  margin: 0 0 5px 10px; }
+.slide h3 {  font: 26px/1em ;color: #FFF;  margin: 0px 0px 0px 55%; }
 
-.slide p { font-size: 14px; color: #FFF; margin: 0 0 0 10px; }
+.slide p { font-size: 14px; color: #FFF; float:right; margin-right: 10px; }
 
 .jFlowSlideContainer { overflow: hidden; }
 

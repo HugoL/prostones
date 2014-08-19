@@ -21,15 +21,46 @@ $(document).ready(function(){
     });
 });
 </script>
-    <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
+    <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxTamanos')); ?>
+    <?php Yii::app()->getClientScript()->registerScript("tamano_precio",
+    "
+     $('#Valorpieza_id_pieza').change(function(){
+        idtipo = $('#Valorpieza_id_tipo').val();
+        idpieza = $('#Valorpieza_id_pieza').val();
+        $.ajax({
+                url: '$url_action', type: 'post', 
+                data: { id_tipo: idtipo, id_pieza: idpieza },
+                success: function(response){
+                    $('#tamanos').html(response);
+                },
+                error: function(e){
+                    $('#tamanos').html(e.responseText);
+                }
+            });
+
+      
+        $('#Valorpieza_id_tamano').val('');
+        $('#tamanos').show('slow');
+        $('.optiontamano').attr('style','display:none');
+        $('.tamano'+$('#Valorpieza_id_pieza').val()).attr('style','display:block');
+        if( $('#Valorpieza_id_pieza').val() == 1 ){
+            $('#medida').html('m2.');
+        }else{
+            $('#medida').html('m.');
+        }
+        });  
+    ",CClientScript::POS_LOAD)  ?>
+
+    <?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
     <?php Yii::app()->getClientScript()->registerScript("ejemplo_ajax",
         "
-        $('#Valorpieza_id_tamano').change(function(){        
+        $('#Valorpieza_id_tamano').change(function(){   
+            alert('aaaaa');
 
             idtipo = $('#Valorpieza_id_tipo').val();
             idtamano = $('#Valorpieza_id_tamano').val();
             $.ajax({
-                url: '$url_action', type: 'post', 
+                url: '$url_action2', type: 'post', 
                 data: { id_tipo: idtipo, id_tamano: idtamano },
                 success: function(response){
                     $('#preciounitario').html(response);
@@ -46,6 +77,8 @@ $(document).ready(function(){
 
 
 ",CClientScript::POS_LOAD); ?>
+
+
 
 <h1>Presupuesto</h1>
 
@@ -191,14 +224,11 @@ $imageArray = array(
         <?php endif; ?>
 
         </div>
-        <div class="span4 pa" id="tamanos" style="display:none">
-            <select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
-                <option value="">Selecciona tamaño</option>
-                <?php foreach ($tamanos as $key => $tamano) : ?>
-                    <option class="optiontamano <?php echo "tamano".$tamano->id_pieza; ?>" value="<?php echo $tamano->id ?>" style="display:none"><?php echo $tamano->nombre; ?></option>
-                <?php endforeach; ?>                
-            </select>            
-        </div>
+
+        
+
+        <div id="tamanos" class="span3"></div>
+
         <!-- tamaños -->
         <!--METER PRECIO UITARIO-->
         <div id="preciounitario" class="span3"></div>
@@ -376,8 +406,8 @@ Tu presupuesto:
             }else{
                 echo "m.";
             }  ?>  de <?php echo $pieza->tipo->nombre; ?>. <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. 
-            <div class="span8 offset3" align="right">
-             <?php echo $pieza->numeropiezas; ?> piezas a X . Precio= <?php echo $preciopieza; ?> €.
+            <div class="span9 offset2" align="right">
+             <?php echo $pieza->numeropiezas; ?> piezas a  <?php echo $pieza->preciounitario; ?> . Precio= <?php echo round($preciopieza,2); ?> €.
            </div>
            <div class="span12">
             1.1 - <font style="text-decoration: underline">Terminación:</font><br>
@@ -386,30 +416,33 @@ Tu presupuesto:
                 echo "m<sup>2</sup>";
             }else{
                 echo "m.";
-            }  ?> . Precio:<?php echo $precioterminacion; ?> €.
+            }  ?> . Precio:<?php echo round($precioterminacion,2); ?> €.
             </div>
         
   <div class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263; ">
-            Precio material : <strong><?php echo $precioterminacion + $preciopieza; ?>  €.</strong>
+            Precio material : 
+        
+            <?php $preciomat = round($precioterminacion + $preciopieza,2)?>
+            <?php echo str_replace(".",",",$preciomat); ?> €
         </div>
         </div>
       
 
         <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
           2 - Transporte (opcional)<br>
-          Peso: <?php echo $pieza->peso; ?> Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?><br><?php echo $entero + 1; ?> pales.
+          Peso: <?php echo $pieza->peso; ?> Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>. <?php echo $entero + 1; ?> pales.
 
 
         <div align="right" class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263;">
            Precio transporte:
-          <strong><?php echo $preciotransporte; ?> €. </strong>
+          <strong><?php echo round($preciotransporte,2); ?> €. </strong>
         </div>
           
        </div>
        <div class="span12" align="right" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
            Material + transporte: <?php echo $pieza->precio; ?>€.<br>
-           IVA:21%: <?php echo (21*$pieza->precio/100); ?> €.<br>
-          <font size="3"><strong> Total: <?php echo $pieza->precio+(21*$pieza->precio/100); ?> €.</strong></font>
+           IVA:21%: <?php echo round((21*$pieza->precio/100),2); ?> €.<br>
+          <font size="3"><strong> Total: <?php echo round($pieza->precio+(21*$pieza->precio/100),2); ?> €.</strong></font>
 
        </div>
        <div class="clearfix"></div>
@@ -482,21 +515,7 @@ $(document).ready(function($){
        //$("#Valorpieza_id_pieza").value("1");        
    });
 
-    $("#Valorpieza_id_pieza").change(function(){
-        //alert("hola: "+$(this).attr("id"));
-       //$("#Valorpieza_id_pieza").val($(this).attr("id"));
-      
-       $("#Valorpieza_id_tamano").val("");
-       $("#tamanos").show('slow');
-       $(".optiontamano").attr('style','display:none');
-       $(".tamano"+$("#Valorpieza_id_pieza").val()).attr('style','display:block');
-       //$(document).scrollTop( $("#terminaciones").offset().top );
-       if( $("#Valorpieza_id_pieza").val() == 1 ){
-        $("#medida").html("m2.");
-    }else{
-        $("#medida").html("m.");
-    }  
-});
+   
 
 
     $("#biselados").click(function(){
@@ -529,5 +548,4 @@ $(".tipos").attr("style","display:none;");
 
 }
    
-
 </script>
