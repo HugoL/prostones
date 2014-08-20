@@ -266,8 +266,11 @@ $imageArray = array(
         <div class="span12">
             Seleccione la <strong>terminacion</strong> de la pieza.
         </div>
+<!--CREAR AQUI LAS TERMINACIONES -->
+
 
         <div class="span4 pa">
+
             <?php if( !empty($terminaciones) ): ?>
 
             <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre'),
@@ -291,11 +294,11 @@ $imageArray = array(
 </div>
 </div><!--FIN PASO 3-->
 
-<div class="span12" id="cantidad"  style="display:none" ><!--PASO 4-->
+<div class="span12" id="destino"  style="display:none" ><!--PASO 4-->
 
     <div class="span2 pasos" >
         <div class="span6">
-            <strong style="color:#134263;"><font size="3">Cantidad y destino</font></strong><br>
+            <strong style="color:#134263;"><font size="3">Destino</font></strong><br>
         </div>
 
             <div class="span6" id="pregunta4">
@@ -311,10 +314,59 @@ $imageArray = array(
     </div>
 
 
+
     
     <div class="cuadropresu span10">
      <div class="span12">
-            Seleccione la cantidad y el destino de la pieza.
+            Seleccione el destino de la pieza.
+        </div>
+        <div class="span5">
+            <div class="span12">
+                    <div class="span12 pa" id="destino">
+                        <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
+                    </div>
+            </div>
+            
+            
+        </div>
+        <div class="span6">
+            Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.
+        </div>
+
+
+    </div>
+
+   
+
+    
+</div><!--FIN PASO 4-->
+
+
+<div class="span12" id="cantidad"  style="display:none" ><!--PASO 5-->
+
+    <div class="span2 pasos" >
+        <div class="span6">
+            <strong style="color:#134263;"><font size="3">Cantidad</font></strong><br>
+        </div>
+
+            <div class="span6" id="pregunta4">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+            </div> 
+            <div class="span6" id="ok4" style="display:none">
+                <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+            </div> 
+
+        <div class="span12">
+                        <p align="justify" style="font-size:12px">Paso 5</p>
+        </div>
+    </div>
+
+
+
+    
+    <div class="cuadropresu span10">
+     <div class="span12">
+            Seleccione la cantidad de la pieza.
         </div>
         <div class="span12">
             <div class="span6">
@@ -326,10 +378,6 @@ $imageArray = array(
                         <?php echo $form->textField($valorpieza,'cantidad'); ?>
                         <?php echo $form->error($valorpieza,'cantidad'); ?>
                         <span id="medida"></span>
-                    </div>
-
-                    <div class="span12 pa" id="destino">
-                        <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
                     </div>
             </div>
 
@@ -479,8 +527,13 @@ Tu presupuesto:
 <script>
 $(document).ready(function($){
 
+  /*  $.each($("[id^='Valorpieza_']"), function(index, obj){
+        obj.value = "";
+    });*/
+
+    
     $("#Valorpieza_cantidad").val(" ");
-   $("#Valorpieza_id_pieza").val("");
+    $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
     $("#Valorpieza_id_terminacion").val("");
 
@@ -528,22 +581,39 @@ $(document).ready(function($){
          $("#pregunta3").attr('style','display:none');
         $("#ok3").attr('style','display:block');
         $("#Valorpieza_id_terminacion").val($(this).attr("value"));
-        $("#cantidad").show('slow');
+        $("#destino").show('slow');
 
     });
 
-     $("#destino").change(function(){
-        $("#boton").show('slow');
+    
+
+
+  $("#destino").change(function(){
+     $("#pregunta4").attr('style','display:none');
+        $("#ok4").attr('style','display:block');
+    $("#cantidad").show('slow');
+    console.log("cambio de destino");
+        $("#Valorpieza_cantidad").display = "block";
+        //$("#Valorpieza_cantidad").val("0");
+        $("#Valorpieza_cantidad").keyup(function(){
+            if(parseInt($("#Valorpieza_cantidad").val()) >0){
+                $("#boton").show('slow');    
+            }else{
+                $("#boton").fadeOut('slow');
+            }
+        });
     });
+
 });
 </script>
 
 <script type="text/javascript">
 
 function vermaterial( idmaterial ){
+
     $(".tipos").show('slow');
 $(".tipos").attr("style","display:none;");
-
+    
     $(".tipo"+idmaterial).attr("style","display:block;");
 
 }

@@ -35,7 +35,12 @@ $this->pageTitle=Yii::app()->name;
 			<div class="span3 enl" >  
 		
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas">
-			<img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/></a>
+			<figure>
+			<img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/>
+			<!--<figcaption> Reformas y rehabitilación.</figcaption>-->
+			
+			</figure>
+			</a>
 
 			</div>  
 

@@ -1,4 +1,5 @@
 
+::selection      { color: gold;  background: grey; } 
 /*------Lo de abajo creado por Edu---------*/
 @font-face { 
  font-family: "eras"; 
@@ -383,6 +384,7 @@ color:white;
 background-color: #134263;
 list-style:none; 
 }
+
 
 
 .ejemplo {

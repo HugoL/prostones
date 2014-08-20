@@ -26,8 +26,10 @@
           info@proston.es<br>
 
       </td>
-    </tr>
+    </tr>S
 
+<!--PONER LA FOTO BIEN -->
+    <img  class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" />
 
 
     <tr style="border:0px;" >

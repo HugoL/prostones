@@ -222,7 +222,7 @@ class PresupuestoController extends Controller
 					$tamano3 = $tamano->tamanopieza;
 					break;
 			}
-			
+
         	$tamanoreal = $numeropiezas * $tamano3;
 
 
@@ -233,9 +233,13 @@ class PresupuestoController extends Controller
 
 			//guardo las variables desglosadas
 			$preciopieza =$precio;
+
+			// CREAR CODIGO QUE DETECTE EL PRECIO CORRECTO DE LA TERMINACION
+			
 			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
 
 			//sumo el precio de la terminación
+
 			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
 
 			$valorPieza->precio = $precio;			
