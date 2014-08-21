@@ -1,25 +1,13 @@
 <?php
-/* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
+	/* @var $this SiteController */
+	$this->pageTitle=Yii::app()->name;
 ?>
 
 
-<!--<h1><i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p><?php $this->widget('bootstrap.widgets.TbButton', array(  
-    'type'=>'warning',
-    'label'=>'Simulador',
-    'size'=>'large',
-    'htmlOptions'=>array('id'=>'buttonStateful'),
-    'url'=>array('simulador/index'),
-)); ?>
-</p>
--->
 <div class="clearfix">&nbsp</div>
 <div class="span11 offset1" style="margin-bottom:20px" >
      <div class="span11" style="margin-left:1%;">
-<strong><p  style="font-size:20px;">la portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</p></strong> 
+<strong><p  style="font-size:20px;">El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</p></strong> 
 </div>
 
 </div>
@@ -30,22 +18,21 @@ $this->pageTitle=Yii::app()->name;
 	<div class="span10">
 
 		<div class="span12">
+
 			<div class="span9 "><!-- BOTONES PRINCIPAL-->
 
-			<div class="span3 enl" >  
-		
-			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas">
-			<figure>
-			<img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/>
-			<!--<figcaption> Reformas y rehabitilación.</figcaption>-->
-			
-			</figure>
-			</a>
-
+			<div class="span3 enl" >
+				 <figure> 		
+					<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas">
+						<img  alt="Reformas y rehabilitación - proSton.es" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/reharefo.jpg';"/>
+						<!--<figcaption style="font-size:24px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"> Reformas y rehabitilación.</figcaption>-->
+					</a>
+				</figure>
 			</div>  
 
 			<div class="span3 enl" style="margin-left:2%;">  
-			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=pisos_unifamiliares"><img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
+				<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=pisos_unifamiliares">
+					<img  alt="" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/pisosyuni.jpg';"/></a>
 
 			
 			</div>  

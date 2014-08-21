@@ -73,7 +73,7 @@ Yii::app()->clientscript
 			
 			effect: "flow", //this is the slide effect (rewind or flow)
 
-			width: "800x",  // this is the width for the content-slider
+			width: "100%",  // this is the width for the content-slider
 
 			height: "200px",  // this is the height for the content-slider
 
@@ -124,14 +124,14 @@ $(document).ready(function() {
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container-fluid">
+			<!--<div class="container-fluid">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-			</div>
-			<!--<a class="brand offset3" href="#"><?php echo Yii::app()->name ?></a>-->
+			</div>-->
+			<!--<a class="brand offset3" href="#"><?php //echo Yii::app()->name ?></a>-->
 			<div > <a href="<?php echo Yii::app()->request->baseUrl?>/index.php"><img  class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
 
 			<div class="nav-collapse" id="menu-top">
@@ -155,17 +155,17 @@ $(document).ready(function() {
 						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),)); ?>
 						
-					</div><!--/.nav-collapse -->
+			</div><!--/.nav-collapse -->
 
-					<div class="offset9"> <img  class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
+			<div style="float:right;" > <img  style="margin-right:10px" class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
 
 
-				</div>
-			</div>
 		</div>
+	</div>
+		
 
-		<div class="cont">
-			<div class="container-fluid">
+	<div class="cont">
+		<div class="container-fluid">
 				<?php if(isset($this->breadcrumbs)):?>
 					<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 						'links'=>$this->breadcrumbs,
@@ -182,8 +182,8 @@ $(document).ready(function() {
 					<?php echo $content ?>
 
 
-				</div><!--/.fluid-container-->
-			</div>
+		</div><!--/.fluid-container-->
+	</div>
 
 
 
