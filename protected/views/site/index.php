@@ -19,7 +19,7 @@ $this->pageTitle=Yii::app()->name;
 <div class="clearfix">&nbsp</div>
 <div class="span11 offset1" style="margin-bottom:20px" >
      <div class="span11" style="margin-left:1%;">
-<strong><p  style="font-size:20px;">El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</p></strong> 
+<strong><p  style="font-size:20px;">la portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</p></strong> 
 </div>
 
 </div>
