@@ -190,7 +190,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'easenjo',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),
