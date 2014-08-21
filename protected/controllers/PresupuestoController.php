@@ -263,6 +263,7 @@ class PresupuestoController extends Controller
 			$this->debug($pesomaximo);
 			$this->debug($pesotransporte);
 			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
+			$entero = 0;
 			if( $pesotransporte > $pesomaximo ){
 				$entero = floor( $pesotransporte / $pesomaximo );
 				$decimal = $pesotransporte / $pesomaximo - $entero;
