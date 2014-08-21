@@ -51,33 +51,7 @@ $(document).ready(function(){
         });  
     ",CClientScript::POS_LOAD)  ?>
 
-    <?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
-    <?php Yii::app()->getClientScript()->registerScript("ejemplo_ajax",
-        "
-        $('#Valorpieza_id_tamano').change(function(){   
-            alert('aaaaa');
-
-            idtipo = $('#Valorpieza_id_tipo').val();
-            idtamano = $('#Valorpieza_id_tamano').val();
-            $.ajax({
-                url: '$url_action2', type: 'post', 
-                data: { id_tipo: idtipo, id_tamano: idtamano },
-                success: function(response){
-                    $('#preciounitario').html(response);
-                },
-                error: function(e){
-                    $('#preciounitario').html(e.responseText);
-                }
-            });
-      $('html, body').animate({scrollTop: $('#terminaciones').offset().top +300 }, 'slow');
-    $('#terminaciones').show('slow');
-    $('#pregunta2').attr('style','display:none');
-        $('#ok2').attr('style','display:block');
-});
-
-
-",CClientScript::POS_LOAD); ?>
-
+   
 
 
 <h1>Presupuesto</h1>
@@ -268,18 +242,12 @@ $imageArray = array(
         </div>
 <!--CREAR AQUI LAS TERMINACIONES -->
 
+    <div id="term" class="span3"></div>
 
-        <div class="span4 pa">
-
-            <?php if( !empty($terminaciones) ): ?>
-
-            <?php echo CHtml::activeDropDownList($valorpieza, 'id_terminacion', CHtml::listData($terminaciones,'id', 'nombre'),
-            array('prompt'=>'Selecciona terminacion'));?>
-
-            <?php endif; ?>
-        </div>
+       
 
     <div class="span2">
+
      Biselado<input type="checkbox" id="biselados" />
  </div>
 
@@ -383,11 +351,11 @@ $imageArray = array(
 
             <div class="span6" id="boton" style="display:none">
                 <div class="row">
-
+                     <?php echo $form->hiddenField($valorpieza,'id_material',array('value'=>'0')); ?>
                     <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
                     <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
                     <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
-                    <?php //echo $form->hiddenField($valorpieza,'id_terminacion'); ?>
+                    <?php echo $form->hiddenField($valorpieza,'id_terminacion',array('value'=>'0')); ?>
                     <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
                     <?php 
                         //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
@@ -571,21 +539,9 @@ $(document).ready(function($){
    
 
 
-    $("#biselados").click(function(){
-       $("#tamañobiselados").show('slow');
 
-   });
 
-    $("#Valorpieza_id_terminacion").change(function(){
-        //alert("hola: "+$(this).attr("id"));
-         $("#pregunta3").attr('style','display:none');
-        $("#ok3").attr('style','display:block');
-        $("#Valorpieza_id_terminacion").val($(this).attr("value"));
-        $("#destino").show('slow');
-
-    });
-
-    
+   
 
 
   $("#destino").change(function(){
@@ -594,7 +550,7 @@ $(document).ready(function($){
     $("#cantidad").show('slow');
     console.log("cambio de destino");
         $("#Valorpieza_cantidad").display = "block";
-        //$("#Valorpieza_cantidad").val("0");
+        $("#Valorpieza_cantidad").attr("iplaceholder","0");
         $("#Valorpieza_cantidad").keyup(function(){
             if(parseInt($("#Valorpieza_cantidad").val()) >0){
                 $("#boton").show('slow');    
@@ -610,7 +566,7 @@ $(document).ready(function($){
 <script type="text/javascript">
 
 function vermaterial( idmaterial ){
-
+ $("#Valorpieza_id_material").val(idmaterial);
     $(".tipos").show('slow');
 $(".tipos").attr("style","display:none;");
     

@@ -1,7 +1,8 @@
 <?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
     <?php echo "<script>";
     echo "
-        $('#Valorpieza_id_tamano').change(function(){   
+        $('#Valorpieza_id_tamano').change(function(){  
+      
             idtipo = $('#Valorpieza_id_tipo').val();
             idtamano = $('#Valorpieza_id_tamano').val();
             $.ajax({
@@ -22,6 +23,34 @@
 ";
 echo "</script>";
 ?>
+
+
+
+<?php $url_action3 = CHtml::normalizeUrl(array('/presupuesto/ajaxTerminaciones')); ?>
+    <?php echo "<script>";
+    echo "
+        $('#Valorpieza_id_tamano').change(function(){  
+        
+            idmaterial = $('#Valorpieza_id_material').val();
+            idpieza = $('#Valorpieza_id_pieza').val();
+           
+            $.ajax({
+                url: '$url_action3', type: 'post', 
+                data: { id_material: idmaterial, id_pieza: idpieza },
+                success: function(response){
+
+                    $('#term').html(response);
+                },
+                error: function(e){
+                    $('#term').html(e.responseText);
+                }
+            });
+   
+});
+";
+echo "</script>";
+?>
+
 
 <div class="">
 	<div class="span4 pa" id="tamanos">

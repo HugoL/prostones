@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos'),
+				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos','ajaxTerminaciones'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -236,6 +236,7 @@ class PresupuestoController extends Controller
 
 			// CREAR CODIGO QUE DETECTE EL PRECIO CORRECTO DE LA TERMINACION
 			
+			echo $valorPieza->terminacion->precio;
 			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
 
 			//sumo el precio de la terminación
@@ -270,7 +271,7 @@ class PresupuestoController extends Controller
 				$kilosdecimal = $decimal * $pesomaximo;
 				
 
-$this->debug($kilosdecimal);
+				$this->debug($kilosdecimal);
 				//CALCULO DEL ENTERO
 				$precioindividual = 0;
 				for ($i = 1; $i <= $entero; $i++) {	
@@ -288,8 +289,8 @@ $this->debug($kilosdecimal);
 			}else{
 
 	
-	$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
-}
+			$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
+			}
 
 		
 
@@ -305,7 +306,8 @@ $this->debug($kilosdecimal);
 			$this->render('index',array(
 			'materiales'=>$materiales,'imagenes'=>$imagenes,'tipos'=>$tipos,'piezas'=>$piezas,'valorpieza'=>$valorPieza, 'terminaciones'=>$terminaciones, 'tamanos'=>$tamanos, 'biselados'=>$biselados,'provincias'=>$provincias
 			));
-		}		
+		}	
+
 	}
 
 	public function actionGenerar( $id ){		
@@ -389,6 +391,29 @@ $this->debug($kilosdecimal);
 
 		Yii::app()->end();
 	}
+
+
+	public function actionAjaxTerminaciones(){
+		$id_material = strip_tags($_POST['id_material']);
+		$id_pieza = strip_tags($_POST['id_pieza']);
+
+		$criteria=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza);
+        $criteria->select = '*';
+		$terminaciones = Terminacion::model()->findAll( $criteria );
+		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
+		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
+
+		echo $this->renderPartial('_ajaxTerminaciones', array(
+					'terminaciones' => $terminaciones), true, false);
+
+		Yii::app()->end();
+	}
+
+
+
+
 	/**
 	 * Manages all models.
 	 */
