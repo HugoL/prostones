@@ -400,14 +400,26 @@ class PresupuestoController extends Controller
 
 		$criteria=new CDbCriteria;        
         //$criteria->compare('id_pieza',$id_pieza);//no se
-       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza);
+       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 1');
         $criteria->select = '*';
 		$terminaciones = Terminacion::model()->findAll( $criteria );
+
+		$criteria2=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+       	$criteria2->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 2');
+        $criteria2->select = '*';
+		$terminacionesArista = Terminacion::model()->findAll( $criteria2 );
+
+		$criteria3=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+       	$criteria3->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 3');
+        $criteria3->select = '*';
+		$terminacionesCanto = Terminacion::model()->findAll( $criteria3 );
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
 		echo $this->renderPartial('_ajaxTerminaciones', array(
-					'terminaciones' => $terminaciones), true, false);
+					'terminaciones' => $terminaciones, 'terminacionesArista' => $terminacionesArista,'terminacionesCanto' => $terminacionesCanto,'tipo_pieza' => $id_pieza), true, false);
 
 		Yii::app()->end();
 	}
