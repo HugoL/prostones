@@ -112,7 +112,20 @@
                  }  ?></td>
            
                  <td><?php echo $pieza->tamano->nombre; ?></td>
-                 <td align="center"><?php echo $pieza->numeropiezas; ?></td>
+                 <td align="center">
+
+                     <?php if( $pieza->tamano-> == 14 || $pieza->tamano-> == 15 ){
+                         echo $pieza->numeropiezas;
+                     }else{
+                     echo $pieza->numeropiezas;
+                     }  ?>
+
+
+
+
+                 <?php echo $pieza->numeropiezas; ?></td>
+
+
                 <?php $preuni = str_replace(".",",",$pieza->preciounitario)?>
                  <td><?php echo $preuni; ?> € / <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
                 }else{
@@ -221,10 +234,10 @@
                 <tr> 
                 
                 <?php $pesopieza = round($pieza->peso,2)?>
-                <td align="center" colspan="2"><?php echo str_replace(".",",",$pesopieza); ?> €</td>
+                <td align="center" colspan="2"><?php echo str_replace(".",",",$pesopieza); ?> KG</td>
                 <td align="center"><?php echo $pieza->tipo->provincia->nombre ?></td>
                 <td align="center"><?php echo $pieza->provincia->nombre; ?></td>
-                <td> <?php echo 1+$pieza->pales; ?></td>
+                <td> <?php echo $pieza->pales; ?></td>
                 <td align="right"> <?php echo $pieza->preciotransporte; ?></td>
 
 

@@ -22,19 +22,6 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
 <br />
 
 
- <?php $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'Ver en simulador',
-        'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('simulador/index/id/'.$tipo->id),
-     )); ?>
-
-        <?php $this->widget('bootstrap.widgets.TbButton', array(
-         'label'=>'Presupuesto',
-        'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('presupuesto/'.$tipo->id),
-     )); ?>
 
 
 
@@ -155,29 +142,30 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
 
 
 
+
 <div class="span3">
-   <div class="span12"> <style="font-size:15px;"><span class="dot">•</span></style="font-size:15px;"><strong>Marmoles </strong>( Más decorativos)</div>
+    <h3 style="font-size:15px;">Mármoles</h3>
     <div class="span12 galemat">
-        <div class="clearfix"></div>
+<div class="clearfix"></div>
 
         <?php foreach ($tipos as $key => $tipo):     ?>
-            <div class="span2">
+            <div class="span2 ">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verCaracteristicas/id/".$tipo->id?>">
 
-                    <img style="width:50px; height:50px;" alt="<?php echo $tipo->nombre ?> - proSton.es" title="<?php echo $tipo->nombre ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>
     </div>
 
-    <h3 style="font-size:15px;"><span class="dot">•</span>Granitos</h3>
+<h3 style="font-size:15px;">Granitos</h3>
     <div class="span12 galemat">
-        <div class="clearfix"></div>
-        <?php foreach ($tipos2 as $key => $tipo):     ?>
+    <div class="clearfix"></div>
+     <?php foreach ($tipos2 as $key => $tipo):     ?>
             <div class="span2">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verCaracteristicas/id/".$tipo->id?>">
 
-                    <img style="width:50px; height:50px;" alt="<?php echo $tipo->nombre ?> - proSton.es"  title="<?php echo $tipo->nombre ?>"src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>
@@ -190,6 +178,10 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
 
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
+
+
+
+
 
  
     

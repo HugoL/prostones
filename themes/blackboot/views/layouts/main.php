@@ -28,7 +28,7 @@ Yii::app()->clientscript
 			 <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
 
 			<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-			<meta name="language" content="en" />
+			<meta name="language" content="es" />
 			<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,66 +54,13 @@ Yii::app()->clientscript
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js?>" type="text/javascript"></script> 
-<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.jqzoom-core-pack.js?>" type="text/javascript"></script>
     <!-- link to magiczoomplus.js file -->
-        <script src="<?php echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>
 
-	$(document).ready(function(){
-		
-		$("#myController").jFlow({
-
-			controller: ".jFlowControl", // must be class, use . sign
-
-			slideWrapper : "#jFlowSlider", // must be id, use # sign
-
-			slides: "#mySlides",  // the div where all your sliding divs are nested in
-
-			selectedWrapper: "jFlowSelected",  // just pure text, no sign
-			
-			effect: "flow", //this is the slide effect (rewind or flow)
-
-			width: "100%",  // this is the width for the content-slider
-
-			height: "200px",  // this is the height for the content-slider
-
-			duration: 400,  // time in milliseconds to transition one slide
-			
-			pause: 5000, //time between transitions
-
-			prev: ".jFlowPrev", // must be class, use . sign
-
-			next: ".jFlowNext", // must be class, use . sign
-
-			auto: true	
-
-		});
-
-
-	});
-
-</script>
 
   
 
-<script type="text/javascript">
-$(document).ready(function() {
-	$('.jqzoom').jqzoom({
-            zoomType: 'standard',
-            lens:true,
-            preloadImages: false,
-            alwaysOn:false,
-            zoomWidth: 300,
-            zoomHeight: 200,
-            xOffset:90,
-            yOffset:100,
-            position:'top'
-        });
-	//$('.jqzoom').jqzoom();
-});
 
-
-</script>
 
 <!--<script type="text/javascript" src="jquery.js"></script>-->
  

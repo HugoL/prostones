@@ -1,4 +1,4 @@
-
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 <h1>Catálogo de materiales <?php echo $material->nombre?></h1>  
 <?php $this->debug($tipos); ?>

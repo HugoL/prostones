@@ -11,45 +11,7 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
     ?>
-    <script type="text/javascript"> 
-$(document).ready(function(){
-    $(".ejemplo_img").mouseenter(function() {
-        $(".ejemplo_img_cont", this).stop().animate({ top:'31px' },{ queue:false, duration:300 });
-    });
-    $(".ejemplo_img").mouseleave(function() {
-        $(".ejemplo_img_cont", this).stop().animate({ top:'48px' },{ queue:false, duration:300 });
-    });
-});
-</script>
-    <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxTamanos')); ?>
-    <?php Yii::app()->getClientScript()->registerScript("tamano_precio",
-    "
-     $('#Valorpieza_id_pieza').change(function(){
-        idtipo = $('#Valorpieza_id_tipo').val();
-        idpieza = $('#Valorpieza_id_pieza').val();
-        $.ajax({
-                url: '$url_action', type: 'post', 
-                data: { id_tipo: idtipo, id_pieza: idpieza },
-                success: function(response){
-                    $('#tamanos').html(response);
-                },
-                error: function(e){
-                    $('#tamanos').html(e.responseText);
-                }
-            });
 
-      
-        $('#Valorpieza_id_tamano').val('');
-        $('#tamanos').show('slow');
-        $('.optiontamano').attr('style','display:none');
-        $('.tamano'+$('#Valorpieza_id_pieza').val()).attr('style','display:block');
-        if( $('#Valorpieza_id_pieza').val() == 1 ){
-            $('#medida').html('m2.');
-        }else{
-            $('#medida').html('m.');
-        }
-        });  
-    ",CClientScript::POS_LOAD)  ?>
 
    
 
@@ -492,7 +454,53 @@ Tu presupuesto:
 </div><!-- /row -->
 <!-- ------------- -->
 
+
+
+    <script type="text/javascript"> 
+$(document).ready(function(){
+    $(".ejemplo_img").mouseenter(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'31px' },{ queue:false, duration:300 });
+    });
+    $(".ejemplo_img").mouseleave(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'48px' },{ queue:false, duration:300 });
+    });
+});
+</script>
+<?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxTamanos')); ?>
+    <?php Yii::app()->getClientScript()->registerScript("tamano_precio",
+    "
+     $('#Valorpieza_id_pieza').change(function(){
+        idtipo = $('#Valorpieza_id_tipo').val();
+        idpieza = $('#Valorpieza_id_pieza').val();
+        $.ajax({
+                url: '$url_action', type: 'post', 
+                data: { id_tipo: idtipo, id_pieza: idpieza },
+                success: function(response){
+                    $('#tamanos').html(response);
+                },
+                error: function(e){
+                    $('#tamanos').html(e.responseText);
+                }
+            });
+
+      
+        $('#Valorpieza_id_tamano').val('');
+         $('#Valorpieza_id_terminacion').val('');
+        $('#tamanos').show('slow');
+        $('.optiontamano').attr('style','display:none');
+        $('.tamano'+$('#Valorpieza_id_pieza').val()).attr('style','display:block');
+        if( $('#Valorpieza_id_pieza').val() == 1 ){
+            $('#medida').html('m2.');
+        }else{
+            $('#medida').html('m.');
+        }
+        });  
+    ",CClientScript::POS_LOAD)  ?>
 <script>
+
+ 
+
+
 $(document).ready(function($){
 
   /*  $.each($("[id^='Valorpieza_']"), function(index, obj){
