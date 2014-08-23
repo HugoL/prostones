@@ -371,11 +371,11 @@ text-align: center;
 color:black;
 }
 .bordepresu a:hover{
-color:white;
+color:white!important;
 }
 .bordepresu li:hover{
-color:white;
-background-color: #134263;
+color:white!important;
+background-color: #134263!important;
 }
 
 .ini{
@@ -528,3 +528,9 @@ margin-top:-15% !important;
 font-size:20px;
 
 }
+
+.presprecio{
+  border: 1px solid #6d6d6d;
+
+  }
+

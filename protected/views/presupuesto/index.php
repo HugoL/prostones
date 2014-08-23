@@ -106,9 +106,9 @@
                                    <div class="clearfix"></div>
 
                                         <?php foreach ( $tipos as $key => $tipo ): ?>  
-                                        <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?>" id="<?php echo $tipo->id; ?>">
+                                        <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?> ti<?php echo $tipo->id; ?>" id="<?php echo $tipo->id; ?>">
                                             <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>" width="100" height="50" /></a>
-                                            <div class="ejemplo_img_cont">
+                                            <div class="ejemplo_img_cont cont<?php echo $tipo->id; ?>">
                                                <?php echo $tipo->nombre; ?>
                                             </div>
                                         </div>
@@ -297,6 +297,8 @@
                             <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
                             <?php echo $form->hiddenField($valorpieza,'precio',array('value'=>'0')); ?>
                             <?php echo $form->hiddenField($valorpieza,'id_terminacion',array('value'=>'0')); ?>
+                            <?php echo $form->hiddenField($valorpieza,'id_terminacion_arista',array('value'=>'0')); ?>
+                            <?php echo $form->hiddenField($valorpieza,'id_terminacion_canto',array('value'=>'0')); ?>
                             <?php //echo $form->hiddenField($valorpieza,'id_pieza',array('value'=>'0')); ?>
                             <?php //Si el presupuesto ya está creado y se están añadiendo piezas, pongo el id del presupuesto
                             if( isset($presupuesto) ):
@@ -357,9 +359,10 @@
                     }  ?>  de <?php echo $pieza->tipo->nombre; ?>. <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. 
 
                     <div class="span9 offset2" align="right">
-                       <?php echo $pieza->numeropiezas; ?> piezas a  <?php echo $pieza->preciounitario; ?> . Precio= <?php echo round($preciopieza,2); ?> €.
+                       <?php echo $pieza->numeropiezas; ?> piezas a  <?php echo $pieza->preciounitario; ?> . Precio= <?php echo round($pieza->tamanoreal * $pieza->preciounitario,2); ?> €.
                    </div>
 
+                   
                    <div class="span12">
                         1.1 - <font style="text-decoration: underline">Terminación:</font><br>
                         <?php echo $pieza->terminacion->nombre; ?>.<?php echo $pieza->terminacion->precio; ?> €/ 
@@ -367,8 +370,40 @@
                             echo "m<sup>2</sup>";
                         }else{
                             echo "m.";
-                        }  ?> . Precio:<?php echo round($precioterminacion,2); ?> €.
+                        }  ?> . Precio:<?php echo round($pieza->terminacion->precio * $pieza->tamanoreal,2); ?> €.
                     </div>
+
+
+                    <div class="span12">
+                        
+                        <?php echo $pieza->terminacionarista->nombre; ?>.                       
+
+                        <?php if( $pieza->id_pieza == 1 ){
+                            echo $pieza->terminacionarista->precio . "€/m<sup>2</sup>" . round($pieza->terminacionarista->precio * $pieza->tamanoreal,2) . "€.";
+                        }else{
+                            echo "";
+                        }  ?> 
+
+                    </div>
+
+
+
+                    <div class="span12">
+                        
+                        Canto <?php echo $pieza->terminacioncanto->nombre; ?>.
+                        
+                        <?php if( $pieza->id_pieza == 1 ){
+                            echo $pieza->terminacioncanto->precio . "€/m .Precio:" . round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud,2) . "€.";
+                        }else{
+                            echo "";
+                        }  ?> 
+
+
+
+                    </div>
+
+                    
+
 
                     <div class="span8 offset3" style="background-color:#acb2e3; padding:5px; border:1px solid #134263; ">
                         Precio material : 
@@ -461,6 +496,7 @@
         $('#terminaciones').hide();
         $('#destino').hide();
         $('#cantidad').hide();
+        $('#preciounitario').hide();
         $('#Valorpieza_id_tamano').val('');
         $('#Valorpieza_id_terminacion').val('');
         $('#tamanos').show('slow');
@@ -480,7 +516,6 @@ $(document).ready(function($){
         obj.value = "";
     });*/
 
-
     $("#Valorpieza_cantidad").val(" ");
     $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
@@ -498,11 +533,31 @@ $(document).ready(function($){
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
+
+         if(parseInt($("#Valorpieza_id_material").val()) == 2){
+            $(".tipo2").attr("style","display:block; border:1px solid black;");
+            $(".ejemplo_img_cont").attr("style","top: 48px;");
+            $(".cont"+$(this).attr("id")).attr("style","top: 31px!important;");
+            $(".ti"+$(this).attr("id")).attr("style","display:block; border-left:3px solid black; border-right:3px solid black;");
+        }else{
+              $(".tipo4").attr("style","display:block; border:1px solid black;");
+            $(".ti"+$(this).attr("id")).attr("style","display:block; border:3px solid black;");
+        }
+        
+        
+
+
         $("#tipo_piezas").show('slow');
         $("#pregunta1").attr('style','display:none');
         $("#ok1").attr('style','display:block');
         //id="<?php echo $tipo->id; ?>
-        $(".tipos, .id").attr("style","border:1 px solid black;");
+        //$(".tipos, .id").attr("style","border:1 px solid black;");
+        $("#Valorpieza_id_pieza").val("");
+        $("#Valorpieza_id_tamano").val("");
+        $('#terminaciones').hide();
+        $('#destino').hide();
+        $('#cantidad').hide();
+        $('#preuni').hide();
         //$(document).scrollTop( $("#tipo_piezas")().offset().top);
         //$('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
         // $('#tipo_piezas').scrollView();
@@ -531,9 +586,19 @@ $(document).ready(function($){
 
     function vermaterial( idmaterial ){
        $("#Valorpieza_id_material").val(idmaterial);
+
+        if(parseInt($("#Valorpieza_id_material").val()) == 2){
+            $(".color2").attr("style","background-color:#134263;color:white;");
+            $(".color4").attr("style","background-color:white;color:black;");
+        }else{
+             $(".color4").attr("style","background-color:#134263;color:white;");
+            $(".color2").attr("style","background-color:white;color:black");
+        }
+
+        
+
        $(".tipos").show('slow');
        $(".tipos").attr("style","display:none;");
-
        $(".tipo"+idmaterial).attr("style","display:block;");
        $('#tipo_piezas').hide();
         $('#terminaciones').hide();

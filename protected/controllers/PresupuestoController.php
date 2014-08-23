@@ -234,14 +234,38 @@ class PresupuestoController extends Controller
 			//guardo las variables desglosadas
 			$preciopieza =$precio;
 
-			// CREAR CODIGO QUE DETECTE EL PRECIO CORRECTO DE LA TERMINACION
-			
-			echo $valorPieza->terminacion->precio;
-			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+			//  TERMINACION  Optimizarla reduciendo texto
+				switch ($valorPieza->id_pieza) {
+				case 1: //baldosas
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=$valorPieza->terminacioncanto->precio * $numeropiezas * $tamano->longitud;
+					$precioterminacionArista=$valorPieza->terminacionarista->precio * $tamanoreal;
+
+					break;
+				case 2: // rodapies
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal * $tamano->tamanopieza;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+				
+				default:
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+			}
+
+
+		
+
+
+			$this->debug($precioterminacion);
+			$this->debug($precioterminacionCanto);
+			$this->debug($precioterminacionArista);
 
 			//sumo el precio de la terminación
 
-			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
+			$precio = $precio + $precioterminacion + $precioterminacionCanto + $precioterminacionArista;
 
 			$valorPieza->precio = $precio;			
 
@@ -260,8 +284,7 @@ class PresupuestoController extends Controller
 
 			$pesomaximo = $pale['pesomaximo'];
 
-			$this->debug($pesomaximo);
-			$this->debug($pesotransporte);
+			
 			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
 			$entero = 0;
 			if( $pesotransporte > $pesomaximo ){
@@ -272,7 +295,7 @@ class PresupuestoController extends Controller
 				$kilosdecimal = $decimal * $pesomaximo;
 				
 
-				$this->debug($kilosdecimal);
+				
 				//CALCULO DEL ENTERO
 				$precioindividual = 0;
 				for ($i = 1; $i <= $entero; $i++) {	
@@ -316,7 +339,7 @@ class PresupuestoController extends Controller
 		if( isset($_POST['Presupuesto']) ){		
 			$presupuesto = $this->loadModel($id);			
 			$presupuesto->attributes = $_POST['Presupuesto'];
-			$this->debug($presupuesto);
+			
 			if( $presupuesto->validate() ) {
                 try {
                     if ($presupuesto->save()){
@@ -588,7 +611,7 @@ class PresupuestoController extends Controller
 
 		$preciotransporte = Preciotransporte::model()->find( $criteria2 );
 
-		$this->debug($peso);
+		
 
 		return $preciotransporte->precio;
 		

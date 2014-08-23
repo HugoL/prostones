@@ -15,10 +15,12 @@
                     $('#preciounitario').html(e.responseText);
                 }
             });
-    $('html, body').animate({scrollTop: $('#terminaciones').offset().top +300 }, 'slow');
+    //$('html, body').animate({scrollTop: $('#terminaciones').offset().top +300 }, 'slow');
     $('#terminaciones').show('slow');
     $('#pregunta2').attr('style','display:none');
     $('#ok2').attr('style','display:block');
+
+
     
 });
 ";
@@ -31,7 +33,7 @@ echo "</script>";
     <?php echo "<script>";
     echo "
         $('#Valorpieza_id_tamano').change(function(){  
-        
+            $('#preciounitario').attr('style','display:block');
             idmaterial = $('#Valorpieza_id_material').val();
             idpieza = $('#Valorpieza_id_pieza').val();
            
