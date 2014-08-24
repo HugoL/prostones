@@ -107,7 +107,7 @@
 
                                         <?php foreach ( $tipos as $key => $tipo ): ?>  
                                         <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?> ti<?php echo $tipo->id; ?>" id="<?php echo $tipo->id; ?>">
-                                            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>" width="100" height="50" /></a>
+                                            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>"  /></a>
                                             <div class="ejemplo_img_cont cont<?php echo $tipo->id; ?>">
                                                <?php echo $tipo->nombre; ?>
                                             </div>
@@ -467,10 +467,10 @@
 <script type="text/javascript"> 
     $(document).ready(function(){
         $(".ejemplo_img").mouseenter(function() {
-            $(".ejemplo_img_cont", this).stop().animate({ top:'31px' },{ queue:false, duration:300 });
+            $(".ejemplo_img_cont", this).stop().animate({ top:'51px' },{ queue:false, duration:300 });
         });
         $(".ejemplo_img").mouseleave(function() {
-            $(".ejemplo_img_cont", this).stop().animate({ top:'48px' },{ queue:false, duration:300 });
+            $(".ejemplo_img_cont", this).stop().animate({ top:'70px' },{ queue:false, duration:300 });
         });
     });
 </script>
@@ -536,12 +536,14 @@ $(document).ready(function($){
 
          if(parseInt($("#Valorpieza_id_material").val()) == 2){
             $(".tipo2").attr("style","display:block; border:1px solid black;");
-            $(".ejemplo_img_cont").attr("style","top: 48px;");
-            $(".cont"+$(this).attr("id")).attr("style","top: 31px!important;");
-            $(".ti"+$(this).attr("id")).attr("style","display:block; border-left:3px solid black; border-right:3px solid black;");
+            $(".ejemplo_img_cont").attr("style","top: 70px;");
+            $(".cont"+$(this).attr("id")).attr("style","top: 51px!important;");
+            $(".ti"+$(this).attr("id")).attr("style","display:block; border-left:3px solid black; border-right:3px solid black;border-top:2px solid black;");
         }else{
               $(".tipo4").attr("style","display:block; border:1px solid black;");
-            $(".ti"+$(this).attr("id")).attr("style","display:block; border:3px solid black;");
+            $(".ejemplo_img_cont").attr("style","top: 70px;");
+            $(".cont"+$(this).attr("id")).attr("style","top: 51px!important;");
+            $(".ti"+$(this).attr("id")).attr("style","display:block; border-left:3px solid black; border-right:3px solid black;");
         }
         
         
@@ -599,7 +601,7 @@ $(document).ready(function($){
 
        $(".tipos").show('slow');
        $(".tipos").attr("style","display:none;");
-       $(".tipo"+idmaterial).attr("style","display:block;");
+       $(".tipo"+idmaterial).attr("style","display:block; border:1px solid black;");
        $('#tipo_piezas').hide();
         $('#terminaciones').hide();
         $('#destino').hide();

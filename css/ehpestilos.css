@@ -355,8 +355,8 @@ height:90px;
 
 .tipos img{
  width:100%;
- height:50px;
- border:none;
+ height:70px!important;
+ border:2px transparent;
  padding:0px;
  margin-bottom: 0px;
 
@@ -408,7 +408,7 @@ list-style:none;
   float:left;
   width:100%;
   padding:0px;
-  
+
 }
 
 .ejemplo_img {
@@ -417,9 +417,14 @@ list-style:none;
  width:100%;
 margin-left:10px;
   margin-bottom:10px;
-  border:1px solid #333;
+
+  
   overflow:hidden;
+  
+
 }
+
+
 
 .ejemplo_img_cont {
   float:left;
@@ -432,13 +437,14 @@ margin-left:10px;
   opacity:.8; 
   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   -MS-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  top:50px;
+  top:70px;
   left:0px;
   color:#FFF;
   font-size:11px;
   text-align: center;
   font-family:"Lucida Grande", Arial, sans-serif;
   z-index:10;
+
 }
 
 #vermarmol{
@@ -519,6 +525,7 @@ margin-top:-15% !important;
 .cuerofertas{
   border: 1px solid black;
   margin-left:0px !important;
+  margin-bottom:10px;
 }
 .tituloweb h1{
  border-bottom: 1px transparent !important; 
@@ -534,3 +541,6 @@ font-size:20px;
 
   }
 
+.display {
+    display: none;
+}

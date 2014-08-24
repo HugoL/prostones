@@ -178,14 +178,25 @@
 	</div>
 
 
-	<div class="span2 ofertas" ><!--OFERTAS-->
+	<div class="span2 ofertas" style="display:block; height:80%"><!--OFERTAS-->
 		<div class="span6 offset3 titofertas" align="center">
 			<h2>Ofertas</h2>
 		</div>
+<div id='container'>
+    <div id='div1' class='display' style="background-color: red; height:175px">div1</div>
+    <div id='div2' class='display' style="background-color: green; height:175px">div2</div>
+    <div id='div3' class='display' style="background-color: blue; height:175px">div3</div>
+    <div id='div4' class='display' style="background-color: blue; height:175px">div4</div>
 
+</div>
+<div id='container'>
+    <div id='div5' class='display' style="background-color: red; height:175px">div5</div>
+    <div id='div6' class='display' style="background-color: green; height:175px">div6</div>
+    <div id='div7' class='display' style="background-color: blue; height:175px">div7</div>
+	<div id='div8' class='display' style="background-color: blue; height:175px">div8</div>
+</div>
 
-
-		<div class="span12 cuerofertas">
+		<div class="span12 cuerofertas oferta" id="oferta1">
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
 			<strong>Emperador Claro</strong>
@@ -211,11 +222,296 @@
 		</div>
 
 				
-		<div class="clearfix">&nbsp</div>
+		
 
-<div class="clearfix">&nbsp</div>
+		<div class="span12 cuerofertas oferta" id="oferta2">
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/negro_marquina.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+				
+		
+		<div class="span12 cuerofertas oferta" id="oferta3" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>rojo coralito</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/rojo_coralito.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >15,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta " id="oferta4" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Blanco Macael</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/blanco_macael.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta" id="oferta5" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina5</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta" id="oferta6" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina6</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >12,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>		
 
 
+		<div class="span12 cuerofertas oferta2" id="oferta21">
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Emperador Claro</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+				
+		
+
+		<div class="span12 cuerofertas oferta2" id="oferta22">
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+				
+		
+		<div class="span12 cuerofertas oferta2" id="oferta23" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta2 " id="oferta24" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina4</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/negro_marquina.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta2" id="oferta25" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina5</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta2" id="oferta26" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Rojo coralito</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/rojo_coralito.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >23,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
 
 
 		<div class="span12" align="center">
@@ -487,9 +783,7 @@
 
 
 								<div class="clearfix">&nbsp</div>          
-
-							
-						</div>
+        				   </div>
 
 
 
@@ -497,10 +791,69 @@
 
 							<div class="clearfix"></div>
 
-							<script type="text/javascript">
+<script type="text/javascript">
+							
+$(document).ready(function () {
+
+    var activeDiv = 1;
+   
+    showDiv(activeDiv);
+     // show first one because all are hidden by default
+    var timer = setInterval(changeDiv, 4000);
+    
+    function changeDiv() {
+        activeDiv++;
+        if (activeDiv == 7) {
+            activeDiv = 1;
+        }
+        showDiv(activeDiv);
+    }
+
+    function showDiv(num) {
+       $('div.oferta').hide(); // hide all
+        $('#oferta' + num).fadeIn(); // show active
+    }
+
+
+});
+
+$(document).ready(function () {
+
+    var activeDiv2 = 1;
+   
+    showDiv2(activeDiv2);
+     // show first one because all are hidden by default
+    var timer = setInterval(changeDiv2, 7000);
+    
+    function changeDiv2() {
+        activeDiv2++;
+        if (activeDiv2 == 7) {
+            activeDiv2 = 1;
+        }
+        showDiv2(activeDiv2);
+    }
+
+    function showDiv2(num) {
+       $('div.oferta2').hide(); // hide all
+        $('#oferta2' + num).fadeIn(); // show active
+    }
+
+
+});
+
 
 	$(document).ready(function(){
-		
+
+
+
+		//$("#oferta1").delay(10000).fadeOut("slow");
+		//$("#oferta4").delay(10500).fadeIn("slow");
+		//$("#oferta2").delay(21000).fadeOut("slow");
+		//$("#oferta5").delay(22000).fadeIn("slow");
+		//$("#oferta3").delay(31000).fadeOut("slow");
+		//$("#oferta6").delay(32000).fadeIn("slow");
+		 
+
 		$("#myController").jFlow({
 
 			controller: ".jFlowControl", // must be class, use . sign
