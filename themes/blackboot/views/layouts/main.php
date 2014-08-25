@@ -57,9 +57,10 @@ Yii::app()->clientscript
     <!-- link to magiczoomplus.js file -->
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>
 
-
-  
-
+<!-- ??? -->
+<link rel="canonical" href="http://www.proston.es" />  
+<link rel="canonical" href="http://www.proston.es/index.php/simulador/index/id" />
+<link rel="canonical" href="http://www.proston.es/index.php/tipo/verCaracteristicas/id/12" />
 
 
 <!--<script type="text/javascript" src="jquery.js"></script>-->

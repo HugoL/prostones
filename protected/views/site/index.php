@@ -182,19 +182,7 @@
 		<div class="span6 offset3 titofertas" align="center">
 			<h2>Ofertas</h2>
 		</div>
-<div id='container'>
-    <div id='div1' class='display' style="background-color: red; height:175px">div1</div>
-    <div id='div2' class='display' style="background-color: green; height:175px">div2</div>
-    <div id='div3' class='display' style="background-color: blue; height:175px">div3</div>
-    <div id='div4' class='display' style="background-color: blue; height:175px">div4</div>
 
-</div>
-<div id='container'>
-    <div id='div5' class='display' style="background-color: red; height:175px">div5</div>
-    <div id='div6' class='display' style="background-color: green; height:175px">div6</div>
-    <div id='div7' class='display' style="background-color: blue; height:175px">div7</div>
-	<div id='div8' class='display' style="background-color: blue; height:175px">div8</div>
-</div>
 
 		<div class="span12 cuerofertas oferta" id="oferta1">
 			
