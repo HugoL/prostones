@@ -78,11 +78,17 @@
 </div>
 
 <div class="span3" style="float:right;">
-    <div class="span12" >
+    <div class="span12"  >
     <?php if( $tipo_pieza == 1 ){?>
-        <img style="float:right" src="<?php echo Yii::app()->request->baseUrl?>/images/baldosa.png"/>
+        <figure>
+        <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/baldosa.png"/>
+        <figcaption style="font-size:10px;">Baldosa con bisel.<br> Detalle de junta de baldosas con bisel.</figcaption>
+        </figure>
     <?php  }else{?>
-        rodapie
+        <figure>
+        <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/rodapie.png"/>
+        <figcaption style="font-size:10px;">Rodapié con bisel.<br> Detalle del canto del rodapié.</figcaption>
+        </figure>
      <?php   }  ?>
         
     </div>

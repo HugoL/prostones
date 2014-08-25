@@ -114,7 +114,7 @@
                  <td><?php echo $pieza->tamano->nombre; ?></td>
                  <td align="center">
 
-                     <?php if( $pieza->tamano-> == 14 || $pieza->tamano-> == 15 ){
+                     <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){
                          echo 'Aleatorio';
                      }else{
                      echo $pieza->numeropiezas;
