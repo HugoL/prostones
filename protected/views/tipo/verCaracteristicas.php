@@ -16,21 +16,20 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
           
 
 
-<figure>
-<img  alt="<?php echo $tipo->nombre; ?> - proSton.es" style="border:1px solid black; width:200px; height:230px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
-</figure>
-<br />
+        <figure>
+        <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="200px" height="300px" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
+        </figure>
+        <br>
 
 
 
 
 
 
-            <br><br>
+            
             <strong>Características</strong> <br>
        
-</table>
-          
+                 
             <table  style=" border-collapse:separate;
     border-spacing:0px 3px; ">
                             <tr  >

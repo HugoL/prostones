@@ -72,13 +72,13 @@
                         </div>
 
                         <div class="span12">
-                            <div class="span8 bordepresu">
+                            <div class=" span6 bordepresu">
                                 <?php if( !empty($materiales) ):?> 
 
                                     <ul>   
                                         <?php foreach ( $materiales as $key => $material ): ?>
                                            <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);">   
-                                            <li class="span2 offset1 color<?php echo $material->id; ?>">
+                                            <li class="span4 offset1 color<?php echo $material->id; ?>">
                                                 <?php echo $material->nombre; ?>
                                             </li>
                                         </a>
@@ -86,12 +86,14 @@
 
 
                                         <?php endforeach; ?>
+
                                      </ul>
                                 <?php endif; ?>
                             </div>
 
-                            <div class="span4">
-                              <font size="1">  Consulte la  información de los materiales y sus caracteristicas técnicas."<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">Ver catálogo.</a></font>
+                            <div class="span6 textogris">
+                              <p>- Tambien trabajamos con Calizas, Travertinos... Indiquenos que desea, próximamente estarán disponibles online.
+
                             </div>
 
                         </div>
@@ -107,7 +109,7 @@
 
                                         <?php foreach ( $tipos as $key => $tipo ): ?>  
                                         <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?> ti<?php echo $tipo->id; ?>" id="<?php echo $tipo->id; ?>">
-                                            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."large/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>"  /></a>
+                                            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."ancha/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>"  /></a>
                                             <div class="ejemplo_img_cont cont<?php echo $tipo->id; ?>">
                                                <?php echo $tipo->nombre; ?>
                                             </div>
@@ -203,7 +205,7 @@
                 </div>
                     
       
-       
+      
                 
 
 
@@ -248,7 +250,7 @@
                 </div>
 
                 <div class="span6">
-                    Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.
+                    <font color="grey">Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.</font>
                 </div>
             </div>
         </div><!--FIN PASO 4-->
@@ -277,7 +279,7 @@
     
             <div class="cuadropresu span10">
                 <div class="span12">
-                    Seleccione la cantidad de la pieza.
+                    Seleccione la cantidad de material.
                 </div>
                 <div class="span12">
                     <div class="span6">
@@ -385,56 +387,25 @@
                                 <tr>
                                     <td align="right" style="padding-right:10px">
                                         <em>Cara:</em> <?php echo $pieza->terminacion->nombre; ?>.
-                                        <?php echo $pieza->terminacion->precio; ?> €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m ";} ?>
+                                        <?php echo $pieza->terminacion->precio; ?> €/m<sup>2</sup>
                                     </td>
                                     <td align="right" style="padding-right:5px">
-                                        <?php
-                                        $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal,2);
-                                        $termcara2 =number_format((float)$termcara, 2, '.', '');
-                                        echo str_replace(".",",",$termcara2) . " € "; 
-
-
-
-                                
-                                ?>                             
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td align="right" style="padding-right:10px">
-                                    <em>Arista:</em>
                                         <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacionarista->nombre . ".";  
-                                         }else{
-                                            echo "Bisel 3 mm ??";       
-
-                                        }  ?> 
-                                         <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacionarista->precio . " €/m" ;
-                                         }else{
-                                         echo "";
-                                        }  ?> 
-                                    </td>
-
-                                    <td align="right" style="padding-right:5px">
-                                    <?php
-                                        $termarista = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
-                                        $termarista2 =number_format((float)$termarista, 2, '.', '');
-                                            
-                                        
-                                        ?>                      
-
-                                        <?php if( $pieza->id_pieza == 1 ){
-                                            echo str_replace(".",",",$termarista2) . " € ";  
+                                            $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal,2);
+                                            $termcara2 =number_format((float)$termcara, 2, '.', '');
+                                            echo str_replace(".",",",$termcara2) . " € ";
                                         }else{
-                                            echo "0 € ";
+                                            $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
+                                            $termcara2 =number_format((float)$termcara, 2, '.', '');
+                                            echo str_replace(".",",",$termcara2) . " € "; 
                                         } ?>
+
+                                                                    
                                     </td>
                                 </tr>
 
 
-                                <tr>
+                                 <tr>
                                     <td align="right" style="padding-right:10px">
                                         <em>Canto:</em> 
                                         <?php if( $pieza->id_pieza == 1 ){
@@ -466,6 +437,42 @@
                                         }  ?> 
                                     </td>
                                 </tr>
+
+                                <tr>
+
+                                    <td align="right" style="padding-right:10px">
+                                    <em>Arista:</em>
+                                        <?php if( $pieza->id_pieza == 1 ){
+                                         echo $pieza->terminacionarista->nombre . ".";  
+                                         }else{
+                                            echo "Bisel 1,5 mm";       
+
+                                        }  ?> 
+                                         <?php if( $pieza->id_pieza == 1 ){
+                                         echo $pieza->terminacionarista->precio . " €/m<sup>2</sup>" ;
+                                         }else{
+                                         echo "";
+                                        }  ?> 
+                                    </td>
+
+                                    <td align="right" style="padding-right:5px">
+                                    <?php
+                                        $termarista = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
+                                        $termarista2 =number_format((float)$termarista, 2, '.', '');
+                                            
+                                        
+                                        ?>                      
+
+                                        <?php if( $pieza->id_pieza == 1 ){
+                                            echo str_replace(".",",",$termarista2) . " € ";  
+                                        }else{
+                                            echo "0 € ";
+                                        } ?>
+                                    </td>
+                                </tr>
+
+
+                               
                                 <tr>
                                     <td align="right" style="padding-right:10px">
                                        <strong> Precio material:</strong>
@@ -473,7 +480,7 @@
                                     <td align="right" style="padding-right:5px; " >
                                     <strong>
                                         
-                                        <?php $preciomat = round(($pieza->tamanoreal * $pieza->preciounitario)+($pieza->terminacion->precio * $pieza->tamanoreal)+($pieza->terminacionarista->precio * $pieza->tamanoreal)+($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud),2)?>
+                                        <?php $preciomat = round(($pieza->tamanoreal * $pieza->preciounitario)+($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza)+($pieza->terminacionarista->precio * $pieza->tamanoreal)+($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud),2)?>
                                         <?php echo str_replace(".",",",$preciomat); ?> €
                                     </strong>
                                     </td>

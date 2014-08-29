@@ -312,7 +312,7 @@ class PresupuestoController extends Controller
 				//$precioultimo = damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
 			}else{
 
-	
+			$valorPieza->pales = $entero;
 			$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
 			}
 
@@ -392,7 +392,7 @@ class PresupuestoController extends Controller
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
 		echo $this->renderPartial('_ajaxPreciounitario', array(
-					'precioajax' => $preciounitario->precio), true, false);
+					'precioajax' => $preciounitario->precio,'tipo' => $preciounitario->tamano->pieza->id), true, false);
 
 		Yii::app()->end();
 	}

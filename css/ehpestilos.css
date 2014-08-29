@@ -214,7 +214,7 @@ margin-left:35px;
 .slide h3 {  font: 26px/1em ;color: #FFF;  margin: 0px 0px 0px 55%; }
 
 .slide p { font-size: 14px; color: #FFF; float:right; margin-right: 10px; }
-.slide img{width:100%; }
+.slide img{width:100%; height:100%; }
 
 .jFlowSlideContainer { overflow: hidden; }
 
@@ -283,9 +283,7 @@ margin-left:35px;
 
 }
 .plat img{
-  width:100%;
-
-  height:60px;
+ 
   border:1px solid black;
 }
 
@@ -485,7 +483,7 @@ border:1px solid black;
 }
 
 .pa select{
-  width:175px;
+  /*width:175px;*/
 }
 .po input{
   width:70px;
@@ -548,4 +546,18 @@ font-size:20px;
 .matpresu p{
 
   margin: 0 0 5px !important;
+}
+
+.foot h2{
+
+  font-size: 18px;
+}
+
+.foot p{
+  text-align:justify;
+}
+
+.textogris p{
+  /*font-size:11px !important;*/
+  color:grey;
 }
