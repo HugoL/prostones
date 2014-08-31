@@ -1,4 +1,22 @@
-<?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
+
+
+
+
+         	<?php if( !empty($tamanos) ): ?>
+         		<select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
+         			<option value="">Selecciona tamaño</option>
+         			<?php foreach ($tamanos as $key => $tamano) : ?>
+         				<option class="optiontamano <?php echo "tamano".$tamano->id_pieza; ?>" value="<?php echo $tamano->id; ?>"><?php echo $tamano->nombre ?></option>
+         			<?php endforeach; ?>
+         		</select>
+            <?php else: ?>
+            	<div class"alert alert-warning">No hay tamaños disponibles para esta pieza</div>   
+            <?php endif; ?> 
+
+
+
+
+    <?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxPreciounitario')); ?>
     <?php echo "<script>";
     echo "
         $('#Valorpieza_id_tamano').change(function(){  
@@ -53,22 +71,3 @@ echo "</script>";
 ";
 echo "</script>";
 ?>
-
-
-<div class="span4 pa" id="tamanos">
-
-         	<?php if( !empty($tamanos) ): ?>
-         		<select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
-         			<option value="">Selecciona tamaño</option>
-         			<?php foreach ($tamanos as $key => $tamano) : ?>
-         				<option class="optiontamano <?php echo "tamano".$tamano->id_pieza; ?>" value="<?php echo $tamano->id; ?>"><?php echo $tamano->nombre ?></option>
-         			<?php endforeach; ?>
-         		</select>
-            <?php else: ?>
-            	<div class"alert alert-warning">No hay tamaños disponibles para esta pieza</div>   
-            <?php endif; ?> 
-
-
-
-
-        </div>

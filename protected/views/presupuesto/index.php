@@ -144,11 +144,12 @@
                     </div>
 
 
-    
+                    
                     <div class="cuadropresu span10">
                         <div class="span12">
                             Seleccione el <strong>formato de pieza</strong> y el <strong>tamaño</strong>.
                         </div>
+                        <div class="span12">
                         <div class="span4 pa">
                             <?php if( !empty($piezas) ): ?>
                                 <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
@@ -159,13 +160,14 @@
 
                         
 
-                        <div id="tamanos" class="span3"></div>
+                        <div id="tamanos" class="span4"></div>
 
                         <!-- tamaños -->
                         
                         <div id="preciounitario" class="span3"></div>
 
                         <!--precio unitario-->
+                        </div>
                     </div>
         </div><!-- FIN PASO 2-->        
 

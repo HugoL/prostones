@@ -19,12 +19,12 @@ $this->pageTitle=Yii::app()->name . ' - Quienes somos';
 
 <h2>Datos identificativos del titular</h2>
 
-<p>El  titular de www.proSton.es es Rosa María Cerro Flores, con domicilio social en Zaragoza, Avda, José Anselmo Clavé 49, 9º. A, 50004 Zaragoza y con C.I.F. número 17849768-C y correo electrónico: info@proston.es</p>
+<p>El  titular de www.proSton.es es <em>Rosa María Cerro Flores</em>, con domicilio social en Zaragoza, Avda, José Anselmo Clavé 49, 9º. A, 50004 Zaragoza y con C.I.F. número 17849768-C y correo electrónico: <font color="#134263">info@proston.es</font></p>
 
 <h2>Objetivo de la empresa</h2>
 
-<p>Poner los materiales al alcance de aquellos clientes que accedan a Internet para aprovisionarse de rocas ornamentales (para realizar obras de nueva planta o reformas), a precios de fábrica..
-En proSton.es se centraliza el control de la “plataforma” y la gestión del sitio WEB en sus oficinas de Zaragoza; los productos a suministrar proceden de diferentes fábricas ubicadas en las comarcas donde se extraen los materiales que suministramos; realizan el servicio post-venta talleres situados en varias provincias del territorio nacional (se abarcan todas las regiones deEspaña), y que tambien forman parte de nuestra organización.</p>
+<p>Poner los materiales al alcance de aquellos clientes que accedan a Internet para aprovisionarse de rocas ornamentales (para realizar obras de nueva planta o reformas), a precios de fábrica.
+En proSton.es se centraliza el control de la “plataforma” y la gestión del sitio web desde sus oficinas de Zaragoza; los productos a suministrar proceden de diferentes fábricas ubicadas en las comarcas donde se extraen los materiales que suministramos; realizan el servicio post-venta talleres situados en varias provincias del territorio nacional (se abarcan todas las regiones deEspaña), y que tambien forman parte de nuestra organización.</p>
 
 <h2>¿Quienes forman la plataforma proSton?</h2>
 <p>

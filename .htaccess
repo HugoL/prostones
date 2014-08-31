@@ -7,9 +7,10 @@
 # SetOutputFilter DEFLATE
 #</Files>
 
-# <Files *.js>
-# SetOutputFilter DEFLATE
-# </Files>
+#<Files *.js>
+#SetOutputFilter DEFLATE
+
+#</Files>
 
 # <Files *.ttf>
 # SetOutputFilter DEFLATE
@@ -22,3 +23,19 @@
 # AddOutputFilterByType DEFLATE application/xml
 # AddOutputFilterByType DEFLATE application/xhtml+xml
 # AddOutputFilterByType DEFLATE application/rss+xml
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+# 1 MES 
+#<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$"> 
+#Header set Cache-Control "max-age=2592000, public" 
+#</FilesMatch> 
+
+# 1 SEMANA 
+#<FilesMatch "\.(html|htm|php|js|xml|txt|css)$"> 
+#Header set Cache-Control "max-age=604800, public, must-revalidate" 
+#</FilesMatch>" 

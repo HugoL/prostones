@@ -92,14 +92,15 @@ Yii::app()->clientscript
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id'),'active'=> Yii::app()->controller->id == "simulador"),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
 						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
-						array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about'),'items'=>array(
+						array('label'=>'Empresa', 'url'=>array('#'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/site/page','view'=>'pisos_unifamiliares')),
 							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/site/page','view'=>'interiorismo_cocinas')),
 							array('label'=>'Edificación - Urbanización', 'url'=>array('/site/page','view'=>'edificacion_urbanizacion')),
 							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/site/page','view'=>'paisajismo_mamposteria')),
 							),),
-						array('label'=>'Ayuda técnica', 'url'=>array('/site/contact')),	
+						array('label'=>'???', 'url'=>array('/site/contact')),	
+						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
 						/*	
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)*/

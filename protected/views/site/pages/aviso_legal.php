@@ -16,7 +16,7 @@ $this->pageTitle=Yii::app()->name . ' - Aviso legal';
 <div class="clearfix">&nbsp</div>
 
 <div class="span6 foot">
-<p>El simple acceso o utilización del presente Sitio Web, supone que usted adquiere al automática condición de “Usuario” del mismo y por ello la aceptación de la totalidad de condiciones y disposiciones que se enumeran a continuación, obligándose a cumplir con lo aquí establecido;  por lo que se recomienda su lectura con carácter previo a cada utilización del Sitio Web.</p>
+<p>El simple acceso o utilización del presente sitio web, supone que usted adquiere al automática condición de “Usuario” del mismo y por ello la aceptación de la totalidad de condiciones y disposiciones que se enumeran a continuación, obligándose a cumplir con lo aquí establecido;  por lo que se recomienda su lectura con carácter previo a cada utilización del Sitio Web.</p>
 
 <p>Las Condiciones enumeradas se interpretarán conforme a la legislación vigente en España en la materia , que se aplicará subsidiariamente en todo lo que no se haya previsto en las mismas. (Básicamente Ley 34/2002 de 11 de julio de servicios de la información y comercio electrónico).</p>
 

@@ -1,6 +1,6 @@
 
 
-<div class="presprecio" id="preuni" align="center">Precio: <strong>
+<div class="presprecio" id="preuni" align="center">Precio base: <strong>
 	<font color="#134263"><?php 	$precioajax = round($precioajax,2);
 			echo preg_replace('/\./', ',', $precioajax);
 			

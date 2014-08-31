@@ -18,9 +18,13 @@ $this->pageTitle=Yii::app()->name . ' - Forma de pago';
 <div class="span6 foot">
 <p>
 
-Transferencia bancaria: de no tener un acuerdo en otro sentido, el cliente deberá realizar un ingreso por anticipado del 50% de la factura proforma, mediante transferencia bancaria en las siguientes cuentas:
-IBERCAJA: IBAN - ES…….
-B.B.V.A.: IBAN - ES ……
+Transferencia bancaria: de no tener un acuerdo en otro sentido, el cliente deberá realizar un ingreso por anticipado del 50% de la factura proforma, mediante transferencia bancaria en las siguientes cuentas:<br><br>
+
+IBERCAJA: IBAN - ES…….<br><br>
+
+B.B.V.A.: IBAN - ES ……<br><br>
+
+<br><br>
 
 Después de realizar la transferencia, el Cliente deberá enviar un email con la copia del justificante bancario (indicándonos el nº. de la proforma), a la dirección de correo electrónico contabilidad@proston.es o info@proston.es confirmando la realización de la misma. El plazo de entrega no comenzará a contar hasta que tenga lugar la recepción del pago.
 

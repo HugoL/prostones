@@ -51,16 +51,16 @@
 
     <tr style="border:0px;" >
       <td> 
-      Nº Presupuesto: <? echo $pieza->presupuesto->id ?> <br>
-        Fecha: <? echo $pieza->presupuesto->fecha?> <br>
+      Nº Presupuesto: <?php echo $pieza->presupuesto->id ?> <br>
+        Fecha: <?php echo $pieza->presupuesto->fecha?> <br>
       </td>
     </tr>
      <tr style="border:0px;"><td></td></tr>
 
        <tr  >
       <td  style="border:1px solid black"> 
-         Nombre:  <? echo $pieza->presupuesto->nombre ?><br>
-        Email: <? echo $pieza->presupuesto->email ?> <br>
+         Nombre:  <?php echo $pieza->presupuesto->nombre ?><br>
+        Email: <?php echo $pieza->presupuesto->email ?> <br>
         Teléfono:  (crear campo del telefono)
       </td>
     </tr>  
@@ -363,7 +363,7 @@
   </div>
 
   <div class="span12" style="margin-top:15px; font-size:18px;">
-       <strong>Transporte</strong><font size="3"> (Opcional. Recogida de material en origen a coste 0. A partir de 100m<sup>2</sup> disponemos de transportes mas económicos</font>
+       <strong>Transporte</strong><font size="3"> (Opcional. Recogida en origen sin cargo. A partir de 100m<sup>2</sup> disponemos de transportes mas económicos</font>
        </div>
       <div class="row-fluid marketing">
         <div class="span12" style="border:1px solid black">

@@ -20,66 +20,63 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
 
 
 <div class="span8">
-    <div class="span12">
-        <div class="span3">
+  <div class="span12">
+    <div class="span3 menusimulador">
 
-          <div class="span12 well">
-            Escenarios
-            <br><br>
-            <strong><span class="dot">•</span> Portal</strong><br>
-            <span class="dot">•</span> Escalera (prox.)<br>
-            <span class="dot">•</span> Habitación (prox.)
-          </div>
-
-          <img style="width:150px; height:210px; border:1px solid black;margin-left:20px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
-          <font size="1" style="margin-left:50px;">Boceto sin material</font>
-
+        <div class="span12 well ">
+          Escenarios
+          <br><br>
+          <strong><span class="dot">•</span> Portal</strong><br>
+          <span class="dot">•</span> Escalera (prox.)<br>
+          <span class="dot">•</span> Habitación (prox.)
         </div>
 
-          <div class="span3" style="text-align:right">
-           
-            <br>
+            <figure>
+            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
+            <figcaption>Boceto sin material</figcaption>
+             </figure>
+    </div>
 
-           <font size="3"> <strong><?php echo $tipo->nombre; ?></strong></font><br>
-            <div style="margin-top:250px;">
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
+    <div class="span3 textosimulador">
+      <br>
+      <font size="3"> <strong><?php echo $tipo->nombre; ?></strong></font><br>
+      
+      <div id="botonsimulador">
+         <?php $this->widget('bootstrap.widgets.TbButton', array(
                'label'=>'info del material',
         'type'=>'info', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
         'size'=>'mini', // null, 'large', 'small' or 'mini'
         'url'=>array('tipo/verCaracteristicas/id/'.$tipo->id),
        )); ?>
 
-<div class="clearfix">&nbsp;</div>  
- <?php $this->widget('bootstrap.widgets.TbButton', array(
+        <div class="clearfix">&nbsp;</div>  
+        <?php $this->widget('bootstrap.widgets.TbButton', array(
                'label'=>'Pedir presupuesto',
         'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
         'size'=>'mini', // null, 'large', 'small' or 'mini'
         'url'=>array('presupuesto/'),
        )); ?>
-</div>
+      </div>
             <br>
             
-        </div>
-        <div class="span6">
-
-         <img style="width:80%; height:80%; border:1px solid black" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
-           
-
-        </div>
-      
     </div>
 
+    <div class="span6">  
+    <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="80%" height="80%" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
+
+    </div>
+      
+  </div>
 </div>
 
 
 
 
-<div class="span3">
-    <h3 style="font-size:15px;">Mármoles</h3>
+<div class="span3 galsimulador">
+    <h3>Mármoles</h3>
     <div class="span12 galemat">
-<div class="clearfix"></div>
-
-        <?php foreach ($tipos as $key => $tipo):     ?>
+      <div class="clearfix"></div>
+      <?php foreach ($tipos as $key => $tipo):     ?>
             <div class="span2 ">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/simulador/index/id/".$tipo->id?>">
 
@@ -89,7 +86,7 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
         <?php endforeach; ?>
     </div>
 
-<h3 style="font-size:15px;">Granitos</h3>
+<h3>Granitos</h3>
     <div class="span12 galemat">
     <div class="clearfix"></div>
      <?php foreach ($tipos2 as $key => $tipo):     ?>
@@ -109,3 +106,13 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
 
 <div class="clearfix">&nbsp</div>
 <div class="clearfix">&nbsp</div>
+
+    <script>
+    $('#zoom_01').elevateZoom({
+    zoomType: "inner",
+cursor: "crosshair",
+zoomWindowFadeIn: 500,
+zoomWindowFadeOut: 750
+
+   }); 
+</script>

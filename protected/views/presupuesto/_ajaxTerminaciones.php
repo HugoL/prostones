@@ -8,6 +8,7 @@
             </div>
 
             <div class="span12">
+                <div class="span12">
                 <?php if( !empty($terminaciones) ): ?>
                     <select type="text" class="form-control span12" id="Valorpieza_id_term" name="Valorpieza[id_ternimacion]">
                         <option value="">Selecciona terminacion de cara</option>         
@@ -22,12 +23,17 @@
                         No hay terminaciones disponibles para esta pieza
                     </div>   
                 <?php endif; ?>  
+                </div>
+                <div id="pretermcara" class="span12" style="display:none">
+
+                
+                </div>
             </div>
         </div>
 
         <?php if( $tipo_pieza == 2 ){?>
 
-        <div class="span5">
+        <div class="span7">
             
             <strong>Canto: </strong>Si la terminacion es pulido el canto sera pulido, las demas terminaciones el canto es apomazado.<br>
             <strong>Arista: </strong> Todo rodapie viene con bisel en una arista larga. 
@@ -97,12 +103,12 @@
         <?php if( $tipo_pieza == 1 ){?>
             <figure>
             <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/baldosa.png"/>
-            <figcaption style="font-size:10px; float:right">Baldosa con bisel.</figcaption>
+            <figcaption style="font-size:10px; float:right;">Baldosa con bisel.</figcaption>
             </figure>
         <?php  }else{?>
             <figure>
             <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/rodapie.png"/>
-            <figcaption style="font-size:10px;">Rodapié con bisel.<br> Detalle del canto del rodapié.</figcaption>
+            <figcaption style="font-size:10px; float:right;">Rodapié con bisel.<br> Detalle del canto del rodapié.</figcaption>
             </figure>
          <?php   }  ?>
             
@@ -131,10 +137,12 @@ $('#Valorpieza_id_term').change(function(){
 
     if( $('#Valorpieza_id_pieza').val() == 1 ){
             $('#termaristas').show('slow');
+            $('#pretermcara').show('slow');
     }else{
             $('#Valorpieza_id_terminacion_arista').val('44');
             $('#Valorpieza_id_terminacion_canto').val('45');
             $('#destino').show('slow');
+             $('#pretermcara').show('slow');
     }
      
       
@@ -160,6 +168,32 @@ $('#Valorpieza_id_term_canto').change(function(){
  
 
 
+";
+echo "</script>";
+?>
+
+ <?php $url_action3 = CHtml::normalizeUrl(array('/presupuesto/ajaxPrecioTermCara')); ?>
+    <?php echo "<script>";
+    echo "
+        $('#Valorpieza_id_term').change(function(){
+     
+            idterminacion = $('#Valorpieza_id_terminacion').val();
+            alert(idterminacion);
+            $.ajax({
+                url: '$url_action3', type: 'post', 
+                data: { id_terminacion: idterminacion},
+                success: function(response){
+                    $('#pretermcara').html(response);
+                },
+                error: function(e){
+                    $('#pretermcara').html(e.responseText);
+                }
+            });
+   
+    $('#pretermcara').show('slow');
+
+    
+});
 ";
 echo "</script>";
 ?>
