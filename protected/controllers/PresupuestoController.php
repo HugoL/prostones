@@ -234,14 +234,38 @@ class PresupuestoController extends Controller
 			//guardo las variables desglosadas
 			$preciopieza =$precio;
 
-			// CREAR CODIGO QUE DETECTE EL PRECIO CORRECTO DE LA TERMINACION
-			
-			echo $valorPieza->terminacion->precio;
-			$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+			//  TERMINACION  Optimizarla reduciendo texto
+				switch ($valorPieza->id_pieza) {
+				case 1: //baldosas
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=$valorPieza->terminacioncanto->precio * $numeropiezas * $tamano->longitud;
+					$precioterminacionArista=$valorPieza->terminacionarista->precio * $tamanoreal;
+
+					break;
+				case 2: // rodapies
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal * $tamano->tamanopieza;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+				
+				default:
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+			}
+
+
+		
+
+
+			$this->debug($precioterminacion);
+			$this->debug($precioterminacionCanto);
+			$this->debug($precioterminacionArista);
 
 			//sumo el precio de la terminación
 
-			$precio = $precio + ($valorPieza->terminacion->precio * $tamanoreal);
+			$precio = $precio + $precioterminacion + $precioterminacionCanto + $precioterminacionArista;
 
 			$valorPieza->precio = $precio;			
 
@@ -260,10 +284,13 @@ class PresupuestoController extends Controller
 
 			$pesomaximo = $pale['pesomaximo'];
 
-			$this->debug($pesomaximo);
-			$this->debug($pesotransporte);
+			
 			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
+<<<<<<< HEAD
 			$entero = 0;
+=======
+			$entero = 1;
+>>>>>>> 7b91cf8cd1b1f154bc1575820c3bfa299efe1534
 			if( $pesotransporte > $pesomaximo ){
 				$entero = floor( $pesotransporte / $pesomaximo );
 				$decimal = $pesotransporte / $pesomaximo - $entero;
@@ -272,7 +299,7 @@ class PresupuestoController extends Controller
 				$kilosdecimal = $decimal * $pesomaximo;
 				
 
-				$this->debug($kilosdecimal);
+				
 				//CALCULO DEL ENTERO
 				$precioindividual = 0;
 				for ($i = 1; $i <= $entero; $i++) {	
@@ -316,7 +343,7 @@ class PresupuestoController extends Controller
 		if( isset($_POST['Presupuesto']) ){		
 			$presupuesto = $this->loadModel($id);			
 			$presupuesto->attributes = $_POST['Presupuesto'];
-			$this->debug($presupuesto);
+			
 			if( $presupuesto->validate() ) {
                 try {
                     if ($presupuesto->save()){
@@ -400,14 +427,26 @@ class PresupuestoController extends Controller
 
 		$criteria=new CDbCriteria;        
         //$criteria->compare('id_pieza',$id_pieza);//no se
-       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza);
+       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 1');
         $criteria->select = '*';
 		$terminaciones = Terminacion::model()->findAll( $criteria );
+
+		$criteria2=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+       	$criteria2->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 2');
+        $criteria2->select = '*';
+		$terminacionesArista = Terminacion::model()->findAll( $criteria2 );
+
+		$criteria3=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+       	$criteria3->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 3');
+        $criteria3->select = '*';
+		$terminacionesCanto = Terminacion::model()->findAll( $criteria3 );
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
 		echo $this->renderPartial('_ajaxTerminaciones', array(
-					'terminaciones' => $terminaciones), true, false);
+					'terminaciones' => $terminaciones, 'terminacionesArista' => $terminacionesArista,'terminacionesCanto' => $terminacionesCanto,'tipo_pieza' => $id_pieza), true, false);
 
 		Yii::app()->end();
 	}
@@ -576,7 +615,7 @@ class PresupuestoController extends Controller
 
 		$preciotransporte = Preciotransporte::model()->find( $criteria2 );
 
-		$this->debug($peso);
+		
 
 		return $preciotransporte->precio;
 		

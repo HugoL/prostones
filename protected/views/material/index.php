@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 	array('label'=>'Manage Material', 'url'=>array('admin')),
 );*/
 ?>
-
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <h1>Catálogo de materiales</h1>
 
 

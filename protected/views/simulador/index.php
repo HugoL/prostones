@@ -11,7 +11,8 @@ $this->breadcrumbs=array(
 	array('label'=>'Manage Material', 'url'=>array('admin')),
 );*/
 
-$this->pageTitle=Yii::app()->name . ' - Diseñador';
+
+$this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->name;
 ?>
 
 
@@ -20,18 +21,21 @@ $this->pageTitle=Yii::app()->name . ' - Diseñador';
 
 <div class="span8">
     <div class="span12">
-    
         <div class="span3">
-        <div class="span12 well">
-           Escenarios
+
+          <div class="span12 well">
+            Escenarios
             <br><br>
-          <strong><span class="dot">•</span> Portal</strong><br>
-           <span class="dot">•</span> Escalera (prox.)<br>
-           <span class="dot">•</span> Habitación (prox.)
-</div>
-               <img style="width:150px; height:210px; border:1px solid black;margin-left:20px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
-               <font size="1" style="margin-left:50px;">Boceto sin material</font>
+            <strong><span class="dot">•</span> Portal</strong><br>
+            <span class="dot">•</span> Escalera (prox.)<br>
+            <span class="dot">•</span> Habitación (prox.)
+          </div>
+
+          <img style="width:150px; height:210px; border:1px solid black;margin-left:20px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
+          <font size="1" style="margin-left:50px;">Boceto sin material</font>
+
         </div>
+
           <div class="span3" style="text-align:right">
            
             <br>
@@ -44,19 +48,13 @@ $this->pageTitle=Yii::app()->name . ' - Diseñador';
         'size'=>'mini', // null, 'large', 'small' or 'mini'
         'url'=>array('tipo/verCaracteristicas/id/'.$tipo->id),
        )); ?>
-<div class="clearfix">&nbsp;</div>  
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
-               'label'=>'Comparar materiales',
-        'type'=>'success', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('presupuesto/'.$tipo->id),
-       )); ?>
+
 <div class="clearfix">&nbsp;</div>  
  <?php $this->widget('bootstrap.widgets.TbButton', array(
                'label'=>'Pedir presupuesto',
         'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
         'size'=>'mini', // null, 'large', 'small' or 'mini'
-        'url'=>array('presupuesto/'.$tipo->id),
+        'url'=>array('presupuesto/'),
        )); ?>
 </div>
             <br>
