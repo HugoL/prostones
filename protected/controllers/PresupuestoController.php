@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos','ajaxTerminaciones'),
+				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos','ajaxTerminaciones','ajaxPrecioTermCara'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -316,7 +316,7 @@ class PresupuestoController extends Controller
 				//$precioultimo = damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
 			}else{
 
-	
+			$valorPieza->pales = $entero;
 			$preciotransporte = $this->damePrecioPale( $valorPieza->tipo->provincia->zona->id, $valorPieza->provincia->zona->id, $pesotransporte );
 			}
 
@@ -396,7 +396,22 @@ class PresupuestoController extends Controller
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
 		echo $this->renderPartial('_ajaxPreciounitario', array(
-					'precioajax' => $preciounitario->precio), true, false);
+					'precioajax' => $preciounitario->precio,'tipo' => $preciounitario->tamano->pieza->id), true, false);
+
+		Yii::app()->end();
+	}
+	public function actionAjaxPrecioTermCara(){
+		$id_terminacion = strip_tags($_POST['id_terminacion']);
+		$criteria=new CDbCriteria;        
+        //$criteria->compare('id_pieza',$id_pieza);//no se
+        $criteria->addCondition( 'id = '.$id_terminacion );	//no se
+        $criteria->select = '*';
+		$preciounitariocara = Terminacion::model()->find( $criteria );
+		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
+		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
+
+		echo $this->renderPartial('_ajaxPrecioTermCara', array(
+					'precioajax' => $preciounitariocara->precio), true, false);
 
 		Yii::app()->end();
 	}

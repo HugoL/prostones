@@ -81,7 +81,7 @@
 
 						<div id="slide1" class="slide">    
 					
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/1.jpg" alt="Catálogo de materiales - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
 					
 							<div class="slideContent">
 								<h3>Catalogo de materiales</h3>
@@ -94,7 +94,7 @@
 						<div id="slide2" class="slide">
 							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">
 							<figure>
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/2.jpg" alt="Diseñador virtual - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>2.jpg" alt="Diseñador virtual - proSton.es" />
 						    </figure>
 							</a>
 
@@ -108,7 +108,7 @@
 
 						<div id="slide3" class="slide">
 							<figure>
-							<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/3.jpg" alt="Presupuesto online - proSton.es" />
+							<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>3.jpg" alt="Presupuesto online - proSton.es" />
 						    </figure>
 							<div class="slideContent"><h3>Presupuesto online</h3>
 								<p>Valora rapidamente tus proyectos.</p>
@@ -123,7 +123,7 @@
 					
 						<div id="slide4" class="slide">
 							<figure>
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg" alt="Transporte a domicilo - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>4.jpg" alt="Transporte a domicilo - proSton.es" />
 							</figure>
 						
 							<div class="slideContent">
@@ -215,7 +215,7 @@
 		<div class="span12 cuerofertas oferta" id="oferta2">
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina</strong>
+			<strong>Negro Marquina 1</strong>
 					</div>
 
 					<div class="span12">
@@ -294,7 +294,7 @@
 		<div class="span12 cuerofertas oferta" id="oferta5" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina5</strong>
+			<strong>Negro Marquina 2</strong>
 					</div>
 
 					<div class="span12">
@@ -320,7 +320,7 @@
 		<div class="span12 cuerofertas oferta" id="oferta6" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina6</strong>
+			<strong>Negro Marquina 3</strong>
 					</div>
 
 					<div class="span12">
@@ -374,7 +374,7 @@
 		<div class="span12 cuerofertas oferta2" id="oferta22">
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina</strong>
+			<strong>Negro Marquina 4</strong>
 					</div>
 
 					<div class="span12">
@@ -401,7 +401,7 @@
 		<div class="span12 cuerofertas oferta2" id="oferta23" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina</strong>
+			<strong>Negro Marquina 5</strong>
 					</div>
 
 					<div class="span12">
@@ -427,7 +427,7 @@
 		<div class="span12 cuerofertas oferta2 " id="oferta24" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina4</strong>
+			<strong>Negro Marquina 6</strong>
 					</div>
 
 					<div class="span12">
@@ -453,7 +453,7 @@
 		<div class="span12 cuerofertas oferta2" id="oferta25" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Negro Marquina5</strong>
+			<strong>Negro Marquina 7 </strong>
 					</div>
 
 					<div class="span12">
@@ -477,6 +477,165 @@
 
 		
 		<div class="span12 cuerofertas oferta2" id="oferta26" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Rojo coralito</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/rojo_coralito.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >23,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="span12 cuerofertas oferta3" id="oferta31">
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Emperador Claro</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+				
+		
+
+		<div class="span12 cuerofertas oferta3" id="oferta32">
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina 8</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+				
+		
+		<div class="span12 cuerofertas oferta3" id="oferta33" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina 9</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta3" id="oferta34" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina 10</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/negro_marquina.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta3" id="oferta35" >
+			
+			<div class="span12" style="margin-bottom:-10px" align="center">
+			<strong>Negro Marquina 11</strong>
+					</div>
+
+					<div class="span12">
+					<div class="span4" style="padding:5px;">
+					<figure>	
+					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/marmol/emperador_claro.jpg">
+				    </figure>
+				</div>
+
+				<div class="span8">
+				<p align="center">
+				<font size="2"> 40x30x2 -En Bruto-</font><br>
+				<font size="4" class="arriba" >16,50 </font>€/m<sup>2</sup><br>
+				<font size="1">a partir de 100 m<sup>2</sup></font></p>
+				
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+		<div class="span12 cuerofertas oferta3" id="oferta36" >
 			
 			<div class="span12" style="margin-bottom:-10px" align="center">
 			<strong>Rojo coralito</strong>
@@ -534,7 +693,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Diseñador virtual - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/diseñador.png">
+					<img alt="Servicio Diseñador virtual - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -558,7 +717,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Presupuesto online - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
+					<img alt="Servicio Presupuesto online - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -581,7 +740,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Catálogo de materiales - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/catalogo.png">
+					<img alt="Servicio Catálogo de materiales - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -606,7 +765,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Transporte a domicilio - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png">
+					<img alt="Servicio Transporte a domicilio - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -629,7 +788,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Tarifas - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/tarifas.png">
+					<img alt="Servicio Tarifas - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -652,7 +811,7 @@
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
-					<img alt="Servicio Atención personalizada - proSton.es" style="height:60px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/atencion.png">
+					<img alt="Servicio Atención personalizada - proSton.es" style="height:60px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
 					</figure>
 				</div>
 				<div class="span9 cuatit" align="right">
@@ -698,25 +857,25 @@
 								
 								<div class="plat"  >  
 									<figure>
-									<img   alt="Taller Galicia - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/orense.jpg">
+									<img   alt="Taller Galicia - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/orense.jpg">
 									<figcaption>Galicia</figcaption>
 									</figure>
 								</div>  
 								<div class="plat" > 
 									<figure> 
-									<img   alt="Taller Asturias - Castilla León "  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/leon.jpg">
+									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/leon.jpg" width="116px" height="60px" alt="Taller Asturias - Castilla León "  >
 									<figcaption>Asturias<br>Castilla León</figcaption>
 									</figure>
 								</div>  
 								<div class="plat" >
 									<figure>  
-									<img   alt="Taller Cantabria - Pais Vasco - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/guipozcoa.jpg">
+									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/guipozcoa.jpg" width="116px" height="60px" alt="Taller Cantabria - Pais Vasco - proSton.es" >
 									<figcaption>Cantabria<br>Pais Vasco</figcaption>
 									</figure>
 								</div>  
 								<div class="plat"> 
 									<figure> 
-									<img   alt="Taller La Rioja - Navarra - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logroño.jpg">
+									<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logrono.jpg" width="116px" height="60px"  alt="Taller La Rioja - Navarra - proSton.es" >
 									<figcaption>La Rioja<br>Navarra</figcaption>
 								</figure>
 								</div>  
@@ -779,7 +938,7 @@
 
 							<div class="clearfix"></div>
 
-<script type="text/javascript">
+<script async type="text/javascript">
 							
 $(document).ready(function () {
 
@@ -824,6 +983,30 @@ $(document).ready(function () {
     function showDiv2(num) {
        $('div.oferta2').hide(); // hide all
         $('#oferta2' + num).fadeIn(); // show active
+    }
+
+
+});
+
+$(document).ready(function () {
+
+    var activeDiv3 = 1;
+   
+    showDiv3(activeDiv3);
+     // show first one because all are hidden by default
+    var timer = setInterval(changeDiv3, 9000);
+    
+    function changeDiv3() {
+        activeDiv3++;
+        if (activeDiv3 == 7) {
+            activeDiv3 = 1;
+        }
+        showDiv3(activeDiv3);
+    }
+
+    function showDiv3(num) {
+       $('div.oferta3').hide(); // hide all
+        $('#oferta3' + num).fadeIn(); // show active
     }
 
 

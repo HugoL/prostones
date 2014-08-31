@@ -5,10 +5,21 @@
  font-family: "eras"; 
  src: url("../fonts/ERASDEMI.TTF") format("truetype");
 }
+@font-face {
+    font-family: "eras";
+    src: url("../fonts/ERASBD.TTF")format("truetype");
+    font-weight: bold;
+}
 @font-face { 
  font-family: "superficial"; 
  src: url("../fonts/superficial_book.otf") format("truetype");
 }
+@font-face { 
+ font-family: "superficial"; 
+ src: url("../fonts/superficial_bold.otf") format("truetype");
+ font-weight: bold;
+}
+
 
 .logo{
 
@@ -214,7 +225,7 @@ margin-left:35px;
 .slide h3 {  font: 26px/1em ;color: #FFF;  margin: 0px 0px 0px 55%; }
 
 .slide p { font-size: 14px; color: #FFF; float:right; margin-right: 10px; }
-.slide img{width:100%; }
+.slide img{width:100%; height:100%; }
 
 .jFlowSlideContainer { overflow: hidden; }
 
@@ -283,9 +294,7 @@ margin-left:35px;
 
 }
 .plat img{
-  width:100%;
-
-  height:60px;
+ 
   border:1px solid black;
 }
 
@@ -456,7 +465,11 @@ text-align: center;
 vertical-align: middle;
 border:1px solid black;
 font-size:14px;
-}   
+} 
+#vermarmol h2{
+    font-size:18px;
+    line-height: 14px !important;
+}  
 
 #vergranito{
  cursor:pointer;
@@ -466,7 +479,10 @@ text-align: center;
 vertical-align: middle;
 border:1px solid black;
 } 
-
+#vergranito h2{
+    font-size:18px;
+    line-height: 14px !important;
+}  
 .cuadropresu{
 
   min-height: 20px;
@@ -485,7 +501,7 @@ border:1px solid black;
 }
 
 .pa select{
-  width:175px;
+  /*width:175px;*/
 }
 .po input{
   width:70px;
@@ -500,7 +516,7 @@ border-radius: 4px;
 }
 
 .ofertas{
-margin-left:5px !important;
+margin-left:0px !important;
 border:1px #134263 solid;padding:5px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -513,7 +529,7 @@ border:1px #134263 solid;padding:5px;
 
 }
 .titofertas{
-margin-top:-15% !important;
+margin-top:-17% !important;
  background-color:white;
 
 }
@@ -548,4 +564,54 @@ font-size:20px;
 .matpresu p{
 
   margin: 0 0 5px !important;
+}
+
+.foot h2{
+
+  font-size: 18px;
+}
+
+.foot p{
+  text-align:justify;
+}
+
+.textogris p{
+  /*font-size:11px !important;*/
+  color:grey;
+}
+
+.botonesinfo input{
+
+    margin-left: 0px;
+    background-color: white;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    color: black;
+
+}
+#secinfo td{
+  text-align:center; 
+}
+#secinfo p{
+  text-align:justify; 
+}
+#secinfo h2{
+  font-size:24px !important; 
+}
+
+.menusimulador img{
+  width:150px; height:210px; border:1px solid black;
+}
+
+.menusimulador figcaption{
+  margin-left:7%;
+}
+.textosimulador{
+  text-align:right
+}
+.galsimulador h3{
+  font-size:15px;
+}
+#botonsimulador{
+  margin-top:250px;
 }

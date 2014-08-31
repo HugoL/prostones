@@ -16,21 +16,20 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
           
 
 
-<figure>
-<img  alt="<?php echo $tipo->nombre; ?> - proSton.es" style="border:1px solid black; width:200px; height:230px;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
-</figure>
-<br />
+        <figure>
+        <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="200px" height="300px" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
+        </figure>
+        <br>
 
 
 
 
 
 
-            <br><br>
+            
             <strong>Características</strong> <br>
        
-</table>
-          
+                 
             <table  style=" border-collapse:separate;
     border-spacing:0px 3px; ">
                             <tr  >
@@ -97,7 +96,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
             <td  align="center" bgcolor="#e8e8e8" style="border-bottom:1px solid #c4c4c4;"><strong style="color:#125171;">
                  <?php echo $preciounitario->precio ?></strong> 
             <font style=" font-size: 9px;" >   
-                <?php echo $this->debug($preciosunitarios);?>
+                
                 <?php if( $preciounitario->tamano->id_pieza == 1 ){
                 echo "€ m<sup>2</sup>.";
             }else{

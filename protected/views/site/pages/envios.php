@@ -13,48 +13,27 @@ $this->pageTitle=Yii::app()->name . ' - Envios';
 
 <div class="clearfix">&nbsp</div>
 
-<div class="span6">
-1. Formas de envío y plazos de entrega
+<div class="span6 foot">
+<p>
+Enviamos pedidos a la Península Ibérica, Ceuta, Melilla, Canarias, Baleares y Portugal. Si quiere hacer un pedido desde otro lugar, indíquelo a la hora de rellenar el presupuesto online y le informaremos personalmente.<br><br>
 
-Los plazos indicados a continuación se computan en días laborables (de lunes a viernes) y pueden verse alterados por fiestas locales o nacionales.
 
-Al ser la forma de pago habitual la transferencia bancaria, se realizará el envío del pedido en el momento que tengamos confirmación bancaria de la transferencia.
+Los gastos de envío dependen del peso o del volumen del pedido y del lugar de destino. Le informamos del importe en el resumen del presupuesto antes de confirmarlo y de realizar el proceso de pago.<br><br>
 
-Envíos a domicilio en España (Península)
 
-1º.- Venta del material del stock
-•	Plazo de entrega: 3 a 5 días.(coste según peso, ver tabla).
+<strong>Cambiar la dirección de entrega de un pedido.</strong><br><br>
 
-1º.- Venta de un material cortado a medida
-•	Plazo de entrega: 13 a 15 días.(coste según peso, ver tabla).
+Una vez realizado el pedido, y recibido el pago total del mismo, no es posible modificar la dirección de entrega. La próxima vez que haga un pedido, compruebe que estén bien los datos en "Mi dirección” cuando se está haciendo el proceso de compra.<br><br>
 
-Portes gratis en pedidos de importe superior a ... € (IVA incluido).
-Material del stock: 3 a 5 días y cortado a medida: 13 a 15 días.
 
-Envíos a domicilio en España (Baleares)
+<strong>Retraso en la recepción de un pedido.</strong><br><br>
 
-1º.- Venta del material del stock
-•	Plazo de entrega: .. a .. días.(coste según peso, ver tabla).
+Si el material que ha comprado no le ha sido entregado en el plazo aproximado que puede leer en el siguiente punto, envíenos un eMail a info@proSton.es con el Asunto: "No he recibido mi Pedido", y en un breve plazo de tiempo, nos pondremos en contacto con usted.<br><br>
 
-1º.- Venta de un material cortado a medida
-•	Plazo de entrega: ... a ... días.(coste según peso, ver tabla).
 
-Portes gratis en pedidos de importe superior a .... € (IVA incluido).
-Material del stock:  a días y cortado a medida: ... a .. días.
+<strong> El pedido no ha llegado correctamente.</strong><br><br>
 
-Envíos a domicilio en España (Canarias, Ceuta y Melilla)
-El importe exacto de los portes se calculará en función de peso final de tu pedido. Puedes consultarlo directamente en la cesta antes de confirmar el pedido.
-
-El plazo aproximado de la entrega a Canarias, Ceuta y Melilla es de 16 a 18 días laborables.
- 
-En las ventas a Canarias, Ceuta y Melilla no se repercutirá IVA (21%), no obstante el sistema aduanero aplicará las cargas impositivas correspondientes. En ningún caso podremos determinar el importe de los impuestos a pagar por el cliente al recibir su pedido ya que, en el caso de Canarias por ejemplo, depende del "I.G.C" y "aduanas de Canarias".
- A modo ORIENTATIVO, y en ningún caso con carácter fijo, suelen cobrar entre 25 y 40 Euros por Derechos de Importación y Papeles Administrativos de aduanas, además del porcentaje correspondiente al I.G.I.C. Canario. (No nos responsabilizamos de las posibles variaciones que desde aduanas realicen sin previo aviso).
-
-Portes gratis en pedidos de importe superior a .... €. (IVA incluido). (siempre que no superen los  Kg de peso).
-
-ATENCIÓN:
-•	En fechas señaladas como Navidad, Reyes y puentes especiales, no garantizamos que la entrega se efectúe en plazo, debido al volumen de mercancía de las agencias de transporte.
-•	proSton se reserva el derecho a modificar los plazos de entrega y el tipo de envío sin previo aviso en el caso de pedidos de grandes dimensiones o casos especiales.
+Si el material que ha comprado no le llega en su totalidad, no  se corresponde con el que ha adquirido o si el material tuviese algún defecto, envíenos un eMail a info@proSton.es con el Asunto: "Incidencia en mi Pedido", y en un breve plazo de tiempo, nos pondremos en contacto con usted.</p>
 
 </div>
 <div class="clearfix">&nbsp</div>
