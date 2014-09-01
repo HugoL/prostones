@@ -38,7 +38,7 @@
     </tr>
 
 
-      <? if( isset($presupuesto) && $presupuesto->id != 0 ):
+      <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
       
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
@@ -47,7 +47,7 @@
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';
               $piezas = Valorpieza::model()->findAll($criteria); ?>
-              <? foreach ($piezas as $key => $pieza): ?>
+              <?php foreach ($piezas as $key => $pieza): ?>
 
     <tr style="border:0px;" >
       <td> 
@@ -71,8 +71,8 @@
    </td>
    </tr>
    <?php break; ?>
-  <? endforeach; ?>
-            <? endif; ?>
+  <?php endforeach; ?>
+            <?php endif; ?>
 
 
   </table>
@@ -85,7 +85,7 @@
            <table class="table table-condensed" style="border:0;">
             
             
-            <? if( isset($presupuesto) && $presupuesto->id != 0 ):
+            <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             echo "<h1>Presupuesto id: ".$presupuesto->id."</h1>";
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
@@ -96,7 +96,7 @@
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';
               $piezas = Valorpieza::model()->findAll($criteria); ?>
-              <? foreach ($piezas as $key => $pieza): ?>
+              <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
                 <td><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
@@ -355,8 +355,8 @@
               </tr>
           <br><br>
               
-                       <? endforeach; ?>
-            <? endif; ?>
+                       <?php endforeach; ?>
+            <?php endif; ?>
 
       </table>
       </div> 
@@ -370,7 +370,7 @@
            <table class="table table-condensed">
            
             
-            <? if( isset($presupuesto) && $presupuesto->id != 0 ):
+            <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             echo "<h1>Presupuesto id: ".$presupuesto->id."</h1>";
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
@@ -381,7 +381,7 @@
               $piezas = Valorpieza::model()->findAll($criteria); ?>
              
               
-              <? foreach ($piezas as $key => $pieza): ?>
+              <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
                 <td><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
@@ -420,8 +420,8 @@
 
 
                 <br><br>
-              <? endforeach; ?>
-            <? endif; ?>
+              <?php endforeach; ?>
+            <?php endif; ?>
       </table>
       </div> 
       </div>
@@ -433,7 +433,7 @@
            <table width="100%">
            
             
-            <? if( isset($presupuesto) && $presupuesto->id != 0 ):
+            <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             echo "<h1>Presupuesto id: ".$presupuesto->id."</h1>";
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
@@ -444,7 +444,7 @@
               $piezas = Valorpieza::model()->findAll($criteria); ?>
              
               
-              <? foreach ($piezas as $key => $pieza): ?>
+              <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr >
                 <td style="background-color:#134263; "><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
@@ -455,8 +455,8 @@
 
            <?php $fintotal = round($pieza->precio  + ($pieza->precio*21/100),2)?>
            <td style=" border: 1px solid black" align="center"><strong><?php echo str_replace(".",",",$fintotal) ?> €</strong></td>
-              <? endforeach; ?>
-            <? endif; ?>
+              <?php endforeach; ?>
+            <?php endif; ?>
       </table>
       </div> 
       </div>

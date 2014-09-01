@@ -368,7 +368,8 @@ class PresupuestoController extends Controller
             $presupuesto->update();
 
             //Generar el PDF
-            $this->creaPdf( $presupuesto );	
+            //$this->creaPdf( $presupuesto );	
+            $this->creaPdf2( $presupuesto );	
 		}	
 	}
 
@@ -576,7 +577,7 @@ class PresupuestoController extends Controller
 
 		# You can easily override default constructor's params
 		$html2pd = Yii::app()->ePdf->mpdf('', 'A4');
-		$title = 'Proston.es';
+		$title = 'proSton.es';
 
 		# Load a stylesheet
 		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
@@ -614,11 +615,11 @@ class PresupuestoController extends Controller
         $content_PDF = $html2pdf->Output('', EYiiPdf::OUTPUT_TO_STRING);
         require_once(dirname(__FILE__).'/pjmail/pjmail.class.php');
         $mail = new PJmail();
-        $mail->setAllFrom('webmaster@my_site.net', "My personal site");
-        $mail->addrecipient('mail_user@my_site.net');
-        $mail->addsubject("Example sending PDF");
-        $mail->text = "This is an example of sending a PDF file";
-        $mail->addbinattachement("my_document.pdf", $content_PDF);
+        $mail->setAllFrom(Yii::app()->params['prostonesEmail'], "proSton.es");
+        $mail->addrecipient('hugoepila@gmail.com');
+        $mail->addsubject("Presupuesto proSton.es");
+        $mail->text = "proSton.es le envía el presupuesto solicitado";
+        $mail->addbinattachement("presupuesto.pdf", $content_PDF);
         $res = $mail->sendmail();
 	}
 
