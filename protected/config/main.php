@@ -224,7 +224,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '523360',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),

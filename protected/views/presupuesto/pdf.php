@@ -2,7 +2,18 @@
   Yii::app()->clientScript->registerCssFile(Yii::getPathOfAlias('webroot.themes')."blackboot/css/bootstrap.css");
 ?>
 
-    <div class="">
+ <?php if(Yii::app()->user->hasFlash('contact')):?>
+            <div class="alert alert-success">
+                <?php echo Yii::app()->user->getFlash('contact'); ?>
+            </div>
+        <?php endif; ?>
+
+         <?php if(Yii::app()->user->hasFlash('error')):?>
+            <div class="alert alert-error">
+                <?php echo Yii::app()->user->getFlash('error'); ?>
+            </div>
+        <?php endif; ?>
+  <div class="">
      
       
       <div class="row-fluid ">
