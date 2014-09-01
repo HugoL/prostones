@@ -286,11 +286,8 @@ class PresupuestoController extends Controller
 
 			
 			//si el peso supera los kg del palé con más capacidad, hay que coger varios palés
-<<<<<<< HEAD
-			$entero = 0;
-=======
 			$entero = 1;
->>>>>>> 7b91cf8cd1b1f154bc1575820c3bfa299efe1534
+
 			if( $pesotransporte > $pesomaximo ){
 				$entero = floor( $pesotransporte / $pesomaximo );
 				$decimal = $pesotransporte / $pesomaximo - $entero;
@@ -568,7 +565,8 @@ class PresupuestoController extends Controller
 		$mPDF1->Output();
 
 		# Outputs ready PDF
-		$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF				
+		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF				
+		$thils->enviarEmailYiiMailer( $presupuesto->email, $path );
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 	
@@ -622,6 +620,25 @@ class PresupuestoController extends Controller
         $mail->text = "This is an example of sending a PDF file";
         $mail->addbinattachement("my_document.pdf", $content_PDF);
         $res = $mail->sendmail();
+	}
+
+	protected function enviarEmailYiiMailer( $email, $pdf ){
+		$mail = new YiiMailer();
+		$mail->setFrom(Yii::app()->params['prostonesEmail'], 'proSton.es');
+		$mail->setTo($email);
+		$mail->setSubject('Presupuesto proSton.es');
+
+		//$mail->setView('contact');
+		$mail->setData(array('message' => 'Message to send', 'name' => 'John Doe', 'description' => 'Contact form'));
+
+		$mail->setAttachment($pdf);
+
+		if ($mail->send()) {
+		    Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+		} else {
+		    Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+		}
+
 	}
 
 	protected function damePrecioPale( $procedencia, $destino, $peso ){
