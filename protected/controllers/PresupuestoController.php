@@ -564,8 +564,8 @@ class PresupuestoController extends Controller
 
 		# Outputs ready PDF
 		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF				
-		$this->enviarEmailYiiMailer( $presupuestoPdf->email );
-
+		//$this->enviarEmailYiiMailer( $presupuestoPdf->email );
+		mail ( "hugoepila@gmail.com" , "presupuesto" , "el presupesto" );
 		$mPDF1->Output();
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
