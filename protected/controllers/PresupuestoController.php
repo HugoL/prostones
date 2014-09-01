@@ -368,8 +368,7 @@ class PresupuestoController extends Controller
             $presupuesto->update();
 
             //Generar el PDF
-            //$this->creaPdf( $presupuesto );	
-            $this->creaPdf2( $presupuesto );	
+            $this->creaPdf( $presupuesto );	
 		}	
 	}
 
