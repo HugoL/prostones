@@ -58,7 +58,7 @@ class YiiMailer extends PHPMailer {
 
 	protected $baseDirPath='webroot.images.mail';
 
-	protected $testMode=true;
+	protected $testMode=false;
 
 	protected $savePath='webroot.assets.mail';
 
