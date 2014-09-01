@@ -561,13 +561,13 @@ class PresupuestoController extends Controller
 		$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
 
 		# render (full page)
-		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));			
-		
-		$mPDF1->Output();
+		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));		
 
 		# Outputs ready PDF
 		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF				
-		$thils->enviarEmailYiiMailer( $presupuesto->email, $path );
+		$this->enviarEmailYiiMailer( $presupuestoPdf->email );
+
+		$mPDF1->Output();
 		//$this->redirect(Yii::app()->request->urlReferrer);
 	}
 	
@@ -623,16 +623,16 @@ class PresupuestoController extends Controller
         $res = $mail->sendmail();
 	}
 
-	protected function enviarEmailYiiMailer( $email, $pdf ){
+	protected function enviarEmailYiiMailer( $email ){
 		$mail = new YiiMailer();
 		$mail->setFrom(Yii::app()->params['prostonesEmail'], 'proSton.es');
 		$mail->setTo($email);
 		$mail->setSubject('Presupuesto proSton.es');
 
 		//$mail->setView('contact');
-		$mail->setData(array('message' => 'Message to send', 'name' => 'John Doe', 'description' => 'Contact form'));
+		$mail->setData(array('message' => 'Presupuesto de proSton.es', 'name' => 'proSton.es', 'description' => 'Presupuesto'));
 
-		$mail->setAttachment($pdf);
+		//$mail->setAttachment($pdf);
 
 		if ($mail->send()) {
 		    Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
