@@ -136,8 +136,7 @@ return array(
             'layoutPath' => 'application.views.layouts',
             'baseDirPath' => 'webroot.images.mail', //note: 'webroot' alias in console apps may not be the same as in web apps
             'savePath' => 'webroot.assets.mail',
-            'testMode' => true, //cambiar a false en producción
-            'savePath' => 'webroot.assets.mail', //esto quitar en producción
+            'testMode' => false, //cambiar a false en producción
             'layout' => 'mail',
             'CharSet' => 'UTF-8',
             'AltBody' => Yii::t('YiiMailer', 'You need an HTML capable viewer to read this message.'),
