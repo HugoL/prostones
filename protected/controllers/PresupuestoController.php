@@ -567,8 +567,7 @@ class PresupuestoController extends Controller
 		$email = 'hugoepila@gmail.com';			
 		$this->enviarEmailYiiMailer( $email );
 		//mail ( "hugoepila@gmail.com" , "presupuesto" , "el presupesto" );
-		$mPDF1->Output();
-		//$this->redirect(Yii::app()->request->urlReferrer);
+		//$mPDF1->Output();		
 	}
 	
 	public function creaPdf2( $presupuestoPdf ){
@@ -625,20 +624,23 @@ class PresupuestoController extends Controller
 
 	protected function enviarEmailYiiMailer( $email ){
 		$mail = new YiiMailer();
-		$mail->setFrom(Yii::app()->params['prostonesEmail'], 'proSton.es');
-		$mail->setTo($email);
+		$mail->setFrom('info@proston.es');
+		$mail->setTo('hugoepila@gmail.com');
 		$mail->setSubject('Presupuesto proSton.es');
-
-		//$mail->setView('contact');
-		$mail->setData(array('message' => 'Presupuesto de proSton.es', 'name' => 'proSton.es', 'description' => 'Presupuesto'));
+		$mail->setBody('presupuesto');
+		//$mail->setView('mail');
+		//$mail->setData(array('message' => 'Presupuesto de proSton.es', 'name' => 'proSton.es', 'description' => 'Presupuesto'));
 
 		//$mail->setAttachment($pdf);
 
 		if ($mail->send()) {
-		    Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+			echo "<p>SE ENVIA</p>";
+		    Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');		    
 		} else {
+			echo "<p>NO SE ENVIA</p>";
 		    Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
 		}
+		$this->render('generado');
 
 	}
 
