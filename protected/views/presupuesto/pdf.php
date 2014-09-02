@@ -1,6 +1,4 @@
-<?php 
-  Yii::app()->clientScript->registerCssFile(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
-?>
+
 
  
   <div class="">
@@ -9,7 +7,8 @@
       <div class="row-fluid ">
         <div class="span12">
           
-         <a href="http://www.proston.es"> <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a>
+         <a href="http://www.proston.es"> <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
+         <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></a>
          
         </div>
       </div>
@@ -26,10 +25,8 @@
           info@proston.es<br>
 
       </td>
-    </tr>S
+    </tr>
 
-<!--PONER LA FOTO BIEN -->
-    <img  class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" />
 
 
     <tr style="border:0px;" >

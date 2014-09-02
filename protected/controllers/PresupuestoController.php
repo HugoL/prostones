@@ -556,22 +556,56 @@ class PresupuestoController extends Controller
 		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
 		$mPDF1->WriteHTML($stylesheet, 1);
 
-		# Renders image
-		$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
+		# Renders image. ESTO DABA ERROR
+		//$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
 
 		# render (full page)
 		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));		
 
 		# Outputs ready PDF
 		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF	
-		$email = 'hugoepila@gmail.com';			
-		$this->enviarEmailYiiMailer( $presupuestoPdf->email );
+		//$email = 'hugoepila@gmail.com';			
+		//$this->enviarEmailYiiMailer( $presupuestoPdf->email );
 		//mail ( "hugoepila@gmail.com" , "presupuesto" , "el presupesto" );
-		//$mPDF1->Output();		
-		$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
+		$mPDF1->Output();		
+		//$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
+		$to = $presupuestoPdf->email;
+		$cco= 'info@proston.es';		
+		$from = 'info@proston.es';		
+		$subject = 'Presupuesto ' . $presupuestoPdf->id . '- www.proSton.es';		
+		$message = 'Este email incluye el presupuesto en pdf creado en www.proston.es';	
+
+		$mPDF1->Output('C:\xampp\htdocs\yii\prostones\protected\views\mail\presu'. $presupuestoPdf->id .'.pdf', EYiiPdf::OUTPUT_TO_FILE);
+		$rutapdf  = ('C:\xampp\htdocs\yii\prostones\protected\views\mail\presu'. $presupuestoPdf->id .'.pdf');
+		$this->mailsend($to,$cc,$from,$subject,$message,$rutapdf); 
 	}
-	
-	public function creaPdf2( $presupuestoPdf ){
+
+
+	public function mailsend($to,$cco,$from,$subject,$message,$rutapdf){
+
+       
+
+        $mail=Yii::app()->Smtpmail;
+        $mail->SetFrom($from, 'Dept. comercial Proston');
+        $mail->Subject = $subject;
+        $mail->MsgHTML($message);
+        $mail->AddAddress($to, "");
+        $mail->AddBCC($cc);
+        $mail->AddAttachment($rutapdf);
+       
+
+
+        if(!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }else {
+            echo "Message sent!";
+        }
+        //$this->render('generado');
+    }
+
+
+	/*
+	public function creaPdf2( $presupuestoPdf ){ //no se usa
 		# PDF
 		$html2pd = Yii::app()->ePdf->HTML2PDF();
 
@@ -593,8 +627,10 @@ class PresupuestoController extends Controller
 		$html2pd->Output(); //DESCOMENTAR PARA 
 
 		enviarEmail2( $html2pdf );
-	}
+	}*/
 
+
+/*
 	protected function enviarEmail( $email, $path ){
 		$message = 'Le enviamos el presupuesto que ha solicitado en Proston.es';
 		Yii::app()->mailer->Host = 'mail.proston.es';
@@ -644,7 +680,7 @@ class PresupuestoController extends Controller
 		//$this->render('generado');
 
 	}
-
+*/
 	protected function damePrecioPale( $procedencia, $destino, $peso ){
 		$criteria2 = new CdbCriteria;
 		$criteria2->addCondition( 'id_zona_destino = '.$destino. ' AND id_zona_procedencia = '.$procedencia.' AND pesomaximo >= '.$peso );

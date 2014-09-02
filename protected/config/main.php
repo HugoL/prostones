@@ -129,6 +129,15 @@ return array(
             'pathViews' => 'application.views.email',
             'pathLayouts' => 'application.views.email.layouts'
         ),
+        'Smtpmail'=>array(
+            'class'=>'application.extensions.smtpmail.PHPMailer',
+            'Host'=>"mail.proston.es",
+            'Username'=>'info@proston.es',
+            'Password'=>'123456789',
+            'Mailer'=>'smtp',
+            'Port'=>5025,
+            'SMTPAuth'=>true, 
+        ),
 
 		// uncomment the following to enable URLs in path-format
 		
@@ -191,7 +200,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=ehprostones',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'easenjo',
 			'charset' => 'utf8',
 			'tablePrefix' => 'ehp_',
 		),

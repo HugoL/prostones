@@ -23,6 +23,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos</p>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'contact-form',
+	
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
