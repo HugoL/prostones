@@ -178,7 +178,7 @@ echo "</script>";
         $('#Valorpieza_id_term').change(function(){
      
             idterminacion = $('#Valorpieza_id_terminacion').val();
-            alert(idterminacion);
+            
             $.ajax({
                 url: '$url_action3', type: 'post', 
                 data: { id_terminacion: idterminacion},

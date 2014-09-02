@@ -553,6 +553,7 @@
              <?php $form2=$this->beginWidget('CActiveForm', array(
             'id'=>'presupuesto-form',
             'action'=>Yii::app()->createUrl('presupuesto/generar/id/'.$presupuesto->id),
+            'htmlOptions'=>array('target'=>'_blank'),
             'enableAjaxValidation'=>true,
             )); ?>
 
@@ -563,6 +564,7 @@
             <?php echo $form2->labelEx($presupuesto,'nombre');
             echo $form2->textField($presupuesto,'nombre'); ?>
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
+
             <?php $this->endWidget(); ?>
             <?php endif; ?>
         </div>
