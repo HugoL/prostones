@@ -29,12 +29,10 @@ return array(
 		'smtp_error' => Yii::t('YiiMailer', 'SMTP server error: '),
 		'variable_set' => Yii::t('YiiMailer', 'Cannot set or reset variable: ')
 	),
-// if you want to use SMTP, uncomment and configure lines below to your needs
-//	'Mailer' => 'smtp',
-//	'Host' => 'smtp.gmail.com',
-//	'Port' => 465,
-//	'SMTPSecure' => 'ssl',
-//	'SMTPAuth' => true,
-//	'Username' => 'your_email@gmail.com',
-//	'Password' => 'your_password',
+	'Mailer' => 'smtp',
+	'Host' => 'mail.proston.es',
+	'Port' => 5025,
+	'SMTPAuth' => true,
+	'Username' => 'info@proston.es',
+	'Password' => '123456789',
 );

@@ -565,9 +565,10 @@ class PresupuestoController extends Controller
 		# Outputs ready PDF
 		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF	
 		$email = 'hugoepila@gmail.com';			
-		$this->enviarEmailYiiMailer( $email );
+		$this->enviarEmailYiiMailer( $presupuestoPdf->email );
 		//mail ( "hugoepila@gmail.com" , "presupuesto" , "el presupesto" );
 		//$mPDF1->Output();		
+		$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
 	}
 	
 	public function creaPdf2( $presupuestoPdf ){
@@ -627,7 +628,7 @@ class PresupuestoController extends Controller
 		$mail->setFrom('info@proston.es');
 		$mail->setTo('hugoepila@gmail.com');
 		$mail->setSubject('Presupuesto proSton.es');
-		$mail->setBody('presupuesto');
+		$mail->setBody('presupuesto ad as ad as a');
 		//$mail->setView('mail');
 		//$mail->setData(array('message' => 'Presupuesto de proSton.es', 'name' => 'proSton.es', 'description' => 'Presupuesto'));
 
@@ -640,7 +641,7 @@ class PresupuestoController extends Controller
 			echo "<p>NO SE ENVIA</p>";
 		    Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
 		}
-		$this->render('generado');
+		//$this->render('generado');
 
 	}
 
