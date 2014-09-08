@@ -577,7 +577,7 @@ class PresupuestoController extends Controller
 
 		$mPDF1->Output(Yii::getPathOfAlias('webroot.pdfs'). DIRECTORY_SEPARATOR .'presu'. $presupuestoPdf->id .'.pdf', EYiiPdf::OUTPUT_TO_FILE);
 		$rutapdf  = Yii::getPathOfAlias('webroot.pdfs'). DIRECTORY_SEPARATOR .'presu'. $presupuestoPdf->id .'.pdf';
-		$this->mailsend($to,$cc,$from,$subject,$message,$rutapdf); 
+		$this->mailsend($to,$cco,$from,$subject,$message,$rutapdf); 
 
 		/*$rutapdf  = Yii::getPathOfAlias('webroot.pdfs') .
           DIRECTORY_SEPARATOR . 'presu' .
@@ -595,7 +595,7 @@ class PresupuestoController extends Controller
         $mail->Subject = $subject;
         $mail->MsgHTML($message);
         $mail->AddAddress($to, "");
-        $mail->AddBCC($cc);
+        $mail->AddBCC($cco);
         $mail->AddAttachment($rutapdf);
        
 

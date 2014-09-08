@@ -53,11 +53,11 @@
                             <strong style="color:#134263;">Material</strong></font>
                         </div>
 
-                        <div class="span6" id="pregunta1">
-                           <img  style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+                       <div class="span6" id="pregunta1">
+                            <img  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                         </div> 
                         <div class="span6" id="ok1" style="display:none">
-                           <img style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+                           <img style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                         </div> 
 
                        <div class="span12">
@@ -265,10 +265,10 @@
                 </div>
 
                 <div class="span6" id="pregunta4">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png ?>"/>
+                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
                 <div class="span6" id="ok4" style="display:none">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png ?>"/>
+                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
@@ -563,8 +563,9 @@
 
             <?php echo $form2->labelEx($presupuesto,'nombre');
             echo $form2->textField($presupuesto,'nombre'); ?>
+            <div id="botonpresu">
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
-
+            </div>
             <?php $this->endWidget(); ?>
             <?php endif; ?>
         </div>
@@ -641,6 +642,8 @@ $(document).ready(function($){
     });
 
 
+
+
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
         $("#Valorpieza_id_tipo").val($(this).attr("id"));
@@ -692,6 +695,10 @@ $(document).ready(function($){
         }
         });
     });
+
+  
+    
+
 });
 </script>
 

@@ -36,7 +36,7 @@ Yii::app()->clientscript
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/ehpestilos.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/view.css" media="all">
+<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/view.css" media="all">-->
 <link href="<?php echo Yii::app()->baseUrl; ?>/css/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/elastislide.css" />
 <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -93,14 +93,14 @@ Yii::app()->clientscript
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id'),'active'=> Yii::app()->controller->id == "simulador"),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
 						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
-						array('label'=>'Empresa', 'url'=>array('#'),'items'=>array(
+						array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
-							array('label'=>'Pisos - Unifamiliares', 'url'=>array('/site/page','view'=>'pisos_unifamiliares')),
+							array('label'=>'Edificación - Unifamiliares', 'url'=>array('/site/page','view'=>'edificacion_unifamiliares')),
 							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/site/page','view'=>'interiorismo_cocinas')),
-							array('label'=>'Edificación - Urbanización', 'url'=>array('/site/page','view'=>'edificacion_urbanizacion')),
-							array('label'=>'Paisajismo - Mamposteria', 'url'=>array('/site/page','view'=>'paisajismo_mamposteria')),
+							array('label'=>'Mamposteria - Urbanización', 'url'=>array('/site/page','view'=>'mamposteria_urbanizacion')),
+							
 							),),
-						array('label'=>'???', 'url'=>array('/site/contact')),	
+						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
 						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
 						/*	
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -149,18 +149,25 @@ Yii::app()->clientscript
 				<div class="container">
 					<div class="row">
 						<div class="span4">
-							<h4>Siguenos en:</h4>
-							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">
-							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">
-							<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
-							<br>
+							<div class="span12">
+							
+								<h4>Siguenos próximamente en:</h4>
+								<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">
+								<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">
+								<img   alt="" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
+							
 
-							<h4>Recibe nuestras novedades:</h4>
-							<input type="text" >
+							</div>
+							<div class="clearfix">&nbsp</div>
 
-
+							<div class="span12">
+							<h4>Trabajamos con :</h4>
+							<img   alt="" style="width:120px;" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>logos/ibercaja.png">
+							<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>logos/bbva.png">
+							</div>
 
 						</div> 
+
 						<div class="span8" style="border:1px solid black;border: 1px solid #bbbbbb;
 						-webkit-border-radius: 4px;
 						-moz-border-radius: 4px;

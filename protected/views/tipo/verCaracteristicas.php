@@ -101,7 +101,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
                 echo "€ m<sup>2</sup>.";
             }else{
                 echo "€ m.";
-            }  ?> .<br>
+            }  ?> <br>
    
 
                </font></td>
@@ -112,26 +112,63 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
                 
                 <br>
             </div>
+<strong>Utilizacion del material: </strong>
+            <div class="span12 utilizaciones">
+                
+                <table >
+                    <tr>
+                        <th align="center" >Pavimiento exterior</th>
+                        <th align="center" >Pavimiento interior</th>
+                        <th align="center" >Transito bajo</th>
+                        <th align="center" >Transito medio</th>
+                        <th align="center">Transito intenso</th>
+                        <th align="center" >Revestimiento interior</th>
+                        <th>Revestimiento exterior</th>
+                    </tr>
+                    <tr id="datos">
+                        <td><?php echo $tipo->pavimento_exterior; ?></td>
+                        <td><?php echo $tipo->pavimento_interior; ?></td>
+                        <td><?php echo $tipo->transito_bajo; ?></td>
+                        <td><?php echo $tipo->transito_medio; ?></td>
+                        <td><?php echo $tipo->transito_intenso; ?></td>
+                        <td><?php echo $tipo->revestimiento_interior; ?></td>
+                        <td><?php echo $tipo->revestimiento_exterior; ?></td>
+                    
 
-          <strong> Acabados</strong><br> 
+                    </tr>
+                </table>
+
+                
+                
+                
+                
+                
+                
+                
+
+
+
+            </div>
+
+        <!--  <strong> Acabados</strong><br> 
            <div class="span12 imgacabados" id="content" >
             
             
  
                
-              <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado1;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado 1" class="MagicZoom"><img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado1;?>" alt="Acabado 1 de <?php echo $tipo->nombre; ?> - proSton.es"/></a>
+              <a href="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php // echo $tipo->acabado1;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado 1" class="MagicZoom"><img   src="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php //echo $tipo->acabado1;?>" alt="Acabado 1 de <?php // echo  $tipo->nombre; ?> - proSton.es"/></a>
 
-<a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado2;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado 2" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado2;?>" alt="Acabado 2 de <?php echo $tipo->nombre; ?> - proSton.es"/></a>
+<a href="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php // echo  $tipo->acabado2;?>" rel="zoom-position: top; zoom-height: 300px;zoom-width:500px; zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10"  title="acabado 2" class="MagicZoom"><img src="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php // echo $tipo->acabado2;?>" alt="Acabado 2 de <?php // echo $tipo->nombre; ?> - proSton.es"/></a>
 
           
 
-       <a href="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php echo $tipo->acabado3;?>" title="acabado 3" class="MagicZoom"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php echo $tipo->acabado3;?>" alt="Acabado 1 de <?php echo $tipo->nombre; ?> - proSton.es"/></a>
+       <a href="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/large/<?php  // echo  $tipo->acabado3;?>" title="acabado 3" class="MagicZoom"><img src="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/mini/<?php // echo $tipo->acabado3;?>" alt="Acabado 1 de <?php // echo $tipo->nombre; ?> - proSton.es"/></a>
         
       
        
     
 
-        </div>
+        </div>-->
 
  </div>
 </div>

@@ -52,14 +52,16 @@
   width:300px;
   padding: 5px;
   /*margin-bottom: 20px;*/
- 
+
   
    }
 
-  
+  .divSeccion figure{
+     padding:20px 20px 20px 20px;
+  }
    .divSeccion img{
     width:80%;
-   /*padding:0px 20px 0px 20px;*/
+   
    border:1px solid black;
   }
    .divSeccion .texto{
@@ -139,14 +141,14 @@ padding:10px;
  
  #menu-top ul li a { float: left; display: block; }
  
- #menu-top ul li ul { display: none; position: absolute; top: 140%;height:100px;
-  background: #134263; color: #fff; height: auto;
+ #menu-top ul li ul { display: none; position: absolute; top: 140%; width:35%;
+  background: #FFFFFF; color: #000; height: auto; border: 1px solid #134263;
 }
 
-#menu-top ul li ul li a { color: #ccc; padding: 0px 14px; display: block; }
+#menu-top ul li ul li a { color: #343; padding: 0px 14px; display: block; }
 
 #menu-top ul li ul li.active a,
-#menu-top ul li ul li a:hover { color: #fff }
+#menu-top ul li ul li a:hover { color: #fe7902 }
 
 
 #menu-bot {
@@ -589,6 +591,9 @@ font-size:20px;
     color: black;
 
 }
+.b_info h3{
+  font-size: 16px !important;
+}
 #secinfo td{
   text-align:center; 
 }
@@ -614,4 +619,32 @@ font-size:20px;
 }
 #botonsimulador{
   margin-top:250px;
+}
+
+
+.form_contacto h2{
+font-size: 18px;
+}
+.form_contacto h3{
+font-size: 15px;
+}
+
+
+#acabadosinfo img{
+
+  float:left;
+  width:150px;
+  height:120px;
+ 
+}
+
+.utilizaciones table{
+  border-collapse:separate;
+    border-spacing:3px 0px;
+  font-size: 10px;
+}
+
+.utilizaciones td{
+  border:1px solid #8f8c8c;
+  text-align: center;
 }

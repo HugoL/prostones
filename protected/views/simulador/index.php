@@ -61,9 +61,11 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
             
     </div>
 
-    <div class="span6">  
+    <div class="span6"> 
+    <figure> 
     <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="80%" height="80%" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
-
+    <figcaption ><font size="1">* Pase el ratón para hacer zoom en la imágen.</font></figcaption>
+    </figure>
     </div>
       
   </div>
