@@ -171,7 +171,7 @@ class PresupuestoController extends Controller
 
 			if( $valorPieza->save() ){
 				$valorPieza->id = $valorPieza->getPrimaryKey();
-				Yii::app()->user->setFlash('success', "¡Añadido al presupuesto!");
+				Yii::app()->user->setFlash('success', "- Ha añadido un material al presupuesto correctamente.<br>- Añada otro material adicional o continue con el presupuesto en la barra lateral derecha en <strong>Tu presupuesto</strong> ");
 				//$this->render('/presupuesto/index',array('valorpieza'=>$model));				
 			}else{
 
@@ -259,9 +259,7 @@ class PresupuestoController extends Controller
 		
 
 
-			$this->debug($precioterminacion);
-			$this->debug($precioterminacionCanto);
-			$this->debug($precioterminacionArista);
+		
 
 			//sumo el precio de la terminación
 
@@ -436,15 +434,14 @@ class PresupuestoController extends Controller
 	public function actionAjaxTerminaciones(){
 		$id_material = strip_tags($_POST['id_material']);
 		$id_pieza = strip_tags($_POST['id_pieza']);
+		$id_tamano = strip_tags($_POST['id_tamano']);
 
 		$criteria=new CDbCriteria;        
-        //$criteria->compare('id_pieza',$id_pieza);//no se
-       	$criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 1');
+        $criteria->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 1');
         $criteria->select = '*';
 		$terminaciones = Terminacion::model()->findAll( $criteria );
 
 		$criteria2=new CDbCriteria;        
-        //$criteria->compare('id_pieza',$id_pieza);//no se
        	$criteria2->addCondition( 'id_material = '.$id_material .' AND formato = '.$id_pieza.' AND tipo = 2');
         $criteria2->select = '*';
 		$terminacionesArista = Terminacion::model()->findAll( $criteria2 );
@@ -457,8 +454,16 @@ class PresupuestoController extends Controller
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
+		$criteria4=new CDbCriteria;        
+        
+       	$criteria4->addCondition( 'id = '.$id_tamano );
+        $criteria4->select = '*';
+		$tamanos = Tamano::model()->findAll( $criteria4 );
+
+		
+
 		echo $this->renderPartial('_ajaxTerminaciones', array(
-					'terminaciones' => $terminaciones, 'terminacionesArista' => $terminacionesArista,'terminacionesCanto' => $terminacionesCanto,'tipo_pieza' => $id_pieza), true, false);
+					'terminaciones' => $terminaciones, 'terminacionesArista' => $terminacionesArista,'terminacionesCanto' => $terminacionesCanto,'tipo_pieza' => $id_pieza,'tamanos' => $tamanos), true, false);
 
 		Yii::app()->end();
 	}

@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name . ' - Envios';
 ?>
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
+			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png">
 			</div class="span10"><h1>Envios.</h1> 
 
 <div class="clearfix">&nbsp</div>

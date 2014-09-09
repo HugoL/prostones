@@ -47,9 +47,11 @@ class Presupuesto extends CActiveRecord
 			array('id_cliente, id_provincia, total', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
 			array('email', 'length', 'max'=>512),
+			array('telefono', 'length', 'max'=>256),
+			array('informacion_adicional', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, id_cliente, id_provincia, fecha, email, total', 'safe', 'on'=>'search'),
+			array('id, nombre, id_cliente, id_provincia, fecha, email,informacion_adicional, total', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,7 +79,8 @@ class Presupuesto extends CActiveRecord
 			'id_provincia' => 'Provincia',
 			'fecha' => 'Fecha',
 			'email' => 'Email',
-			'total' => ' Total',
+			'total' => 'Total',
+			'telefono' => 'Telefono'
 		);
 	}
 
@@ -99,7 +102,8 @@ class Presupuesto extends CActiveRecord
 		$criteria->compare('fecha',$this->fecha,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('total',$this->total);
-
+		$criteria->compare('telefono',$this->telefono);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -35,11 +35,11 @@ class Valorpieza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto, cantidad', 'required'),
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, id_terminacion_arista, id_terminacion_canto, precio, cantidad, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'numerical', 'integerOnly'=>true),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto,id_tipo_canto, cantidad', 'required'),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion, id_terminacion_arista, id_terminacion_canto,id_tipo_canto precio, cantidad, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto, precio, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'safe', 'on'=>'search'),
+			array('id, id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto,id_tipo_canto, precio, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +55,7 @@ class Valorpieza extends CActiveRecord
 			'terminacion' => array(self::BELONGS_TO, 'Terminacion', 'id_terminacion'),
 			'terminacionarista' =>array(self::BELONGS_TO, 'Terminacion', 'id_terminacion_arista'),
 			'terminacioncanto' => array(self::BELONGS_TO, 'Terminacion', 'id_terminacion_canto'),
+			'tipocanto' => array(self::BELONGS_TO, 'Terminacion', 'id_terminacion_canto'),
 			'tamano' => array(self::BELONGS_TO, 'Tamano', 'id_tamano'),
 			'tipo' => array(self::BELONGS_TO, 'Tipo', 'id_tipo'),
 			'pieza' => array(self::BELONGS_TO, 'Pieza', 'id_pieza'),

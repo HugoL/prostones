@@ -36,12 +36,23 @@
     <div class="span8 panel">   <!-- DIV CENTRAL -->
 
         <div id="inicio" class="span12" ><!--BOTON INICIO-->
+            <?php if(Yii::app()->user->hasFlash('success')):?>
+            <div class="alert alert-success">
+                <?php echo Yii::app()->user->getFlash('success'); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if(Yii::app()->user->hasFlash('danger')):?>
+            <div class="alert alert-error">
+                <?php echo Yii::app()->user->getFlash('danger'); ?>
+            </div>
+            <?php endif; ?>
                     <a href="#"> 
                     <div class="span2 offset3 ini">
-                        <li align="center">  Empezar</li>
+                        <li align="center"> Añadir pieza </li>
                     </div></a>
                     <div class="span9">
-                        Haga click en <strong>Empezar</strong> para crear su presupuesto. Mediante 4 pasos, podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
+                        Haga click en <strong>Añadir pieza</strong> para presupuestar un material  sin compromiso alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
                         <br>
                     </div>
         </div>
@@ -326,32 +337,23 @@
 
     <div class="span4"><!--DIV LATERAL - LISTA DE PIEZAS EN EL PRESUPUESTO-->
 
-        <?php if(Yii::app()->user->hasFlash('success')):?>
-            <div class="alert alert-success">
-                <?php echo Yii::app()->user->getFlash('success'); ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if(Yii::app()->user->hasFlash('danger')):?>
-            <div class="alert alert-error">
-                <?php echo Yii::app()->user->getFlash('danger'); ?>
-            </div>
-        <?php endif; ?>
+        
 
                 
         <div id="piezasguardadas" class="span12"><!-- piezas guardadas -->
-            Tu presupuesto:
+            <strong>Tu presupuesto:</strong>
             <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             $criteria=new CDbCriteria;                      
             $criteria->compare('id_presupuesto',$presupuesto->id);  
             $criteria->select = '*';
-            $piezas = Valorpieza::model()->findAll($criteria);  ?>
+            $piezas = Valorpieza::model()->findAll($criteria);  
+            $i = 1;?>
 
             <?php foreach ($piezas as $key => $pieza): ?>
 
             <div class="well span11">
                 <div class="clearfix"></div> 
-                Id <?php echo $pieza->id; ?>     
+                <font color="#134263">Constulta <?php echo $i ; $i = $i + 1;?>     </font>
                 <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
                     <div class="span12"><font><strong>Material</strong></font></div>
 
@@ -366,7 +368,7 @@
                             <p><font size="3"><?php echo $pieza->tipo->nombre; ?>. <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){echo '';}else{echo $pieza->numeropiezas;}?> <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. </font> </p>
                             
                             <table style="float:right">
-                                <tr><td align="center">Descripcion</td><td align="center" style="padding-right:5px">Precio</td></tr>
+                                <tr><td align="center">Descripción</td><td align="center" style="padding-right:5px">Precio</td></tr>
 
                                 <tr>
                                     <td align="right" style="padding-right:10px">
@@ -431,9 +433,17 @@
                                     <td align="right" style="padding-right:5px">
                                              
                                          <?php if( $pieza->id_pieza == 1 ){
-                                            $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud,2);
+
+                                                    if( $pieza->id_tipo_canto== 1 ){
+                                                        $longitudcanto = $pieza->tamano->cantolargo;
+                                                    }else{
+                                                        $longitudcanto = $pieza->tamano->cantocorto;
+                                                    }
+                                            $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);
                                             $termcanto2 =number_format((float)$termcanto, 2, '.', '');
                                             echo str_replace(".",",",$termcanto2) . " € ";  
+
+
                                         }else{
                                             echo "0 € ";
                                         }  ?> 
@@ -546,9 +556,12 @@
             <?php endforeach; ?>
             <?php endif; ?>
         </div>
-
+        <?php if (isset($presupuesto) ): ?>
+        <div class="span11">
+        <strong>Finalizar presupuesto</strong><br>
+        <p>Introduzca su nombre y su email. Le enviaremos un Pdf del presupuesto a su email. El teléfono es opcional, incluyalo si quiere que nos pongamos en contacto más rapidamente.</p></div>
         <div class="span4">
-            <?php if (isset($presupuesto) ): ?>
+            
 
              <?php $form2=$this->beginWidget('CActiveForm', array(
             'id'=>'presupuesto-form',
@@ -563,6 +576,12 @@
 
             <?php echo $form2->labelEx($presupuesto,'nombre');
             echo $form2->textField($presupuesto,'nombre'); ?>
+            <?php echo $form2->labelEx($presupuesto,'telefono');
+            echo $form2->textField($presupuesto,'telefono'); ?>
+              <?php echo $form2->labelEx($presupuesto,'informacion adicional');
+            echo $form2->textField($presupuesto,'informacion_adicional'); ?>
+
+
             <div id="botonpresu">
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
             </div>
@@ -632,7 +651,7 @@ $(document).ready(function($){
     $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
     $("#Valorpieza_id_terminacion").val("");
-
+    $("#Valorpieza_destino").val("");
     $("#inicio").click(function(){
         $("#inicio").hide();
         $("#material").show('slow');

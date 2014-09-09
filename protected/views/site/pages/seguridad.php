@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Seguridad';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/seguridad.png">
 			</div class="span10"><h1>Seguridad</h1> 
 
 <div class="clearfix">&nbsp</div>

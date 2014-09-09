@@ -180,14 +180,14 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 
 
 $(document).ready(function($){
-	 $("#ContactForm_que").change(function(){
+	 $("#ContactForm_subject").change(function(){
         
-          if( $('#ContactForm_que').val() == 1  || $('#ContactForm_que').val() == 2){
+          if( $('#ContactForm_subject').val() == 1  || $('#ContactForm_subject').val() == 2){
             $("#reformas_colocaciones").show('slow');
             $("#texto").show('slow');;
              $("#incidencia_sugerencia").hide();
 
-            }else if( $("#ContactForm_que").val() == 3  || $("#ContactForm_que").val() == 4){
+            }else if( $("#ContactForm_subject").val() == 3  || $("#ContactForm_subject").val() == 4){
         	$("#incidencia_sugerencia").show('slow');  
         	$("#reformas_colocaciones").hide();   
             $("#texto").show('slow');

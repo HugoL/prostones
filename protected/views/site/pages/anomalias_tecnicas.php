@@ -10,15 +10,14 @@ $this->pageTitle=Yii::app()->name . ' - Anomalias técnicas';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/anomalias.png">
 			</div class="span10"><h1>Anomalias técnicas</h1> 
 
 <div class="clearfix">&nbsp</div>
 
 <div class="span6">
 <p>
-      EDUARDO: comprueba si lo que escribo a continuación se atiene a la realidad y modifica lo que no sea verdad.
-
+      
 Para navegar por nuestro Sitio Web, ver el catalogo y consultar tarifas y ofertas, no es necesario que el Usuario se registre.
  
 Si quieres acceder a Mi Cuenta y no puedes, es posible que hayas introducido mal los datos de usuario y/o contraseña.

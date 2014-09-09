@@ -8,7 +8,7 @@
         <div class="span12">
           
          <a href="http://www.proston.es"> <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
-         <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></a>
+         <img style="float:right" class="brand logo"  src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></a>
          
         </div>
       </div>
@@ -22,7 +22,7 @@
           17849768C<br>
           Avda. Jose Antonio Clavé 49 - 9A<br>
           50004 Zaragoza<br>
-          info@proston.es<br>
+          
 
       </td>
     </tr>
@@ -31,7 +31,8 @@
 
     <tr style="border:0px;" >
       <td align="right" style="font-size:20px;"> 
-     <strong> Presupuesto</strong>
+     <strong> Presupuesto</strong><br>
+     <strong> online</strong>
       </td>
     </tr>
 
@@ -59,7 +60,7 @@
       <td  style="border:1px solid black"> 
          Nombre:  <?php echo $pieza->presupuesto->nombre ?><br>
         Email: <?php echo $pieza->presupuesto->email ?> <br>
-        Teléfono:  (crear campo del telefono)
+        Teléfono:  <?php echo $pieza->presupuesto->telefono?>
       </td>
     </tr>  
     <tr  style="border:0px;"><td></td></tr>
@@ -89,21 +90,23 @@
                 echo $pieza->nombre."<br/>";
               }*/
 
-
+             $i = 1;
               $criteria=new CDbCriteria;                      
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';
               $piezas = Valorpieza::model()->findAll($criteria); ?>
+
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
-                <td><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
+                <td><h6 style="color:white;">Consulta <?php echo $i;?></h6></td>
+                <?php $i=$i+1; ?>
                 <td colspan="7"></td></tr>
               <tr class="success"> 
                 <td><h6>Concepto </h6></td>             
-                <td><h6>Cantidad</h6></td>
-                <td><h6>Tamaño</h6></td>
                 <td><h6>Nº Piezas</h6></td>
+                <td><h6>Tamaño</h6></td>
+                <td><h6>Cantidad</h6></td>
                 <td><h6>Precio</h6></td>
                 <td><h6>Base</h6></td>  
                 <td><h6>21 % IVA</h6></td>  
@@ -117,34 +120,34 @@
                  <?php echo $pieza->pieza->nombre; ?> de <?php echo $pieza->tipo->nombre; ?>
                  </td>
                 <?php $tareal = str_replace(".",",",$pieza->tamanoreal)?>
-                <td><?php echo $tareal; ?> <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
-                }else{
-                echo "m";
-                 }  ?></td>
-           
-                 <td><?php echo $pieza->tamano->nombre; ?></td>
-                 <td align="center">
-
-                     <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){
+                <td>
+                  <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){
                          echo '';
                      }else{
                      echo $pieza->numeropiezas;
                      }  ?>
+                
 
 
-
-
-                 
-
-
-                <?php $preuni = str_replace(".",",",$pieza->preciounitario)?>
-                 <td><?php echo $preuni; ?> €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
+                 </td>
+           
+                 <td><?php echo $pieza->tamano->nombre; ?></td>
+                 <td align="center">
+                <?php echo $tareal; ?> <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
+                }else{
+                echo "m";
+                 }  ?>
+                     
+                 </td>
+                 <td>
+      <?php $preuni = str_replace(".",",",$pieza->preciounitario)?>
+                 <?php echo $preuni; ?> €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
                 }else{
                 echo "m";
                  }  ?></td>
 
                  <?php $preciomat = round($pieza->preciounitario * $pieza->tamanoreal,2)?>
-                 <td align="right" ><?php echo str_replace(".",",",$preciomat); ?> €</td>
+                 <td align="right" ><?php echo str_replace(".",",",$preciomat); ?> </td>
 
                  <td align="right">
                     <?php $precioivamat = round(((($pieza->preciounitario * $pieza->tamanoreal))/100)*21,2)?>
@@ -168,15 +171,8 @@
 
                  
 
-                <td>
-                  <?php if( $pieza->id_pieza == 1 ){
-
-                      $tareal = round($pieza->tamanoreal,2);
-                      echo str_replace(".",",",$tareal) ;
-                }else{
-                    $tareal = round($pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
-                    echo str_replace(".",",",$tareal );
-                 }  ?> m<sup>2</sup>
+                <td colspan="2">
+                 
 
                 
 
@@ -188,7 +184,14 @@
 
 
                
-                <td colspan="2"></td>
+                <td > <?php if( $pieza->id_pieza == 1 ){
+
+                      $tareal = round($pieza->tamanoreal,2);
+                      echo str_replace(".",",",$tareal) ;
+                }else{
+                    $tareal = round($pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
+                    echo str_replace(".",",",$tareal );
+                 }  ?> m<sup>2</sup></td>
                 <td><?php echo $pieza->terminacion->precio; ?> €/m<sup>2</sup></td>
 
 
@@ -243,24 +246,37 @@
           </tr>
           <tr>
 
-                 <td >Canto - <?php if( $pieza->id_pieza == 1 ){
+                 <td >Canto   <?php  if( $pieza->id_tipo_canto== 1 ){
+                    echo 'largo ';
+                 }else{ 
+                   echo 'corto ';
+                 } ?>
+
+
+
+                 <?php if( $pieza->id_pieza == 1 ){
                                          echo $pieza->terminacioncanto->nombre . ".";  
                                          }else{
 
                                             if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
-                                                echo "Pulido";
+                                                echo " Pulido";
                                             }else{
-                                                echo "Apomazado";
+                                                echo " Apomazado";
                                             }        
 
                                         }  ?> 
 
                  </td>
 
+                 <?php  if( $pieza->id_tipo_canto== 1 ){
+                    $longitudcanto = $pieza->tamano->cantolargo;
+                 }else{
+                   $longitudcanto = $pieza->tamano->cantocorto;
+                 } ?>
           <?php if( $pieza->id_pieza == 2 ){
                          $tareal = str_replace(".",",",$pieza->tamanoreal);
                      }else{
-                        $ta = $pieza->numeropiezas * $pieza->tamano->longitud;
+                        $ta = $pieza->numeropiezas * $longitudcanto;
 
                         $tareal = str_replace(".",",",$ta);
                      }  ?>
@@ -269,18 +285,18 @@
                  
               
                  
-                <td>
-                  <?php echo $tareal . "m."; ?> </td>
+                <td colspan="2">
+                   </td>
 
 
                
-                <td colspan="2"></td>
+                <td ><?php echo $tareal . "m."; ?></td>
                 <td><?php echo $pieza->terminacioncanto->precio; ?> €<?php if( $pieza->id_pieza == 1 ){echo "/m";
                 }else{
                 echo "";
                  }  ?></td>
 
-                <?php $precioterca = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud,2)?>
+                <?php $precioterca = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2)?>
                 <td align="right">
 
 
@@ -288,7 +304,7 @@
 
 
                <td align="right">
-                    <?php $precioivaterca = round(((($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud))/100)*21,2)?>
+                    <?php $precioivaterca = round(((($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto))/100)*21,2)?>
                 <?php echo str_replace(".",",",$precioivaterca);  ?> €
                  </td>
 
@@ -296,7 +312,7 @@
                  <td align="right">
 
                  <?php
-                 $pcanto = ($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud) + (((($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud))/100)*21);
+                 $pcanto = ($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto) + (((($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto))/100)*21);
 
                   $preciototerca= round($pcanto,2)?>
                  <?php echo str_replace(".",",",$preciototerca); ?> €
@@ -308,18 +324,18 @@
                  </td>
 
                  
-                <td>
+                <td colspan="2">
+
+              </td>
 
 
+               
+                <td >
                 <?php $tareal = str_replace(".",",",$pieza->tamanoreal)?>
                 <?php echo $tareal; ?> <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
                 }else{
                 echo "m.";
                  }  ?></td>
-
-
-               
-                <td colspan="2"></td>
                 <td><?php echo $pieza->terminacionarista->precio; ?> €<?php if( $pieza->id_pieza == 1 ){echo "/m<sup>2</sup>";
                 }else{
                 echo "";
@@ -373,6 +389,7 @@
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
               }*/
+              $o = 1;
               $criteria=new CDbCriteria;                      
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';
@@ -382,7 +399,8 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
-                <td><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
+                <td><h6 style="color:white;">Consulta <?php echo $o;?></h6></td>
+                <?php $o = $o + 1; ?>
                 <td colspan="7"></td></tr>
 
             <tr class="success"> 
@@ -436,6 +454,7 @@
               /*foreach ($presupuesto->valorpieza as $key => $pieza) {
                 echo $pieza->nombre."<br/>";
               }*/
+              $u = 1;
               $criteria=new CDbCriteria;                      
               $criteria->compare('id_presupuesto',$presupuesto->id);  
               $criteria->select = '*';
@@ -445,7 +464,8 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr >
-                <td style="background-color:#134263; "><h6 style="color:white;">Pedido <?php echo $pieza->id;?></h6></td>
+                <td style="background-color:#134263; "><h6 style="color:white;">Consulta <?php echo $u?></h6></td>
+                <?php $u = $u + 1; ?>
            <td align="right" style="padding-right:5px;">Material ( <?php
             $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2);
             $preciototivamat = round(($pieza->precio  + ($pieza->precio*21/100))-(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte),2);
@@ -463,20 +483,19 @@
                  
           <table width="100%">
             <tr>
-              <td>Comentarios del pedido y la entrega:</td>
+              <td>Comentarios para esta consulta:</td>
               <td></td>
               <td>Datos de envio:</td>
             </tr>
 
             <tr >
               <td style="border:1px solid black"> 
-                Necesito que .... <br>
-                Tambien..s.as. <br>
+               <?php echo $pieza->presupuesto->informacion_adicional?>
               </td>
               <td></td>
               <td style="border:1px solid black">
                Transportista: PalletWay<br>
-              Destino: X (Concretar destino)</td>
+              Destino: <?php echo $pieza->provincia->nombre; ?> (Concretar destino)</td>
             </tr>
           </table>
      
@@ -485,7 +504,7 @@
       <div>
         Disponemos de una red de profesionales en toda España dedicados a la instalaciones de marmoles y granitos.</div>
      <div class="span12" style="font-size:10px;">
-        De conformidad con la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, puede ejercer los derechos de acceso, cancelación y rectificación remitiendo carta certificada a nuestras oficinas sitas en Centro Empresarial Parque Roma Plaza Roma,1 50017 Zaragoza.
+        De conformidad con la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, puede ejercer los derechos de acceso, cancelación y rectificación remitiendo carta certificada a nuestras oficinas sitas en Avda. Jose Antonio Clavé 49 - 9A -  50004 Zaragoza.
      </div>
 
 <!--

@@ -68,22 +68,46 @@
                 <strong>Canto</strong>
             </div>
             <div class="span12">
-                <?php if( !empty($terminacionesCanto) ): ?>
-                    <select id="Valorpieza_id_term_canto" class="span12" name="Valorpieza[id_ternimacion_canto]">
+                <div class="span12">
+                    <?php if( !empty($terminacionesCanto) ): ?>
+                        <select id="Valorpieza_id_term_canto" class="span12" name="Valorpieza[id_ternimacion_canto]">
+                            
+                        <option value="">Seleccione tratamiento</option>
+                            <?php foreach ($terminacionesCanto as $key => $terminacion) : ?>
+                                <option class="" value="<?php echo $terminacion->id ?>" ><?php echo $terminacion->nombre ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <?php else: ?>
+                    
+                        <div class"alert alert-warning">
+                            No hay terminaciones disponibles para esta pieza
+                        </div>   
+                    <?php endif; ?>  
+                </div>
+
+                <div  style="display:none" id="tipocantos">
+                  <?php if( !empty($tamanos) ): ?>
+                        <select id="Valorpieza_id_tipo_canto" class="span12" name="Valorpieza[id_tipo_canto]">
+                            
                         
-                    <option value="">Seleccione tratamiento de canto</option>
-                        <?php foreach ($terminacionesCanto as $key => $terminacion) : ?>
-                            <option class="" value="<?php echo $terminacion->id ?>" ><?php echo $terminacion->nombre ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php else: ?>
-                
-                    <div class"alert alert-warning">
-                        No hay terminaciones disponibles para esta pieza
-                    </div>   
-                <?php endif; ?>  
+                            
+                             <?php foreach ($tamanos as $key => $tamano) : ?>
+                               <option value="0">¿Que canto?</option>
+                        <option value="1">Canto largo <?php echo $tamano->cantolargo * 100 . 'cm' ?></option>
+                        <option value="2">Canto corto <?php echo $tamano->cantocorto * 100 . 'cm' ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <?php else: ?>
+                    
+                        <div class"alert alert-warning">
+                            No hay terminaciones disponibles para esta pieza
+                        </div>   
+                    <?php endif; ?> 
+
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -119,7 +143,7 @@
     
 </div>
 
- 
+
 
            
  
@@ -157,14 +181,32 @@ $('#Valorpieza_id_term_arista').change(function(){
         $('#Valorpieza_id_terminacion_arista').val($(this).attr('value'));
         
     });
+
+
+
+
+
+
 $('#Valorpieza_id_term_canto').change(function(){
-         $('#pregunta3').attr('style','display:none');
-        $('#ok3').attr('style','display:block');
-        $('#destino').show('slow');
+      
+        $('#tipocantos').show('slow');
         
         $('#Valorpieza_id_terminacion_canto').val($(this).attr('value'));
         
     });
+
+
+$('#Valorpieza_id_tipo_canto').change(function(){
+         $('#pregunta3').attr('style','display:none');
+        $('#ok3').attr('style','display:block');
+        $('#destino').show('slow');
+        
+        $('#Valorpieza_id_tipo_canto').val($(this).attr('value'));
+        
+    });
+
+
+
  
 
 

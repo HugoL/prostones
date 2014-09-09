@@ -1,8 +1,8 @@
 <?php
 /* @var $this SiteController */
-/*
-$this->pageTitle=Yii::app()->name . ' - Reformas';
-$this->breadcrumbs=array(
+
+$this->pageTitle=Yii::app()->name . ' - Interiorismo . Cocinas y baños';
+/*$this->breadcrumbs=array(
 	'Reformas',
 );*/
 ?>
@@ -14,7 +14,7 @@ $this->breadcrumbs=array(
 <div class="span12 divSeccion">
 	<div class="span6">
 		<div class="span12">
-			<h2><font size="5" >Materiales para decorar su domicilio, en especial las cocinas y los baños</font></h2>
+			<h1><font size="5" >Materiales para decorar su domicilio, en especial las cocinas y los baños</font></h1>
 		</div>
 		<!--<div class="span3">
 			<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/reformas.jpg">

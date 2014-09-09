@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Como realizar una compra';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/compra.png">
 			</div class="span10"><h1>Como realizar una compra</h1> 
 
 <div class="clearfix">&nbsp</div>

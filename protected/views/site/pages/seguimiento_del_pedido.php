@@ -1,7 +1,7 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Asesoramiento';
+$this->pageTitle=Yii::app()->name . ' - Seguimiento del pedido';
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/
@@ -10,8 +10,8 @@ $this->pageTitle=Yii::app()->name . ' - Asesoramiento';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
-			</div class="span10"><h1>Asesoramiento.</h1> 
+			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/seguimiento.png">
+			</div class="span10"><h1>Seguimiento del pedido.</h1> 
 
 <div class="clearfix">&nbsp</div>
 

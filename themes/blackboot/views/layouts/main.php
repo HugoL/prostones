@@ -82,7 +82,7 @@ Yii::app()->clientscript
 				</a>
 			</div>-->
 			<!--<a class="brand offset3" href="#"><?php //echo Yii::app()->name ?></a>-->
-			<div > <a href="<?php echo Yii::app()->request->baseUrl?>/index.php"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
+			<div > <a href="<?php echo Yii::app()->baseUrl?>/index.php"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
 
 			<div class="nav-collapse" id="menu-top">
 				<?php $this->widget('zii.widgets.CMenu',array(

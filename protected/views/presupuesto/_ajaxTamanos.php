@@ -57,7 +57,7 @@ echo "</script>";
            
             $.ajax({
                 url: '$url_action3', type: 'post', 
-                data: { id_material: idmaterial, id_pieza: idpieza },
+                data: { id_material: idmaterial, id_pieza: idpieza, id_tamano: idtamano },
                 success: function(response){
 
                     $('#term').html(response);
