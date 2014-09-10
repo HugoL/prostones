@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Anulación de pedido';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+			<img alt="Anulación del pedido - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
 			</div class="span10"><h1>Anulación de pedido</h1> 
 
 <div class="clearfix">&nbsp</div>

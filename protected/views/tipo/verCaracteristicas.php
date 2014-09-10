@@ -72,8 +72,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 
                <strong>Tarifas </strong><font style=" font-size: 10px;" >(Los materiales son en bruto y sus precios no incluyen el IVA)</font><br>
-               <table style=" border-collapse:separate;
-    border-spacing:3px 0px;">
+               <table >
                <tr>
                <td ><font style=" font-size: 10px;" >Tamaño:</font></td>
                
@@ -112,7 +111,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
                 
                 <br>
             </div>
-<strong>Utilizacion del material: </strong>
+<strong>Rendimiento del material: </strong>
             <div class="span12 utilizaciones">
                 
                 <table >
@@ -188,7 +187,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
             <div class="span2 ">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verCaracteristicas/id/".$tipo->id?>">
 
-                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img  alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>
@@ -201,7 +200,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
             <div class="span2">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/tipo/verCaracteristicas/id/".$tipo->id?>">
 
-                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>

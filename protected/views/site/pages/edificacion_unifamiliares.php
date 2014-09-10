@@ -29,7 +29,7 @@ $this->pageTitle=Yii::app()->name . ' - Edificación y unifamiliares';
 		<div class="span11" style="height:40%">
 			<figure align="center">
 				<img   alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/unifamiliares.jpg">
-			<figcaption ><font size="1">Cambio del material de la escalera</font></figcaption>
+			<figcaption ><font size="1">Proyecto de casa unifamiliar.</font></figcaption>
 			
 			</figure>
 		</div>

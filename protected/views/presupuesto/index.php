@@ -65,10 +65,10 @@
                         </div>
 
                        <div class="span6" id="pregunta1">
-                            <img  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                            <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                         </div> 
                         <div class="span6" id="ok1" style="display:none">
-                           <img style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                           <img alt="Ok- www.proston.es" style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                         </div> 
 
                        <div class="span12">
@@ -143,10 +143,10 @@
                         </div>
 
                         <div class="span6" id="pregunta2">
-                            <img  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                            <img  alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                         </div> 
                         <div class="span6" id="ok2" style="display:none">
-                            <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                            <img alt="Ok - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                         </div> 
 
                         <div class="span12">
@@ -191,10 +191,10 @@
                 </div>
 
                 <div class="span6" id="pregunta3">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
                 <div class="span6" id="ok3" style="display:none">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                    <img alt="Ok- www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
@@ -236,10 +236,10 @@
                 </div>
 
                 <div class="span6" id="pregunta4">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
                 <div class="span6" id="ok4" style="display:none">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                    <img alt="Ok - www.proston.es"  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
@@ -276,10 +276,10 @@
                 </div>
 
                 <div class="span6" id="pregunta4">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
                 <div class="span6" id="ok4" style="display:none">
-                    <img style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                    <img alt="ok- www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">

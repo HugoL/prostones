@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Plazos de entrega';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/plazos.png">
+			<img alt="Plazos de entrega - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/plazos.png">
 			</div class="span10"><h1>Plazos de entrega</h1> 
 
 <div class="clearfix">&nbsp</div>

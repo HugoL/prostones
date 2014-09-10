@@ -84,7 +84,7 @@
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
 					
 							<div class="slideContent">
-								<h3>Catalogo de materiales</h3>
+								<h2>Catalogo de materiales</h2>
 								<p>Selección de las mejores rocas ornamentales </p>
 						
 							</div>
@@ -92,7 +92,7 @@
 						</div>    
 
 						<div id="slide2" class="slide">
-							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">
+							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id/12">
 							<figure>
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>2.jpg" alt="Diseñador virtual - proSton.es" />
 						    </figure>
@@ -100,7 +100,7 @@
 
 							<div class="slideContent"  >
 							
-							<h3 >Diseñador virtual</h3>
+							<h2 >Diseñador virtual</h2>
 							<p>Nuestro simulador le ayudara a tomar decisiones</p>
 							</div>
 											
@@ -110,7 +110,7 @@
 							<figure>
 							<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>3.jpg" alt="Presupuesto online - proSton.es" />
 						    </figure>
-							<div class="slideContent"><h3>Presupuesto online</h3>
+							<div class="slideContent"><h2>Presupuesto online</h2>
 								<p>Valora rapidamente tus proyectos.</p>
 							</div>
 						
@@ -127,7 +127,7 @@
 							</figure>
 						
 							<div class="slideContent">
-								<h3>Transporte a domicilio</h3>
+								<h2>Transporte a domicilio</h2>
 								<p>Rápido transporte a todo el territorio nacional</p>
 							</div>
 						
@@ -168,7 +168,7 @@
 					<strong>¿No ha encontrado lo que necesita?.</strong><p align="justify"><em>Consultenos, proSton.es puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
 				
 
-					<strong>¿Necesita colocar un material?</strong> <p align="justify"><em>Disponemos de profesionales en toda España que le pasaran presupuestos de colocación.</em></p>
+					<strong>¿Necesita que le coloquen un material?</strong> <p align="justify"><em>Disponemos de profesionales en toda España que le pasaran presupuestos de colocación.</em></p>
 						<br><br>
 					</p>				
 				</div>
@@ -274,7 +274,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/beige_levante.jpg">
+					<img alt="Oferta Marmol Beige Levante - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/beige_levante.jpg">
 				    </figure>
 				</div>
 
@@ -300,7 +300,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/crema_levante.jpg">
+					<img alt="Oferta Marmol Crema Levante - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/crema_levante.jpg">
 				    </figure>
 				</div>
 
@@ -326,7 +326,7 @@
 			<div class="span12">
 				<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rosa_zarci.jpg">
+					<img alt="Oferta Mármol rosa Zarci - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rosa_zarci.jpg">
 				    </figure>
 				</div>
 
@@ -353,7 +353,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
+					<img alt="Oferta Mármol Blanco Macael- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
 				    </figure>
 				</div>
 
@@ -378,7 +378,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
+					<img alt="Oferta Mármol Blanco Macael- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
 				    </figure>
 				</div>
 
@@ -404,7 +404,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rojo_coralito.jpg">
+					<img alt="Oferta Mármol Rojo Coralito - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rojo_coralito.jpg">
 				    </figure>
 				</div>
 
@@ -430,7 +430,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/marron_emperador.jpg">
+					<img alt="Oferta Mármol Marrón emperador  - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/marron_emperador.jpg">
 				    </figure>
 				</div>
 
@@ -459,7 +459,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+					<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 				    </figure>
 				</div>
 
@@ -485,7 +485,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+					<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 				    </figure>
 				</div>
 
@@ -511,7 +511,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+					<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 				    </figure>
 				</div>
 
@@ -537,7 +537,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
+					<img alt="Oferta Granito G664 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
 				    </figure>
 				</div>
 
@@ -563,7 +563,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
+					<img alt="Oferta Granito G664 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
 				    </figure>
 				</div>
 
@@ -589,7 +589,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
+					<img alt="Oferta Gris Parga - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
 				    </figure>
 				</div>
 
@@ -614,7 +614,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
+					<img alt="Oferta Gris Parga - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
 				    </figure>
 				</div>
 
@@ -640,7 +640,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/rosa_porrino.jpg">
+					<img alt="Oferta Granito Gris Parga- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/rosa_porrino.jpg">
 				    </figure>
 				</div>
 
@@ -666,7 +666,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/mondariz.jpg">
+					<img alt="Oferta Granito Mondariz- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/mondariz.jpg">
 				    </figure>
 				</div>
 
@@ -692,7 +692,7 @@
 					<div class="span12">
 					<div class="span5" style="padding:5px;">
 					<figure>	
-					<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gran_perla.jpg">
+					<img alt="Oferta Granito Gran Perla - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gran_perla.jpg">
 				    </figure>
 				</div>
 
@@ -708,7 +708,7 @@
 
 			</div>
 		</div>
-		<div class="span12" ><font size="1">* Todas las ofertas son a partir de 100 m<sup>2</sup></font></div>
+		<div class="span12" ><font size="1">* Ofertas a partir de 100 m<sup>2</sup></font></div>
 
 		<div class="span12" align="center">
 			<a href="" style="background-color:#134263;padding:3px;border:1px solid black;"><font size="2" color="white">Ver mas ofertas</font></a>
@@ -738,7 +738,7 @@
 <div class="span12" style="margin-left:0px;"> 
 
 	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id">	
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id/12">	
 			<div class="divHome span12">
 				<div class="span3 iconoser">
 					<figure>
@@ -845,7 +845,7 @@
 						<h3><font>Tarifas</font></h3>
 					</div>
 					<div>
-						<h3><font><br></font></h3>
+						<br>
 					</div>
 				</div>
 				<div class="span12 parr">

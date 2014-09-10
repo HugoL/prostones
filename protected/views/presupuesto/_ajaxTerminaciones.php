@@ -189,10 +189,20 @@ $('#Valorpieza_id_term_arista').change(function(){
 
 $('#Valorpieza_id_term_canto').change(function(){
       
-        $('#tipocantos').show('slow');
+        $('#pregunta3').attr('style','display:block');
+            $('#ok3').attr('style','display:none');
         
         $('#Valorpieza_id_terminacion_canto').val($(this).attr('value'));
-        
+        $('#destino').hide();
+
+        if ( $('#Valorpieza_id_term_canto').val() == 40   || $('#Valorpieza_id_term_canto').val() == 41  ){
+             $('#pregunta3').attr('style','display:none');
+            $('#ok3').attr('style','display:block');
+             $('#destino').show('slow');
+        }else{
+        $('#tipocantos').show('slow');
+        }
+
     });
 
 

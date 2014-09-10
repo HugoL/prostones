@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Condiciones de venta';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/venta.png">
+			<img alt="Condiciones de venta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/venta.png">
 			</div class="span10"><h1>Condiciones de venta</h1> 
 
 <div class="clearfix">&nbsp</div>

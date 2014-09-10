@@ -35,7 +35,7 @@ $this->pageTitle=Yii::app()->name . ' - Mamposteria y urbanización';
 		<div class="span11" style="height:40%">
 			<figure align="center">
 				<img   alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/mamposteria.jpg">
-			<figcaption ><font size="1">Cambio del material de la escalera</font></figcaption>
+			<figcaption ><font size="1">Trabajo de mamposteria.</font></figcaption>
 			
 			</figure>
 		</div>

@@ -9,7 +9,7 @@ $this->pageTitle=Yii::app()->name . ' - Elaboración y suministro';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.png">
+			<img alt="Elaboración y suministro - www.proton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/suministro.png">
 			</div class="span10"><h1>Elaboración y suministro.</h1> 
 
 <div class="clearfix">&nbsp</div>

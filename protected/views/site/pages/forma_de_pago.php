@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Forma de pago';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/pago.png">
+			<img alt="Forma de pago - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/pago.png">
 			</div class="span10"><h1>Forma de pago</h1> 
 
 <div class="clearfix">&nbsp</div>

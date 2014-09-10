@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Asesoramiento';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/preguntas.png">
+			<img alt="Preguntas frecuentes - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/preguntas.png">
 			</div class="span10"><h1>Asesoramiento.</h1> 
 
 <div class="clearfix">&nbsp</div>

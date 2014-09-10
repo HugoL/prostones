@@ -32,7 +32,7 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
         </div>
 
             <figure>
-            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
+            <img alt="Boceto Rellano - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/render/base.jpg"/>
             <figcaption>Boceto sin material</figcaption>
              </figure>
     </div>
@@ -82,7 +82,7 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
             <div class="span2 ">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/simulador/index/id/".$tipo->id?>">
 
-                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img  alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>
@@ -95,7 +95,7 @@ $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->n
             <div class="span2">
                 <a href="<?php echo Yii::app()->request->baseUrl."/index.php/simulador/index/id/".$tipo->id?>">
 
-                    <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
+                    <img  alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
             </div>
         <?php endforeach; ?>

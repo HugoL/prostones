@@ -189,7 +189,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img  alt="Cizallado - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/cizallado_granito.jpg">
+				<img  alt="Cizallado - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/cizallado_granito.jpg">
 				</figure>
 			</div>
 
@@ -208,7 +208,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Al corte de sierra- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/sierra_granito.jpg">
+				<img   alt="Al corte de sierra- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/sierra_granito.jpg">
 			</figure>
 			</div>
 
@@ -225,7 +225,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Al corte de disco- acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/disco_granito.jpg">
+				<img   alt="Al corte de disco- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/disco_granito.jpg">
 			</figure>
 			</div>
 
@@ -245,7 +245,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Apomazado- acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/apomazado.jpg">
+				<img   alt="Apomazado-  Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/apomazado.jpg">
 			</figure>
 			</div>
 
@@ -265,7 +265,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Pulido - acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/pulido.jpg">
+				<img   alt="Pulido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/pulido.jpg">
 			</figure>
 			</div>
 
@@ -285,7 +285,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Abujardado- acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/abujardado.jpg">
+				<img   alt="Abujardado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/abujardado.jpg">
 			</figure>
 			</div>
 
@@ -306,7 +306,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Granallado- acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granallado.jpg">
+				<img   alt="Granallado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granallado.jpg">
 			</figure>
 			</div>
 
@@ -327,7 +327,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Envejecido - acabado superficial granito - www.proston.es - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/envejecido.jpg">
+				<img   alt="Envejecido - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/envejecido.jpg">
 			</figure>
 			</div>
 
@@ -340,7 +340,7 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 				</p>
 			</div>
 		</div>
-		<h3>Granito</h3>
+		<h3>Mármol</h3>
 		<div class="span11">
 		<p><strong>	Al corte de Sierra. </strong><br>
 		Como consecuencia de dividir el bloque que se obtiene de la cantera en tablas, obtenemos este acabado que es el punto de partida para todos los demás. Las sierras utilizadas en este proceso dejan su huella en la piedra con una apariencia semi-rugosa e imperfecta, y al contrario del Pulido, ni deja ver la apariencia de la piedra, ni tapa el poro del material. Para resaltar un poco el color se puede además lavar al ácido.<p>

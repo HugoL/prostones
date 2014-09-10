@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Política de privacidad';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+			<img alt="Politica de privaciodad - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
 			
 
 </div class="span10"><h1>Política de privacidad</h1> 

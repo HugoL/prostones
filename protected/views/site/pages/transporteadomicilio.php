@@ -14,7 +14,7 @@ $this->pageTitle=Yii::app()->name . ' - Transporte a domicilio';
 <div class="span12">
 	<div class="span12">
 		<div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png">
+			<img alt="Transporte a domicilio - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png">
 		</div>
 
 		<h1>Transporte a domicilio.</h1> 
@@ -35,18 +35,14 @@ Todas las operaciones de distribución de mercancía es sobre pallet y están so
 
 		<div class="span3 divServicio">
 			<div class="span12">
-				<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg">	
+				<img  alt="Transporte a domicilio - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg">	
 			</div>
 			<div class="span12" align="center"><font size="1">
 				Diseñador Virtual</font>
 			</div>
 			<div class="clearfix">&nbsp</div>
-			<div class="span12">
-				<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg">
-	
-			</div>
-			<div class="span12" align="center">
-			<font size="1">Presupuesto Online</font></div>
+			
+			
 		</div>
 	</div>
 

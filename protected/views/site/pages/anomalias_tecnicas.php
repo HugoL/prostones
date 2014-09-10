@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Anomalias técnicas';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/anomalias.png">
+			<img alt="Anomalias técnicas" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/anomalias.png">
 			</div class="span10"><h1>Anomalias técnicas</h1> 
 
 <div class="clearfix">&nbsp</div>

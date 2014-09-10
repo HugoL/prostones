@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Seguimiento del pedido';
 
 
 <div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/seguimiento.png">
+			<img alt="Seguimiento del pedido - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/seguimiento.png">
 			</div class="span10"><h1>Seguimiento del pedido.</h1> 
 
 <div class="clearfix">&nbsp</div>

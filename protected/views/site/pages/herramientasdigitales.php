@@ -14,7 +14,7 @@ $this->pageTitle=Yii::app()->name . ' - Herramientas digitales';
 <div class="span12">
 	<div class="span12">
 		<div class="span1 iconoser">
-			<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
+			<img alt="Herramientas digitales - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.png">
 		</div>
 
 		<h1>Herramientas digitales.</h1> 
@@ -34,14 +34,14 @@ $this->pageTitle=Yii::app()->name . ' - Herramientas digitales';
 
 		<div class="span3 divServicio">
 			<div class="span12">
-				<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/diseñador.jpg">	
+				<img  alt="Diseñador online- www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/diseñador.jpg">	
 			</div>
 			<div class="span12" align="center"><font size="1">
 				Diseñador Virtual</font>
 			</div>
 			<div class="clearfix">&nbsp</div>
 			<div class="span12">
-				<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg">
+				<img alt="Presupuesto online - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/presupuesto.jpg">
 	
 			</div>
 			<div class="span12" align="center">
