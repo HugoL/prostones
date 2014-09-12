@@ -1,6 +1,9 @@
 <?php
 	/* @var $this SiteController */
-	$this->pageTitle=Yii::app()->name . ' - Suministro de Mármol , Granito y rocas ornamentales.';
+	$this->pageTitle='proSton.es - Marmolistas - Suministro de Mármol , Granito y rocas ornamentales.';
+	Yii::app()->clientScript->registerMetaTag("Venta de materiales ornamentales Mármol, Granito, Caliza, Travertinos, etc", 'description');
+	Yii::app()->clientScript->registerMetaTag(" Marmol , Granito ,Presupuesto, Reformas,Diseñador, Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
+	
 ?>
 
 
@@ -163,13 +166,13 @@
 
 			<div class="span1"></div>
 
-			<div class="span3" style="margin-left:2%"> <!--TEXTO ?-->
-				<div class="span9 enl" style=" margin-left:1.4%;">  
+			<div class="span3 prenl"> <!--TEXTO ?-->
+				<div class="span9 enl" >  
 					<strong>¿No ha encontrado lo que necesita?.</strong><p align="justify"><em>Consultenos, proSton.es puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
 				
 
 					<strong>¿Necesita que le coloquen un material?</strong> <p align="justify"><em>Disponemos de profesionales en toda España que le pasaran presupuestos de colocación.</em></p>
-						<br><br>
+						
 					</p>				
 				</div>
 			</div><!--FIN TEXTO ?-->
@@ -178,7 +181,7 @@
 	</div>
 
 
-	<div class="span2 ofertas" style="display:block; height:80%"><!--OFERTAS-->
+	<div class="span2 ofertas" style="display:block;"><!--OFERTAS-->
 		<div class="span6 offset3 titofertas" align="center">
 			<h2>Ofertas</h2>
 		</div>

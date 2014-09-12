@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Política de privacidad';
+
+$this->pageTitle= 'Política de privacidad - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Normas de privacidad de la web www.proston.es. Características de la misma", 'description');
+Yii::app()->clientScript->registerMetaTag("privacidad, normas, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

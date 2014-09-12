@@ -3,7 +3,7 @@
 
 
 
-$this->pageTitle= 'Anomalias técnicas - '. Yii::app()->name;
+$this->pageTitle= 'Anomalias técnicas - '. Yii::app()->name . ' Marmolistas';
 Yii::app()->clientScript->registerMetaTag("Anomalias técnicas. Resuelva sus problemas con la web.");
 Yii::app()->clientScript->registerMetaTag("anomalia,web, mármol, granito, mármolistas proston", 'keywords');
 /*$this->breadcrumbs=array(

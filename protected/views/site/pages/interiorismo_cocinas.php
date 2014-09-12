@@ -1,7 +1,13 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Interiorismo . Cocinas y baños';
+
+
+
+$this->pageTitle= 'Interiorismo. Cocinas y baños - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Te ofrecemos tanto las ideas como los materiales para poder desarrollar tu nuevo proyecto ", 'description');
+Yii::app()->clientScript->registerMetaTag("Interiorismo, Cocinas, Baños, Pedidos,   Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

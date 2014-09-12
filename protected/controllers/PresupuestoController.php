@@ -232,13 +232,34 @@ class PresupuestoController extends Controller
 			$precio = $tamanoreal * $preciounitario->precio;
 
 			//guardo las variables desglosadas
-			$preciopieza =$precio;
+			$preciopieza = $precio;
+
+
+                  if( $valorPieza->id_tipo_canto== 1 ){
+                    $longitudcanto = $valorPieza->tamano->cantolargo;
+                 }else{
+                   $longitudcanto = $valorPieza->tamano->cantocorto;
+                 } 
+
+
+
+          if( $valorPieza->id_pieza == 1 ){
+                        $tareal = $valorPieza->numeropiezas * $longitudcanto;
+
+                        
+                     }  
+
+
+
+
+
+
 
 			//  TERMINACION  Optimizarla reduciendo texto
 				switch ($valorPieza->id_pieza) {
 				case 1: //baldosas
 					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
-					$precioterminacionCanto=$valorPieza->terminacioncanto->precio * $numeropiezas * $tamano->longitud;
+					$precioterminacionCanto=$valorPieza->terminacioncanto->precio * $tareal;
 					$precioterminacionArista=$valorPieza->terminacionarista->precio * $tamanoreal;
 
 					break;
@@ -319,7 +340,7 @@ class PresupuestoController extends Controller
 
 			$valorPieza->preciotransporte = $preciotransporte;
 
-			$valorPieza->precio = $precio + $preciotransporte;			
+			$valorPieza->precio = $precio ;			
 			$valorPieza->update();
 
 			$this->render('index',array(

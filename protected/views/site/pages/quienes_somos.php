@@ -2,6 +2,11 @@
 /* @var $this SiteController */
 
 $this->pageTitle=Yii::app()->name . ' - Quienes somos';
+
+$this->pageTitle= 'Quienes somos - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Información de la empresa www.proston.es dedicada a la venta de mármoles y granitos", 'description');
+Yii::app()->clientScript->registerMetaTag("Entrega, tiempo, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

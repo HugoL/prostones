@@ -1,7 +1,12 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Devoluciónes';
+
+$this->pageTitle= 'Devoluciones - '. Yii::app()->name  . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Normas generales de devolución de mercancia", 'description');
+Yii::app()->clientScript->registerMetaTag(" devolución, pedido,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
+/*$this->breadcrumbs=array(
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

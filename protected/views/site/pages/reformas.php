@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Reformas';
+
+$this->pageTitle= 'Reformas y rehabilitación - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Realizamos todo tipo de reformas y rehabilitaciones de edificios, tanto fachadas como interiores", 'description');
+Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Granito ,Barato, Precio, Obra,  Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

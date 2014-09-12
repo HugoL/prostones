@@ -12,8 +12,8 @@ $this->breadcrumbs=array(
 );*/
 
 
-$this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->name;
-Yii::app()->clientScript->registerMetaTag("Diseñador virtual de ".$tipo->material->nombre ." ". $tipo->nombre, 'description');
+$this->pageTitle= 'Diseñador.  '. $tipo->material->nombre . " ". $tipo->nombre .' - '. Yii::app()->name . ' Marmolistas';
+Yii::app()->clientScript->registerMetaTag("Diseñador virtual. Portal de ".$tipo->material->nombre ." ". $tipo->nombre .". Multitud de materiales para elegir.", 'description');
 Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", Acabado,Simulador,". $tipo->material->nombre .", Precio, Ofertas, Baldosa, Rodapie, Pulido, Flameado, Abujardado, mármolistas proston", 'keywords');
 ?>
 
@@ -41,7 +41,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 
     <div class="span3 textosimulador">
       <br>
-      <font size="3"> <strong><?php echo $tipo->nombre; ?></strong></font><br>
+      <h2><?php echo $tipo->nombre; ?></h2><br>
       
       <div id="botonsimulador">
          <?php $this->widget('bootstrap.widgets.TbButton', array(
@@ -63,10 +63,10 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
             
     </div>
 
-    <div class="span6"> 
+    <div class="span6 imagensimulador"> 
     <figure> 
-    <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="80%" height="80%" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
-    <figcaption ><font size="1">* Pase el ratón para hacer zoom en la imágen.</font></figcaption>
+    <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="80%" height="80%"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
+    <figcaption id="textofoto">* Pase el ratón para hacer zoom en la imágen.</figcaption>
     </figure>
     </div>
       

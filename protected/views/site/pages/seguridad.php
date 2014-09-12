@@ -1,7 +1,10 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Seguridad';
+$this->pageTitle= 'Seguridad - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Garantizamos la seguridad trabajando con nosotros", 'description');
+Yii::app()->clientScript->registerMetaTag("Entrega, tiempo, Seguridad,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

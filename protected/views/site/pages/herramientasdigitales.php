@@ -1,7 +1,14 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Herramientas digitales';
+
+
+
+$this->pageTitle= 'Herramientas digitales - '. Yii::app()->name  . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Disponemos de un presupuesto online y un diseñador virtual de materiales para que pueda interactuar con la web y sacar las conclusiones correctas.", 'description');
+Yii::app()->clientScript->registerMetaTag("Simulador, Diseñador , Presupuesto, Online, Pedidos,   Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
+
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

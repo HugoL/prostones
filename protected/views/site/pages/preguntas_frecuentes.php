@@ -2,6 +2,11 @@
 /* @var $this SiteController */
 
 $this->pageTitle=Yii::app()->name . ' - Asesoramiento';
+
+$this->pageTitle= 'Asesoramiento - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Podemos ayudarle a realizar todas sus ideas y proyectos. ", 'description');
+Yii::app()->clientScript->registerMetaTag("Asesoramiento, Ayuda, Comprar, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

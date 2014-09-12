@@ -11,7 +11,7 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
 
-$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name;
+$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name . 'Marmolistas';
 Yii::app()->clientScript->registerMetaTag("Presupuesto online a medida de mármoles y granitos.", 'description');
 Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
     ?>
@@ -62,21 +62,20 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         </div>
 
                 
-        <div class="span12 row" id="material" style="display:none"><!-- PASO 1 MATERIAL-->
+        <div class="span12 row" id="material" ><!-- PASO 1 MATERIAL-->
                     <div class="span2 pasos" >
-                        <div class="span6"><font size="3">
-                            <strong style="color:#134263;">Material</strong></font>
+                        <div class="span6 titulopcion">Material</font>
                         </div>
 
                        <div class="span6" id="pregunta1">
-                            <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                            <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                         </div> 
-                        <div class="span6" id="ok1" style="display:none">
-                           <img alt="Ok- www.proston.es" style="float: right;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                        <div class="span6" id="ok1">
+                           <img alt="Ok- www.proston.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                         </div> 
 
                        <div class="span12">
-                        <p align="left" style="font-size:12px"><strong>Paso 1</strong></p>
+                        <p id="titulopaso">Paso 1</p>
                        </div>
                     </div>
 
@@ -139,22 +138,21 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         </div><!--FIN PASO 1-->
 
 
-        <div class="span12 row" id="tipo_piezas" style="display:none"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
+        <div class="span12 row" id="tipo_piezas"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
 
                     <div class="span2 pasos" >
-                        <div class="span6"><font size="3">
-                            <strong style="color:#134263;">Formato</strong></font><br>
+                        <div class="span6 titulopcion">Formato<br>
                         </div>
 
                         <div class="span6" id="pregunta2">
-                            <img  alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                            <img  alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                         </div> 
-                        <div class="span6" id="ok2" style="display:none">
-                            <img alt="Ok - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                        <div class="span6" id="ok2">
+                            <img alt="Ok - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                         </div> 
 
                         <div class="span12">
-                            <p align="left" style="font-size:12px"><strong>Paso 2</strong></p>
+                            <p id="titulopaso">Paso 2</p>
                         </div>
                     </div>
 
@@ -187,22 +185,20 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         </div><!-- FIN PASO 2-->        
 
 
-        <div class="span12" id="terminaciones" style="display:none"><!--PASO 3-->
+        <div class="span12" id="terminaciones"><!--PASO 3-->
 
             <div class="span2 pasos" >
-                <div class="span6">
-                    <strong style="color:#134263;"><font size="3">Acabado</font></strong><br>
-                </div>
+                <div class="span6 titulopcion">Acabado</div>
 
                 <div class="span6" id="pregunta3">
-                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
-                <div class="span6" id="ok3" style="display:none">
-                    <img alt="Ok- www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                <div class="span6" id="ok3">
+                    <img alt="Ok- www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
-                     <p align="left" style="font-size:12px"><strong>Paso 3</strong></p>
+                     <p id="titulopaso"><strong>Paso 3</strong></p>
                 </div>
             </div>
 
@@ -232,22 +228,21 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         </div><!--FIN PASO 3-->
 
 
-        <div class="span12" id="destino"  style="display:none" ><!--PASO 4-->
+        <div class="span12" id="destino" ><!--PASO 4-->
 
             <div class="span2 pasos" >
-                <div class="span6">
-                    <strong style="color:#134263;"><font size="3">Destino</font></strong><br>
+                <div class="span6 titulopcion">Destino
                 </div>
 
                 <div class="span6" id="pregunta4">
-                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es"src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
-                <div class="span6" id="ok4" style="display:none">
-                    <img alt="Ok - www.proston.es"  style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                <div class="span6" id="ok4">
+                    <img alt="Ok - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
-                  <p align="justify" style="font-size:12px">Paso 4</p>
+                  <p id="titulopaso">Paso 4</p>
                 </div>
             </div>
 
@@ -260,34 +255,32 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                  </div>
                 <div class="span5">
                     <div class="span12">
-                        <div class="span12 pa" id="destino">
+                        <div class="span12 pa" id="destino2">
                           <?php echo CHtml::activeDropDownList($valorpieza, 'destino', CHtml::listData(Provincia::model()->findAll(array('order'=>'nombre ASC')), 'id', 'nombre'),array('empty'=>'Selecciona destino'));?>
                         </div>
                     </div>
                 </div>
 
-                <div class="span6">
-                    <font color="grey">Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.</font>
+                <div class="span6 textogris">
+                    <p>Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.</p>
                 </div>
             </div>
         </div><!--FIN PASO 4-->
 
 
-        <div class="span12" id="cantidad"  style="display:none" ><!--PASO 5-->
+        <div class="span12" id="cantidad"><!--PASO 5-->
             <div class="span2 pasos" >
-                <div class="span6">
-                    <strong style="color:#134263;"><font size="3">Cantidad</font></strong><br>
-                </div>
+                <div class="span6 titulopcion">Cantidad</div>
 
                 <div class="span6" id="pregunta4">
-                    <img alt="Pregunta - www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
                 </div> 
-                <div class="span6" id="ok4" style="display:none">
-                    <img alt="ok- www.proston.es" style="float:right" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                <div class="span6" id="ok4">
+                    <img alt="ok- www.proston.es"src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div> 
 
                 <div class="span12">
-                    <p align="justify" style="font-size:12px">Paso 5</p>
+                    <p id="titulopaso">Paso 5</p>
                 </div>
             </div>
 
@@ -309,7 +302,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                         </div>
                     </div>
 
-                    <div class="span6" id="boton" style="display:none">
+                    <div class="span6" id="boton" >
                         <div class="row">
                             <?php echo $form->hiddenField($valorpieza,'id_material',array('value'=>'0')); ?>
                             <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
@@ -357,13 +350,13 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
             <div class="well span11">
                 <div class="clearfix"></div> 
-                <font color="#134263">Constulta <?php echo $i ; $i = $i + 1;?>     </font>
-                <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
+                <span id="azul">Constulta <?php echo $i ; $i = $i + 1;?>     </span>
+                <div class="span12 cuadropedido">
                     <div class="span12"><font><strong>Material</strong></font></div>
 
                     <div class="span12">
                         <div class="span2">
-                            <img  style="border:1px solid black" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $pieza->tipo->imagen; ?> "/>
+                            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $pieza->tipo->imagen; ?> "/>
                             <strong><font size="3"><?php echo str_replace(".",",",$pieza->tamanoreal); ?></font><?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?></strong>
                        
                         </div>
@@ -372,10 +365,10 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                             <p><font size="3"><?php echo $pieza->tipo->nombre; ?>. <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){echo '';}else{echo $pieza->numeropiezas;}?> <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. </font> </p>
                             
                             <table style="float:right">
-                                <tr><td align="center">Descripción</td><td align="center" style="padding-right:5px">Precio</td></tr>
+                                <tr><td align="right" colspan="2"><em><font size="2">Descripción</font></em></td><td align="right" style="padding-right:5px"><em>Precio</em></td></tr>
 
                                 <tr>
-                                    <td align="right" style="padding-right:10px">
+                                    <td align="right" colspan="2">
 
                                     <?php echo str_replace(".",",",$pieza->tamanoreal); ?> <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?>
                                      a  
@@ -393,7 +386,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                                 </tr>
 
                                 <tr>
-                                    <td align="right" style="padding-right:10px">
+                                    <td align="right" colspan="2" >
                                         <em>Cara:</em> <?php echo $pieza->terminacion->nombre; ?>.
                                         <?php echo $pieza->terminacion->precio; ?> €/m<sup>2</sup>
                                     </td>
@@ -414,8 +407,13 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
                                  <tr>
-                                    <td align="right" style="padding-right:10px">
-                                        <em>Canto:</em> 
+                                    <td align="right" colspan="2" >
+                                        <em>Canto</em> 
+                                        <?php  if( $pieza->id_tipo_canto== 1 ){
+                                            echo ' de ' . $pieza->tamano->cantolargo * 100 . 'cm.';
+                                         }else{ 
+                                            echo ' de ' . $pieza->tamano->cantocorto * 100 . 'cm. ';
+                                         } ?>
                                         <?php if( $pieza->id_pieza == 1 ){
                                          echo $pieza->terminacioncanto->nombre . ".";  
                                          }else{
@@ -434,7 +432,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                                         }  ?> 
                                     </td>
 
-                                    <td align="right" style="padding-right:5px">
+                                    <td align="right"  style="padding-right:5px">
                                              
                                          <?php if( $pieza->id_pieza == 1 ){
 
@@ -456,7 +454,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
                                 <tr>
 
-                                    <td align="right" style="padding-right:10px">
+                                    <td align="right" colspan="2" >
                                     <em>Arista:</em>
                                         <?php if( $pieza->id_pieza == 1 ){
                                          echo $pieza->terminacionarista->nombre . ".";  
@@ -490,7 +488,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
                                
                                 <tr>
-                                    <td align="right" style="padding-right:10px">
+                                    <td align="right" colspan="2" >
                                        <strong> Precio material:</strong>
                                     </td>
                                     <td align="right" style="padding-right:5px; " >
@@ -534,25 +532,37 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                 </div>
 
                 <div class="span12" align="right" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
-
+                    <table align="right">
+                        <tr>
+                            <td align="right">
 
                      Material + transporte:
                       <?php $prematrans = round($preciomat + $pieza->preciotransporte ,2);
                            $prematrans2 =number_format((float)$prematrans, 2, '.', '');
                             echo str_replace(".",",",$prematrans2) . " € ";
-                     ?><br>
+                     ?></td>
+                     </tr>
+
+                        <tr>
+                            <td align="right">
                      IVA:21%: <?php 
                             $preiva = round((21 * $prematrans / 100),2);
                            $preiva2 = number_format((float)$preiva, 2, '.', '');
                             echo str_replace(".",",",$preiva2) . " € ";
                             ?>
-                        <br>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td align="right">
                      <font size="3"><strong> Total: <?php $pretot = round($prematrans + $preiva,2);
                            $pretot2 =number_format((float)$pretot, 2, '.', '');
                             echo str_replace(".",",",$pretot2) . " € ";
 
                      ?></strong></font>
-
+                     </td>
+                     </tr>
+                     </table>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -655,7 +665,7 @@ $(document).ready(function($){
     $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
     $("#Valorpieza_id_terminacion").val("");
-    $("#Valorpieza_destino").val("");
+    $("#Valorpieza_destino2").val("");
     $("#inicio").click(function(){
         $("#inicio").hide();
         $("#material").show('slow');

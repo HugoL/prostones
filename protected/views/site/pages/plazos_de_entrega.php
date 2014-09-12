@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Plazos de entrega';
+
+$this->pageTitle= 'Plazos de entrega - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Tabla de los tiempos en que enviamos los pedidos asi como su características", 'description');
+Yii::app()->clientScript->registerMetaTag("Entrega, tiempo, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

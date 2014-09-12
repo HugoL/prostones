@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Condiciones de utilización';
+
+$this->pageTitle= 'Condiciones de utilización - '. Yii::app()->name  . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Condiciones de utilización. Conozca sus derechos de uso de la página", 'description');
+Yii::app()->clientScript->registerMetaTag("Condiciones, utilización,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

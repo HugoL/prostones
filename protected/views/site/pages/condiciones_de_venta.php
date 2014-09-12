@@ -1,7 +1,12 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Condiciones de venta';
+
+
+$this->pageTitle= 'Condiciones de venta - '. Yii::app()->name  . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Condiciones de venta de mármol , granito, etc sujeto a las normas de tráfico de mercancías", 'description');
+Yii::app()->clientScript->registerMetaTag("Condiciones, venta,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/
@@ -16,7 +21,7 @@ $this->pageTitle=Yii::app()->name . ' - Condiciones de venta';
 <div class="clearfix">&nbsp</div>
 
 <div class="span6 foot">
-<p>En las Tarifas indicamos los precios de todos los materiales, situados en las fábricas que elaboran sus PEDIDOS (en €uros y no tienen el IVA incluido). Además calculamos el transporte desde estas fábricas hasta el domicilio que usted nos indica, también brindamos la posibilidad que el Cliente pase a recoger su material en Origen.<br><br>
+<p>En las Tarifas indicamos los precios de todos los materiales, situados en las fábricas que elaboran sus <strong>pedidos</strong> (en €uros y no tienen el IVA incluido). Además calculamos el transporte desde estas fábricas hasta el domicilio que usted nos indica, también brindamos la posibilidad que el Cliente pase a recoger su material en Origen.<br><br>
 
 Todos los suministros se harán de acuerdo a las normas vigentes de tráfico de mercancías. En caso de existir algún tipo de limitación en la obra en cuanto a pesos, volúmenes, etc., el Cliente será responsable de ponerlo en conocimiento de proSton. Todos los gastos por ello ocasionados, se facturarán al cliente. </p>
 <h2>Relación contractual</h2>

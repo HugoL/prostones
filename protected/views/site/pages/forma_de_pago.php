@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Forma de pago';
+
+$this->pageTitle= 'Forma de pago - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Metodos de pago para adquirir mármoles y granitos en www.proston.es", 'description');
+Yii::app()->clientScript->registerMetaTag("Pagar, Suministro, Pedidos,   Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

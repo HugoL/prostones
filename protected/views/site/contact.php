@@ -3,7 +3,12 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - Contacta con nosotros';
+
+$this->pageTitle= 'Contacta con nosotros - '. Yii::app()->name;
+
+Yii::app()->clientScript->registerMetaTag("Contacta con nosotros. Necesita construir su idea. Nosotros se la hacemos realidad", 'description');
+Yii::app()->clientScript->registerMetaTag("Contacto, formulario,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
+
 ?>
 
 <h1>Contacta con nosotros</h1>

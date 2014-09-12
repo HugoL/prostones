@@ -247,9 +247,9 @@
           <tr>
 
                  <td >Canto   <?php  if( $pieza->id_tipo_canto== 1 ){
-                    echo 'largo ';
+                    echo 'largo ' . $pieza->tamano->cantolargo * 100 . 'cm.';
                  }else{ 
-                   echo 'corto ';
+                   echo 'corto ' . $pieza->tamano->cantocorto * 100 . 'cm. ';
                  } ?>
 
 
@@ -468,10 +468,11 @@
                 <?php $u = $u + 1; ?>
            <td align="right" style="padding-right:5px;">Material ( <?php
             $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2);
-            $preciototivamat = round($preciototivamat,2);
-            echo str_replace(".",",",$preciototivamat); ?> €) + transporte( <?php echo str_replace(".",",",$tottrans) ?> €)</td>
+            $totmat = round(($pieza->precio/100)*21 + $pieza->precio,2);
+           /* $preciototivamat = round($preciototivamat,2);*/
+            echo str_replace(".",",",$totmat); ?> €) + transporte( <?php echo str_replace(".",",",$tottrans) ?> €)</td>
 
-           <?php $fintotal = round($preciototivamat + $tottrans,2)?>
+           <?php $fintotal = round($totmat + $tottrans,2)?>
            <td style=" border: 1px solid black" align="center"><strong><?php echo str_replace(".",",",$fintotal) ?> €</strong></td>
               <?php endforeach; ?>
             <?php endif; ?>

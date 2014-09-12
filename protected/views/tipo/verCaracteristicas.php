@@ -1,23 +1,27 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
+$this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name . 'Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Catálogo de materiales. " . $tipo->nombre . " en detalle. Características, rendimiento, tarifas. ", 'description');
+Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tipo->nombre ." Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
+
 ?>
 
-<h1><?php echo $tipo->nombre; ?>.<font style="font-size:12px; color:grey;"> </font></h1> 
+<h1><?php echo $tipo->nombre; ?>.</h1> 
 
 
 
 
 
-<div class="span8">
+<div class="span8 caracteristicas">
     <div class="span12">
         <div class="span3" >
           
 
 
         <figure>
-        <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="200px" height="300px" style="border:1px solid black;"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
+        <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="200px" height="300px"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/<?php echo $tipo->imagen; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/large/<?php echo $tipo->imagen; ?>"/>
         </figure>
         <br>
 
@@ -27,83 +31,97 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
 
 
             
-            <strong>Características</strong> <br>
+            <h2>Características</h2>
        
                  
-            <table  style=" border-collapse:separate;
-    border-spacing:0px 3px; ">
-                            <tr  >
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Masa volúmica:</font></td>
-                    <td style="border:1px solid #8f8c8c;" align="center"><font style=" font-size: 12px;" ><?php echo $tipo->masa_volumica; ?></font> </td>
-                    <td bgcolor="#e8e8e8"><font size="1" >g/cm<sup>3</sup></font></td>
+            <table>
+                <tr>
+                    <td id="etiqueta" colspan="2"  align="center">Masa volúmica:</td>
+                    <td id="datoresaltado" align="center"><?php echo $tipo->masa_volumica; ?></td>
+                    <td id="etiqueta">g/cm<sup>3</sup></td>
                 </tr>
                
                 <tr  >
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Coeficiente absorción:</font></td>
-                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->absorcion; ?></font> </td>
-                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >%</font></td>
+                    <td id="etiqueta"  colspan="2" align="center">Coeficiente absorción:</td>
+                    <td id="datoresaltado"  align="center"><?php echo $tipo->absorcion; ?></td>
+                    <td id="etiqueta">%</td>
                 </tr>
                 <tr >
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia a compresión: </font></td>
-                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->compresion; ?></font></td>
-                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >Mpa</font></td>
+                    <td id="etiqueta"colspan="2" align="center">Resistencia a compresión: </td>
+                    <td id="datoresaltado"  align="center"><?php echo $tipo->compresion; ?></td>
+                    <td id="etiqueta">Mpa</td>
                 </tr>
                 <tr>
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia a la flexión:</font> </td>
-                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->flexion; ?></font></td>
-                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >Mpa</font></td>
+                    <td id="etiqueta"colspan="2" align="center">Resistencia a la flexión: </td>
+                    <td id="datoresaltado"  align="center"><?php echo $tipo->flexion; ?></td>
+                    <td id="etiqueta">Mpa</td>
                 </tr>
                 <tr>
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia al desgaste</font></td>
-                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" ><?php echo $tipo->desgaste; ?></font></td>
-                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >mm.</font></td>
+                    <td id="etiqueta" colspan="2" align="center">Resistencia al desgaste</td>
+                    <td id="datoresaltado"  align="center"><?php echo $tipo->desgaste; ?></td>
+                    <td id="etiqueta">mm.</td>
                 </tr>
                 <tr>
-                    <td bgcolor="#e8e8e8"  align="center"><font style=" font-size: 10px;" >Resistencia al impacto:</font></td>
-                    <td style="border:1px solid #8f8c8c;"  align="center"><font style=" font-size: 12px;" > <?php echo $tipo->impacto; ?></font></td>
-                    <td bgcolor="#e8e8e8"><font style=" font-size: 10px;" >cm.</font></td>
+                    <td id="etiqueta" colspan="2" align="center">Resistencia al impacto:</td>
+                    <td id="datoresaltado"  align="center"> <?php echo $tipo->impacto; ?></td>
+                    <td id="etiqueta">cm.</td>
                 </tr>
 
             </table>
             
         </div>
-        <div class="span8" style="margin-left:40px;">
+        <div class="span8 tarifas">
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 
-               <strong>Tarifas </strong><font style=" font-size: 10px;" >(Los materiales son en bruto y sus precios no incluyen el IVA)</font><br>
+               <strong>Tarifas </strong>(Los materiales son en bruto y sus precios no incluyen el IVA)<br>
                <table >
+               
                <tr>
-               <td ><font style=" font-size: 10px;" >Tamaño:</font></td>
+               <td >Tamaño:</td>
                
 
-             <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
-            <!--<div class="span2">-->
-            <td align="center" style="border:1px solid #8f8c8c;">
+             <?php foreach ($preciosunitarios as $key => $preciounitario):?>
+            
+                <?php if( $preciounitario->tamano->id_pieza == 1 ){?>
+            <td align="center" id="datoresaltado">
+
                  <?php echo $preciounitario->tamano->nombre; ?></td>
-
+                <?php } ?>
              
-            <!--</div>-->
+            
         <?php endforeach; ?>
+            
 
+            <?php foreach ($preciosunitarios as $key => $preciounitario):?>
+           
+                <?php if( $preciounitario->tamano->id_pieza == 2 ){?>
+            <td align="center" id="datoresaltado">
+
+                 <?php echo $preciounitario->tamano->nombre; ?></td>
+                <?php } ?>
+             
+           
+        <?php endforeach; ?>
                </tr>
-               <tr>
-               <td><font style=" font-size: 10px;" >Precio:</font></td>
 
-                <?php foreach ($preciosunitarios as $key => $preciounitario):     ?>
+               <tr>
+               
+               <td>Precio:</td>
+
+                <?php foreach ($preciosunitarios as $key => $preciounitario):  ?>
             <!--<div class="span2">-->
-            <td  align="center" bgcolor="#e8e8e8" style="border-bottom:1px solid #c4c4c4;"><strong style="color:#125171;">
-                 <?php echo $preciounitario->precio ?></strong> 
-            <font style=" font-size: 9px;" >   
-                
+            <td  align="center" id="etiquetazul">
+                 <?php echo $preciounitario->precio ?>
+                           
                 <?php if( $preciounitario->tamano->id_pieza == 1 ){
-                echo "€ m<sup>2</sup>.";
+                echo "<span id='black'>€ m<sup>2</sup>.</span>";
             }else{
-                echo "€ m.";
-            }  ?> <br>
+                echo "<span id='black'>€ m.</span>";
+            }  ?> 
    
 
-               </font></td>
+               </td>
             <!--</div>-->
         <?php endforeach; ?>
         </tr>
@@ -178,8 +196,8 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
 
 
 
-<div class="span3">
-    <h3 style="font-size:15px;">Mármoles</h3>
+<div class="span3 menumat">
+    <h3>Mármoles</h3>
     <div class="span12 galemat">
 <div class="clearfix"></div>
 
@@ -193,7 +211,7 @@ $this->pageTitle= 'Catálogo - '. $tipo->nombre .' - '. Yii::app()->name;
         <?php endforeach; ?>
     </div>
 
-<h3 style="font-size:15px;">Granitos</h3>
+<h3>Granitos</h3>
     <div class="span12 galemat">
     <div class="clearfix"></div>
      <?php foreach ($tipos2 as $key => $tipo):     ?>

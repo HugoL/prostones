@@ -1,7 +1,12 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Elaboración y suministro';
+
+
+$this->pageTitle= 'Elaboración y suministro - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Productos y materiales desde la extracción a la obra", 'description');
+Yii::app()->clientScript->registerMetaTag("Elaboración, Suministro,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

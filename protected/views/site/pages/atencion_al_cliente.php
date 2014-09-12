@@ -3,7 +3,7 @@
 
 
 
-$this->pageTitle= 'Atención al cliente - '. Yii::app()->name;
+$this->pageTitle= 'Atención al cliente - '. Yii::app()->name  . ' Marmolistas';
 Yii::app()->clientScript->registerMetaTag("Atención al cliente. Necesita ayuda, nosotros se la proporcionamos.");
 Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 

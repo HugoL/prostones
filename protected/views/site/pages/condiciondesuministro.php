@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Condiciones generales de suministro';
+
+$this->pageTitle= 'Condiciones generales de suministro - '. Yii::app()->name  . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Condiciones generales de suministro. Como www.proston.es tramita los pedidos", 'description');
+Yii::app()->clientScript->registerMetaTag("Condiciones, suministro,  Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 
 ?>
 <h1>Condiciones generales de suministro</h1>

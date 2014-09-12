@@ -2,7 +2,7 @@
 /* @var $this SiteController */
 
 
-$this->pageTitle= 'Anulación de pedido - '. Yii::app()->name;
+$this->pageTitle= 'Anulación de pedido - '. Yii::app()->name  . ' Marmolistas';
 Yii::app()->clientScript->registerMetaTag("Anulación del pedido. Instrucciones para anular el pedido.");
 Yii::app()->clientScript->registerMetaTag("anulacion pedido,web, mármol, granito, mármolistas proston", 'keywords');
 /*$this->breadcrumbs=array(

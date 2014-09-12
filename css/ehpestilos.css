@@ -265,6 +265,13 @@ margin-left:35px;
 .enl img:active{
   border: 2px  #b0cce9 solid;
 }
+.prenl{
+  margin-left:2%;
+}
+.enl{
+  margin-left:1.4%;
+  margin-bottom:12%;
+}
 
 .plat{
  width:7.45%;
@@ -529,6 +536,7 @@ border:1px #134263 solid;padding:5px;
 
 
 
+height:80%;
 }
 .ofertacuadro{
 
@@ -622,13 +630,21 @@ font-size:20px;
 .textosimulador{
   text-align:right
 }
+.textosimulador h2{
+  font-size: 18px;
+}
+#textofoto{
+  font-size:10px;
+}
 .galsimulador h3{
   font-size:15px;
 }
 #botonsimulador{
   margin-top:250px;
 }
-
+.imagensimulador img{
+border:1px solid black;
+}
 
 .form_contacto h2{
 font-size: 18px;
@@ -645,7 +661,49 @@ font-size: 15px;
   height:120px;
  
 }
+.caracteristicas h2{
+  font-size: 16px;
 
+
+}
+.caracteristicas img{
+  border:1px solid black;
+
+
+}
+.caracteristicas table{
+  border-collapse:separate;  
+  border-spacing:0px 3px;
+  font-size:10px;
+}
+.caracteristicas td{
+  /*background-color: #e8e8e8;*/
+}
+.tarifas{
+  margin-left:40px;
+}
+.tarifas td{
+  font-size: 12px;
+}
+#datoresaltado{
+  font-size: 12px;
+  border:1px solid #8f8c8c;
+  background-color: white;
+}
+#etiqueta{
+  background-color: #e8e8e8;
+  border-bottom:1px solid #c4c4c4;
+}
+#etiquetazul{
+  font-size: 13px;
+  background-color: #e8e8e8;
+  border-bottom:1px solid #c4c4c4;
+   font-weight: bold;
+  color: #134263;
+}
+#black{
+  color:black;
+}
 .utilizaciones table{
   border-collapse:separate;
     border-spacing:3px 0px;
@@ -657,7 +715,9 @@ font-size: 15px;
   text-align: center;
 }
 
-
+.menumat h3{
+  font-size: 15px;
+}
 
 .telefonodiv{
 float:right;
@@ -687,4 +747,91 @@ table {
 th,td {
    height:20% !important;
     word-wrap: break-word!important;
+}
+
+
+/*ESTILOS PRESUPUESTO (ir poniendolos debajo) */
+
+.titulopcion{
+  font-size:16px;
+  color:#134263;
+  font-weight: bold;
+}
+#titulopaso{
+  font-size:12px;
+  font-weight: bold;
+  float:left;
+}
+
+#pregunta1{
+float:right;
+}
+#pregunta2{
+float:right;
+}
+#pregunta3{
+float:right;
+}
+#pregunta4{
+float:right;
+}
+
+#ok1{
+  display:none;
+}
+#ok1 img{
+  float: right;
+}
+#ok2{
+  display:none;
+}
+#ok2 img{
+  float: right;
+}
+#ok3{
+  display:none;
+}
+#ok3 img{
+  float: right;
+}
+#ok4{
+  display:none;
+}
+#ok4 img{
+  float: right;
+}
+#material{
+  
+  display:none;
+}
+#tipo_piezas{
+  display:none;
+}
+#terminaciones{
+  display:none;
+}
+#destino{
+  display:none
+}
+
+#cantidad{
+  display:none;
+}
+#boton{
+  display:none;
+}
+
+/*estilos pedido*/
+
+#azul{
+  color: #134263;
+}
+.cuadropedido{
+background-color:white;
+ padding:5px; 
+ border:1px solid #134263;
+  margin-bottom:10px;
+}
+.cuadropedido img{
+  border:1px solid black
 }

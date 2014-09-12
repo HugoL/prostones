@@ -4,7 +4,7 @@
 
 
 
-$this->pageTitle= 'Información técnica - '. Yii::app()->name;
+$this->pageTitle= 'Información técnica - '. Yii::app()->name  . ' Marmolistas';
 Yii::app()->clientScript->registerMetaTag("Información técnica sobre diferentes conocimientos y uso de rocas ornamentales");
 Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir baldosas, medir obra, resbalabilidad,atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(

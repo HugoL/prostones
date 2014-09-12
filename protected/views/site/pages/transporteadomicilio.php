@@ -2,7 +2,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Transporte a domicilio';
+
+$this->pageTitle= 'transporte a domicilio- '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Enviamos mármoles y granitos a buen precio a toda España", 'description');
+Yii::app()->clientScript->registerMetaTag("Entrega, tiempo, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

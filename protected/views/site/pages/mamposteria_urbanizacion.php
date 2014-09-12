@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Mamposteria y urbanización';
+
+$this->pageTitle= 'Mamposteria y urbanización - '. Yii::app()->name . ' Marmolistas';
+
+Yii::app()->clientScript->registerMetaTag("Las rocas ornamentales ofrecen muchos usos en mamposteria y urbanización. Consultanos y te diremos que material necesitas.", 'description');
+Yii::app()->clientScript->registerMetaTag("Mamposteria, Urbanización, Proyecto, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/
