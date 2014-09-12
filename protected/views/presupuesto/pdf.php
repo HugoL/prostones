@@ -427,7 +427,7 @@
                <?php $ivatrans = round(($pieza->preciotransporte/100)*21,2)?>
               <td align="center"> <?php echo str_replace(".",",",$ivatrans) ?> €</td>
 
-  <?php $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2)?>
+          <?php $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2)?>
               <td align="right"> <strong><?php echo str_replace(".",",",$tottrans) ?></strong></td>
 
                 </tr>
@@ -468,10 +468,10 @@
                 <?php $u = $u + 1; ?>
            <td align="right" style="padding-right:5px;">Material ( <?php
             $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2);
-            $preciototivamat = round(($pieza->precio  + ($pieza->precio*21/100))-(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte),2);
+            $preciototivamat = round($preciototivamat,2);
             echo str_replace(".",",",$preciototivamat); ?> €) + transporte( <?php echo str_replace(".",",",$tottrans) ?> €)</td>
 
-           <?php $fintotal = round($pieza->precio  + ($pieza->precio*21/100),2)?>
+           <?php $fintotal = round($preciototivamat + $tottrans,2)?>
            <td style=" border: 1px solid black" align="center"><strong><?php echo str_replace(".",",",$fintotal) ?> €</strong></td>
               <?php endforeach; ?>
             <?php endif; ?>

@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Atención personalizada';
+
+
+$this->pageTitle= 'Atención personalizada - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Atención personalizada para obra, reforma o proyecto que desee realizar.");
+Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

@@ -1,6 +1,6 @@
 <?php
 	/* @var $this SiteController */
-	$this->pageTitle=Yii::app()->name . ' - Suministro de materiales';
+	$this->pageTitle=Yii::app()->name . ' - Suministro de Mármol , Granito y rocas ornamentales.';
 ?>
 
 

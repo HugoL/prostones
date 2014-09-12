@@ -1,7 +1,11 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Como realizar una compra';
+
+
+$this->pageTitle= 'Como realizar una compra - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Realizar una compra en www.proston.es es facil , rapido e intiutivo.");
+Yii::app()->clientScript->registerMetaTag("comprar marmol ,oferta ,facil ,obra ,reforma ,web ,mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

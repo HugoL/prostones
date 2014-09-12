@@ -13,6 +13,8 @@ $this->breadcrumbs=array(
 
 
 $this->pageTitle= 'Diseñador. Portal  en '. $tipo->nombre .' - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Diseñador virtual de ".$tipo->material->nombre ." ". $tipo->nombre, 'description');
+Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", Acabado,Simulador,". $tipo->material->nombre .", Precio, Ofertas, Baldosa, Rodapie, Pulido, Flameado, Abujardado, mármolistas proston", 'keywords');
 ?>
 
 

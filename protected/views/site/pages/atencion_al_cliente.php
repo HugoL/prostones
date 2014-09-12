@@ -1,7 +1,13 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Atencion al cliente';
+
+
+$this->pageTitle= 'Atención al cliente - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Atención al cliente. Necesita ayuda, nosotros se la proporcionamos.");
+Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
+
+
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

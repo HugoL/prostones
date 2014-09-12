@@ -2,6 +2,10 @@
 /* @var $this SiteController */
 
 $this->pageTitle=Yii::app()->name . ' - Aviso legal';
+
+$this->pageTitle= 'Aviso legal - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Avios legal del uso de la web.");
+Yii::app()->clientScript->registerMetaTag("aviso legal,condiciones ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/

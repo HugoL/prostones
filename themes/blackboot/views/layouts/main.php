@@ -27,11 +27,14 @@ Yii::app()->clientscript
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+<meta name="keywords" content="Mármol, Granito, Piedra, Comprar, Presupuesto">
+<meta name="description" content="Venta de materiales ornamentales Mármol, Granito, Caliza, Travertinos, etc">
+<meta name="language" content="es" />
+<meta name="msvalidate.01" content="9D772A7448CDD4689B4167F238BEB9F3" />
 <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
 
 		
-<meta name="language" content="es" />
+
 			
 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />

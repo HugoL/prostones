@@ -10,6 +10,10 @@
     array('label'=>'Create Material', 'url'=>array('create')),
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
+
+$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Presupuesto online a medida de mármoles y granitos.", 'description');
+Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
     ?>
 
 
@@ -492,7 +496,7 @@
                                     <td align="right" style="padding-right:5px; " >
                                     <strong>
                                         
-                                        <?php $preciomat = round(($pieza->tamanoreal * $pieza->preciounitario)+($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza)+($pieza->terminacionarista->precio * $pieza->tamanoreal)+($pieza->terminacioncanto->precio * $pieza->numeropiezas * $pieza->tamano->longitud),2)?>
+                                        <?php $preciomat = round( $prema + $termcara + $termarista + $termcanto,2)?>
                                         <?php echo str_replace(".",",",$preciomat); ?> €
                                     </strong>
                                     </td>
@@ -533,17 +537,17 @@
 
 
                      Material + transporte:
-                      <?php $prematrans = round($pieza->precio,2);
+                      <?php $prematrans = round($preciomat + $pieza->preciotransporte ,2);
                            $prematrans2 =number_format((float)$prematrans, 2, '.', '');
                             echo str_replace(".",",",$prematrans2) . " € ";
                      ?><br>
                      IVA:21%: <?php 
-                            $preiva = round((21*$pieza->precio/100),2);
-                           $preiva2 =number_format((float)$preiva, 2, '.', '');
+                            $preiva = round((21 * $prematrans / 100),2);
+                           $preiva2 = number_format((float)$preiva, 2, '.', '');
                             echo str_replace(".",",",$preiva2) . " € ";
                             ?>
                         <br>
-                     <font size="3"><strong> Total: <?php $pretot = round($pieza->precio+(21*$pieza->precio/100),2);
+                     <font size="3"><strong> Total: <?php $pretot = round($prematrans + $preiva,2);
                            $pretot2 =number_format((float)$pretot, 2, '.', '');
                             echo str_replace(".",",",$pretot2) . " € ";
 

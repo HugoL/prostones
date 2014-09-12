@@ -587,13 +587,17 @@ font-size:20px;
 }
 
 .botonesinfo input{
-
+    font-weight: bold;
     margin-left: 0px;
     background-color: white;
     margin-bottom: 10px;
-    border: 1px solid black;
+    border-left: 5px solid #134263;
+    border-right: 5px solid #134263;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     color: black;
-
+    white-space: normal;
+    width:100%;
 }
 .b_info h3{
   font-size: 16px !important;
@@ -681,6 +685,6 @@ table {
 }
 
 th,td {
-   
+   height:20% !important;
     word-wrap: break-word!important;
 }

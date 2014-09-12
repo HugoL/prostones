@@ -1,7 +1,12 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Informacion técnica';
+
+
+
+$this->pageTitle= 'Información técnica - '. Yii::app()->name;
+Yii::app()->clientScript->registerMetaTag("Información técnica sobre diferentes conocimientos y uso de rocas ornamentales");
+Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir baldosas, medir obra, resbalabilidad,atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
 );*/
@@ -14,21 +19,21 @@ $this->pageTitle=Yii::app()->name . ' - Informacion técnica';
 <div class="clearfix">&nbsp</div>
 
 <div class="span12" id="secinfo">
-	<div class="span5 botonesinfo">
-		<div >
+	<div class="span4 botonesinfo">
+		<div  class="span12">
 			Haga click en el tema que desee para conocer su contenido.<br><br>
 			<strong>Indice de temas:</strong><br><br>
 		</div>
-		<div >
+		<div class="span12">
 			<input type="button" id="mostrar" name="boton1" value="Rocas en la construcción."><br>
 		</div>
-		<div >
-	 	    <input type="button" id="mostrar2" name="boton2" value="Resbaladicidad de los suelos ateniendonos al Código Técnico de la Edificaicón.">
+		<div class="span12">
+	 	    <input type="button" id="mostrar2" name="boton2" value="Resbaladicidad de los suelos. Código Técnico de la Edificaicón.">
 		</div>
-		<div >
+		<div class="span12">
 	 	    <input type="button" id="mostrar3" name="boton3" value="Acabados superficiales en mármoles y ganitos.">
 		</div>
-		<div >
+		<div class="span12">
 	 	    <input type="button" id="mostrar4" name="boton4" value="Cómo medir su obra para una correcta adquisición de material.">
 		</div>
 	
