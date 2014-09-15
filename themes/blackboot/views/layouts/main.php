@@ -50,17 +50,14 @@ Yii::app()->clientscript
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 
-<!--<script src="<?php echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>-->
+<!--<script src="<?php //echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>-->
 
 <!--slider configuracion-->
 
 <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
-<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 
-<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
-<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js" type="text/javascript"></script> 
     <!-- link to magiczoomplus.js file -->
-<!--<script  src="<?php echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>-->
+<!--<script  src="<?php //echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>-->
 
 <!-- ??? -->
 <!--<link rel="canonical" href="http://www.proston.es" />  
@@ -77,13 +74,13 @@ Yii::app()->clientscript
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<!--<div class="container-fluid">
+			<div class="container-fluid">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-			</div>-->
+			</div>
 			<!--<a class="brand offset3" href="#"><?php //echo Yii::app()->name ?></a>-->
 			<div > <a href="<?php echo Yii::app()->baseUrl?>/"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
 
@@ -242,7 +239,9 @@ Yii::app()->clientscript
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100770405ns.gif" /></p></noscript>
 
 -->
-
-
-		</body>
-		</html>
+	<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js" type="text/javascript"></script> 
+</body>
+</html>
