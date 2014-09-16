@@ -269,6 +269,9 @@ margin-left:35px;
   margin-left:2%;
 }
 .enl{
+   margin-left:1.4%;
+}
+.enl2{
   margin-left:1.4%;
   margin-bottom:12%;
 }
@@ -707,7 +710,7 @@ font-size: 15px;
 .utilizaciones table{
   border-collapse:separate;
     border-spacing:3px 0px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .utilizaciones td{
@@ -749,7 +752,17 @@ th,td {
     word-wrap: break-word!important;
 }
 
-
+#textodiez{
+  font-size: 10px;
+}
+#variacion td{
+  text-align: center;
+  border:1px solid black;
+}
+#selecvariacion{
+  background-color: khaki;
+  font-weight: bold;
+}
 /*ESTILOS PRESUPUESTO (ir poniendolos debajo) */
 
 .titulopcion{
@@ -835,3 +848,14 @@ background-color:white;
 .cuadropedido img{
   border:1px solid black
 }
+
+#datos td{
+  border:0px !important;
+}
+#titulo th{
+  border-left: 1px solid grey;
+  border-right:1px solid grey;
+  border-bottom: 1px solid black;
+}
+
+

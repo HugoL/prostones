@@ -74,7 +74,7 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
             <div class="span12" >
                <p align="justify"> <?php echo $tipo->descripcion; ?></p>
                 
-               <strong>Tarifas </strong>(Los materiales son en bruto y sus precios no incluyen el IVA)<br>
+               <p><strong>• Tarifas: </strong><span id="textodiez">(Los materiales son en bruto y sus precios no incluyen el IVA.)</span></p>
                <table >
                
                <tr>
@@ -129,11 +129,11 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                 
                 <br>
             </div>
-<strong>Rendimiento del material: </strong>
+            <p><strong>• Recomendaciones de uso: </strong> <span id="textodiez">(Dependiendo del lugar donde se desea colocar.)</span></p>
             <div class="span12 utilizaciones">
                 
                 <table >
-                    <tr>
+                    <tr id="titulo">
                         <th align="center" >Pavimiento exterior</th>
                         <th align="center" >Pavimiento interior</th>
                         <th align="center" >Transito bajo</th>
@@ -141,21 +141,51 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                         <th align="center">Transito intenso</th>
                         <th align="center" >Revestimiento interior</th>
                         <th>Revestimiento exterior</th>
+                        <th>Encimeras</th>
                     </tr>
                     <tr id="datos">
-                        <td><?php echo $tipo->pavimento_exterior; ?></td>
-                        <td><?php echo $tipo->pavimento_interior; ?></td>
-                        <td><?php echo $tipo->transito_bajo; ?></td>
-                        <td><?php echo $tipo->transito_medio; ?></td>
-                        <td><?php echo $tipo->transito_intenso; ?></td>
-                        <td><?php echo $tipo->revestimiento_interior; ?></td>
-                        <td><?php echo $tipo->revestimiento_exterior; ?></td>
+                        <td>
+                        <img  alt="pavimiento exterior - www.proston.es" width="80px" height="18x"  title="<?php echo $tipo->pavimento_exterior; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_exterior; ?>.png">
+
+                        </td>
+                        <td>
+                        <img  alt="Pavimiento interior - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->pavimento_interior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_interior; ?>.png">
+
+                        </td>
+
+                         <td>
+                        <img  alt="Transito bajo - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->transito_bajo; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_bajo; ?>.png">
+
+                        </td>
+                        <td>
+                        <img  alt="Transito medio - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->transito_medio; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_medio; ?>.png">
+
+                        </td>
+                          <td>
+                        <img  alt="Transito intenso - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->transito_intenso; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_intenso; ?>.png">
+
+                        </td>
+                         <td>
+                        <img  alt="Revestimiento_interior - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->revestimiento_interior; ?>/5"   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_interior; ?>.png">
+
+                        </td>
+
+                        <td>
+                        <img  alt="Revestimiento exterior - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->revestimiento_exterior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_exterior; ?>.png">
+
+                        </td>
+                        <td>
+                        <img  alt="Emcimeras - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->encimeras; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->encimeras; ?>.png">
+
+                        </td>
+                        
+                        
                     
 
                     </tr>
                 </table>
 
-                
+             
                 
                 
                 
@@ -164,8 +194,57 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                 
 
 
+<div class="clearfix">&nbsp</div>
 
             </div>
+
+<p><br><strong>• Variaciones de tono: </strong> <span id="textodiez">(Propias de la naturaleza del material.)</span></p>  
+ 
+            <div class="span5"> 
+                <table id="variacion">
+                   
+
+                    <?php if ($tipo->variacion == 3 ){ ?>
+                    <tr>
+                        <td>
+                            Uniforme 
+                        </td>
+                        <td>
+                             Ligero 
+                        </td>
+                        <td id="selecvariacion">
+                              Moderado
+                        </td>
+                        </tr>
+                    <?php } elseif ($tipo->variacion == 2) {?>
+                        <tr>
+                         <td>
+                            Uniforme 
+                        </td>
+                        <td id="selecvariacion">
+                             Ligero 
+                        </td>
+                        <td>
+                              Moderado
+                        </td>
+                        </tr>
+                    <?php }else{ ?>
+                         <tr>
+                         <td id="selecvariacion">
+                            Uniforme 
+                        </td>
+                        <td>
+                             Ligero 
+                        </td>
+                        <td>
+                              Moderado
+                        </td>
+                        </tr>
+                    <?php } ?>
+                     
+                </table>
+            </div>   
+
 
         <!--  <strong> Acabados</strong><br> 
            <div class="span12 imgacabados" id="content" >

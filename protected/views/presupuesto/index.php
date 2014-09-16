@@ -64,7 +64,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                 
         <div class="span12 row" id="material" ><!-- PASO 1 MATERIAL-->
                     <div class="span2 pasos" >
-                        <div class="span6 titulopcion">Material</font>
+                        <div class="span6 titulopcion">Material
                         </div>
 
                        <div class="span6" id="pregunta1">

@@ -1,6 +1,6 @@
 <?php
 	/* @var $this SiteController */
-	$this->pageTitle='proSton.es - Marmolistas - Suministro de Mármol , Granito y rocas ornamentales.';
+	$this->pageTitle='proSton.es - Marmolistas - Venta de Mármol y Granito de calidad.';
 	Yii::app()->clientScript->registerMetaTag("Venta de materiales ornamentales Mármol, Granito, Caliza, Travertinos, etc", 'description');
 	Yii::app()->clientScript->registerMetaTag(" Marmol , Granito ,Presupuesto, Reformas,Diseñador, Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 	
@@ -62,11 +62,11 @@
 			</div><!--FIN BOTONES PRINCIPAL-->
 
 			<div class="span3"><!--BOTON ?-->
-				<div class="span9 enl" style=" margin-left:6%;"> 
+				<div class="span9 enl" style=" margin-left:6%; display:block"> 
 					<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/contact">
-					<figure> 	
+						
 					<img alt="Dinos tu idea - proSton.es" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/otros.jpg';"/>
-					</figure>
+					
 					</a>				
 				</div>
 			</div><!--FIN BOTON ?-->
@@ -167,7 +167,7 @@
 			<div class="span1"></div>
 
 			<div class="span3 prenl"> <!--TEXTO ?-->
-				<div class="span9 enl" >  
+				<div class="span9 enl2" >  
 					<strong>¿No ha encontrado lo que necesita?.</strong><p align="justify"><em>Consultenos, proSton.es puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
 				
 
