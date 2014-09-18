@@ -32,9 +32,9 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 			<p align="justify">Si usted es arquitecto o ingeniero en edificación, proyectista o prescriptor, responsable de compras o del aprovisionamiento en una constructora, jefe de grupo o de obra, etc.; no dude en consultarnos y pedir presupuesto, dependiendo del volumen a suministrar y/o colocar, tenemos unos precios “muy especiales” para usted… le sorprenderemos gratamente.</p>
  
 		</div>
-		<div class="span11" style="height:40%">
+		<div class="span11" style="margin-left:0; padding:0px;">
 			<figure align="center">
-				<img   alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/unifamiliares.jpg">
+				<img style="width:100%"  alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/unifamiliares.jpg">
 			<figcaption ><font size="1">Proyecto de casa unifamiliar.</font></figcaption>
 			
 			</figure>

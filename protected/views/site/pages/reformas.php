@@ -32,10 +32,12 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
  
 		</div>
 		<div class="clearfix">&nbsp</div>
-		<div class="span11" style="height:40%">
-			<figure align="center">
-				<img   alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/reformas.jpg">
-			<figcaption ><font size="1">Cambio del material de la escalera</font></figcaption>
+
+		
+		<div class="span11" >
+			<figure align="center" style="margin-left:0; padding:0px;">
+				<img style="width:100%" with="100%" alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/reformas.jpg">
+			<figcaption ><font size="1">Reformas y rehabilitaciones</font></figcaption>
 			
 			</figure>
 		</div>

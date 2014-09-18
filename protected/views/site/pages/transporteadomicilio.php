@@ -42,7 +42,7 @@ Todas las operaciones de distribución de mercancía es sobre pallet y están so
 				<img  alt="Transporte a domicilio - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/4.jpg">	
 			</div>
 			<div class="span12" align="center"><font size="1">
-				Diseñador Virtual</font>
+				Suministramos a toda España</font>
 			</div>
 			<div class="clearfix">&nbsp</div>
 			

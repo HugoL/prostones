@@ -24,9 +24,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			Haga click en el tema que desee para conocer su contenido.<br><br>
 			<strong>Indice de temas:</strong><br><br>
 		</div>
-		<div class="span12">
-			<input type="button" id="mostrar" name="boton1" value="Rocas en la construcción."><br>
-		</div>
+		
 		<div class="span12">
 	 	    <input type="button" id="mostrar2" name="boton2" value="Resbaladicidad de los suelos. Código Técnico de la Edificaicón.">
 		</div>
@@ -36,7 +34,9 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 		<div class="span12">
 	 	    <input type="button" id="mostrar4" name="boton4" value="Cómo medir su obra para una correcta adquisición de material.">
 		</div>
-	
+		<div class="span12">
+			<input type="button" id="mostrar" name="boton1" value="Rocas en la construcción."><br>
+		</div>
 	</div>
 	<div id="rocasinfo"class="span6 b_info" style="display:none">
 		<h2>Rocas en la construcción</h2>
@@ -200,8 +200,10 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong> Cizallado - Rustico. </strong>	<br>
-				Es el acabado más natural de granito ya que presenta la rugosidad propia del material cuando se extrae de la naturaleza. Se consigue tronzando la piedra por presión mecánica. Todo el proceso de producción es manual y proporciona un aspecto muy rústico que lo hace muy valorado en la reconstrucción de elementos arquitectónicos antiguos. <br>
-				Las superficies del granito se conservan del mismo modo que aparecen tras sufrir el desdoblamiento mediante cuñas de acero de los bloque de mayores dimensiones, únicamente se rebajan con puntero de acero aquellas prominencias que no resultan satisfactorias para el elemento que se quiere conseguir. El aspecto resultante es el del granito en estado puro.
+				Es el acabado más natural de granito ya que presenta la rugosidad propia del material cuando se extrae de la naturaleza. 
+				Se consigue tronzando la piedra por presión mecánica, la mayor parte de superficie se conserva del mismo modo que aparece tras sufrir el desdoblamiento, únicamente se rebajan con puntero de acero aquellas prominencias que no resultan satisfactorias para el aspecto que se quiere conseguir (el del granito en estado puro).
+
+
 	
 				</p>
 			</div>
@@ -219,7 +221,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Al corte de sierra.</strong>	<br>
-				Como consecuencia de dividir el bloque que se obtiene de la cantera en tablas, obtenemos este acabado que es el punto de partida para todos los demás. Las sierras utilizadas en este proceso dejan su huella en la piedra con una apariencia semi-rugosa e imperfecta, y al contrario del Pulido, ni deja ver la apariencia de la piedra, ni tapa el poro del material. Para resaltar un poco el color se puede además lavar al ácido.
+				Como consecuencia de dividir el bloque que se obtiene de la cantera en tablas, obtenemos este acabado que es el punto de partida para todos los demás.
+				Las sierras utilizadas en este proceso, dejan su huella en la piedra con una apariencia semi-rugosa e imperfecta, que ni deja ver la apariencia de la piedra, ni tapa el poro del material.
 				<br><br>
 				</p>
 			</div>
@@ -236,9 +239,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Al corte de disco.</strong>	<br>
-				Es un acabado que deja la superficie lisa, muy porosa. Le da un acabado mate y un tono blanquecino a la piedra. 
-				Este acabado constituye en la mayoría de los casos un paso previo a la realización de los otros acabados. Es el acabado que resulta del corte del mármol y del granito con discos o hilos diamantados.<br>
- 				El aspecto resultante es el de una superficie lisa y ligeramente áspera, en algunos casos con pequeñas ondulaciones provocadas por el corte y con un tono claro y mate.
+				Este acabado deja la superficie lisa, ligeramente áspera (por los poros que posee), y en algunos casos con pequeñas ondulaciones provocadas por el corte. Le da un aspecto mate y un tono blanquecino al granito. 
+				Constituye, en la mayoría de los casos, un paso previo a la realización de los otros acabados. Es el acabado que resulta del corte del granito con discos o hilos diamantados.<br><br>
 
 				</p>
 			</div>
@@ -256,9 +258,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Apomazado</strong>	<br>
-			Este acabado que se realiza en las piedras que presentan un nivel de cristalización alto, resalta su textura y color sin dejar ninguna marca visible, proporcionando un tono mas oscuro que el Serrado, pero sin llegar a tener brillo. <br>
-			Esto se consigue mediante un proceso de abrasión, que consiste en pasar piedras o lijas de diferente granulometría, hasta obtener el acabado deseado. El Apomazado es un paso previo antes del Pulido.<br>
-			Este acabado sólo puede realizarse en mármoles y granitos de calidad (con una dureza contrastada), por lo que permite la elaboración de superficies lisas y curvas
+			Este acabado resalta la textura y el color del granito, sin dejar ninguna marca visible, proporcionando un tono más oscuro que “al corte de disco”, pero sin llegar a tener brillo. 
+			Esto se consigue mediante un proceso de abrasión, que consiste en pasar piedras o lijas de diferente granulometría, hasta obtener el acabado deseado. El Apomazado es un paso previo antes del Pulido.<br><br>
 
 				</p>
 			</div>
@@ -276,9 +277,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Pulido</strong>	<br>
-			El pulido es un tratamiento más utilizado en los acabados del mármol y del granito, pues proporciona una superficie brillante que resalta todos los colores y textura del material. 
-			El proceso del pulido se realiza mediante máquinas con brazos articulados o mecanizados que llevan acopladas una serie de muelas abrasivas de distintos granos que, utilizadas progresivamente, proporcionan el acabado final característico. <br>
-			Con este acabado se consigue una superficie plana y brillante, con un tono más oscuro que en otros tratamientos y se proporciona el cierre de los poros de la roca lo que hace que el material sea más resistente a las agresiones externas.
+			Proporciona una superficie brillante, que resalta todos los colores y la textura del material. Confiere un tono más oscuro que en otros tratamientos, ocasionando el cierre de los poros del granito, lo que hace que el material sea más resistente a las agresiones externas.
+			El proceso se realiza  con unas máquinas a las que han acoplado una serie de muelas abrasivas de distintos granos que, utilizadas progresivamente, proporcionan el acabado descrito.
 
 				</p>
 			</div>
@@ -290,14 +290,14 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure align="center" >
-				<img   alt="Abujardado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/abujardado.jpg">
+				<img   alt="Abujardado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/s.jpg">
 			</figure>
 			</div>
 
 			<div class="span9"><p>
 				<strong>Abujardado</strong>	<br>
-			Es una de las formas de acabado mas antigua. Tradicionalmente se llevaba a cabo golpeando manualmente la piedra con una bujarda dotada de dos cabezas de acero con pequeños dientes piramidales. El número de dientes de la cabeza proporcionaba unos acabados más o menos finos según su cantidad. <br>
-			Actualmente se utiliza maquinaria con brazos articulados o mecanizadas, que llevan incorporados una serie de bailarines, dotados de los dientes piramidales, con lo que se proporciona un acabado más homogéneo y regular. La superficie resultante presenta pequeños cráteres uniformemente repartidos que le dan a la piedra un tono ligeramente claro.
+			Este acabado se consigue utilizando maquinaria con brazos articulados o mecanizadas, que llevan incorporados una serie de bailarines (dotados de los dientes piramidales), con lo que se proporciona un acabado homogéneo y regular.
+			La superficie resultante presenta pequeños cráteres uniformemente repartidos que le dan a la piedra un tono ligeramente claro.
 
 				</p>
 			</div>
@@ -317,14 +317,33 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Granallado</strong>	<br>
-			Acabado similar al abujardado tradicional. Proporciona al granito una textura rugosa fina y uniforme, realza el tono natural de la piedra.<br>
-			Se consigue impactando granalla de acero inoxidable sobre la superficie de la piedra.<br><br><br>
+			Acabado similar al abujardado tradicional. Proporciona al granito una textura rugosa fina y uniforme (que presenta propiedades antideslizantes), que realza el tono natural de la piedra.
+			El granallado se consigue proyectando granalla de acero inoxidable (de forma mecánica), sobre la superficie del granito, una vez cortada
+			El grado de rugosidad se puede controlar en función de la fuerza con la que se proyecte.<br>
 
 
 				</p>
 			</div>
 		</div>
 
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure align="center" >
+				<img   alt="Flameado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/abujardado.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Flameado</strong>	<br>
+			Consiste en un tratamiento térmico que se puede aplicar al granito, este acabado proporciona al material una defensa muy elevada a la alteración química atmosférica.
+			Se aplica a la superficie una serie de fuentes de calor (mediante mecheros de oxiacetileno montados sobre pistola o mecánicos), que proporcionan temperaturas superiores a 2.800 ºCentígrados, y que al pasar sobre el material provocan un choque térmico que hace que se desprendan pequeñas láminas de roca.
+
+
+				</p>
+			</div>
+		</div>
 		
 
 		<div class="span12">
@@ -338,7 +357,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span9"><p>
 				<strong>Envejecido</strong>	<br>
-				En un primer tratamiento se somete al material a un proceso de flameado y posteriormente se le aplican diferentes cepillos con “hilos” diamantados.<br>
+				En un primer tratamiento se somete al material a un proceso de flameado y posteriormente se le aplican diferentes cepillos con “hilos” diamantados.
 				Con estos dos procesos se intenta imitar al envejecido natural,  Además del componente estético que da este innovador acabado, se dota al granito de un cierto grado de rugosidad, que la hace apto para usarlo en interiores y en exteriores.
 
 

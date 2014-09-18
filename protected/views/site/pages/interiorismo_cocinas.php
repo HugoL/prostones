@@ -35,9 +35,9 @@ Yii::app()->clientScript->registerMetaTag("Interiorismo, Cocinas, Baños, Pedido
  
 		</div>
 		<div class="clearfix">&nbsp</div>
-		<div class="span11" style="height:40%">
+		<div class="span11" style="margin-left:0; padding:0px;">
 			<figure align="center">
-				<img   alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/interiorismo.jpg">
+				<img style="width:100%"  alt="Obras de reforma y rehabilitacion - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/interiorismo.jpg">
 			<figcaption ><font size="1">Interiorismo. Cocinas y baños.</font></figcaption>
 			
 			</figure>

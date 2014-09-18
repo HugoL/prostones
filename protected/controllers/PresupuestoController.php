@@ -294,7 +294,7 @@ class PresupuestoController extends Controller
 			$valorPieza->peso = $peso;	
 
 			//se añade el 20%
-			$pesotransporte = $peso + (10*$peso/100); 	
+			$pesotransporte = $peso; 	
 			
 			//Se suma el precio del transporte (por palés)	
 			$criteria3 = new CdbCriteria;
@@ -338,7 +338,7 @@ class PresupuestoController extends Controller
 
 		
 
-			$valorPieza->preciotransporte = $preciotransporte;
+			$valorPieza->preciotransporte = $preciotransporte + (10*$preciotransporte/100);
 
 			$valorPieza->precio = $precio ;			
 			$valorPieza->update();
@@ -596,8 +596,8 @@ class PresupuestoController extends Controller
 		$mPDF1->Output();		
 		//$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
 		$to = $presupuestoPdf->email;
-		$cco= 'info@proston.es';		
-		$from = 'info@proston.es';		
+		$cco= '44info@proston.es';		
+		$from = '44info@proston.es';		
 		$subject = 'Presupuesto ' . $presupuestoPdf->id . ' - www.proSton.es';		
 		$message = 'Este email incluye el presupuesto en pdf creado en www.proston.es';	
 

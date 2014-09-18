@@ -409,10 +409,11 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                                  <tr>
                                     <td align="right" colspan="2" >
                                         <em>Canto</em> 
-                                        <?php  if( $pieza->id_tipo_canto== 1 ){
-                                            echo ' de ' . $pieza->tamano->cantolargo * 100 . 'cm.';
-                                         }else{ 
-                                            echo ' de ' . $pieza->tamano->cantocorto * 100 . 'cm. ';
+                                        <!--crear que si es largo libre no salga el tamaño-->
+                                        <?php  if( $pieza->id_tipo_canto== 2 ){
+                                            echo ' de ' . $pieza->tamano->cantocorto * 100 . 'cm.';
+
+                                         }else{ echo ' de ' . $pieza->tamano->cantolargo * 100 . 'cm. ';
                                          } ?>
                                         <?php if( $pieza->id_pieza == 1 ){
                                          echo $pieza->terminacioncanto->nombre . ".";  
@@ -436,10 +437,11 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                                              
                                          <?php if( $pieza->id_pieza == 1 ){
 
-                                                    if( $pieza->id_tipo_canto== 1 ){
-                                                        $longitudcanto = $pieza->tamano->cantolargo;
-                                                    }else{
+                                                    if( $pieza->id_tipo_canto== 2 ){
+                                                        
                                                         $longitudcanto = $pieza->tamano->cantocorto;
+                                                    }else{
+                                                        $longitudcanto = $pieza->tamano->cantolargo;
                                                     }
                                             $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);
                                             $termcanto2 =number_format((float)$termcanto, 2, '.', '');
@@ -447,6 +449,16 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
                                         }else{
+
+                                              if( $pieza->id_tipo_canto== 2 ){
+                                                        $longitudcanto = $pieza->tamano->cantocorto;
+                                                    }else{
+                                                        $longitudcanto = $pieza->tamano->cantolargo;
+
+                                                    }
+                                            $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);   
+
+
                                             echo "0 € ";
                                         }  ?> 
                                     </td>
@@ -471,6 +483,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
                                     <td align="right" style="padding-right:5px">
                                     <?php
+
                                         $termarista = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
                                         $termarista2 =number_format((float)$termarista, 2, '.', '');
                                             

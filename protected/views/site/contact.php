@@ -74,7 +74,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 			
 
 			<div class="row" id="texto" >
-			<div>Diganos de que se trata.</div>
+			<div>Diganos de que se trata. *</div>
 				<?php //echo $form->labelEx($model,'body'); ?>
 				<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 				<?php echo $form->error($model,'body'); ?>
@@ -132,7 +132,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 
 			<div class="row-fluid span12">
 				<div class="span4">
-				<div>E-mail</div>
+				<div>E-mail *</div>
 				<?php //echo $form->labelEx($model,'email'); ?>
 				<?php echo $form->textField($model,'email'); ?>
 				<?php echo $form->error($model,'email'); ?>
