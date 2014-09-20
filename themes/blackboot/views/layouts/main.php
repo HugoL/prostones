@@ -50,26 +50,17 @@ Yii::app()->clientscript
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 
-<!--<script src="<?php //echo Yii::app()->baseUrl; ?>/js/modernizr.custom.17475.js?>"></script>-->
-
-<!--slider configuracion-->
-
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
-
-    <!-- link to magiczoomplus.js file -->
-<!--<script  src="<?php //echo Yii::app()->baseUrl; ?>/js/magiczoom.js" type="text/javascript"></script>-->
-
-<!-- ??? -->
-<!--<link rel="canonical" href="http://www.proston.es" />  
-<link rel="canonical" href="http://www.proston.es/index.php/simulador/index/id" />
-<link rel="canonical" href="http://www.proston.es/index.php/tipo/verCaracteristicas/id/12" />-->
-
-
-<!--<script type="text/javascript" src="jquery.js"></script>-->
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
+	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js" type="text/javascript"></script> 
 
 </head>
 
 <body>
+
+
+
 <?php include_once("analyticstracking.php") ?>
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -92,14 +83,15 @@ Yii::app()->clientscript
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto'), 'active'=> Yii::app()->controller->id == "presupuesto"),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id/12'),'active'=> Yii::app()->controller->id == "simulador"),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
-						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),							
-						array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
+						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),
+						array('label'=>'Empresa', 'url'=>array('/site/page','view'=>'reformas')),								
+						/*array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Edificación - Unifamiliares', 'url'=>array('/site/page','view'=>'edificacion_unifamiliares')),
 							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/site/page','view'=>'interiorismo_cocinas')),
 							array('label'=>'Mamposteria - Urbanización', 'url'=>array('/site/page','view'=>'mamposteria_urbanizacion')),
 							
-							),),
+							),),*/
 						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
 						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
 						/*	
@@ -239,9 +231,6 @@ Yii::app()->clientscript
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100770405ns.gif" /></p></noscript>
 
 -->
-	<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
-	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery-1.8.3.min.js" type="text/javascript"></script>
-	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jflow.plus.js" type="text/javascript"></script>
-	<script  src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.elevatezoom.js" type="text/javascript"></script> 
+	
 </body>
 </html>

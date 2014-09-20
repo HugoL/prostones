@@ -294,7 +294,7 @@ class PresupuestoController extends Controller
 			$valorPieza->peso = $peso;	
 
 			//se añade el 20%
-			$pesotransporte = $peso; 	
+			$pesotransporte = $peso + (3.5*$peso/100); 	
 			
 			//Se suma el precio del transporte (por palés)	
 			$criteria3 = new CdbCriteria;
@@ -338,7 +338,7 @@ class PresupuestoController extends Controller
 
 		
 
-			$valorPieza->preciotransporte = $preciotransporte + (10*$preciotransporte/100);
+			$valorPieza->preciotransporte = $preciotransporte ;
 
 			$valorPieza->precio = $precio ;			
 			$valorPieza->update();

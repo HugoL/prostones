@@ -990,6 +990,14 @@
 
 							<div class="clearfix"></div>
 
+							<div id="caja_flotante">
+  								<div id="cont_caja_flotante" >
+  									<div align="center"> <img width="15px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>flecha.png"</div>
+  									<div style="border: 1px solid black; background-color:khaki;"><font size="1"><strong>Presupueste gratis sus materiales</strong></font></div>
+	  								
+  								</div>
+							</div>
+
 <script async type="text/javascript">
 							
 $(document).ready(function () {
@@ -1086,4 +1094,24 @@ $(document).ready(function () {
 
 	});
 
+</script>
+
+<script type='text/javascript'>
+//<![CDATA[
+$(document).ready(function() {
+  var posicion = $("#caja_flotante").offset();
+  var margenSuperior = 67;
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > posicion.top) {
+      $("#caja_flotante").stop().animate({
+        marginTop: $(window).scrollTop() - posicion.top + margenSuperior
+      });
+    } else {
+      $("#caja_flotante").stop().animate({
+        marginTop: 0
+      });
+    };
+  });
+});
+//]]>
 </script>
