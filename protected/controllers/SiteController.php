@@ -69,7 +69,7 @@ class SiteController extends Controller
 
 
 				$mail=Yii::app()->Smtpmail;
-        $mail->SetFrom($model->email, 'Formulario de ' . $name);
+        $mail->SetFrom('info@proston.es', 'Formulario');
         $mail->Subject = $subject;
         $mail->MsgHTML($model->body);
         $mail->AddAddress('info@proston.es', "");

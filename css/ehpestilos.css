@@ -342,7 +342,6 @@ height:90px;
   
 }
 
-
 .cuatit{
 
   background-color: white;
@@ -583,22 +582,14 @@ font-size:20px;
 
   margin: 0 0 5px !important;
 }
-.titulofoot h3{
-  font-size: 20px;
-  border-bottom: 2px solid black;
-}
 
-.foot h4{
+.foot h2{
 
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .foot p{
   text-align:justify;
-}
-#quienesomos {
-  font-size: 22px;
-  color:#134263;
 }
 
 .textogris p{
@@ -866,14 +857,5 @@ background-color:white;
   border-right:1px solid grey;
   border-bottom: 1px solid black;
 }
-
-
-
-
-
-
-
-/*condiciones privacidad*/
-
 
 

@@ -172,29 +172,29 @@ Yii::app()->clientscript
 						<div class="span2">
 							<h4><img   alt="Informacion - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/info.png"> proSton.es</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#quienesomos">Quienes somos</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#avisolegal">Aviso legal</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesutilizacion">Condiciones de utilización</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#politicadeprivacidad">Politica de privacidad</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=quienes_somos">Quienes somos</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=aviso_legal">Aviso legal</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_de_utilizacion">Condiciones de utilización</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=politica_de_privacidad">Politica de privacidad</a></li>
 							</ul>
 						</div> 
 						<div class="span2"><h4><img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png"> 
 							Comprar</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesdeventa">Condiciones de venta</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#comorealizarunacompra">Como realizar una compra</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#formadepago">Forma de pago</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anulaciondepedido">Anulación del pedido</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_de_venta">Condiciones de venta</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=como_realizar_una_compra">Como realizar una compra</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=forma_de_pago">Forma de pago</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=anulacion_de_pedido">Anulación del pedido</a></li>
 
 							</ul>
 						</div> 
 						<div class="span2"><h4><img   alt="Envios - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/envio.png"> 
 							Suministros</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#envios">Envios</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#plazosdeentrega">Plazos de entrega</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguimientodelpedido">Seguimiento del pedido</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#devoluciones">Devoluciones</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=envios">Envios</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=plazos_de_entrega">Plazos de entrega</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=seguimiento_del_pedido">Seguimiento del pedido</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=devoluciones">Devoluciones</a></li>
 								
 								
 							</ul>
@@ -205,10 +205,10 @@ Yii::app()->clientscript
 						<div class="span2"><h4><img   alt="Ayuda - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ayuda.png">
 							Ayuda</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#preguntasfrecuentes">Preguntas frecuentes</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#atencionalcliente">Atención al cliente</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguridad">Seguridad</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anomaliastecnicas">Anomalias técnicas</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=preguntas_frecuentes">Preguntas frecuentes</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=atencion_al_cliente">Atención al cliente</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=seguridad">Seguridad</a></li>
+								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=anomalias_tecnicas">Anomalias técnicas</a></li>
 
 							</ul>
 						</div> <!-- /span3 -->
