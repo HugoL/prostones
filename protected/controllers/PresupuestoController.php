@@ -596,8 +596,8 @@ class PresupuestoController extends Controller
 		$mPDF1->Output();		
 		//$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
 		$to = $presupuestoPdf->email;
-		$cco= '44info@proston.es';		
-		$from = '44info@proston.es';		
+		$cco= 'info@proston.es';		
+		$from = 'info@proston.es';		
 		$subject = 'Presupuesto ' . $presupuestoPdf->id . ' - www.proSton.es';		
 		$message = 'Este email incluye el presupuesto en pdf creado en www.proston.es';	
 

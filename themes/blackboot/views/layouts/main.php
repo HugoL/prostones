@@ -170,7 +170,8 @@ Yii::app()->clientscript
 								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#politicadeprivacidad">Politica de privacidad</a></li>
 							</ul>
 						</div> 
-						<div class="span2"><h4><img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png"> 
+						<div class="span2">
+						<h4><img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png"> 
 							Comprar</h4>
 							<ul>
 								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesdeventa">Condiciones de venta</a></li>

@@ -16,6 +16,10 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
+	<div class="offset9 span2 botonsegmentos">
+ Edificacion y unifamiliares >>
+	</div>
+	<div class="span12">
 	<div class="span6">
 		<div class="span12">
 			<h1><font size="5" >Obras de Reforma y Rehabilitación</font></h1>
@@ -71,7 +75,7 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
 
 		</div>
 	</div>
-
+	</div>
 </div>
 
 

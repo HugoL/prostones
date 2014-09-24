@@ -18,6 +18,13 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
+<div class="span2 botonsegmentos">
+<< reformas
+</div>
+<div class="offset7 span2 botonsegmentos">
+ rel next Interiorismo. Cocinas y baños >>
+	</div>
+	<div class="span12">
 	<div class="span6">
 		<div class="span12">
 			<h1><font size="5" >Edificación y Unifamiliares</font></h1>
@@ -75,7 +82,7 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 
 		</div>
 	</div>
-
+		</div>
 </div>
 
 

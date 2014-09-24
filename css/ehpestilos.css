@@ -885,3 +885,40 @@ background-color:white;
   width: 200px; /* definimos su ancho */
   /* cualquier otra propiedad gráfica como background, border, etc */
 }
+
+.botonsegmentos{
+  border: 1px solid black;
+  text-align:   center;
+  padding: 5px;
+}
+
+.botonsegmentos:hover{
+  background-color:   #134263;
+  color:white;
+}
+
+
+.ofertaseccion h2{
+  font-size: 18px;
+
+}
+
+.ofertaseccion h3{
+  font-size: 14px;
+  margin: 0px !important;
+ padding: 0px !important;
+ line-height: 22px;
+}
+
+.ofertaseccion img{
+  border:1px solid black;
+}
+
+.ofertaindividual{
+  border:1px solid grey;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.ofertaindividual:hover{
+border:1px solid orange;
+}
