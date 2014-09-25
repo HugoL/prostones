@@ -94,9 +94,9 @@ Yii::app()->clientscript
 							),),*/
 						array('label'=>'Contacto', 'url'=>array('/site/contact')),	
 						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
-						/*	
+							
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)*/
+						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),)); ?>
 						
 			</div><!--/.nav-collapse -->

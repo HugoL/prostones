@@ -714,7 +714,7 @@
 		<div class="span12" ><font size="1">* Ofertas a partir de 100 m<sup>2</sup></font></div>
 
 		<div class="span12" align="center">
-			<a href="" style="background-color:#134263;padding:3px;border:1px solid black;"><font size="2" color="white">Ver mas ofertas</font></a>
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=ofertas" style="background-color:#134263;padding:3px;border:1px solid black;"><font size="2" color="white">Ver mas ofertas</font></a>
 		</div>
 	
 	</div><!--FIN OFERTAS-->

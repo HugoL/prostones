@@ -55,7 +55,7 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 <div class="span8" id="avisolegal">
 	<div class="span1 iconoser" >
-		<img alt="Aviso legal - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+		<img alt="Aviso legal - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/aviso.png">
 	</div>
 	<div class="span11 titulofoot">
 		<h3>Aviso legal</h3> 
@@ -129,7 +129,7 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 <div class="span8">
 	<div class="span1 iconoser" >
-		<img alt="Politica de privaciodad - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+		<img alt="Politica de privaciodad - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/privacidad.png">
 	</div>
 	<div class="span11 titulofoot">
 		<h3>Política de privacidad</h3> 
@@ -282,9 +282,9 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 		Transferencia bancaria: de no tener un acuerdo en otro sentido, el cliente deberá realizar un ingreso por anticipado del 50% de la factura proforma, mediante transferencia bancaria en las siguientes cuentas:</p>
 
-		<p>IBERCAJA: IBAN - ES…….</p>
+		<p>IBERCAJA: IBAN - ES52 2085 0110 2101 0194 9093</p>
 
-		<p>B.B.V.A.: IBAN - ES …… </p>
+		<p>B.B.V.A.: IBAN - ES13 0182 0743 7102 0003 9086</p>
 
 		
 
@@ -306,7 +306,7 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 <div class="span8">
 	<div class="span1 iconoser" >
-		<img alt="Anulación del pedido - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+		<img alt="Anulación del pedido - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/anulacion.png">
 	</div>
 	<div class="span11 titulofoot">
 		<h3>Anulación de pedido</h3> 
@@ -453,7 +453,7 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 		<h3>Seguimiento del pedido</h3> 
 	</div>
 	<div class="span12 foot">
-
+	<a href="http://track.palletways.com/" target="_blank">Enlace </a>
 	</div>
 </div>
 
@@ -470,7 +470,7 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 <div class="span8">
 	<div class="span1 iconoser">
-		<img alt="Devoluciones - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/asesoramiento.png">
+		<img alt="Devoluciones - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/devoluciones.png">
 	</div>
 	<div class="span11 titulofoot">
 		<h3>Devoluciones</h3> 

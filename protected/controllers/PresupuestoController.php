@@ -293,7 +293,7 @@ class PresupuestoController extends Controller
 
 			$valorPieza->peso = $peso;	
 
-			//se añade el 20%
+			//se añade el 3.5%
 			$pesotransporte = $peso + (3.5*$peso/100); 	
 			
 			//Se suma el precio del transporte (por palés)	

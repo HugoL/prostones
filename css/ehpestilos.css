@@ -900,6 +900,7 @@ background-color:white;
 
 .ofertaseccion h2{
   font-size: 18px;
+  border-bottom: 1px solid #134263;
 
 }
 
@@ -922,3 +923,8 @@ background-color:white;
 .ofertaindividual:hover{
 border:1px solid orange;
 }
+.texto24{
+  font-size: 24px;
+}
+
+

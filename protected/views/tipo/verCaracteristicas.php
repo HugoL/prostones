@@ -145,37 +145,37 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                     </tr>
                     <tr id="datos">
                         <td>
-                        <img  alt="pavimiento exterior - www.proston.es" width="80px" height="18x"  title="<?php echo $tipo->pavimento_exterior; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_exterior; ?>.png">
+                        <img  alt="pavimiento exterior - www.proston.es" width="60px" height="16x"  title="<?php echo $tipo->pavimento_exterior; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_exterior; ?>.png">
 
                         </td>
                         <td>
-                        <img  alt="Pavimiento interior - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->pavimento_interior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_interior; ?>.png">
+                        <img  alt="Pavimiento interior - www.proston.es" width="60px" height="16px" title="<?php echo $tipo->pavimento_interior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_interior; ?>.png">
 
                         </td>
 
                          <td>
-                        <img  alt="Transito bajo - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->transito_bajo; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_bajo; ?>.png">
+                        <img  alt="Transito bajo - www.proston.es" width="60px" height="16px" title="<?php echo $tipo->transito_bajo; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_bajo; ?>.png">
 
                         </td>
                         <td>
-                        <img  alt="Transito medio - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->transito_medio; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_medio; ?>.png">
+                        <img  alt="Transito medio - www.proston.es" width="60px" height="16px"  title="<?php echo $tipo->transito_medio; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_medio; ?>.png">
 
                         </td>
                           <td>
-                        <img  alt="Transito intenso - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->transito_intenso; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_intenso; ?>.png">
+                        <img  alt="Transito intenso - www.proston.es" width="60px" height="16px" title="<?php echo $tipo->transito_intenso; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->transito_intenso; ?>.png">
 
                         </td>
                          <td>
-                        <img  alt="Revestimiento_interior - www.proston.es" width="80px" height="18px" title="<?php echo $tipo->revestimiento_interior; ?>/5"   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_interior; ?>.png">
+                        <img  alt="Revestimiento_interior - www.proston.es" width="60px" height="16px" title="<?php echo $tipo->revestimiento_interior; ?>/5"   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_interior; ?>.png">
 
                         </td>
 
                         <td>
-                        <img  alt="Revestimiento exterior - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->revestimiento_exterior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_exterior; ?>.png">
+                        <img  alt="Revestimiento exterior - www.proston.es" width="60px" height="16px"  title="<?php echo $tipo->revestimiento_exterior; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->revestimiento_exterior; ?>.png">
 
                         </td>
                         <td>
-                        <img  alt="Emcimeras - www.proston.es" width="80px" height="18px"  title="<?php echo $tipo->encimeras; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->encimeras; ?>.png">
+                        <img  alt="Emcimeras - www.proston.es" width="60px" height="16px"  title="<?php echo $tipo->encimeras; ?>/5"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->encimeras; ?>.png">
 
                         </td>
                         
