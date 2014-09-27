@@ -11,7 +11,7 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
 
-$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name . 'Marmolistas';
+$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name . 'Marmoles y Granitos';
 Yii::app()->clientScript->registerMetaTag("Presupuesto online a medida de mármoles y granitos.", 'description');
 Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
     ?>

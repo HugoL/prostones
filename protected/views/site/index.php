@@ -1,6 +1,6 @@
 <?php
 	/* @var $this SiteController */
-	$this->pageTitle='proSton.es - Marmolistas - Venta de Mármol y Granito de calidad.';
+	$this->pageTitle='proSton.es - Mármoles y Granitos - Venta de Mármol y Granito de calidad.';
 	Yii::app()->clientScript->registerMetaTag("Venta de materiales ornamentales Mármol, Granito, Caliza, Travertinos, etc", 'description');
 	Yii::app()->clientScript->registerMetaTag(" Marmol , Granito ,Presupuesto, Reformas,Diseñador, Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 	
@@ -87,7 +87,7 @@
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
 					
 							<div class="slideContent">
-								<h2>Catalogo de materiales</h2>
+								<h2>Catálogo de materiales</h2>
 								<p>Selección de las mejores rocas ornamentales </p>
 						
 							</div>

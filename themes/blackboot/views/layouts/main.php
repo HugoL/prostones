@@ -96,7 +96,9 @@ Yii::app()->clientscript
 						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
 							
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
+						array('label'=>'Cuenta ('.Yii::app()->user->name.')', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Cerrar sesión', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
+						
 						),)); ?>
 						
 			</div><!--/.nav-collapse -->

@@ -73,7 +73,7 @@ class AdminController extends Controller
 			$model->attributes=$_POST['User'];
 			$model->activkey=Yii::app()->controller->module->encrypting(microtime().$model->password);
 			$model->createtime=time();
-			$model->lastvisit_at=time();
+			$model->lastvisit=time();
 			$profile->attributes=$_POST['Profile'];
 			$profile->user_id=0;
 			if($model->validate()&&$profile->validate()) {

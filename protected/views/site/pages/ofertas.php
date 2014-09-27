@@ -12,7 +12,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 ?>
 
 <div class="span1 iconoser">
-			<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
+			<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/ofertas.png">
 			</div class="span10"><h1>Ofertas.</h1> 
 
 <div class="clearfix">&nbsp</div>
@@ -243,7 +243,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Rojo Coralito</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -268,7 +268,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Marrón Emperador</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -291,7 +291,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+			<img alt="Oferta Granito G687 Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 			</figure>
 			</div>
 
@@ -299,7 +299,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>G687</h3>
 			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -316,7 +316,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+			<img alt="Oferta Granito G687- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 			</figure>
 			</div>
 
@@ -324,7 +324,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>G687</h3>
 			Baldosas de <strong>60x40x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -340,7 +340,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+			<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 			</figure>
 			</div>
 
@@ -348,7 +348,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>G687</h3>
 			Baldosas de <strong>60x40x3</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -365,7 +365,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
+			<img alt="Oferta Ganito G664 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
 			</figure>
 			</div>
 
@@ -373,7 +373,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>G664</h3>
 			Baldosas de <strong>60x40x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -389,7 +389,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
+			<img alt="Oferta Granito G664 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G664.jpg">
 			</figure>
 			</div>
 
@@ -397,7 +397,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>G664</h3>
 			Baldosas de <strong>60x40x3</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -415,7 +415,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
+			<img alt="Oferta Granito Gris Parga- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
 			</figure>
 			</div>
 
@@ -423,7 +423,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Gris Parga</h3>
 			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -439,7 +439,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
+			<img alt="Oferta Granito Gris Parga - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
 			</figure>
 			</div>
 
@@ -447,7 +447,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Gris Parga</h3>
 			Baldosas de <strong>60x40x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -463,7 +463,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gris_parga.jpg">
+			<img alt="Oferta Granito Rosa Porriño - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/rosa_porrino.jpg">
 			</figure>
 			</div>
 
@@ -471,7 +471,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Rosa Porriño</h3>
 			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -488,7 +488,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/mondariz.jpg">
+			<img alt="Oferta Granito Mondariz - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/mondariz.jpg">
 			</figure>
 			</div>
 
@@ -496,7 +496,7 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 			<p align="center">
 			<h3>Mondariz</h3>
 			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		
@@ -512,15 +512,15 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">
 			<figure>	
-			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gran_perla.jpg">
+			<img alt="Oferta Granito Gran Perla  - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/gran_perla.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Gran Perla<</h3>
+			<h3>Gran Perla</h3>
 			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Terminación de cara pulida)</span></p>
 					
 			</div>
 		

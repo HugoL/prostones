@@ -18,6 +18,14 @@ Yii::app()->clientScript->registerMetaTag("Interiorismo, Cocinas, Baños, Pedido
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
+<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=edificacion_unifamiliares">
+<div class="span2 botonsegmentos">
+<img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>leftarrow.png"> Edificación y unifamiliares
+</div></a>
+<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=mamposteria_urbanizacion">
+<div class="offset7 span2 botonsegmentos">
+ Mamposteria y urbanización <img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>rightarrow.png">
+	</div></a>
 	<div class="span6">
 		<div class="span12">
 			<h1><font size="5" >Materiales para decorar su domicilio, en especial las cocinas y los baños</font></h1>
@@ -49,7 +57,7 @@ Yii::app()->clientScript->registerMetaTag("Interiorismo, Cocinas, Baños, Pedido
 		</div>
 	</div>
 
-	<div class="span6">
+	<div class="span5">
 		<div class="span12">
 			<h2><font size="5" >¿Cómo le ayuda proSton en este tipo de obras? </font></h2>
 		</div>

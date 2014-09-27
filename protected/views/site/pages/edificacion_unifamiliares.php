@@ -18,13 +18,18 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
-<div class="span2 botonsegmentos">
-<< reformas
-</div>
-<div class="offset7 span2 botonsegmentos">
- rel next Interiorismo. Cocinas y baños >>
-	</div>
 	<div class="span12">
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=reformas">
+		<div class="span2 botonsegmentos">
+			<img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>leftarrow.png"> Reformas
+		</div></a>
+
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=interiorismo_cocinas">
+		<div class="offset7 span2 botonsegmentos">
+ 			Interiorismo. Cocinas y baños <img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>rightarrow.png">
+		</div> </a>
+	</div>
+
 	<div class="span6">
 		<div class="span12">
 			<h1><font size="5" >Edificación y Unifamiliares</font></h1>
@@ -54,7 +59,7 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 		</div>
 	</div>
 
-	<div class="span6">
+	<div class="span5">
 		<div class="span12">
 			<h2><font size="5" >¿Cómo le ayuda proSton en este tipo de obras? </font></h2>
 		</div>
@@ -83,7 +88,7 @@ Yii::app()->clientScript->registerMetaTag("Edificación, Unifamiliares,  Marmol 
 		</div>
 	</div>
 		</div>
-</div>
+
 
 
 

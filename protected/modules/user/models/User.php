@@ -14,7 +14,7 @@ class User extends CActiveRecord
 	 * @var string $email
 	 * @var string $activkey
 	 * @var integer $createtime
-	 * @var integer $lastvisit_at
+	 * @var integer $lastvisit
 	 * @var integer $superuser
 	 * @var integer $status
 	 */
@@ -54,8 +54,8 @@ class User extends CActiveRecord
 			array('username', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u','message' => UserModule::t("Incorrect symbols (A-z0-9).")),
 			array('status', 'in', 'range'=>array(self::STATUS_NOACTIVE,self::STATUS_ACTIVE,self::STATUS_BANED)),
 			array('superuser', 'in', 'range'=>array(0,1)),
-			array('username, email, createtime, lastvisit_at, superuser, status', 'required'),
-			array('createtime, lastvisit_at, superuser, status', 'numerical', 'integerOnly'=>true),
+			array('username, email, createtime, lastvisit, superuser, status', 'required'),
+			array('createtime, lastvisit, superuser, status', 'numerical', 'integerOnly'=>true),
 		):((Yii::app()->user->id==$this->id)?array(
 			array('username, email', 'required'),
 			array('username', 'length', 'max'=>20, 'min' => 3,'message' => UserModule::t("Incorrect username (length between 3 and 20 characters).")),
@@ -92,7 +92,7 @@ class User extends CActiveRecord
 			'id' => UserModule::t("Id"),
 			'activkey' => UserModule::t("activation key"),
 			'createtime' => UserModule::t("Registration date"),
-			'lastvisit_at' => UserModule::t("Last visit"),
+			'lastvisit' => UserModule::t("Last visit"),
 			'superuser' => UserModule::t("Superuser"),
 			'status' => UserModule::t("Status"),
 		);
@@ -114,7 +114,7 @@ class User extends CActiveRecord
                 'condition'=>'superuser=1',
             ),
             'notsafe'=>array(
-            	'select' => 'id, username, password, email, activkey, createtime, lastvisit_at, superuser, status',
+            	'select' => 'id, username, password, email, activkey, createtime, lastvisit, superuser, status',
             ),
         );
     }
@@ -122,7 +122,7 @@ class User extends CActiveRecord
 	public function defaultScope()
     {
         return array(
-            'select' => 'id, username, email, createtime, lastvisit_at, superuser, status',
+            'select' => 'id, username, email, createtime, lastvisit, superuser, status',
         );
     }
 	
@@ -142,5 +142,34 @@ class User extends CActiveRecord
 			return isset($_items[$type][$code]) ? $_items[$type][$code] : false;
 		else
 			return isset($_items[$type]) ? $_items[$type] : false;
+	}
+
+	private static $_items=array();
+	public static function items($tipo)
+	{
+ 		// Devuelve todos los ítems que forman el arreglo
+	 if(!isset(self::$_items[$tipo]))
+ 	 self::loadItems($tipo);
+ 	return self::$_items[$tipo];
+	}
+
+	public static function item($tipo, $id)
+	{
+	 // Devuelve el ítem al que le corresponde el id
+	 if(!isset(self::$_items[$tipo]))
+	  self::loadItems($tipo);
+	 return isset(self::$_items[$tipo][$id]) ? self::$_items[$tipo][$id] : false;
+	}
+
+	private static function loadItems($tipo)
+	{
+ 	// Obtiene los registros
+ 	self::$_items[$tipo]=array();
+ 	$models=self::model()->findAll(array(
+  	'order'=>'username',
+ 	));
+	 //self::$_items[$tipo][""]=""; // Descomentar para incluir un campo en blanco al inicio, para cuando el campo puede ser nulo
+	 foreach($models as $model)
+ 	 self::$_items[$tipo][$model->id]=$model->username;
 	}
 }

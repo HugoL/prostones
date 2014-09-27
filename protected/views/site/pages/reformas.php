@@ -16,9 +16,10 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
+	<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=edificacion_unifamiliares">
 	<div class="offset9 span2 botonsegmentos">
- Edificacion y unifamiliares >>
-	</div>
+ Edificacion y unifamiliares <img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>rightarrow.png">
+	</div></a>
 	<div class="span12">
 	<div class="span6">
 		<div class="span12">
@@ -47,7 +48,7 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
 		</div>
 	</div>
 
-	<div class="span6">
+	<div class="span5">
 		<div class="span12">
 			<h2><font size="5" >¿Cómo le ayuda proSton en este tipo de obras? </font></h2>
 		</div>

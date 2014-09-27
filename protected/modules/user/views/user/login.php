@@ -1,8 +1,8 @@
 <?php
 $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
-/*$this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	UserModule::t("Login"),
-);*/
+);
 ?>
 
 <h1><?php echo UserModule::t("Login"); ?></h1>
@@ -15,12 +15,12 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 
 <?php endif; ?>
 
-<p><?php echo UserModule::t("Por favor, rellene el siguiente formulario con sus datos de usuario:"); ?></p>
+<p><?php echo UserModule::t("Please fill out the following form with your login credentials:"); ?></p>
 
 <div class="form">
 <?php echo CHtml::beginForm(); ?>
 
-	<p class="note"><?php echo UserModule::t('Campos con <span class="required">*</span> son requeridos.'); ?></p>
+	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 	
 	<?php echo CHtml::errorSummary($model); ?>
 	
@@ -36,7 +36,7 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 	
 	<div class="row">
 		<p class="hint">
-		<?php echo CHtml::link(UserModule::t("Registraste"),Yii::app()->getModule('user')->registrationUrl); ?> | <?php echo CHtml::link(UserModule::t("¿Contraseña perdida?"),Yii::app()->getModule('user')->recoveryUrl); ?>
+		<?php echo CHtml::link(UserModule::t("Register"),Yii::app()->getModule('user')->registrationUrl); ?> | <?php echo CHtml::link(UserModule::t("Lost Password?"),Yii::app()->getModule('user')->recoveryUrl); ?>
 		</p>
 	</div>
 	

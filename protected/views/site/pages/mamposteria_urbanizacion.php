@@ -16,6 +16,14 @@ Yii::app()->clientScript->registerMetaTag("Mamposteria, Urbanización, Proyecto,
 <div class="clearfix">&nbsp</div>
 
 <div class="span12 divSeccion">
+	<div class="span12">
+	<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=interiorismo_cocinas">
+	<div class="span2 botonsegmentos">
+		<img style="width:18px;"  alt="left arrow - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>leftarrow.png"> Interiorismo. Cocinas y baños
+	</div>
+	</a>
+	</div>
+
 	<div class="span6">
 		<div class="span12">
 			<h1><font size="5" >Suministro de Mamposteria y materiales para Urbanización</font></h1>

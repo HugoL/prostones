@@ -35,6 +35,8 @@ class ContactForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			array('name, email, subject, body', 'required'),
+			array('direccion, apellidos, localidad, provincia', 'length', 'max'=>256),
+			array('telefono, codigopostal', 'numerical', 'integerOnly'=>true),
 			// email has to be a valid email address
 			array('email', 'email'),
 			// verifyCode needs to be entered correctly

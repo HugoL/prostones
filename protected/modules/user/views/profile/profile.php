@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	UserModule::t("Profile"),
 );
-?><h2><?php echo UserModule::t('Your profile'); ?></h2>
+?><h2><?php echo UserModule::t('Tu cuenta'); ?></h2>
 <?php echo $this->renderPartial('menu'); ?>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
@@ -48,7 +48,7 @@ $this->breadcrumbs=array(
 <tr>
 	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('lastvisit')); ?>
 </th>
-    <td><?php echo date("d.m.Y H:i:s",$model->lastvisit_at); ?>
+    <td><?php echo date("d.m.Y H:i:s",$model->lastvisit); ?>
 </td>
 </tr>
 <tr>

@@ -39,7 +39,7 @@ return array(
 		'gii'=>array(
 
 			'class'=>'system.gii.GiiModule',
-			'password'=>'',
+			'password'=>'easenjo',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths'=>array(
@@ -48,9 +48,9 @@ return array(
 		),
 
 		'user'=>array(
-            'tableUsers' => 'ehp_users',
-            'tableProfiles' => 'ehp_profiles',
-            'tableProfileFields' => 'ehp_profiles_fields',
+            'tableUsers' => 'users',
+            'tableProfiles' => 'profiles',
+            'tableProfileFields' => 'profiles_fields',
             'hash' => 'md5',
  
             # send activation email

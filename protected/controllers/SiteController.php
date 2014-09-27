@@ -61,25 +61,27 @@ class SiteController extends Controller
 			{
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
 				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				
 				$headers="From: $name<{$model->email}>\r\n".
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
-				$body = "Asunto: ".$model->body."<br />";
+					
+				$body = "Contenido: ".$model->body."<br />";
+				/*$body .= "Asunto: ".$subject." ". $model->que." ".$model->donde."<br />";*/
       			$body .= "Datos de contacton:<br />";
-    			$body .= "Nombre: .".$model->name."<br />";
+    			$body .= "Nombre: .".$model->name . " " . $model->apellidos."<br />";
     			$body .= "Dirección: ".$model->direccion."<br />";
+    			$body .= "email: ".$model->email."<br />";
 				$body .= "Teléfono: ".$model->telefono."<br />";
 				$body .= "Provincia: ".$model->provincia."<br />";
 				$body .= "Codigo postal: ".$model->codigopostal."<br />";
 
 				$mail=Yii::app()->Smtpmail;
-        $mail->SetFrom($model->email, 'Formulario de ' . $name);
-        $mail->Subject = $subject ;
-        $mail->MsgHTML($body);
-        $mail->AddAddress('info@proston.es', "");
-		$mail->Send();
+       			$mail->SetFrom($model->email, 'Formulario de ' . $name);
+       			$mail->Subject = $subject ;
+        		$mail->MsgHTML($body);
+       			$mail->AddAddress('info@proston.es', "");
+				$mail->Send();
 
 
 

@@ -4,13 +4,13 @@ $this->breadcrumbs=array(
 	$model->username,
 );
 ?>
-<h1><?php echo UserModule::t('View User').' "'.$model->username.'"'; ?></h1>
+<h1><?php echo UserModule::t('Ver Usuario').' "'.$model->username.'"'; ?></h1>
 
 <?php echo $this->renderPartial('_menu', array(
 		'list'=> array(
-			CHtml::link(UserModule::t('Create User'),array('create')),
-			CHtml::link(UserModule::t('Update User'),array('update','id'=>$model->id)),
-			CHtml::linkButton(UserModule::t('Delete User'),array('submit'=>array('delete','id'=>$model->id),'confirm'=>UserModule::t('Are you sure to delete this item?'))),
+			CHtml::link(UserModule::t('Crear Usuario'),array('create')),
+			CHtml::link(UserModule::t('Modificar Usuario'),array('update','id'=>$model->id)),
+			CHtml::linkButton(UserModule::t('Borrar Usuario'),array('submit'=>array('delete','id'=>$model->id),'confirm'=>UserModule::t('¿Estás seguro de borrar este elemento?'))),
 		),
 	)); 
 
@@ -42,7 +42,7 @@ $this->breadcrumbs=array(
 		),
 		array(
 			'name' => 'lastvisit',
-			'value' => (($model->lastvisit_at)?date("d.m.Y H:i:s",$model->lastvisit_at):UserModule::t("Not visited")),
+			'value' => (($model->lastvisit)?date("d.m.Y H:i:s",$model->lastvisit):UserModule::t("Not visited")),
 		),
 		array(
 			'name' => 'superuser',

@@ -5,7 +5,7 @@
 			echo "<li>".$item."</li>";
 	}
 ?>
-	<li><?php echo CHtml::link(UserModule::t('List User'),array('/user')); ?></li>
-	<li><?php echo CHtml::link(UserModule::t('Manage User'),array('admin')); ?></li>
-	<li><?php echo CHtml::link(UserModule::t('Manage Profile Field'),array('profileField/admin')); ?></li>
+	<li><?php echo CHtml::link(UserModule::t('Lista de Usuarios'),array('/user')); ?></li>
+	<li><?php echo CHtml::link(UserModule::t('Control de Usuarios'),array('admin')); ?></li>
+	<li><?php echo CHtml::link(UserModule::t('Control contenido cuentas de usuario'),array('profileField/admin')); ?></li>
 </ul><!-- actions -->

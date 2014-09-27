@@ -62,7 +62,7 @@
    .divSeccion img{
     width:80%;
    
-   border:1px solid black;
+   /*border:1px solid black;*/
   }
    .divSeccion .texto{
     margin-top:20px;
@@ -758,7 +758,7 @@ table {
 }
 
 th,td {
-   height:20% !important;
+  /* height:20% !important;*/
     word-wrap: break-word!important;
 }
 
