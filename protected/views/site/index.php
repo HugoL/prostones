@@ -19,7 +19,7 @@
 
 	<div class="span10">
 
-		<div class="span12">
+		<div class="span12" align="center" id="menusegmentos">
 
 			<div class="span9 "><!-- BOTONES PRINCIPAL-->
 

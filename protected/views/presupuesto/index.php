@@ -56,7 +56,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                         <li align="center"> Añadir pieza </li>
                     </div></a>
                     <div class="span9">
-                        Haga click en <strong>Añadir pieza</strong> para presupuestar un material  sin compromiso alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
+                        Haga click en <strong>Añadir pieza</strong> para obtener un presupuesto sin compromiso alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
                         <br>
                     </div>
         </div>
@@ -609,7 +609,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             echo $form2->textField($presupuesto,'informacion_adicional'); ?>
 
 
-            <div id="botonpresu">
+            <div id="botonpresu" style="display:none">
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
             </div>
             <?php $this->endWidget(); ?>
@@ -631,6 +631,9 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             $(".ejemplo_img_cont", this).stop().animate({ top:'70px' },{ queue:false, duration:300 });
         });
     });
+
+
+}
 </script>
 
 <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxTamanos')); ?>
@@ -742,7 +745,15 @@ $(document).ready(function($){
         });
     });
 
-  
+    $("#Presupuesto_email").keyup(function(){
+        
+
+        if(parseInt($("#Presupuesto_email").val()) != null){
+            $("#botonpresu").show('slow');    
+        }else{
+            $("#botonpresu").fadeOut('slow');
+        }
+        });
     
 
 });

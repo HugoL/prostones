@@ -928,3 +928,23 @@ border:1px solid orange;
 }
 
 
+/********* MOVIL ESTILOS **************/
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+  #sliderContainer{
+    display: none;
+  }
+
+  #caja_flotante{
+    display: none;
+  }
+  
+  #menusegmentos img{
+    margin-bottom: 10px;
+
+  }
+
+}
+
+

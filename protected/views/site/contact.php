@@ -41,12 +41,12 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 	<?php //echo $form->errorSummary($model); ?>
 
 	<div class="span12 form_contacto">
-		<div class="span3 ">
+		<div class="span4 ">
 			<div><h2>Asunto de la consulta</h2></div>
 			<div class="row" id"pregunta1">			
 			<div>Diganos que necesita.</div>
 			<?php // echo $form->labelEx($model,'Seleccione que necesita'); ?>
-			<?php echo	$form->dropDownList($model,'subject',array('1'=>'Reforma','2'=>'Colocación','3'=>'Incidencia','4'=>'Sugerencia','5'=>'Otros'), array('options' => array('1'=>array('selected'=>true))));?>
+			<?php echo	$form->dropDownList($model,'subject',array('Reforma'=>'Reforma','Colocación'=>'Colocación','Pedir Material'=>'Pedir Material','Incidencia'=>'Incidencia','Sugerencia'=>'Sugerencia','Otros'=>'Otros'), array('options' => array('1'=>array('selected'=>true))));?>
 			<?php echo $form->error($model,'subject'); ?>
 			</div>
 
@@ -66,12 +66,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 				<?php echo $form->error($model,'donde2'); ?>
 			</div>
 
-			<div class="row"  id="otros" style="display:none">
-				<?php // echo $form->labelEx($model,'otros'); ?>
-				<?php echo $form->textArea($model,'otros',array('rows'=>6, 'cols'=>50)); ?>
-				<?php echo $form->error($model,'otros'); ?>
-			</div>
-			
+				
 
 			<div class="row" id="texto" >
 			<div>Diganos de que se trata. *</div>
@@ -161,7 +156,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 	</div>
 	<?php endif; ?>
 
-	<div class="row buttons span7 offset5">
+	<div class="row buttons span7 offset5" >
 		<?php echo CHtml::submitButton('Enviar'); ?>
 	</div>
 		</div>
@@ -187,12 +182,12 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 $(document).ready(function($){
 	 $("#ContactForm_subject").change(function(){
         
-          if( $('#ContactForm_subject').val() == 1  || $('#ContactForm_subject').val() == 2){
+          if( $('#ContactForm_subject').val() == 'Reforma'  || $('#ContactForm_subject').val() == 'Colocación'){
             $("#reformas_colocaciones").show('slow');
             $("#texto").show('slow');;
              $("#incidencia_sugerencia").hide();
 
-            }else if( $("#ContactForm_subject").val() == 3  || $("#ContactForm_subject").val() == 4){
+            }else if( $("#ContactForm_subject").val() == 'Incidencia'  || $("#ContactForm_subject").val() == 'Sugerencia'){
         	$("#incidencia_sugerencia").show('slow');  
         	$("#reformas_colocaciones").hide();   
             $("#texto").show('slow');
