@@ -82,7 +82,7 @@
 
 					<div id="mySlides">
 
-						<div id="slide1" class="slide">    
+						<div id="slide1 " class="slide">    
 					
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
 					
@@ -990,13 +990,13 @@
 
 							<div class="clearfix"></div>
 
-							<div id="caja_flotante">
+							<!--<div id="caja_flotante">
   								<div id="cont_caja_flotante" >
-  									<div align="center"> <img width="15px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>flecha.png"</div>
+  									<div align="center"> <img width="15px" src="<?php // echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>flecha.png"</div>
   									<div style="border: 1px solid black; background-color:khaki;"><font size="1"><strong>Presupueste gratis sus materiales</strong></font></div>
 	  								
   								</div>
-							</div>
+							</div>-->
 
 <script async type="text/javascript">
 							
@@ -1077,7 +1077,7 @@ $(document).ready(function () {
 
 			width: "100%",  // this is the width for the content-slider
 
-			height: "200px",  // this is the height for the content-slider
+			height: "100%",  // this is the height for the content-slider
 
 			duration: 400,  // time in milliseconds to transition one slide
 			

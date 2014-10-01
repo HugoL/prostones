@@ -64,7 +64,7 @@ Yii::app()->clientscript
 <?php include_once("analyticstracking.php") ?>
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
+		<div class="navbar-inner row">
 			<div class="container-fluid">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
@@ -73,7 +73,8 @@ Yii::app()->clientscript
 				</a>
 			</div>
 			<!--<a class="brand offset3" href="#"><?php //echo Yii::app()->name ?></a>-->
-			<div > <a href="<?php echo Yii::app()->baseUrl?>/"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
+			<div id="logo"> <a href="<?php echo Yii::app()->baseUrl?>/"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" /></a></div>
+			<div id="logomini"> <a href="<?php echo Yii::app()->baseUrl?>/"><img alt="www.proSton.es - Suministro de materiales" class="brand logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo_mini.png" /></a></div>
 
 			<div class="nav-collapse" id="menu-top">
 				<?php $this->widget('zii.widgets.CMenu',array(
@@ -96,8 +97,8 @@ Yii::app()->clientscript
 						array('label'=>'Información técnica', 'url'=>array('/site/page','view'=>'informacion_tecnica')),
 							
 						array('label'=>'Mi cuenta', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Cuenta ('.Yii::app()->user->name.')', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest),
-						array('label'=>'Cerrar sesión', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
+						array('label'=>'Cuenta ('.Yii::app()->user->name.')', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest)/*,
+						array('label'=>'Cerrar sesión', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)*/
 						
 						),)); ?>
 						
