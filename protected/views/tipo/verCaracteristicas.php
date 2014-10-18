@@ -83,26 +83,16 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
 
              <?php foreach ($preciosunitarios as $key => $preciounitario):?>
             
-                <?php if( $preciounitario->tamano->id_pieza == 1 ){?>
+                
             <td align="center" id="datoresaltado">
 
                  <?php echo $preciounitario->tamano->nombre; ?></td>
-                <?php } ?>
+                
              
             
         <?php endforeach; ?>
             
 
-            <?php foreach ($preciosunitarios as $key => $preciounitario):?>
-           
-                <?php if( $preciounitario->tamano->id_pieza == 2 ){?>
-            <td align="center" id="datoresaltado">
-
-                 <?php echo $preciounitario->tamano->nombre; ?></td>
-                <?php } ?>
-             
-           
-        <?php endforeach; ?>
                </tr>
 
                <tr>
@@ -143,7 +133,7 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                         <th>Revestimiento exterior</th>
                         <th>Encimeras</th>
                     </tr>
-                    <tr id="datos">
+                    <tr id="datos"><!--<span style="color:yellow">★</span><span style="color:#770">★</span>-->
                         <td>
                         <img  alt="pavimiento exterior - www.proston.es" width="60px" height="16x"  title="<?php echo $tipo->pavimento_exterior; ?>/5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/<?php echo $tipo->pavimento_exterior; ?>.png">
 

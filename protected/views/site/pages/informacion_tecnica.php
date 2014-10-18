@@ -5,7 +5,7 @@
 
 
 $this->pageTitle= 'Información técnica - '. Yii::app()->name  . ' Marmolistas';
-Yii::app()->clientScript->registerMetaTag("Información técnica sobre diferentes conocimientos y uso de rocas ornamentales");
+Yii::app()->clientScript->registerMetaTag("Información técnica sobre diferentes conocimientos y uso de rocas ornamentales", 'description');
 Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir baldosas, medir obra, resbalabilidad,atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
 	'Reformas',
@@ -16,12 +16,13 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 
 
-<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp;</div>
 
 <div class="span12" id="secinfo">
 	<div class="span4 botonesinfo">
 		<div  class="span12">
-			Haga click en el tema que desee para conocer su contenido.<br><br>
+
+			Haga click en el tema que desee para conocer su contenido. Le proporcionamos varios temas relacionados con el mundo de la roca ornamental.<br><br>
 			<strong>Indice de temas:</strong><br><br>
 		</div>
 		
@@ -38,7 +39,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<input type="button" id="mostrar" name="boton1" value="Rocas en la construcción."><br>
 		</div>
 	</div>
-	<div id="rocasinfo"class="span6 b_info" style="display:none">
+	<div id="rocasinfo" class="span6 b_info" style="display:none">
 		<h2>Rocas en la construcción</h2>
 
 		<p>Se puede definir la roca de construcción (producto industrial), a aquellas rocas que después de un proceso de elaboración son aptas para ser utilizadas como materiales nobles de construcción, elementos de ornamentación, arte funerario y escultórico, objetos artísticos y variados, conservando íntegramente su composición, textura y características físico-químicas.</p>
@@ -52,7 +53,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 				<th style="padding:6px">Rocas metamorficas</th>
 			</tr>
 			<tr>
-				<td align="center">Granito</td>
+				<td>Granito</td>
 				<td>Caliza</td>
 				<td>Marmol</td>
 			</tr>
@@ -144,45 +145,45 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 	</div>
 
-	<div id="resbalinfo"class="span6 b_info" style="display:none">
+	<div id="resbalinfo" class="span6 b_info" style="display:none">
 		<h2>Resbaladicidad de los suelos</h2>
-		<p>El Documento Básico DB-SUA, perteneciente al Código Técnico de la Edificación <em>(CTE)</em>, asignan una <em>clase</em> a los suelos en función a su localización y a las caracteristicas del suelo.
+		<p>El Documento Básico <em>DB-SUA</em>, perteneciente al Código Técnico de la Edificación <em>(CTE)</em>, asignan una <em>clase</em> a los suelos en función a su localización y a las caracteristicas del suelo.
 		</p>
 		<p>Es exigible para los suelos de los edificios de uso Sanitario, Docente, Comercial, Administrativo,Aparcamiento y Pública Concurrecia; <strong>no</strong> para las viviendas privadas de uso Residencial, ni para uso Residencial público.</p>
 		<p>Vamos a indicar que tipo de acabado superficial se deberá emplear, con caracter general, en los diferentes suelos. Aunque les recordamos que cada material posee sus propias caracteristicas fisico-mecanicas, lo que le confiere una Resistencia al deslizamiento (Rd) diferente (que deberá confirmarla a la hora de contratar el producto).</p>
 
 		<p>
-			Rd ≤ 15 = Clase 0 ~ Pulido<br>
-			Rd 15 ≤ 35 = Clase 1 ~ Pulido<br>
-			Rd 35 ≤ 45 = Clase 2 ~ Al corte de disco / Apomazado<br>
-			Rd > 45 = Clase 3 ~ Al corte de sierra / Envejecido / Arenado / Granallado / Flameado
-			/ Abujardado / Cizallado.
+			Rd ≤ 15 = Clase 0 (Pulido)<br>
+			Rd 15 ≤ 35 = Clase 1 (Pulido)<br>
+			Rd 35 ≤ 45 = Clase 2 (Al corte de disco / Apomazado)<br>
+			Rd > 45 = Clase 3 ~(Al corte de sierra / Envejecido / Arenado / Granallado / Flameado
+			/ Abujardado / Cizallado)
 
 		</p>
 
 		<p>La clase exigible a los suelos en función de su localización y los acabados supierficiales que la cumplirian son:</p>
 		<p>
 			<strong>Zonas interiores secas:</strong><br>
-			- Superficies con pendiente menor que el 6 % = Clase 1 ~ Pulido.<br>
-			- Superficies con pendientes mayor o igual que el 6% = Clase 2 ~ Al corte de disco / Apomazado.<br>
-			- Escaleras = Clase 3 / Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado.
+			- Superficies con pendiente menor que el 6 % = Clase 1 (Pulido)<br>
+			- Superficies con pendientes mayor o igual que el 6% = Clase 2 (Al corte de disco / Apomazado)<br>
+			- Escaleras = Clase 3 (Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado)
 		</p>
 		<p>
 		<strong>Zonas interiores húmedas</strong> (entrada a los edificios desde una zona a la intemperie, terrazas cubiertas, vestuarios, baños, cocinas):<br>
-		- Superficies con pendiente menor que el 6 % = Clase 2 ~ Al corte de disco / Apomazado.<br>
-		- Superficies con pendientes mayor o igual que el 6% = Clase 3 / Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado.<br>
-		- Escaleras = Clase 3 / Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado.
+		- Superficies con pendiente menor que el 6 % = Clase 2 (Al corte de disco / Apomazado)<br>
+		- Superficies con pendientes mayor o igual que el 6% = Clase 3 (Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado)<br>
+		- Escaleras = Clase 3 (Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado)
 		</p>
 		<p>
 			<strong>Zonas exteriores</strong> (excepto cuando se trate de accesos directos a zonas de uso restringido, en zonas previstas para usuarios descalzos y en el fondo de los vasos ...).<br>
-			- Piscinas, spa, etc... = Clase 3 / Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado
+			- Piscinas, spa, etc... = Clase 3 (Al corte de sierra / Envejecido / Arenado / Granallado / Flameado / Abujardado / Cizallado)
 		</p>
 
 	</div>
 
 
 
-	<div id="acabadosinfo"class="span7 b_info" style="display:none">
+	<div id="acabadosinfo" class="span7 b_info" style="display:none">
 
 		<h2>Acabados superficiales</h2>
 
@@ -193,8 +194,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img  alt="Cizallado - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/cizallado_granito.jpg">
+				<figure>
+				<img  alt="Cizallado - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/cizallado_granito.jpg">
 				</figure>
 			</div>
 
@@ -214,8 +215,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Al corte de sierra- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/sierra_granito.jpg">
+				<figure>
+				<img   alt="Al corte de sierra- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/sierra_granito.jpg">
 			</figure>
 			</div>
 
@@ -232,8 +233,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Al corte de disco- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/disco_granito.jpg">
+				<figure>
+				<img   alt="Al corte de disco- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/disco_granito.jpg">
 			</figure>
 			</div>
 
@@ -251,8 +252,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Apomazado-  Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/apomazado.jpg">
+				<figure>
+				<img   alt="Apomazado-  Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/apomazado.jpg">
 			</figure>
 			</div>
 
@@ -270,8 +271,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Pulido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/pulido.jpg">
+				<figure>
+				<img   alt="Pulido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/pulido.jpg">
 			</figure>
 			</div>
 
@@ -289,15 +290,15 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Abujardado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/s.jpg">
+				<figure >
+				<img   alt="Abujardado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/abujardado.jpg">
 			</figure>
 			</div>
 
 			<div class="span9"><p>
 				<strong>Abujardado</strong>	<br>
 			Este acabado se consigue utilizando maquinaria con brazos articulados o mecanizadas, que llevan incorporados una serie de bailarines (dotados de los dientes piramidales), con lo que se proporciona un acabado homogéneo y regular.
-			La superficie resultante presenta pequeños cráteres uniformemente repartidos que le dan a la piedra un tono ligeramente claro.
+			La superficie resultante presenta pequeños cráteres uniformemente repartidos que le dan a la piedra un tono ligeramente claro.<br><br>
 
 				</p>
 			</div>
@@ -310,17 +311,16 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Granallado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granallado.jpg">
+				<figure  >
+				<img   alt="Granallado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/granallado.jpg">
 			</figure>
 			</div>
 
 			<div class="span9"><p>
 				<strong>Granallado</strong>	<br>
 			Acabado similar al abujardado tradicional. Proporciona al granito una textura rugosa fina y uniforme (que presenta propiedades antideslizantes), que realza el tono natural de la piedra.
-			El granallado se consigue proyectando granalla de acero inoxidable (de forma mecánica), sobre la superficie del granito, una vez cortada
-			El grado de rugosidad se puede controlar en función de la fuerza con la que se proyecte.<br>
-
+			El granallado se consigue proyectando granalla de acero inoxidable (de forma mecánica), sobre la superficie del granito una vez cortada. El grado de rugosidad se puede controlar en función de la fuerza con la que se proyecte.<br>
+			<br>
 
 				</p>
 			</div>
@@ -330,15 +330,15 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Flameado- Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/abujardado.jpg">
+				<figure>
+				<img   alt="Flameado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/abujardado.jpg">
 			</figure>
 			</div>
 
 			<div class="span9"><p>
 				<strong>Flameado</strong>	<br>
 			Consiste en un tratamiento térmico que se puede aplicar al granito, este acabado proporciona al material una defensa muy elevada a la alteración química atmosférica.
-			Se aplica a la superficie una serie de fuentes de calor (mediante mecheros de oxiacetileno montados sobre pistola o mecánicos), que proporcionan temperaturas superiores a 2.800 ºCentígrados, y que al pasar sobre el material provocan un choque térmico que hace que se desprendan pequeñas láminas de roca.
+			Se aplica a la superficie una serie de fuentes de calor (mediante mecheros de oxiacetileno montados sobre pistola o mecánicos), que proporcionan temperaturas superiores a 2.800º Centígrados, y que al pasar sobre el material provocan un choque térmico que hace que se desprendan pequeñas láminas de roca.
 
 
 				</p>
@@ -350,8 +350,8 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 			<div class="span2">
 				
-				<figure align="center" >
-				<img   alt="Envejecido - Acabado superficial granito- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/envejecido.jpg">
+				<figure>
+				<img   alt="Envejecido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/envejecido.jpg">
 			</figure>
 			</div>
 
@@ -363,61 +363,166 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 
 				</p>
 			</div>
+
 		</div>
+
+		<div class="clearfix">&nbsp;</div>
 		<h3>Mármol</h3>
-		<div class="span11">
-		<p><strong>	Al corte de Sierra. </strong><br>
-		Como consecuencia de dividir el bloque que se obtiene de la cantera en tablas, obtenemos este acabado que es el punto de partida para todos los demás. Las sierras utilizadas en este proceso dejan su huella en la piedra con una apariencia semi-rugosa e imperfecta, y al contrario del Pulido, ni deja ver la apariencia de la piedra, ni tapa el poro del material. Para resaltar un poco el color se puede además lavar al ácido.<p>
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Al corte de sierra - Acabado superficial mármol- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/alcorte.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Al corte de Sierra</strong>	<br>
+				Como consecuencia de dividir el bloque que se obtiene de la cantera en tablas, obtenemos este acabado que es el punto de partida para todos los demás. Las sierras utilizadas en este proceso dejan su huella en la piedra con una apariencia semi-rugosa e imperfecta, y al contrario del Pulido, ni deja ver la apariencia de la piedra, ni tapa el poro del material. Para resaltar un poco el color se puede además lavar al ácido.
+				<br><br>
+
+				</p>
+
+			</div>
+		</div>
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Al corte de disco- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/alcortedisco.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Al corte de disco</strong>	<br>
+				Es un acabado que deja la superficie lisa, muy porosa. Le da un acabado mate y un tono blanquecino a la piedra. 
+				Este acabado constituye en la mayoría de los casos un paso previo a la realización de los otros acabados. Es el acabado que resulta del corte del mármol y del granito con discos o hilos diamantados.<br>
+		 		El aspecto resultante es el de una superficie lisa y ligeramente áspera, en algunos casos con pequeñas ondulaciones provocadas por el corte y con un tono claro y mate.
+				</p>
+			</div>
+		</div>		
 
 
-		<p><strong>	Al corte de disco. </strong><br>
-		 Es un acabado que deja la superficie lisa, muy porosa. Le da un acabado mate y un tono blanquecino a la piedra. 
-		Este acabado constituye en la mayoría de los casos un paso previo a la realización de los otros acabados. Es el acabado que resulta del corte del mármol y del granito con discos o hilos diamantados.<br>
-		 El aspecto resultante es el de una superficie lisa y ligeramente áspera, en algunos casos con pequeñas ondulaciones provocadas por el corte y con un tono claro y mate.
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Apomazado- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/apomazado.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Al corte de disco</strong>	<br>
+				Este acabado que se realiza en las piedras que presentan un nivel de cristalización alto, resalta su textura y color sin dejar ninguna marca visible, proporcionando un tono mas oscuro que el Serrado, pero sin llegar a tener brillo. 
+				Esto se consigue mediante un proceso de abrasión, que consiste en pasar piedras o lijas de diferente granulometría, hasta obtener el acabado deseado. El Apomazado es un paso previo antes del Pulido. Este acabado sólo puede realizarse en mármoles y granitos de calidad (con una dureza contrastada), por lo que permite la elaboración de superficies lisas y curvas
+				</p>
+			</div>
+		</div>
 
 
-		<p><strong>	Apomazado. </strong><br>
-		Este acabado que se realiza en las piedras que presentan un nivel de cristalización alto, resalta su textura y color sin dejar ninguna marca visible, proporcionando un tono mas oscuro que el Serrado, pero sin llegar a tener brillo. 
-		Esto se consigue mediante un proceso de abrasión, que consiste en pasar piedras o lijas de diferente granulometría, hasta obtener el acabado deseado. El Apomazado es un paso previo antes del Pulido.<br>
-		Este acabado sólo puede realizarse en mármoles y granitos de calidad (con una dureza contrastada), por lo que permite la elaboración de superficies lisas y curvas
+		<div class="span12">
 
-		<p><strong>Pulido.</strong><br>
-		El pulido es un tratamiento más utilizado en los acabados del mármol y del granito, pues proporciona una superficie brillante que resalta todos los colores y textura del material. 
-		El proceso del pulido se realiza mediante máquinas con brazos articulados o mecanizados que llevan acopladas una serie de muelas abrasivas de distintos granos que, utilizadas progresivamente, proporcionan el acabado final característico. 
-		Con este acabado se consigue una superficie plana y brillante, con un tono más oscuro que en otros tratamientos y se proporciona el cierre de los poros de la roca lo que hace que el material sea más resistente a las agresiones externas.</p>
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Pulido- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/pulido.jpg">
+			</figure>
+			</div>
 
-		<p><strong>Arenado.</strong><br>
-		El Arenado es un proceso que consiste en proyectar gránulos de abrasivo como Sílice o Corindón, mediante aire a alta presión contra la piedra. Con este proceso menos agresivo que el abujardado, conseguimos un acabado parecido a este, aunque con un poco mas de color y menor rugosidad.</p>
-
-
-		<p><strong>Flameado.</strong><br>
-		El flameado consiste en un tratamiento térmico que se puede aplicar al algunos mármoles y al granito. <br>
-		Para su elaboración se aplica a la superficie una serie de fuentes de calor, mediante mecheros de oxiacetileno montados sobre pistola o mecánicos, que proporcionan temperaturas muy altas (en el granito superiores a 2.800 º centígrados), y que al pasar sobre el material provocan un choque térmico que hace que se desprendan pequeñas láminas de roca.<br>
- 		El resultado es una superficie rugosa y vítrea que proporciona un aspecto rústico pero sin producir cambios apreciables de color, ni dejar restos del tratamiento. Este acabado proporciona a la piedra una defensa muy elevada a la alteración química atmosférica.</p>
-
-		<p><strong>Abujardado.</strong><br>
-		Proporciona al material un acabado bello y muy antideslizante. El resultado de abujardar no siempre es el mismo, varia segun la dureza del material, la herramienta usada o el número de pasadas.
-		Se consigue golpeando repetidamente, mediante una herramientas con puntas, la superficie a tratar.</p>
+			<div class="span9"><p>
+				<strong>Pulido</strong>	<br>
+				El pulido es un tratamiento más utilizado en los acabados del mármol y del granito, pues proporciona una superficie brillante que resalta todos los colores y textura del material. El proceso del pulido se realiza mediante máquinas con brazos articulados o mecanizados que llevan acopladas una serie de muelas abrasivas de distintos granos que, utilizadas progresivamente, proporcionan el acabado final característico. Con este acabado se consigue una superficie plana y brillante, con un tono más oscuro que en otros tratamientos y se proporciona el cierre de los poros de la roca lo que hace que el material sea más resistente a las agresiones externas.
+				</p>
+			</div>
+		</div>
 
 
-		<p><strong>Envejecido.</strong><br>
-		Consiste en someter a la piedra a un proceso que pueden ser mecánico o químico. Con estos procesos se busca un acabado que imita el mármol, que ha sido sometido a las agresiones medioambientales, durante siglos lo dejan sin brillo y erosionado. Además del componente estético que da este innovador acabado, dota a la piedra de un cierto grado de rugosidad, que la hace apta para su uso en exteriores, ya que este acabado le da unas propiedades antideslizantes mayores que el Mármol pulido.</p>
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Arenado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/arenado.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Arenado</strong>	<br>
+				El Arenado es un proceso que consiste en proyectar gránulos de abrasivo como Sílice o Corindón, mediante aire a alta presión contra la piedra. Con este proceso menos agresivo que el abujardado, conseguimos un acabado parecido a este, aunque con un poco mas de color y menor rugosidad.<br><br><br>
+				</p>
+			</div>
+		</div>
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Flameado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/flameado.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Flameado</strong><br>
+				El flameado consiste en un tratamiento térmico que se puede aplicar al algunos mármoles y al granito. Para su elaboración se aplica a la superficie una serie de fuentes de calor, mediante mecheros de oxiacetileno montados sobre pistola o mecánicos, que proporcionan temperaturas muy altas (en el granito superiores a 2.800 º centígrados), y que al pasar sobre el material provocan un choque térmico que hace que se desprendan pequeñas láminas de roca. El resultado es una superficie rugosa y vítrea que proporciona un aspecto rústico pero sin producir cambios apreciables de color, ni dejar restos del tratamiento. Este acabado proporciona a la piedra una defensa muy elevada a la alteración química atmosférica.
+				</p>
+			</div>
+		</div>
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Abujardado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/abujardado.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Abujardado</strong><br>
+				Proporciona al material un acabado bello y muy antideslizante. El resultado de abujardar no siempre es el mismo, varia segun la dureza del material, la herramienta usada o el número de pasadas.
+				Se consigue golpeando repetidamente, mediante una herramientas con puntas, la superficie a tratar.<br><br><br>
+				</p>
+			</div>
+		</div>
+
+
+		<div class="span12">
+
+			<div class="span2">
+				
+				<figure>
+				<img   alt="Envejecido - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/envejecido.jpg">
+			</figure>
+			</div>
+
+			<div class="span9"><p>
+				<strong>Envejecido</strong><br>
+				Consiste en someter a la piedra a un proceso que pueden ser mecánico o químico. Con estos procesos se busca un acabado que imita el mármol, que ha sido sometido a las agresiones medioambientales, durante siglos lo dejan sin brillo y erosionado. Además del componente estético que da este innovador acabado, dota a la piedra de un cierto grado de rugosidad, que la hace apta para su uso en exteriores, ya que este acabado le da unas propiedades antideslizantes mayores que el Mármol pulido.
+				</p>
+			</div>
 		</div>
 	</div>
 
-	<div id="medirinfo"class="span6 b_info" style="display:none">
+	<div id="medirinfo" class="span6 b_info" style="display:none">
 
 		<h2>Cómo medir su obra para una correcta adquisición de material</h2>
 		
 		<p>Recomendamos medir utilizando una cinta métrica, y tomar todas las medidas en metros, será más fácil calcular posteriormente los m². y m.l. Asegúrese que ha colocado bien las comas en las cifras para evitar que los cálculos sean incorrectos.<br> También es conveniente que haga un croquis de las habitaciones a medir, dibuje la forma de las mismas lo más semejante posible, incluyendo las irregularidades que pudiese tener.</p>
 
-		<p><h3>1. Suelos</h3>
-		<strong>1.1</strong> Baldosas:<br>
+		<h3>1. Suelos</h3>
+		<p><strong>1.1</strong> Baldosas:<br>
 		Tomar en primer lugar la cota más larga de la superficie a calcular, después el lado menor en ambos extremos (si se apreciase una diferencia apreciable, apuntar la media entre ambas medidas). Una vez disponga de las dos medidas las multiplica y tendrá los m². de baldosa que va a necesitar.<br>
-		Es habitual incrementar esta medida en un 10 % a la hora de hacer el pedido del material, ya que disponer de más material para realizar recortes, piezas que se rompen con la manipulación, alguna que tenga vetas o gabarros que no le agraden, etc. <br><br>
+		Es habitual incrementar esta medida en un 10 % a la hora de hacer el pedido del material, ya que disponer de más material para realizar recortes, piezas que se rompen con la manipulación, alguna que tenga vetas o gabarros que no le agraden, etc. </p>
 
-		1.2 -Rodapiés:<br>
-		Sumar las cotas que tiene de las 4 paredes en cada habitación, el resultado es su perímetro y también los m.l. de rodapié que se va a necesitar.<br>
+		1.2 -Rodapiés:
+		<p>Sumar las cotas que tiene de las 4 paredes en cada habitación, el resultado es su perímetro y también los m.l. de rodapié que se va a necesitar.<br>
 		Al igual que en las baldosas, es recomendable incrementar la totalidad del rodapié que le sale en sus cálculos en un 10 %.
 
 		</p>
@@ -447,7 +552,7 @@ Unidades: se debe apuntar las huellas a suministrar, es habitual pedir alguna pi
 
 </div>
 
-<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp;</div>
 
 
 

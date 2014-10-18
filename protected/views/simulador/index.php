@@ -18,7 +18,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 ?>
 
 
-<h1>Diseñador virtual</h1>
+<h1>Diseñador virtual:  <?php echo $tipo->nombre; ?></h1>
 
 
 <div class="span8">
@@ -41,7 +41,8 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 
     <div class="span3 textosimulador">
       <br>
-      <h2><?php echo $tipo->nombre; ?></h2><br>
+      <h2> Portal en <?php echo $tipo->nombre; ?>
+      <br>
       
       <div id="botonsimulador">
          <?php $this->widget('bootstrap.widgets.TbButton', array(

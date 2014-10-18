@@ -20,14 +20,14 @@ Yii::app()->clientscript
 		*/
 		?>
 		<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 
 <head>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="language" content="es" />
+
 <meta name="msvalidate.01" content="9D772A7448CDD4689B4167F238BEB9F3" />
 <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
 
@@ -146,14 +146,14 @@ Yii::app()->clientscript
 						<div class="span4">
 							<div class="span12">
 							
-								<h4>Siguenos próximamente en:</h4>
+								<h4>Síguenos próximamente en:</h4>
 								<img   alt="Facebook - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">
 								<img   alt="Youtube - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">
 								<img   alt="Twitter - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
 							
 
 							</div>
-							<div class="clearfix">&nbsp</div>
+							<div class="clearfix">&nbsp;</div>
 
 							<div class="span12 bancos">
 							<h4>Trabajamos con :</h4>
@@ -225,7 +225,7 @@ Yii::app()->clientscript
 			<?php if(!empty(Yii::app()->params['debugContent'])):?>
 				<?php echo Yii::app()->params['debugContent'];?>
 			<?php endif;?>
-
+		</div>	
 
 
 			

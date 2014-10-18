@@ -252,6 +252,7 @@ margin-left:35px;
 .jFlowSelected, .jFlowSelected:hover {background-position: -15px 0px;   }
 
 
+
 .enl img:hover{
   border: 2px  #fe7902 solid;
   
@@ -262,6 +263,9 @@ margin-left:35px;
 }
 .prenl{
   margin-left:2%;
+}
+.prenl p{
+  text-align: justify;
 }
 .enl{
    margin-left:1.4%;
@@ -339,7 +343,7 @@ height:90px;
 
 
 .cuatit{
-
+  text-align: right;
   background-color: white;
   padding-right:10px;
   border:1px solid #525455;
@@ -543,7 +547,7 @@ height:80%;
 .titofertas{
 margin-top:-17% !important;
  background-color:white;
-
+text-align: center;
 }
 .titofertas h2{
   font-size:18px;
@@ -555,6 +559,9 @@ margin-top:-17% !important;
   border: 1px solid black;
   margin-left:0px !important;
   margin-bottom:10px;
+}
+.tituloweb{
+  text-align: center;
 }
 .tituloweb h1{
  border-bottom: 1px transparent !important; 
@@ -600,7 +607,9 @@ font-size:20px;
   /*font-size:11px !important;*/
   color:grey;
 }
-
+.b_info img{
+  border: 1px solid black;
+}
 .botonesinfo input{
     font-weight: bold;
     margin-left: 0px;
@@ -625,6 +634,9 @@ font-size:20px;
 }
 #secinfo h2{
   font-size:24px !important; 
+}
+#secinfo figure{
+  vertical-align: middle;
 }
 
 .menusimulador img{
@@ -755,7 +767,23 @@ th,td {
   /* height:20% !important;*/
     word-wrap: break-word!important;
 }
+.cuerofertas p{
+  text-align: center
+}
 
+.vermasofertas{
+  text-align: center;
+  background-color:#134263;
+  padding:3px;
+  border:1px solid black;
+}
+.textoblanco{
+  color: white;
+}
+
+.textodiez{
+  font-size: 10px;
+}
 #textodiez{
   font-size: 10px;
 }
@@ -770,7 +798,7 @@ th,td {
 /*ESTILOS PRESUPUESTO (ir poniendolos debajo) */
 
 .titulopcion{
-  font-size:16px;
+ /* font-size:16px;*/
   color:#134263;
   font-weight: bold;
 }
@@ -863,7 +891,9 @@ background-color:white;
 }
 
 
-
+.inicio p{
+  text-align: justify;
+}
 
 
 
@@ -937,6 +967,24 @@ border:1px solid orange;
   display:none;
 }
 
+.ini h2{
+  font-size: 14px;
+}
+
+.aten h2{
+  font-size: 16px;
+}
+.titulopcion h2{
+  font-size:16px;
+}
+
+.botonestarifas{
+  margin-top: 10px;
+}
+.botonestarifas h2{
+  font-size:16px;
+}
+
 /********* MOVIL ESTILOS **************/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -946,7 +994,7 @@ border:1px solid orange;
   }
 
   
-  
+ 
   #menusegmentos img{
     margin-bottom: 10px;
 
@@ -995,31 +1043,60 @@ border:1px solid orange;
  #caja_flotante{
     display: none;
   }
-    #logo{
- display:none;
+    #logo img{
+ width:14%;
 }
-  
+ /* 
  #logomini{
  display:block;
  width:69px;
   height:48px;
   margin-top:5px;
   float:left;
-}
+}*/
 
 .telefono{
   width:190px;
   height: 33px;
 }
+#menu-top li{
+  width:83px;
+}
+#menu-top li a{
+  width:50%;
+  text-align: center;
+  line-height: 10px;
+}
 
+#sliderContainer{
+    height:160px;
+    margin-top:20px;
+}
+.titulo {
+    width:15% !important;
+}
 
+.enl2 p{
+  font-size: 11px;
+}
 
+.texto24{
+  font-size: 20px;
+}
+.cuerofertas img{
+height:50px;
+ margin-top: 10px;
+}
+
+ select{
+  width:150px;
+}
 }
 
 
 
 @media screen and (min-width: 1080px) and (max-width: 1235px) {
-  #logo{
+ /* #logo{
  display:none;
 }
  #logomini{
@@ -1028,6 +1105,15 @@ border:1px solid orange;
   height:48px;
   margin-top:5px;
   float:left;
+}*/
+
+#menu-top li{
+  width:83px;
+}
+#menu-top li a{
+  width:50%;
+  text-align: center;
+  line-height: 10px;
 }
   .telefono{
     width:250px;

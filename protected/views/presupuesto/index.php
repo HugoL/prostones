@@ -11,7 +11,7 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
 
-$this->pageTitle= 'Presupuesto online - Mármol, Granito '. Yii::app()->name . 'Marmoles y Granitos';
+$this->pageTitle= 'Presupuesto online - '. Yii::app()->name . 'Marmoles y Granitos';
 Yii::app()->clientScript->registerMetaTag("Presupuesto online a medida de mármoles y granitos.", 'description');
 Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
     ?>
@@ -35,7 +35,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             'enableAjaxValidation'=>true,
     )); ?>
 
-<div class="row">
+<div class="row pres">
          
     <div class="span8 panel">   <!-- DIV CENTRAL -->
 
@@ -52,19 +52,25 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             </div>
             <?php endif; ?>
                     <a href="#"> 
-                    <div class="span2 offset3 ini">
-                        <li align="center"> Añadir pieza </li>
+                    <div class="span2 offset4 ini">
+                       <h2> <li align="center"> Añadir pieza </li></h2>
                     </div></a>
-                    <div class="span9">
-                        Haga click en <strong>Añadir pieza</strong> para obtener un presupuesto sin compromiso alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos.
+                    <div class="span10">
+                        <p>Empezar: Haga click en <strong>Añadir pieza</strong> para obtener un presupuesto <em>sin compromiso</em> alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos. Si no encuentra el material deseado, contactenos para colicitarlo.</p>
                         <br>
+                    </div>
+
+                    <div  class="span12"><br><br>
+                <h4>Cómo obtnerer tu presupuesto.</h4>
+                    <br>
+                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>pasospresu.png"/>
                     </div>
         </div>
 
                 
         <div class="span12 row" id="material" ><!-- PASO 1 MATERIAL-->
                     <div class="span2 pasos" >
-                        <div class="span6 titulopcion">Material
+                        <div class="span6 titulopcion"><h2>Material</h2>
                         </div>
 
                        <div class="span6" id="pregunta1">
@@ -141,7 +147,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         <div class="span12 row" id="tipo_piezas"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
 
                     <div class="span2 pasos" >
-                        <div class="span6 titulopcion">Formato<br>
+                        <div class="span6 titulopcion"><h2>Formato</h2>
                         </div>
 
                         <div class="span6" id="pregunta2">
@@ -188,7 +194,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         <div class="span12" id="terminaciones"><!--PASO 3-->
 
             <div class="span2 pasos" >
-                <div class="span6 titulopcion">Acabado</div>
+                <div class="span6 titulopcion"><h2>Acabado</h2></div>
 
                 <div class="span6" id="pregunta3">
                     <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
@@ -231,7 +237,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         <div class="span12" id="destino" ><!--PASO 4-->
 
             <div class="span2 pasos" >
-                <div class="span6 titulopcion">Destino
+                <div class="span6 titulopcion"><h2>Destino</h2>
                 </div>
 
                 <div class="span6" id="pregunta4">
@@ -270,7 +276,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
         <div class="span12" id="cantidad"><!--PASO 5-->
             <div class="span2 pasos" >
-                <div class="span6 titulopcion">Cantidad</div>
+                <div class="span6 titulopcion"><h2>Cantidad</h2></div>
 
                 <div class="span6" id="pregunta4">
                     <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
@@ -410,27 +416,36 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                                     <td align="right" colspan="2" >
                                         <em>Canto</em> 
                                         <!--crear que si es largo libre no salga el tamaño-->
-                                        <?php  if( $pieza->id_tipo_canto== 2 ){
-                                            echo ' de ' . $pieza->tamano->cantocorto * 100 . 'cm.';
+                                      <?php   
 
-                                         }else{ echo ' de ' . $pieza->tamano->cantolargo * 100 . 'cm. ';
-                                         } ?>
-                                        <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacioncanto->nombre . ".";  
-                                         }else{
 
-                                            if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
-                                                echo "Pulido";
-                                            }else{
-                                                echo "Apomazado";
-                                            }        
+                  if( $pieza->id_tipo_canto== 1 ){
+                  echo 'largo ' . $pieza->tamano->cantolargo * 100 . ' cm.';
 
-                                        }  ?> 
-                                         <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacioncanto->precio . " €/m" ;
-                                         }else{
-                                         echo "";
-                                        }  ?> 
+
+                 }
+
+                 if( $pieza->id_tipo_canto== 2 ){ 
+
+                   echo 'corto ' . $pieza->tamano->cantocorto * 100 . ' cm. ';
+                 } 
+
+                 ?>
+
+
+
+                 <?php if( $pieza->id_pieza == 1 ){
+                  echo "- " . $pieza->terminacioncanto->nombre . ".";  
+                  }else{
+
+                  if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
+
+                   echo "- Pulido";
+                  }else{
+                    echo "- Apomazado";
+                  }        
+
+                 }  ?>  
                                     </td>
 
                                     <td align="right"  style="padding-right:5px">
@@ -584,7 +599,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             <?php endif; ?>
         </div>
         <?php if (isset($presupuesto) ): ?>
-        <div class="span11">
+        <div class="span11"><img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
         <strong>Finalizar presupuesto</strong><br>
         <p>Introduzca su nombre y su email. Le enviaremos un Pdf del presupuesto a su email. El teléfono es opcional, incluyalo si quiere que nos pongamos en contacto más rapidamente.</p></div>
         <div class="span4">
@@ -609,7 +624,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             echo $form2->textField($presupuesto,'informacion_adicional'); ?>
 
 
-            <div id="botonpresu" style="display:none">
+            <div id="botonpresu">
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
             </div>
             <?php $this->endWidget(); ?>
@@ -745,7 +760,7 @@ $(document).ready(function($){
         });
     });
 
-    $("#Presupuesto_email").keyup(function(){
+  /*  $("#Presupuesto_email").keyup(function(){
         
 
         if(parseInt($("#Presupuesto_email").val()) != null){
@@ -753,7 +768,7 @@ $(document).ready(function($){
         }else{
             $("#botonpresu").fadeOut('slow');
         }
-        });
+        });*/
     
 
 });

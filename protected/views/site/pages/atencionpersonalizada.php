@@ -17,10 +17,11 @@ Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,
 
 <div class="clearfix">&nbsp</div>
 
-<div class="span6">
+<div class="span6 aten">
 <p>
 ​Las siguientes personas (cuyos talleres pertenecen a la plataforma proSton), se desplazarán hasta su domicilio cuando deban medir y/o colocarar sus pedidos.
-<br><br>
+
+<h2>Lista de profesionales en proSton.es</h2>
 <strong>Santiago</strong>  <font color="#134263"> (Allariz)</font>.  Gestiona las consultas de Galicia.
 <br>
 <strong>Gerardo</strong><font color="#134263"> (León)  </font>. Gestiona las consultas de Asturias y Castilla Leon

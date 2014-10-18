@@ -28,7 +28,7 @@ Yii::app()->clientScript->registerMetaTag("Interiorismo, Cocinas, Baños, Pedido
 	</div></a>
 	<div class="span6">
 		<div class="span12">
-			<h1><font size="5" >Materiales para decorar su domicilio, en especial las cocinas y los baños</font></h1>
+			<h1><font size="5" >Materiales para decorar su domicilio. Cocinas y los baños</font></h1>
 		</div>
 		<!--<div class="span3">
 			<img   alt="" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/segmentos/reformas.jpg">

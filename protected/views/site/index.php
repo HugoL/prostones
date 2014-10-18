@@ -1,25 +1,25 @@
 <?php
 	/* @var $this SiteController */
-	$this->pageTitle='proSton.es - Mármoles y Granitos - Venta de Mármol y Granito de calidad.';
+	$this->pageTitle='proSton.es - Mármoles y Granitos. Venta de materiales de calidad.';
 	Yii::app()->clientScript->registerMetaTag("Venta de materiales ornamentales Mármol, Granito, Caliza, Travertinos, etc", 'description');
 	Yii::app()->clientScript->registerMetaTag(" Marmol , Granito ,Presupuesto, Reformas,Diseñador, Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Granito proston,  Marmolistas", 'keywords');
 	
 ?>
 
 
-<div class="clearfix">&nbsp</div>
-<div class="span12 tituloweb" align="center" >
+<div class="clearfix">&nbsp;</div>
+<div class="span12 tituloweb">
      
-<p><h1><strong>El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</strong></h1></p>
+<h1>El portal de internet para adquirir mármoles, granitos y otras rocas ornamentales a precios de fábrica.</h1>
 
 </div>
 
 
 <div class="span12">
 
-	<div class="span10">
+	<div class="span10" >
 
-		<div class="span12" align="center" id="menusegmentos">
+		<div class="span12"  id="menusegmentos">
 
 			<div class="span9 "><!-- BOTONES PRINCIPAL-->
 
@@ -54,7 +54,7 @@
 				<div class="span3 enl" style=" margin-left:2%;">  
 					<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=mamposteria_urbanizacion">
 					<figure>	
-					<img alt="Mamposteria / Urbanización - proSton.es" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
+					<img alt="Mampostería / Urbanización - proSton.es" class="thumbnail" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru2.jpg';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/constru.jpg';"/>
 					</figure>
 					</a>
 			
@@ -72,7 +72,7 @@
 			</div><!--FIN BOTON ?-->
 		</div>
 
-		<div class="clearfix">&nbsp</div>
+		<div class="clearfix">&nbsp;</div>
 
 		<div class="span12">
 
@@ -82,7 +82,7 @@
 
 					<div id="mySlides">
 
-						<div id="slide1 " class="slide">    
+						<div id="slide1" class="slide">    
 					
 							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
 					
@@ -114,7 +114,7 @@
 							<img   src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>3.jpg" alt="Presupuesto online - proSton.es" />
 						    </figure>
 							<div class="slideContent"><h2>Presupuesto online</h2>
-								<p>Valora rapidamente tus proyectos.</p>
+								<p>Valora rápidamente tus proyectos.</p>
 							</div>
 						
 						</div>
@@ -126,7 +126,7 @@
 					
 						<div id="slide4" class="slide">
 							<figure>
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>4.jpg" alt="Transporte a domicilo - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>4.jpg" alt="Transporte a domicilio - proSton.es" />
 							</figure>
 						
 							<div class="slideContent">
@@ -168,12 +168,12 @@
 
 			<div class="span3 prenl"> <!--TEXTO ?-->
 				<div class="span9 enl2" >  
-					<strong>¿No ha encontrado lo que necesita?.</strong><p align="justify"><em>Consultenos, proSton.es puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
+					<strong>¿No ha encontrado lo que necesita?.</strong><p><em>Consúltenos, proSton.es puede suministrar todas sus</em> <strong>ideas</strong> o <strong> proyectos</strong>.</p>
 				
 
-					<strong>¿Necesita que le coloquen un material?</strong> <p align="justify"><em>Disponemos de profesionales en toda España que le pasaran presupuestos de colocación.</em></p>
-						
-					</p>				
+					<strong>¿Necesita colocar un material?</strong> <p><em>Disponemos de un equipo de  profesionales por toda la geografía española para su instalación.</em></p>
+					<br>	
+									
 				</div>
 			</div><!--FIN TEXTO ?-->
 
@@ -182,15 +182,15 @@
 
 
 	<div class="span2 ofertas" style="display:block;"><!--OFERTAS-->
-		<div class="span6 offset3 titofertas" align="center">
+		<div class="span6 offset3 titofertas">
 			<h2>Ofertas</h2>
 		</div>
 
 		
 		<div class="span12 cuerofertas oferta" id="oferta1">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Emperador Claro</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Emperador Claro</strong>
 					</div>
 
 					<div class="span12">
@@ -201,12 +201,12 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2">40x30x2</font><br>
+				<p>
+				40x30x2<br>
 				
 
-				<font size="4" class="arriba" >9,00 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<span class="texto24 arriba" >9,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 					
 				</div>
 
@@ -218,8 +218,8 @@
 
 		<div class="span12 cuerofertas oferta" id="oferta2">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Emperador Claro</strong>
+			<div class="span12" style="margin-bottom:-10px" >
+			Mármol.<strong> Emperador Claro</strong>
 					</div>
 
 					<div class="span12">
@@ -230,11 +230,11 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2">60x30x2</font><br>
+				<p>
+				60x30x2<br>
 				
-				<font size="4" class="arriba" >16 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<span class="texto24 arriba" >16,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 					
 				</div>
 
@@ -245,8 +245,8 @@
 		
 		<div class="span12 cuerofertas oferta" id="oferta3" >
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Emperador Claro</strong>
+			<div class="span12" style="margin-bottom:-10px" >
+			Mármol.<strong> Emperador Claro</strong>
 					</div>
 
 					<div class="span12">
@@ -257,10 +257,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2">60x40x2</font><br>
-				<font size="4" class="arriba" >16,65 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<p>
+				60x40x2<br>
+				<span class="texto24 arriba" >16,65 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 					
 				</div>
 
@@ -270,8 +270,8 @@
 		
 		<div class="span12 cuerofertas oferta " id="oferta4" >
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Beige Levante</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Beige Levante</strong>
 					</div>
 
 					<div class="span12">
@@ -282,10 +282,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x30x2</font><br>
-				<font size="4" class="arriba" >12,10 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<p>
+				60x30x2<br>
+				<span class="texto24 arriba" >12,10 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 				
 					
 				</div>
@@ -296,8 +296,8 @@
 		
 		<div class="span12 cuerofertas oferta" id="oferta5" >
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Crema Levante</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Crema Levante</strong>
 					</div>
 
 					<div class="span12">
@@ -308,10 +308,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2">40x30x2</font><br>
-				<font size="4" class="arriba" >12,10 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<p>
+				40x30x2<br>
+				<span class="texto24 arriba" >12,10 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 				
 					
 				</div>
@@ -322,8 +322,8 @@
 		
 		<div class="span12 cuerofertas oferta" id="oferta6" >
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Rosa Zarci</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Rosa Zarci</strong>
 			</div>
 
 			<div class="span12">
@@ -334,10 +334,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2">60x30x2</font><br>
-				<font size="4" class="arriba" >13,30 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<p>
+				60x30x2<br>
+				<span class="texto24 arriba" >13,30 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 				
 					
 				</div>
@@ -349,8 +349,8 @@
 
 		<div class="span12 cuerofertas oferta" id="oferta7">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Blanco Macael</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Blanco Macael</strong>
 					</div>
 
 					<div class="span12">
@@ -361,10 +361,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 40x20x2</font><br>
-				<font size="4" class="arriba" >11 </font>€/m<sup>2</sup><br>
-				<font size="1">(en bruto)</font></p>
+				<p>
+				40x20x2<br>
+				<span class="texto24 arriba" >11,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 				
 				
 					
@@ -374,8 +374,8 @@
 		</div>	
 		<div class="span12 cuerofertas oferta" id="oferta8">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Blanco Macael</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Blanco Macael</strong>
 					</div>
 
 					<div class="span12">
@@ -386,10 +386,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 40x30x2</font><br>
-				<font size="4" class="arriba" >17 </font>€/m<sup>2</sup><br>
-				<font size="1">(En bruto)</font></p>
+				<p>
+				40x30x2<br>
+				<span class="texto24 arriba" >17,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(En bruto)</span></p>
 				
 				
 					
@@ -400,8 +400,8 @@
 
 		<div class="span12 cuerofertas oferta" id="oferta9">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Rojo Coralito</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Rojo Coralito</strong>
 					</div>
 
 					<div class="span12">
@@ -412,10 +412,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 40x30x2</font><br>
-				<font size="4" class="arriba" >11 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				40x30x2<br>
+				<span class="texto24 arriba" >11,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -426,8 +426,8 @@
 
 		<div class="span12 cuerofertas oferta" id="oferta10">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Marrón Emperador</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Mármol.<strong> Marrón Emperador</strong>
 					</div>
 
 					<div class="span12">
@@ -438,10 +438,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 40x30x2</font><br>
-				<font size="4" class="arriba" >18 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				40x30x2<br>
+				<span class="texto24 arriba" >18,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -455,8 +455,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta21">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>G687</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> G687</strong>
 					</div>
 
 					<div class="span12">
@@ -467,10 +467,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x1,5</font><br>
-				<font size="4" class="arriba" >13,75 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x1,5<br>
+				<span class="texto24 arriba" >13,75 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -481,8 +481,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta22">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>G687</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> G687</strong>
 					</div>
 
 					<div class="span12">
@@ -493,10 +493,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x2</font><br>
-				<font size="4" class="arriba" >15,40 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x2<br>
+				<span class="texto24 arriba" >15,40 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -507,8 +507,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta23">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>G687</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> G687</strong>
 					</div>
 
 					<div class="span12">
@@ -519,10 +519,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x3</font><br>
-				<font size="4" class="arriba"> 21,00 </font>€/m<sup>2</sup><br>
-				<font size="1">(Flameado)</font></p>
+				<p>
+				60x40x3<br>
+				<span class="texto24 arriba"> 21,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Flameado)</span></p>
 				
 				
 					
@@ -533,8 +533,8 @@
 				
 		<div class="span12 cuerofertas oferta2" id="oferta24">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>G664</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> G664</strong>
 					</div>
 
 					<div class="span12">
@@ -545,10 +545,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x2</font><br>
-				<font size="4" class="arriba" >16,20 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x2<br>
+				<span class="texto24 arriba" >16,20 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -559,8 +559,8 @@
 						
 		<div class="span12 cuerofertas oferta2" id="oferta25">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>G664</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> G664</strong>
 					</div>
 
 					<div class="span12">
@@ -571,10 +571,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x2</font><br>
-				<font size="4" class="arriba" >17,00 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x2<br>
+				<span class="texto24 arriba" >17,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -585,8 +585,8 @@
 				
 		<div class="span12 cuerofertas oferta2" id="oferta26">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Gris Parga</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> Gris Parga</strong>
 					</div>
 
 					<div class="span12">
@@ -597,10 +597,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x1,5</font><br>
-				<font size="4" class="arriba" >18,90 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x1,5<br>
+				<span class="texto24 arriba" >18,90 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -610,8 +610,8 @@
 		</div>
 		<div class="span12 cuerofertas oferta2" id="oferta27">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Gris Parga</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> Gris Parga</strong>
 					</div>
 
 					<div class="span12">
@@ -622,10 +622,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x2</font><br>
-				<font size="4" class="arriba" >19,80 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x2<br>
+				<span class="texto24 arriba" >19,80 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -636,8 +636,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta28">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Rosa Porriño</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> Rosa Porriño</strong>
 					</div>
 
 					<div class="span12">
@@ -648,10 +648,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x1,5</font><br>
-				<font size="4" class="arriba" >20,00 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x1,5<br>
+				<span class="texto24 arriba" >20,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -662,8 +662,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta29">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Mondariz</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> Mondariz</strong>
 					</div>
 
 					<div class="span12">
@@ -674,10 +674,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x1,5</font><br>
-				<font size="4" class="arriba" >22,00 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x1,5<br>
+				<span class="texto24 arriba" >22,00 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -688,8 +688,8 @@
 
 		<div class="span12 cuerofertas oferta2" id="oferta210">
 			
-			<div class="span12" style="margin-bottom:-10px" align="center">
-			<strong>Gran Perla</strong>
+			<div class="span12" style="margin-bottom:-10px">
+			Granito.<strong> Gran Perla</strong>
 					</div>
 
 					<div class="span12">
@@ -700,10 +700,10 @@
 				</div>
 
 				<div class="span7">
-				<p align="center">
-				<font size="2"> 60x40x1,5</font><br>
-				<font size="4" class="arriba" >22,15 </font>€/m<sup>2</sup><br>
-				<font size="1">(Pulido)</font></p>
+				<p>
+				60x40x1,5<br>
+				<span class="texto24 arriba" >22,15 </span>€/m<sup>2</sup><br>
+				<span class="textodiez">(Pulido)</span></p>
 				
 				
 					
@@ -711,10 +711,10 @@
 
 			</div>
 		</div>
-		<div class="span12" ><font size="1">* Ofertas a partir de 100 m<sup>2</sup></font></div>
+		<div class="span12" ><span class="textodiez">* Ofertas a partir de 100 m<sup>2</sup></span></div>
 
-		<div class="span12" align="center">
-			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=ofertas" style="background-color:#134263;padding:3px;border:1px solid black;"><font size="2" color="white">Ver mas ofertas</font></a>
+		<div class="span11 vermasofertas" >
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=ofertas"><span class="textoblanco">Ver más ofertas</span></a>
 		</div>
 	
 	</div><!--FIN OFERTAS-->
@@ -748,16 +748,16 @@
 					<img alt="Servicio Diseñador virtual - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit">
 					<div class="arriba">
-						<h3><font>Diseñador</font></h3>
+						<h3>Diseñador</h3>
 					</div>
 					<div class="abajo">
-						<h3><font>virtual</font></h3>
+						<h3>virtual</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p><em>Conviertase en su decorador, utilice nuestros escenarios.</em></p>
+					<p><em>Conviértase en su decorador, utilice nuestros escenarios.</em></p>
 				</div>
 			</div>
 
@@ -772,12 +772,12 @@
 					<img alt="Servicio Presupuesto online - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit" >
 					<div class="arriba">
-						<h3><font>Presupuesto</font></h3>
+						<h3>Presupuesto</h3>
 					</div>
 					<div class="abajo">
-						<h3><font>online</font></h3>
+						<h3>online</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
@@ -795,12 +795,12 @@
 					<img alt="Servicio Catálogo de materiales - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit" >
 					<div class="arriba">
-						<h3><font>Catálogo</font></h3>
+						<h3>Catálogo</h3>
 					</div>
 					<div class="abajo">
-						<h3><font>de materiales</font></h3>
+						<h3>de materiales</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
@@ -820,12 +820,12 @@
 					<img alt="Servicio Transporte a domicilio - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit" >
 					<div class="arriba">
-						<h3><font>Transporte</font></h3>
+						<h3>Transporte</h3>
 					</div>
 					<div class="abajo">
-						<h3><font>a domicilio</font></h3>
+						<h3>a domicilio</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
@@ -843,12 +843,12 @@
 					<img alt="Servicio Tarifas - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit" >
 					<div class="arriba">
-						<h3><font>Tarifas</font></h3>
+						<h3>Tarifas</h3>
 					</div>
-					<div>
-						<br>
+					<div class="abajo">
+						<h3>y ofertas</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
@@ -866,12 +866,12 @@
 					<img alt="Servicio Atención personalizada - proSton.es" style="height:60px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
 					</figure>
 				</div>
-				<div class="span9 cuatit" align="right">
+				<div class="span9 cuatit" >
 					<div class="arriba">
-						<h3><font>Atención</font></h3>
+						<h3>Atención</h3>
 					</div>
 					<div class="abajo">
-						<h3><font>personalizada</font></h3>
+						<h3>personalizada</h3>
 					</div>
 				</div>
 				<div class="span12 parr">
@@ -894,8 +894,8 @@
 	
 								
 
-								<div class="clearfix">&nbsp</div>
-								<div class="clearfix">&nbsp</div>
+								<div class="clearfix">&nbsp;</div>
+								<div class="clearfix">&nbsp;</div>
 
 
 
@@ -905,7 +905,7 @@
 								-moz-border-radius: 4px;
 								border-radius: 4px;">  
 								<div class="titulo " style="width:20%;"><p>Plataforma proSton</p></div>
-								<div class="clearfix">&nbsp</div>
+								<div class="clearfix">&nbsp;</div>
 								
 								<div class="plat"  >  
 									<figure>
@@ -915,19 +915,19 @@
 								</div>  
 								<div class="plat" > 
 									<figure> 
-									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/leon.jpg" width="116px" height="60px" alt="Taller Asturias - Castilla León "  >
+									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/leon.jpg" alt="Taller Asturias - Castilla León "  >
 									<figcaption>Asturias<br>Castilla León</figcaption>
 									</figure>
 								</div>  
 								<div class="plat" >
 									<figure>  
-									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/guipozcoa.jpg" width="116px" height="60px" alt="Taller Cantabria - Pais Vasco - proSton.es" >
-									<figcaption>Cantabria<br>Pais Vasco</figcaption>
+									<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/guipozcoa.jpg" alt="Taller Cantabria - País Vasco - proSton.es" >
+									<figcaption>Cantabria<br>País Vasco</figcaption>
 									</figure>
 								</div>  
 								<div class="plat"> 
 									<figure> 
-									<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logrono.jpg" width="116px" height="60px"  alt="Taller La Rioja - Navarra - proSton.es" >
+									<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logrono.jpg"   alt="Taller La Rioja - Navarra - proSton.es" >
 									<figcaption>La Rioja<br>Navarra</figcaption>
 								</figure>
 								</div>  
@@ -981,14 +981,14 @@
 								</div>
 
 
-								<div class="clearfix">&nbsp</div>          
+								<div class="clearfix">&nbsp;</div>          
         				   </div>
 
 
 
 
 
-							<div class="clearfix"></div>
+							<div class="clearfix">&nbsp;</div>
 
 							<!--<div id="caja_flotante">
   								<div id="cont_caja_flotante" >
@@ -998,7 +998,7 @@
   								</div>
 							</div>-->
 
-<script async type="text/javascript">
+<script type="text/javascript">
 							
 $(document).ready(function () {
 
@@ -1095,7 +1095,7 @@ $(document).ready(function () {
 	});
 
 </script>
-
+<!--
 <script type='text/javascript'>
 //<![CDATA[
 $(document).ready(function() {
@@ -1114,4 +1114,4 @@ $(document).ready(function() {
   });
 });
 //]]>
-</script>
+</script>-->
