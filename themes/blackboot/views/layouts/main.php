@@ -104,8 +104,8 @@ Yii::app()->clientscript
 						
 			</div><!--/.nav-collapse -->
 
-			<div class="telefonodiv" > <img alt="Email y teléfono - www.proston.es" class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
-
+			<div class="telefonodiv" id="telediv" > <img alt="Email y teléfono - www.proston.es" class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></div>
+			<div class="telefonodiv2" id="telediv2" style="display:none"> <img alt="Email y teléfono - www.proston.es" class="brand telefono" src="<?php echo Yii::app()->baseUrl; ?>/images/telefono2.png" /></div>
 
 		</div>
 	</div>

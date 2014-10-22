@@ -61,7 +61,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                     </div>
 
                     <div  class="span12"><br><br>
-                <h4>Cómo obtnerer tu presupuesto.</h4>
+                <h4>Cómo obtener tu presupuesto.</h4>
                     <br>
                     <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>pasospresu.png"/>
                     </div>

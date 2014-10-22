@@ -126,9 +126,9 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
                     <tr id="titulo">
                         <th align="center" >Pavimiento exterior</th>
                         <th align="center" >Pavimiento interior</th>
-                        <th align="center" >Transito bajo</th>
-                        <th align="center" >Transito medio</th>
-                        <th align="center">Transito intenso</th>
+                        <th align="center" >Tránsito bajo</th>
+                        <th align="center" >Tránsito medio</th>
+                        <th align="center">Tránsito intenso</th>
                         <th align="center" >Revestimiento interior</th>
                         <th>Revestimiento exterior</th>
                         <th>Encimeras</th>

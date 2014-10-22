@@ -685,6 +685,7 @@ font-size: 15px;
 
 
 }
+
 .caracteristicas img{
   border:1px solid black;
 
@@ -716,9 +717,10 @@ font-size: 15px;
 #etiquetazul{
   font-size: 13px;
   background-color: #e8e8e8;
-  border-bottom:1px solid #c4c4c4;
+  border:1px solid #c4c4c4;
    font-weight: bold;
   color: #134263;
+  padding-right:2px;
 }
 #black{
   color:black;
@@ -911,9 +913,10 @@ background-color:white;
 }
 
 .botonsegmentos{
-  border: 1px solid black;
+  border: 1px solid grey;
   text-align:   center;
   padding: 5px;
+  color:black;
 }
 
 .botonsegmentos:hover{
@@ -1016,7 +1019,9 @@ border:1px solid orange;
   
 }
   
-
+.telefonodiv2{
+  display:none;
+}
 
   
 
@@ -1034,7 +1039,9 @@ border:1px solid orange;
  display:none;
 }
 
-
+.telefonodiv2{
+  display:none;
+}
 }
 
 
@@ -1054,16 +1061,26 @@ border:1px solid orange;
   margin-top:5px;
   float:left;
 }*/
-
-.telefono{
-  width:190px;
-  height: 33px;
+#telediv{
+  display:none;
 }
+#telediv2{
+  display:block !important;
+}
+.telefono{
+  width:118px;
+  height: 50px;
+  margin-top:0px;
+ /* margin-right:20px !important;*/
+}
+/*Que aparezca la nueva del telefono*/
+
 #menu-top li{
-  width:83px;
+  width:90px;
 }
 #menu-top li a{
-  width:50%;
+ /* width:50%;*/
+ height:28px;
   text-align: center;
   line-height: 10px;
 }
@@ -1090,6 +1107,31 @@ height:50px;
 
  select{
   width:150px;
+}
+
+#titulo th{
+	font-size:9px;
+	line-height:14px;
+}
+
+.contact1024{
+  width:65% !important;
+}
+
+#pdf{
+  font-size: 10px !important;
+}
+#oferesp{
+  font-size: 10px !important;
+}
+td{
+  font-size: 10px !important;
+}
+
+.plat {
+  width:60px !important;
+  min-width: 60px !important;
+  height:72px !important;
 }
 }
 
@@ -1133,7 +1175,13 @@ height:50px;
   font-size: 11px;
 }
 
-
+.telefonodiv2{
+  display:none;
+}
+#titulo th{
+	font-size:9px;
+	line-height:14px;
+}
 }
 
 @media screen and (min-width: 1236px) and (max-width: 1355px) {
@@ -1149,16 +1197,31 @@ height:50px;
   height:28px;
   margin-top:10px;  
     }
+    .telefonodiv2{
+  display:none;
+}
+#titulo th{
+	font-size:9px;
+	line-height:14px;
+}
 }
 
 
-@media screen and (min-width: 1356px) and (max-width: 1600px) {
+@media screen and (min-width: 1356px) and (max-width: 1400px) {
 
  #caja_flotante{
     display: none;
   }
  #logomini{
  display:none;
+}
+.telefonodiv2{
+  display:none;
+  
+}
+#titulo th{
+	font-size:9px;
+	line-height:14px;
 }
 }
 

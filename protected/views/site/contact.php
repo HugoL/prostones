@@ -24,7 +24,7 @@ Yii::app()->clientScript->registerMetaTag("Contacto, formulario,  Marmol , Grani
 <p>
 Si desea colocar un material o desea desarrollar una idea consultenos. Nos comprometemos a responderte en el menor tiempo posible.</p>
 </div>
-<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp;</div>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -43,7 +43,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 	<div class="span12 form_contacto">
 		<div class="span4 ">
 			<div><h2>Asunto de la consulta</h2></div>
-			<div class="row" id"pregunta1">			
+			<div class="row">			
 			<div>Diganos que necesita.</div>
 			<?php // echo $form->labelEx($model,'Seleccione que necesita'); ?>
 			<?php echo	$form->dropDownList($model,'subject',array('Reforma'=>'Reforma','Colocación'=>'Colocación','Pedir Material'=>'Pedir Material','Incidencia'=>'Incidencia','Sugerencia'=>'Sugerencia','Otros'=>'Otros'), array('options' => array('1'=>array('selected'=>true))));?>
@@ -77,7 +77,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 		</div>
 
 
-		<div class="span6">
+		<div class="span6 contact1024">
 			<div class="span4"><h3>Datos de contacto</h3>(Los campos con * son obligatorios.)</div>
 
 			<div class="row span12">
@@ -160,24 +160,20 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 		<?php echo CHtml::submitButton('Enviar'); ?>
 	</div>
 		</div>
-	</div>	
+		
 	
 
 	
 
-<?php $this->endWidget(); ?>
-<div class="clearfix">&nbsp</div>
+<?php $this->endWidget();?>
+
+<div class="clearfix">&nbsp;</div>
 </div><!-- form -->
 
 <?php endif; ?>
 
 
 <script>
-
-
-
-
-
 
 $(document).ready(function($){
 	 $("#ContactForm_subject").change(function(){
@@ -201,14 +197,7 @@ $(document).ready(function($){
         
      
     });
-
-
-
-
 });
-
-
-
 
 </script>
 
