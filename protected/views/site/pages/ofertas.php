@@ -12,8 +12,12 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 ?>
 
 <div class="span1 iconoser">
-			<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/ofertas.png">
-			</div class="span10"><h1>Ofertas.</h1> 
+	<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/ofertas.png">
+
+</div>
+<div class="span10">
+	<h1>Ofertas.</h1> 
+</div>
 
 <div class="clearfix">&nbsp</div>
 
@@ -27,7 +31,9 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 		
 
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Emperador Claro</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
 			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/emperador_claro.jpg">
 			</figure>
@@ -35,25 +41,25 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 
 			<div class="span4">
 			<p align="center">
-			<h3>Emperador Claro</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >9,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">9,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
 
 			<div class="clearfix">&nbsp</div>
 
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Emperador Claro</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
 			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/emperador_claro.jpg">
 			</figure>
@@ -61,28 +67,30 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 
 			<div class="span4">
 			<p align="center">
-			<h3>Emperador Claro</h3>
 			Baldosas de <strong>60x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >16,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">16,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
+
 
 	
 
 		<div class="clearfix">&nbsp</div>
 
 
+
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Emperador Claro</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
 			<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/emperador_claro.jpg">
 			</figure>
@@ -90,27 +98,28 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 
 			<div class="span4">
 			<p align="center">
-			<h3>Emperador Claro</h3>
 			Baldosas de <strong>60x40x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >16,65 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">16,65 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
 
+
+		
 		
 		<div class="clearfix">&nbsp</div>
 
-
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Beige Levante</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
 			<img alt="Oferta Marmol Beige Levante - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/beige_levante.jpg">
 			</figure>
@@ -118,227 +127,186 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 
 			<div class="span4">
 			<p align="center">
-			<h3>Beige Levante</h3>
 			Baldosas de <strong>60x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >12,10 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">12,10 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
 
+
+
+<div class="clearfix">&nbsp</div>
+
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Crema Levante</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Marmol Beige Levante - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/crema_levante.jpg">
+			<img alt="Oferta Marmol Crema Levante - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/crema_levante.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Crema Levante</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >12,10 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">12,10 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
-		
-		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+
+<div class="clearfix">&nbsp</div>		
+
+				<div class="span11 ofertaindividual" id="oferta1">
+			<div class="span12"><h3>Rosa Zarci</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Mármol rosa Zarci - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rosa_zarci.jpg">
+			<img alt="Oferta Marmol Rosa Zarci - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rosa_zarci.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Rosa Zarci</h3>
 			Baldosas de <strong>60x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >13,30 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">13,30 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
 
-
+<div class="clearfix">&nbsp</div>			
+		
 
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Blanco Macael</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Mármol Blanco Macael- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
+			<img alt="Oferta Marmol Blanco Macael - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Blanco Macael</h3>
 			Baldosas de <strong>40x20x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >11,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">11,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
 
-		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+	
+<div class="clearfix">&nbsp</div>	
+
+	<div class="span11 ofertaindividual" id="oferta1">
+			<div class="span12"><h3>Blanco Macael</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Mármol Blanco Macael- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
+			<img alt="Oferta Marmol Blanco Macael - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/blanco_macael.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Blanco Macael</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara en bruto)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >17,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">17,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
-		</div>
+			</div>
+		</div>		
+<div class="clearfix">&nbsp</div>	
 
-		
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Rojo Coralito</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Mármol Rojo Coralito - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rojo_coralito.jpg">
+			<img alt="Oferta Marmol Rojo Coralito - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/rojo_coralito.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Rojo Coralito</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara pulida)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >11,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">11,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
-				
-		
+<div class="clearfix">&nbsp</div>
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>Marrón Emperador</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
-			<img alt="Oferta Mármol Rojo Coralito - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/marron_emperador.jpg">
+			<img alt="Oferta Marmol Marrón Emperador - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/marron_emperador.jpg">
 			</figure>
 			</div>
 
 			<div class="span4">
 			<p align="center">
-			<h3>Marrón Emperador</h3>
 			Baldosas de <strong>40x30x2</strong><br>
-			<span id="textodiez">(Terminación de cara pulida)</span></p>
+			<span id="textodiez">(Cara en bruto)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >18,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">18,00 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
+
 	</div>
 
 	<div class="span6 ofertaseccion">
 
 		<h2>Granitos</h2>
 
-
-
 		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
-			<figure>	
-			<img alt="Oferta Granito G687 Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
-			</figure>
-			</div>
-
-			<div class="span4">
-			<p align="center">
-			<h3>G687</h3>
-			Baldosas de <strong>60x40x1,5</strong><br>
-			<span id="textodiez">(Terminación de cara pulida)</span></p>
-					
-			</div>
-		
-			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >13,75 </span><strong>€/m<sup>2</sup></strong>
-			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
-			<em>Hasta acabar stock</em>
-			</div>
-			
-		</div>
-
-
-		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
-			<figure>	
-			<img alt="Oferta Granito G687- proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
-			</figure>
-			</div>
-
-			<div class="span4">
-			<p align="center">
-			<h3>G687</h3>
-			Baldosas de <strong>60x40x2</strong><br>
-			<span id="textodiez">(Terminación de cara pulida)</span></p>
-					
-			</div>
-		
-			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >15,40 </span><strong>€/m<sup>2</sup></strong>
-			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
-			<em>Hasta acabar stock</em>
-			</div>
-			
-		</div>
-
-		<div class="span11 ofertaindividual" id="oferta1">
-			<div class="span3" style="padding:5px;">
+			<div class="span12"><h3>G687</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
 			<figure>	
 			<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
 			</figure>
@@ -346,21 +314,74 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 
 			<div class="span4">
 			<p align="center">
-			<h3>G687</h3>
-			Baldosas de <strong>60x40x3</strong><br>
-			<span id="textodiez">(Terminación de cara pulida)</span></p>
+			Baldosas de <strong>60x40x1,5</strong><br>
+			<span id="textodiez">(Cara pulida)</span></p>
 					
 			</div>
 		
 			<div class="span5" align="right">
-			<br>
-			<span  class="texto24 arriba" >21,00 </span><strong>€/m<sup>2</sup></strong>
+			<span  class="texto24 arriba">13,75 </span><strong>€/m<sup>2</sup></strong><br>
 			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
 			<em>Hasta acabar stock</em>
 			</div>
-			
+			</div>
 		</div>
+<div class="clearfix">&nbsp</div>
+
+
+		<div class="span11 ofertaindividual" id="oferta1">
+			<div class="span12"><h3>G687</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
+			<figure>	
+			<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+			</figure>
+			</div>
+
+			<div class="span4">
+			<p align="center">
+			Baldosas de <strong>60x40x2</strong><br>
+			<span id="textodiez">(Cara pulida)</span></p>
+					
+			</div>
 		
+			<div class="span5" align="right">
+			<span  class="texto24 arriba">15,40 </span><strong>€/m<sup>2</sup></strong><br>
+			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
+			<em>Hasta acabar stock</em>
+			</div>
+			</div>
+		</div>
+<div class="clearfix">&nbsp</div>
+
+
+<div class="span11 ofertaindividual" id="oferta1">
+			<div class="span12"><h3>G687</h3></div>
+			<div class="span12" style="padding-right:10px;">
+			<div class="span3">
+			<figure>	
+			<img alt="Oferta Granito G687 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
+			</figure>
+			</div>
+
+			<div class="span4">
+			<p align="center">
+			Baldosas de <strong>60x40x3</strong><br>
+			<span id="textodiez">(Cara pulida)</span></p>
+					
+			</div>
+		
+			<div class="span5" align="right">
+			<span  class="texto24 arriba">21,00 </span><strong>€/m<sup>2</sup></strong><br>
+			<span id="textodiez">(a partir de 100 m<sup>2</sup>)</span><br><br>
+			<em>Hasta acabar stock</em>
+			</div>
+			</div>
+		</div>
+<div class="clearfix">&nbsp</div>
+	
+
+
 
 		<div class="span11 ofertaindividual" id="oferta1">
 			<div class="span3" style="padding:5px;">

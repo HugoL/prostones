@@ -20,7 +20,7 @@
           <tr style="border:0px;" >
             <td> 
             17849768C<br>
-            Avda. Jose Antonio Clavé 49 - 9A<br>
+            Avda. Jose Anselmo Clavé 49 - 9A<br>
             50004 Zaragoza<br>
             </td>
           </tr>
@@ -188,13 +188,7 @@
 
                 <td colspan="2">
                  
-
-                
-
-
-                
-
-
+        
                  </td>
 
 
@@ -230,7 +224,12 @@
                  }  ?> 
 
                   <?php $precioter2 =number_format((float)$precioter, 2, '.', '');
-                   echo str_replace(".",",",$precioter2); ?> €
+                     if ($pieza->terminacion->precio == 0 ){
+                    echo ("0");
+                    }else{
+                    echo str_replace(".",",",$precioter2); 
+                    }?> €
+
 
                 </td>
 
@@ -245,7 +244,12 @@
                  }  ?> 
                  <?php 
                   $precioivater2 =number_format((float)$precioivater, 2, '.', '');
-                  echo str_replace(".",",",$precioivater2) ;?> €
+                  if ($pieza->terminacion->precio == 0 ){
+                    echo ("0");
+                  }else{
+                 echo str_replace(".",",",$precioivater2); 
+                  }?> €
+
                 </td>
 
 
@@ -260,8 +264,16 @@
                     
                  }  ?> 
                  <?php 
-                  $precioivater2 =number_format((float)$preciototer, 2, '.', '');
-                  echo str_replace(".",",",$precioivater2) ;?> €
+                  $precioivater3 =number_format((float)$preciototer, 2, '.', '');
+
+                  if ($pieza->terminacion->precio == 0 ){
+                    echo ("0");
+                  }else{
+                 echo str_replace(".",",",$precioivater3); 
+                  }?> €
+
+
+                  
                  </td>
           </tr>
 
@@ -460,15 +472,24 @@
                 
                 <td align="right">
                   <?php $precioterari = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
-                  $precioterari2 =number_format((float)$precioterari, 2, '.', '');
-                   echo str_replace(".",",",$precioterari2); ?> €
+                  $precioterari2 =number_format((float)$precioterari, 2, '.', '');?>
+                   <?php  if ($pieza->terminacionarista->precio == 0 ){
+                    echo ("0");
+                  }else{
+                  echo str_replace(".",",",$preciototerari2); }?> €
+
                 </td>
 
 
                 <td align="right">
                   <?php $precioivaterari = round(((($pieza->terminacionarista->precio * $pieza->tamanoreal))/100)*21,2);
-                  $precioivaterari2 =number_format((float)$precioivaterari, 2, '.', '');
-                  echo str_replace(".",",",$precioivaterari2);  ?> €
+                  $precioivaterari2 =number_format((float)$precioivaterari, 2, '.', '');?>
+                  
+                  <?php  if ($pieza->terminacionarista->precio == 0 ){
+                    echo ("0");
+                  }else{
+                  echo str_replace(".",",",$precioivaterari2); }?> €
+
                 </td>
 
 
@@ -476,7 +497,12 @@
                  <?php $preciototerari= round(($pieza->terminacionarista->precio * $pieza->tamanoreal) + (((($pieza->terminacionarista->precio * $pieza->tamanoreal))/100)*21),2);
                  $preciototerari2 =number_format((float)$preciototerari, 2, '.', '');?>
                  <?php $parista = ($pieza->terminacionarista->precio * $pieza->tamanoreal) + ((($pieza->terminacionarista->precio * $pieza->tamanoreal)/100)*21); ?>
-                 <?php echo str_replace(".",",",$preciototerari2); ?> €
+                 <?php  if ($pieza->terminacionarista->precio == 0 ){
+                    echo ("0");
+                  }else{
+                  echo str_replace(".",",",$preciototerari2); }?> €
+
+
                  </td>
           </tr>
 
@@ -626,7 +652,7 @@
       <div>
         Disponemos de una red de profesionales en toda España dedicados a la instalaciones de marmoles y granitos.</div>
      <div class="span12" style="font-size:10px;">
-        De conformidad con la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, puede ejercer los derechos de acceso, cancelación y rectificación remitiendo carta certificada a nuestras oficinas sitas en Avda. Jose Antonio Clavé 49 - 9A -  50004 Zaragoza.
+        De conformidad con la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, puede ejercer los derechos de acceso, cancelación y rectificación remitiendo carta certificada a nuestras oficinas sitas en Avda. Jose Anselmo Clavé 49 - 9A -  50004 Zaragoza.
      </div>
 
 <!--
@@ -649,7 +675,7 @@
 
 
       <div class="footer">
-        <p>2014 .&copy; proSton.es</p>
+        <p>2014 &copy; proSton.es</p>
       </div>
 
     </div> <!-- /container -->

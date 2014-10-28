@@ -598,7 +598,7 @@ class PresupuestoController extends Controller
 		$to = $presupuestoPdf->email;
 		$cco= 'info@proston.es';		
 		$from = 'info@proston.es';		
-		$subject = 'Presupuesto ' . $presupuestoPdf->id . ' - www.proSton.es';		
+		$subject = 'Presupuesto ' . $presupuestoPdf->id  . ' '. $presupuestoPdf->nombre . ' - www.proSton.es';		
 		$message = 'Este email incluye el presupuesto en pdf creado en www.proston.es';	
 
 		$mPDF1->Output(Yii::getPathOfAlias('webroot.pdfs'). DIRECTORY_SEPARATOR .'presu'. $presupuestoPdf->id .'.pdf', EYiiPdf::OUTPUT_TO_FILE);

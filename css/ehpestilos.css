@@ -1223,5 +1223,11 @@ td{
 	font-size:9px;
 	line-height:14px;
 }
+
+.plat {
+  width:88px !important;
+  min-width: 60px !important;
+  height:75px !important;
+}
 }
 
