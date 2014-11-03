@@ -11,10 +11,10 @@ Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito
 );*/
 ?>
 
-<div class="span1 iconoser">
+<!--<div class="span1 iconoser">
 	<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/ofertas.png">
 
-</div>
+</div>-->
 <div class="span10">
 	<h1>Ofertas.</h1> 
 </div>

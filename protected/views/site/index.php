@@ -927,55 +927,55 @@
 								</div>  
 								<div class="plat"> 
 									<figure> 
-									<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/logrono.jpg"   alt="Taller La Rioja - Navarra - proSton.es" >
+									<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/logrono.jpg"   alt="Taller La Rioja - Navarra - proSton.es" >
 									<figcaption>La Rioja<br>Navarra</figcaption>
 								</figure>
 								</div>  
 								<div class="plat">
 									<figure>  
-									<img   alt="Taller Cataluña - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/mataro.jpg">
+									<img   alt="Taller Cataluña - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/mataro.jpg">
 									 <figcaption>Cataluña</figcaption>
 									</figure>
 								</div>  
 								<div class="plat"> 
 									<figure> 
-									<img   alt="Taller Extremadura - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/extremadura.jpg">
+									<img   alt="Taller Extremadura - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/extremadura.jpg">
 									<figcaption>Extremadura</figcaption>
 									</figure>
 								</div>  
 								<div class=" plat" >
 									<figure>  
-									<img   alt="Taller Aragón -proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/aragon.jpg">
+									<img   alt="Taller Aragón -proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/aragon.jpg">
 									<figcaption>Aragón</figcaption>
 									</figure>
 								</div>  
 								<div class="plat" >  
 									<figure>
-									<img   alt="Taller Madrid - Castilla La Mancha - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/madrid.jpg">
+									<img   alt="Taller Madrid - Castilla La Mancha - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/madrid.jpg">
 									<figcaption>Madrid<br>Castilla-La Mancha</figcaption>
 									</figure>
 								</div>  
 								<div class="plat" >  
 									<figure>
-									<img   alt="Taller Comunidad Valenciana - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/alicante.jpg">
+									<img   alt="Taller Comunidad Valenciana - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/alicante.jpg">
 									<figcaption>Comunidad Valenciana</figcaption>
 									</figure>
 								</div>  
 								<div class="plat">
 									<figure>  
-									<img   alt="Taller Andalucía occidental - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/sevilla.jpg">
+									<img   alt="Taller Andalucía occidental - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/sevilla.jpg">
 									<figcaption>Andalucía occidental</figcaption>
 									</figure>
 								</div>  
 								<div class="plat">
 									<figure>  
-									<img   alt="Taller Andalucía oriental - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/almeria.jpg">
+									<img   alt="Taller Andalucía oriental - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/almeria.jpg">
 									<figcaption>Andalucía oriental</figcaption>
 									</figure>
 								</div>  
 								<div class="plat">  
 									<figure>
-									<img   alt="Taller Albacete - Murcia - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/talleres/murcia.jpg">
+									<img   alt="Taller Albacete - Murcia - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>talleres/murcia.jpg">
 									<figcaption>Albacete<br>Murcia</figcaption>
 									</figure>
 								</div>

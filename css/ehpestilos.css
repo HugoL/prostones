@@ -676,8 +676,8 @@ font-size: 15px;
 #acabadosinfo img{
 
   float:left;
-  width:150px;
-  height:120px;
+  width:107px;
+  height:107px;
  
 }
 .caracteristicas h2{
@@ -748,9 +748,7 @@ float:right;
   margin-right:10px;
 }
 
-.bancos img{
-width:120px;
-}
+
 .infomenu{
   border:1px solid black;border: 1px solid #bbbbbb;
             -webkit-border-radius: 4px;
@@ -988,6 +986,21 @@ border:1px solid orange;
   font-size:16px;
 }
 
+#redes img{
+  margin-left:8px;
+  margin-top:10px;
+
+}
+#redes h4{
+  color:#2D2C2B;
+}
+.bancos img{
+width:120px;
+}
+.bancos h4{
+  color:#2D2C2B;
+}
+
 /********* MOVIL ESTILOS **************/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -1133,6 +1146,9 @@ td{
   min-width: 60px !important;
   height:72px !important;
 }
+#espacioizquierda{
+  margin-left: 40px;
+}
 }
 
 
@@ -1228,6 +1244,9 @@ td{
   width:88px !important;
   min-width: 60px !important;
   height:75px !important;
+}
+#espacioizquierda{
+  margin-left: 40px;
 }
 }
 

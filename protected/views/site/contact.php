@@ -87,7 +87,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 				<?php echo $form->textField($model,'name',array('size'=>8,'maxlength'=>255)); ?>
 				<?php echo $form->error($model,'name'); ?>
 				</div>
-				<div class="row-fluid span4">
+				<div class="row-fluid span4" id="espacioizquierda">
 				<div>Apellidos</div>
 				<?php //echo $form->labelEx($model,'apellidos'); ?>
 				<?php echo $form->textField($model,'apellidos',array('style'=>'width:100%')); ?>
@@ -132,7 +132,7 @@ Si desea colocar un material o desea desarrollar una idea consultenos. Nos compr
 				<?php echo $form->textField($model,'email'); ?>
 				<?php echo $form->error($model,'email'); ?>
 				</div>
-				<div class="span4">
+				<div class="span4" id="espacioizquierda">
 				<div>Telefono</div>
 				<?php //echo $form->labelEx($model,'telefono'); ?>
 				<?php echo $form->textField($model,'telefono'); ?>

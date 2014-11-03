@@ -400,7 +400,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Al corte de disco- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/alcortedisco.jpg">
+				<img   alt="Al corte de disco- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/no.jpg">
 			</figure>
 			</div>
 
@@ -458,7 +458,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Arenado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/arenado.jpg">
+				<img   alt="Arenado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/no.jpg">
 			</figure>
 			</div>
 

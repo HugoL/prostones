@@ -26,7 +26,7 @@ Yii::app()->clientscript
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name=viewport content="width=device-width, initial-scale=1">
 
 <meta name="msvalidate.01" content="9D772A7448CDD4689B4167F238BEB9F3" />
 <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
@@ -144,13 +144,21 @@ Yii::app()->clientscript
 				<div class="container">
 					<div class="row">
 						<div class="span4">
-							<div class="span12">
+							<div class="span12" id="redes">
 							
-								<h4>Síguenos próximamente en:</h4>
-								<img   alt="Facebook - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">
-								<img   alt="Youtube - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">
+								<h4>Síguenos en:</h4>
+								<!--<img   alt="Facebook - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">-->
+
+								<!--<img   alt="Youtube - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">-->
+								<a href="https://twitter.com/proStones" target="blank">
 								<img   alt="Twitter - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
-							
+								</a>
+								<a href="https://www.linkedin.com/company/proston-es" target="blank">
+								<img   alt="Linkedin - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/linkedin.jpg">
+								</a>
+								<a href="https://plus.google.com/103620278599603888414/posts" target="blank">
+								<img   alt="Google +- www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/googleplus.jpg">
+								</a>
 
 							</div>
 							<div class="clearfix">&nbsp;</div>

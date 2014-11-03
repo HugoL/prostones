@@ -68,11 +68,11 @@ class SiteController extends Controller
 					
 				$body = "Contenido: ".$model->body."<br />";
 				/*$body .= "Asunto: ".$subject." ". $model->que." ".$model->donde."<br />";*/
-      			$body .= "Datos de contacton:<br />";
+      			$body .= "Datos de contacto:<br />";
     			$body .= "Nombre: .".$model->name . " " . $model->apellidos."<br />";
-    			$body .= "Dirección: ".$model->direccion."<br />";
+    			$body .= "Direccion: ".$model->direccion."<br />";
     			$body .= "email: ".$model->email."<br />";
-				$body .= "Teléfono: ".$model->telefono."<br />";
+				$body .= "Telefono: ".$model->telefono."<br />";
 				$body .= "Provincia: ".$model->provincia."<br />";
 				$body .= "Codigo postal: ".$model->codigopostal."<br />";
 
