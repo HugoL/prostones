@@ -19,6 +19,12 @@ Yii::app()->clientScript->registerMetaTag("Contacto, formulario,  Marmol , Grani
 	<?php echo Yii::app()->user->getFlash('contact'); ?>
 </div>
 
+	<?php Yii::app()->getClientScript()->registerScript("google contacto finalizado",
+    "
+    CODIGO JAVASCRIPT AQUÍ 
+    ",CClientScript::POS_LOAD)  
+    ?>
+
 <?php else: ?>
 <div class="span4">
 <p>

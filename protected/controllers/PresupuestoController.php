@@ -589,12 +589,8 @@ class PresupuestoController extends Controller
 		$mPDF1->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));		
 
 		# Outputs ready PDF
-		//$this->enviarEmail( $presupuestoPdf->email, $path ); //DESCOMENTAR PARA GENERAR EL PDF	
-		//$email = 'hugoepila@gmail.com';			
-		//$this->enviarEmailYiiMailer( $presupuestoPdf->email );
-		//mail ( "hugoepila@gmail.com" , "presupuesto" , "el presupesto" );
-		$mPDF1->Output();		
-		//$this->render('pdf', array('presupuesto'=>$presupuestoPdf));
+		$mPDF1->Output();	
+
 		$to = $presupuestoPdf->email;
 		$cco= 'info@proston.es';		
 		$from = 'info@proston.es';		
@@ -604,7 +600,7 @@ class PresupuestoController extends Controller
 		$mPDF1->Output(Yii::getPathOfAlias('webroot.pdfs'). DIRECTORY_SEPARATOR .'presu'. $presupuestoPdf->id .'.pdf', EYiiPdf::OUTPUT_TO_FILE);
 		$rutapdf  = Yii::getPathOfAlias('webroot.pdfs'). DIRECTORY_SEPARATOR .'presu'. $presupuestoPdf->id .'.pdf';
 		$this->mailsend($to,$cco,$from,$subject,$message,$rutapdf); 
-
+		$this->render('gracias', array('presupuesto'=>$presupuestoPdf));
 		/*$rutapdf  = Yii::getPathOfAlias('webroot.pdfs') .
           DIRECTORY_SEPARATOR . 'presu' .
          $presupuestoPdf->id . '.pdf';*/
