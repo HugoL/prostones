@@ -780,9 +780,14 @@ th,td {
 .textoblanco{
   color: white;
 }
-
+#naranja{
+  color:#be6413;
+}
 .textodiez{
   font-size: 10px;
+}
+#textonce{
+  font-size: 11px;
 }
 #textodiez{
   font-size: 10px;
@@ -796,7 +801,9 @@ th,td {
   font-weight: bold;
 }
 /*ESTILOS PRESUPUESTO (ir poniendolos debajo) */
-
+#imgpresubot img{
+  padding-right:5px;
+}
 .titulopcion{
  /* font-size:16px;*/
   color:#134263;

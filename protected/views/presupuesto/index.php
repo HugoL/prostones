@@ -20,7 +20,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
 
-    <h1>Presupuesto</h1>
+    <h1>Presupuesto online</h1>
 
     <?php
 //Galeria de imágenes
@@ -51,20 +51,54 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                 <?php echo Yii::app()->user->getFlash('danger'); ?>
             </div>
             <?php endif; ?>
-                    <a href="#"> 
-                    <div class="span2 offset4 ini">
-                       <h2> <li align="center"> Añadir pieza </li></h2>
-                    </div></a>
-                    <div class="span10">
-                        <p>Empezar: Haga click en <strong>Añadir pieza</strong> para obtener un presupuesto <em>sin compromiso</em> alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos. Si no encuentra el material deseado, contactenos para colicitarlo.</p>
-                        <br>
-                    </div>
-
-                    <div  class="span12"><br><br>
-                <h4>Cómo obtener tu presupuesto.</h4>
+                    <div  class="span12">
+                <h4>¿Cómo obtener tu presupuesto con <img  alt="www.proSton.es - Suministro de materiales"  src="<?php echo Yii::app()->baseUrl; ?>/images/logoletra.png" />?</h4>
                     <br>
+                   
                     <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>pasospresu.png"/>
                     </div>
+                    <a href="#"> 
+                    <div class="span4 offset2 ini">
+                       <h2> <li align="center"> Haz <span id="naranja">click</span> para añadir un material al presupuesto</li></h2>
+                    </div>
+                    </a>
+                    <div class="span10" id="imgpresubot">
+                        <!--<p>Para comenzar el presupuesto haga click en <strong>Añadir pieza</strong> para obtener un presupuesto <em>sin compromiso</em> alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos. Si no encuentra el material deseado, contactenos para colicitarlo.</p>-->
+                        <br>
+                        <div class="span2">
+                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/catapresu.png"/>
+                       <p>
+                        <span id="textonce"><strong>Catálogo con las mejores soluciones.</strong></span>
+                        </p>
+                        </div>
+                         <div class="span2">
+                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/enviospresu.png"/>
+                       <p>
+                        <span id="textonce"><strong>Envios a toda España.</strong></span>
+                        </p>
+                        </div>
+                         <div class="span2">
+                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/transpresu.png"/>
+                       <p>
+                        <span id="textonce"><strong>Camiones con grua integrada.</strong></span>            
+                        </p>
+                        </div>
+                         <div class="span2">
+                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/seguridadpresu.png"/>
+                       <p>
+                       <span id="textonce"> <strong>Confianza online y total seguridad.</strong></span>
+                        </p>
+                        </div>
+                         <div class="span2">
+                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/rapidedpresu.png"/>
+                       <p>
+                       <span id="textonce"> <strong>Envio rápido y eficiente.</strong></span>
+                        </p>
+                        </div>
+
+                       
+                    </div>
+                    
         </div>
 
                 
@@ -327,7 +361,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                             echo $form->hiddenField($valorpieza,'id_presupuesto',array('value'=>$idPresupuesto)); ?>
                         </div>
 
-                        <div class="row buttons">
+                        <div class="row buttons" id="nuevomaterial">
                             <?php echo CHtml::submitButton($valorpieza->isNewRecord ? 'Añadir al presupuesto' : 'Añadir al presupuesto'); ?>
                         </div>
                     </div>
@@ -344,7 +378,10 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
                 
         <div id="piezasguardadas" class="span12"><!-- piezas guardadas -->
-            <strong>Tu presupuesto:</strong>
+           <div><img style="float:left; " width="30px;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/compra.png"/></div>
+ <div style="margin-top:5px; margin-left:40px"><strong>Tu presupuesto:</strong>  <span id="textodiez">(Aquí aparecera su material)</span></<div>
+
+           
             <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             $criteria=new CDbCriteria;                      
             $criteria->compare('id_presupuesto',$presupuesto->id);  
@@ -769,6 +806,9 @@ $(document).ready(function($){
             $("#botonpresu").fadeOut('slow');
         }
         });*/
+
+
+
     
 
 });
