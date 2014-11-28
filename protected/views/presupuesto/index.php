@@ -20,7 +20,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
 
-    <h1>Presupuesto online</h1>
+    <h1>Presupuesto online.</h1> 
 
     <?php
 //Galeria de imágenes
@@ -379,7 +379,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                 
         <div id="piezasguardadas" class="span12"><!-- piezas guardadas -->
            <div><img style="float:left; " width="30px;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/compra.png"/></div>
- <div style="margin-top:5px; margin-left:40px"><strong>Tu presupuesto:</strong>  <span id="textodiez">(Aquí aparecera su material)</span></<div>
+ <div style="margin-top:5px; margin-left:40px"><strong>Tu presupuesto:</strong>  <span id="textodiez">(Aquí aparecera su material). Todos los presupuestos son gratuitos y sin ningún tipo de compromiso. Conozca el precio de su material y guarde el pdf para futuras consultas.</span></<div>
 
            
             <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
