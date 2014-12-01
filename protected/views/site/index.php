@@ -91,7 +91,7 @@
 			<div class="span12 cuerofertas oferta" id="oferta2">
 							
 				<div class="span12" style="margin-bottom:-10px">
-						Mármol.<strong>222 Emperador Claro</strong>
+						Granito.<strong>222 Emperador Claro</strong>
 				</div>
 				<div class="span12">
 					<div class="span5" style="padding:5px;">
@@ -154,7 +154,7 @@
 						
 					</div>
 					<div class="span8 individualstock">	
-						<strong>Rojo Coralito</strong><br><br><br>
+						<strong>Rojo Coralito</strong><br><br>
 						<strong><span class="arriba" style="font-size:16px;" >11,00 </span><span style="font-size:10px;">€/m<sup>2</sup></span></strong>
 					</div>
 				</div>	
@@ -172,7 +172,7 @@
 				<div class="span4" style="margin-left:0px; border-right:1px dotted black;">
 					<div class="span4 preciostock">
 						<img heigth="100%" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/granito/G687.jpg">
-						<strong><span class="textodiez">60x30x1'5 (pulido)</span></strong>
+						<strong><span class="textodiez">60x30x1,5 (pulido)</span></strong>
 						
 					</div>
 					<div class="span8 individualstock">	
@@ -310,7 +310,123 @@
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>
 
-<div class=" span12  servicios" >  <!--SERVICIOS-->
+
+
+
+<div class=" span12  servicios" > 
+	<div class="titulo " style="width:10%">
+		<span style="margin-left:10px">Servicios</span><br>
+		<span style="margin-left:70px; color:#bcbcbc ; font-size:20px;">proSton</span>
+	</div>
+	<div class="clearfix">&nbsp;</div>
+
+	<div class="span2">
+		<div align="center">
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=atencionpersonalizada">	
+		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png';"/>
+		</a>
+		</div>
+		<div>
+			<h2><span class="arriba">Atención</span><span class="abajo"> personalizada</span></h2>
+		</div>
+		<div>
+			<p><em>Disponemos de talleres a su servicio muy cerca de usted.</em></p>
+		</div>
+	</div>
+
+	<div class="span2">
+		<div align="center">
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">	
+		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png';"/>
+
+		</a>
+		</div>
+		<div>
+			<h2><span class="arriba">Catálogo</span><span class="abajo"> de materiales</span></h2>
+		</div>
+		<div>
+			<p><em>Vendemos materiales con la mejor relación calidad-precio.</em></p>
+		</div>
+	</div>
+
+	<div class="span2">
+		<div align="center">
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/preciounitario/index">	
+		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png';"/>
+		</a>
+		
+		</div>
+		<div>
+			<h2><span class="arriba">Tarifas</span><span class="abajo"> y ofertas</span></h2>
+		</div>
+		<div>
+			<p><em>Conozca y compare el precio de todas las elaboraciones.</em></p>
+		</div>
+	</div>
+
+	<div class="span2" >
+		<div align="center">
+		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id/12">	
+		<img alt="Servicio Diseñador virtual - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador.png';"/>
+		</a>
+		</div>
+		<div>
+			<h2><span class="arriba">Diseñador</span><span class="abajo"> virtual</span></h2>
+		</div>
+		<div>
+			<p><em>Conviértase en su decorador, utilice nuestros escenarios.</em></p>
+		</div>
+	</div>
+
+
+	<div class="span2">
+		<div align="center">
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/presupuesto">	
+				<img alt="Servicio Presuspuesto online - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png';"/>
+			</a>
+	
+		</div>
+		<div>
+			<h2><span class="arriba">Presupuesto</span><span class="abajo"> online</span></h2>
+		</div>
+		<div>
+			<p><em>Conocerá inmediatamente el coste de sus consultas.</em></p>
+		</div>
+	</div>
+
+	
+
+	<div class="span2">
+		<div align="center">
+			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=transporteadomicilio">	
+			<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png';"/>
+			</a>
+		
+		</div>
+		<div>
+			<h2><span class="arriba">Transporte</span><span class="abajo"> a domicilio</span></h2>
+		</div>
+		<div>
+			<p><em>Facilitamos el seguimiento y el control de su material.</em></p>
+		</div>
+	</div>
+
+	
+
+
+
+	
+
+</div>
+
+<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>
+
+
+
+<!--SERVICIOS
+
+<div class=" span12  servicios" >  
 
 	<div class="titulo " style="width:10%">
 		<p style="margin-left:10px">Servicios</p>
@@ -359,7 +475,8 @@
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p><em>Conocerá inmediatamente el coste de sus consultas.</em></p></div>
+					<p><em>Conocerá inmediatamente el coste de sus consultas.</em></p>
+					</div>
 				</div>
 
 		</a>	
@@ -382,7 +499,8 @@
 					</div>
 				</div>
 				<div class="span12 parr">
-					<p><em>Vendemos materiales con la mejor relación calidad-precio.</em></p></div>
+					<p><em>Vendemos materiales con la mejor relación calidad-precio.</em></p>
+					</div>
 				</div>
 
 		</a>	
@@ -467,7 +585,7 @@
 
 
 
-	</div><!--FIN SERVICIOS-->
+	</div>FIN SERVICIOS-->
 
 	
 								
@@ -482,7 +600,10 @@
 								-webkit-border-radius: 4px;
 								-moz-border-radius: 4px;
 								border-radius: 4px;">  
-								<div class="titulo " style="width:20%;"><p>Plataforma proSton</p></div>
+								<div class="titulo " style="width:10%">
+					<span style="margin-left:10px">Plataforma</span><br>
+		<span style="margin-left:70px; color:#bcbcbc ; font-size:20px;">proSton</span>
+	</div>
 								<div class="clearfix">&nbsp;</div>
 								
 								<div class="plat"  >  
