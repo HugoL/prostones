@@ -175,7 +175,7 @@ line-height: 18px;
 
 #sliderContainer {
  /*width: 726px; */
- height: 340px; 
+ height: 360px; 
  position: relative; 
  border-top: 5px solid #134263;
  border-bottom: 5px solid #134263;
@@ -1013,7 +1013,7 @@ width:120px;
 }
 .proyectossuministrados li{
   font-size: 12px;
-  line-height: 15px;
+  line-height: 17px;
 }
 .botonestop p{
   text-align: center;
@@ -1290,9 +1290,9 @@ td{
   
 }
 #sliderContainer {
-height: 300px;
-top:0px;
-left:15px;
+height: 310px;
+top:30px;
+left:0px;
 margin-right:30px;
   }
 .jFlowNext {  top:80px;}
@@ -1330,6 +1330,12 @@ margin-right:30px;
   text-align: center;
   line-height: 11px;
   
+}
+.arriba{
+  font-size: 20px;
+}
+.abajo{
+  font-size: 14px;
 }
 
 }

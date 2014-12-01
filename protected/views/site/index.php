@@ -41,7 +41,7 @@
 		<div class="clearfix">&nbsp;</div>
 		<div class="span12 proyectossuministrados bordelateralazul" ><!--proyectos sumninistrados-->
 			
-			<strong><span class="texto16" style="color:#1c4a6b">Proyectos sumninistrados</span><span class="textodiez"> (del 10 al 16 de Noviembre de 2014)<br></span></strong>
+			<strong><span class="texto16" style="color:#1c4a6b">Proyectos sumninistrados</span><span class="textodiez"> (del 10 al 16 de Noviembre de 2014)<br><br></span></strong>
 			
 			
 			<div class="span6">
@@ -67,49 +67,77 @@
 		<div class="span12 ofertasprincipal"><!--ofertas-->
 			
 				<div class="span2 stocktitulo"><h2>Ofertas</h2></div>
-			
-
+				
+				<div class="span10 textodiez" style="margin-top:15px">Esta semana proSton.es recomienda:</div>
 		
 			<div class="span12 cuerofertas oferta" id="oferta1">
-							
-				<div class="span12" style="margin-bottom:-10px">
-						Mármol.<strong>Emperador Claro</strong>
-				</div>
-				<div class="span12">
-					<div class="span5" style="padding:5px;">
+				<div class="span5" style="padding:5px;">
 						<figure>	
-							<img style="border: 1px solid black;" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/emperador_claro.jpg">
+							<img  style="border: 1px solid black; height:100px; width:200px;" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/granito/G687.jpg">
 						</figure>
+				</div>
+
+				<div class="span7">
+					<div class"span12">
+					Granito<strong><span style="font-size:22px"> G687<br></span></strong>
 					</div>
-					<div class="span7">
-						<p>40x30x2<span class="textodiez">(En bruto)</span><br>
-						<span class="texto24 arriba" >9,00 </span>€/m<sup>2</sup><br></p>
+					<div class="span12" style:"">
+						<div class="span10" style=";margin-left:0px;">
+						Baldosas de 60x30x1,5<span class="textodiez">(En bruto)</span><br>.
+						
+						</div>
+						 <div class="span10">
+				<span class="texto24 arriba" >13,75 </span>€/m<sup>2</sup>.<br>
+						<span class="textodiez" style="float:right">Los precios no incluyen el IVA.</span>
+					</div>
 						
 					</div>
+
+					
+
 				</div>
+
+
 			</div>
+
 			<div class="span12 cuerofertas oferta" id="oferta2">
-							
-				<div class="span12" style="margin-bottom:-10px">
-						Granito.<strong>222 Emperador Claro</strong>
-				</div>
-				<div class="span12">
-					<div class="span5" style="padding:5px;">
+				<div class="span5" style="padding:5px;">
 						<figure>	
-							<img alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ancha/marmol/emperador_claro.jpg">
+							<img  style="border: 1px solid black; height:100px; width:200px;" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/med/marmol/rojo_coralito.jpg">
 						</figure>
+				</div>
+
+				<div class="span7">
+					<div class"span12">
+					Mármol.<strong><span style="font-size:22px"> Rojo Coralito<br></span></strong>
 					</div>
-					<div class="span7">
-						<p>40x30x2<span class="textodiez">(En bruto)</span><br>
-						<span class="texto24 arriba" >9,00 </span>€/m<sup>2</sup><br></p>
+					<div class="span12" style:"">
+						<div class="span10" style=";margin-left:0px;">
+						Baldosas de 40x30x2<span class="textodiez">(En bruto)</span><br>.
+						
+						</div>
+						 <div class="span10">
+				<span class="texto24 arriba" >11,00 </span>€/m<sup>2</sup>.<br>
+						<span class="textodiez" style="float:right">Los precios no incluyen el IVA.</span>
+					</div>
 						
 					</div>
+
+					
+
+				</div>
+
+
+			</div>
+			
+				
+			<div class="span12">
+				<div class="span6" ><span class="textodiez">* Ofertas a partir de 100 m<sup>2</sup>.</span>
+				</div>
+				<div class="span6" style="color:#134263; font-size:16px; ">
+					<a href="/" style="text-decoration:none; color:#134263;">Ver mas ofertas</a>
 				</div>
 			</div>
-				
-
-			<!--<div class="span12" ><span class="textodiez">* Ofertas a partir de 100 m<sup>2</sup></span></div>-->
-
 			<!--<div class="span4 offset7 vermasofertas" >
 				<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=ofertas"><span class="textoblanco">Ver más ofertas</span></a>
 			</div>-->
@@ -118,7 +146,7 @@
 		<!--STOCK-->
 		<div class="span12 stock" style="margin-left:0px!important;">
 			
-			<div class="span2 stocktitulo" ><h2>Stock</h2></div><div class="span4 textodiez" style="margin-top:12px">a partir de 100 m<sup>2</sup></div>
+			<div class="span2 stocktitulo" ><h2>Stock</h2></div>
 			
 			<div class="span12 row stockprimeracolumna" style="border:1px solid black;  margin-left:0px!important ">
 				<div class="span2" style="width:20px; margin-left:-17px; ">
@@ -210,10 +238,7 @@
 
 			
 
-<div class="span12">
-			
-			<span class="textodiez" style="float:right">Ver otros stocks.</span>
-			</div>
+
 		</div>
 	</div>
 	<div class="span4"><!--slider-->
@@ -411,12 +436,6 @@
 		</div>
 	</div>
 
-	
-
-
-
-	
-
 </div>
 
 <div class="clearfix">&nbsp;</div>
@@ -424,168 +443,6 @@
 
 
 
-<!--SERVICIOS
-
-<div class=" span12  servicios" >  
-
-	<div class="titulo " style="width:10%">
-		<p style="margin-left:10px">Servicios</p>
-	</div>
-
-<div class="span12" style="margin-left:0px;"> 
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id/12">	
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Diseñador virtual - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/disenador.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit">
-					<div class="arriba">
-						<h3>Diseñador</h3>
-					</div>
-					<div class="abajo">
-						<h3>virtual</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Conviértase en su decorador, utilice nuestros escenarios.</em></p>
-				</div>
-			</div>
-
-		</a>	
-	</div>
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/presupuesto">	
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Presupuesto online - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit" >
-					<div class="arriba">
-						<h3>Presupuesto</h3>
-					</div>
-					<div class="abajo">
-						<h3>online</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Conocerá inmediatamente el coste de sus consultas.</em></p>
-					</div>
-				</div>
-
-		</a>	
-	</div>
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">	
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Catálogo de materiales - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit" >
-					<div class="arriba">
-						<h3>Catálogo</h3>
-					</div>
-					<div class="abajo">
-						<h3>de materiales</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Vendemos materiales con la mejor relación calidad-precio.</em></p>
-					</div>
-				</div>
-
-		</a>	
-	</div>
-</div>
-<div class="span12" style="margin-left:0px;">
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=transporteadomicilio">		
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Transporte a domicilio - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit" >
-					<div class="arriba">
-						<h3>Transporte</h3>
-					</div>
-					<div class="abajo">
-						<h3>a domicilio</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Facilitamos el seguimiento y el control de su material.</em></p></div>
-				</div>
-
-		</a>	
-	</div>
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/preciounitario/index">	
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Tarifas - proSton.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit" >
-					<div class="arriba">
-						<h3>Tarifas</h3>
-					</div>
-					<div class="abajo">
-						<h3>y ofertas</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Conozca y compare el precio de todas las elaboraciones.</em></p></div>
-				</div>
-
-		</a>	
-	</div>
-
-	<div class="span4">
-		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=atencionpersonalizada">	
-			<div class="divHome span12">
-				<div class="span3 iconoser">
-					<figure>
-					<img alt="Servicio Atención personalizada - proSton.es" style="height:60px;" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
-					</figure>
-				</div>
-				<div class="span9 cuatit" >
-					<div class="arriba">
-						<h3>Atención</h3>
-					</div>
-					<div class="abajo">
-						<h3>personalizada</h3>
-					</div>
-				</div>
-				<div class="span12 parr">
-					<p><em>Disponemos de talleres a su servicio muy cerca de usted.</em></p></div>
-				</div>
-
-		</a>	
-	</div>
-
-
-
-</div>
-
-
-
-
-
-	</div>FIN SERVICIOS-->
 
 	
 								
@@ -705,7 +562,7 @@ $(document).ready(function () {
    
     showDiv(activeDiv);
      // show first one because all are hidden by default
-    var timer = setInterval(changeDiv, 4000);
+    var timer = setInterval(changeDiv, 7000);
     
     function changeDiv() {
         activeDiv++;
@@ -729,7 +586,7 @@ $(document).ready(function () {
    
     showDiv2(activeDiv2);
      // show first one because all are hidden by default
-    var timer = setInterval(changeDiv2, 7000);
+    var timer = setInterval(changeDiv2, 25000);
     
     function changeDiv2() {
         activeDiv2++;
