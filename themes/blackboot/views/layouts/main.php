@@ -143,62 +143,48 @@ Yii::app()->clientscript
 			<div class="extra" id="menu-bot">
 				<div class="container">
 					<div class="row">
-						<div class="span4">
-							<div class="span12" id="redes">
+						<div class="span4 ">
 							
-								<h4>Síguenos en:</h4>
-								<!--<img   alt="Facebook - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">-->
-
-								<!--<img   alt="Youtube - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">-->
-								<a href="https://twitter.com/proStones" target="blank">
-								<img   alt="Twitter - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
-								</a>
-								<a href="https://www.linkedin.com/company/proston-es" target="blank">
-								<img   alt="Linkedin - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/linkedin.jpg">
-								</a>
-								<a href="https://plus.google.com/103620278599603888414/posts" target="blank">
-								<img   alt="Google +- www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/googleplus.jpg">
-								</a>
-
+							<div class="span8 " style="margin-left:60px; line-height:12px;">
+							<img style="float:left" width="70"  alt="Linkedin - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>logoblanco.png"> 
+							<p style=" margin-top:15px!important; margin-left:86px; color:#666666">Nuestras oficinas están situadas en: <br>Avda. Jose Anselmo Clavé 49 - 9A .<br> 50004 Zaragoza (España).</p>
 							</div>
-							<div class="clearfix">&nbsp;</div>
-
-							<div class="span12 bancos">
-							<h4>Trabajamos con :</h4>
+							<div class="span12 bancos" style="margin-left:60px;">
+							<h4><span style="font-size:12px">Trabajamos con :</span></h4>
 							<img   alt="Ibercaja - www.proston.es" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>logos/ibercaja.png">
 							<img   alt="BBVA - www.proston.es" class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>logos/bbva.png">
 							</div>
 
 						</div> 
 
-						<div class="span8 infomenu">
+					<div class="span8 infomenu" style="float:right; margin-right:35px; width:790px;">
 						<div class="span2">
 							<h4><img   alt="Informacion - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/info.png"> proSton.es</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#quienesomos">Quienes somos</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#avisolegal">Aviso legal</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesutilizacion">Condiciones de utilización</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#politicadeprivacidad">Politica de privacidad</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#quienesomos">QUIENES SOMOS</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#avisolegal">AVISO LEGAL</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesutilizacion">CONDICIONES DE UTILIZACIÓN</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#politicadeprivacidad">POLÍTICA DE PRIVACIDAD</a></li>
 							</ul>
 						</div> 
 						<div class="span2">
 						<h4><img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png"> 
 							Comprar</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesdeventa">Condiciones de venta</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#comorealizarunacompra">Como realizar una compra</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#formadepago">Forma de pago</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anulaciondepedido">Anulación del pedido</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesdeventa">CONDICIONES DE VENTA</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#comorealizarunacompra">COMO REALIZAR UNA COMPRA</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#formadepago">FORMA DE PAGO</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anulaciondepedido">ANULACION DE PEDIDO</a></li>
 
 							</ul>
 						</div> 
 						<div class="span2"><h4><img   alt="Envios - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/envio.png"> 
 							Suministros</h4>
 							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#envios">Envios</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#plazosdeentrega">Plazos de entrega</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguimientodelpedido">Seguimiento del pedido</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#devoluciones">Devoluciones</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#envios">ENVIOS</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#plazosdeentrega">PLAZOS DE ENTREGA</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguimientodelpedido">SEGUIMIENTO DE PEDIDO</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#devoluciones">DEVOLICIONES</a></li>
 								
 								
 							</ul>
@@ -208,11 +194,11 @@ Yii::app()->clientscript
 
 						<div class="span2"><h4><img   alt="Ayuda - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ayuda.png">
 							Ayuda</h4>
-							<ul>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#preguntasfrecuentes">Preguntas frecuentes</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#atencionalcliente">Atención al cliente</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguridad">Seguridad</a></li>
-								<li><span class="dot">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anomaliastecnicas">Anomalias técnicas</a></li>
+							<ul style="width:170px;">
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#preguntasfrecuentes">PREGUNTAS FRECUENTES</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#atencionalcliente">ATENCIÓN AL CLIENTE</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#seguridad">SEGURIDAD</a></li>
+								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#anomaliastecnicas">ANOMALIAS TÉCNICAS</a></li>
 
 							</ul>
 						</div> <!-- /span3 -->
@@ -224,9 +210,21 @@ Yii::app()->clientscript
 		<div class="footer">
 			<div class="container">
 				<div class="row">
+					<div class="col-md-3" style="margin-left:70px;">
+						<img   alt="Facebook - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/fb.png">
 
-					<div id="footer-terms" class="col-md-6">
-						© 2014  proSton.es . Todos los derechos reservados.<!--<a href="http://nachi.me.pn" target="_blank">Nachi</a>.-->
+						<img   alt="Youtube - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/youtube.png">
+						<a href="https://twitter.com/proStones" target="blank">
+						<img   alt="Twitter - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/twitter.png">
+						</a>
+								<a href="https://www.linkedin.com/company/proston-es" target="blank">
+								<img   alt="Linkedin - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/linkedin.jpg">
+								</a>
+								<a href="https://plus.google.com/103620278599603888414/posts" target="blank">
+								<img   alt="Google +- www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/googleplus.jpg">
+					</div>
+					<div id="footer-terms" class="col-md-6" style="margin-right:55px; margin-top:8px;">	
+						© 2014  proSton.es . Todos los derechos reservados. V2.0<!--<a href="http://nachi.me.pn" target="_blank">Nachi</a>.-->
 					</div> <!-- /row -->
 				</div> <!-- /container -->
 			</div>

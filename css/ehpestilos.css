@@ -6,7 +6,7 @@
  src: url("../fonts/ERASDEMI.TTF") format("truetype");
 }
 @font-face {
-    font-family: "eras";
+    font-family: "erasbold";
     src: url("../fonts/ERASBD.TTF")format("truetype");
     font-weight: bold;
 }
@@ -24,8 +24,8 @@
 
 .telefono{
 
-  width:360px;
-  height:40px;
+  width:320px;
+  height:36px;
   margin-top:10px;
   
   
@@ -175,10 +175,10 @@ line-height: 18px;
 
 #sliderContainer {
  /*width: 726px; */
- height: 360px; 
+ height: 410px; 
  position: relative; 
- border-top: 5px solid #134263;
- border-bottom: 5px solid #134263;
+ /*border-top: 5px solid #134263;
+ border-bottom: 5px solid #134263;*/
 /*margin: 0 auto;*/
 margin-right:60px;
 /*margin-top:25px;*/
@@ -244,37 +244,24 @@ margin-right:60px;
 
 .plat{
  width:7.45%;
- min-width: 80px;
-  margin-left:4px;
+ height:90px;
+
+  margin-left:10px;
   font-size:9px;
   /*background-color: #191919;*/
-  background-color:#134263;
+  /*background-color:#134263;*/
   color:white;
   line-height:0px;
  /* width: 90px;*/
-  height:90px;
+  
   float: left;
   display: block;
-  padding: 2px 4px 2px 2px;
+  padding: 0px;
 
   line-height: 20px;
-  border: 1px solid black;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  
+}
 
-}
-.plat img{
- 
-  border:1px solid black;
-}
 
 .plat figcaption{
 
@@ -480,10 +467,10 @@ border:1px solid black;
 .servicios{
   padding:10px;
   width:98% !important; 
-  border: 1px solid #134263;
--webkit-border-radius: 4px;
+  border: 1px solid #d44711;
+/*-webkit-border-radius: 4px;
 -moz-border-radius: 4px;
-border-radius: 4px;
+border-radius: 4px;*/
 }
 .servicios img{
   width: 100px;
@@ -537,14 +524,15 @@ text-align: center;
 .cuerofertas{
   /*border: 1px solid black;*/
   margin-left:0px !important;
-  margin-bottom:10px;
+  /*margin-bottom:10px;*/
 }
 .tituloweb{
   text-align: center;
 }
 .tituloweb h1{
  border-bottom: 1px transparent !important; 
- margin:bottom: 15px !important;
+ margin-bottom: 10px !important;
+ font-weight: normal;
 }
 .tituloweb p{
 font-size:20px;
@@ -643,15 +631,28 @@ font-size:20px;
 .imagensimulador img{
 border:1px solid black;
 }
+.form_contacto{
 
+
+}
 .form_contacto h2{
 font-size: 18px;
 }
 .form_contacto h3{
 font-size: 15px;
 }
-
-
+.lineaform{
+  margin-left: 0px!important;
+}
+.tituloform{
+  color:#134263;
+}
+.buttons input{
+  background-color: #134263;
+}
+.captcha{
+  margin-top: 0px;
+}
 #acabadosinfo img{
 
   float:left;
@@ -724,19 +725,14 @@ float:right;
 }
 
 .telefonodiv img{
-  margin-right:10px;
+  margin-right:40px;
+ 
 }
 
 
-.infomenu{
-  border:1px solid black;border: 1px solid #bbbbbb;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
-            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-background-color: #f9f9f9;
+.infomenu li{
+  
+font-size: 10px;
   }
 table {
     table-layout: fixed !important;
@@ -1011,9 +1007,19 @@ width:120px;
   font-size: 16px;
   margin-left: 2%;
 }
+.proyectossuministrados h2{
+  margin-top: 25px;
+  margin-bottom: 10px; 
+  padding-left:10px;
+  color:white;
+  font-size: 18px;
+  background-color: #1c4a6b;
+  line-height: 20px;
+}
 .proyectossuministrados li{
   font-size: 12px;
-  line-height: 17px;
+  line-height: 20px;
+
 }
 .botonestop p{
   text-align: center;
@@ -1023,16 +1029,49 @@ width:120px;
   font-size: 18px;
   background-color: #1c4a6b;
   line-height: 20px;
+  margin-top: 0px;
+  margin-bottom:  0px;
+  font:  erasbold;
 
 }
 .stocktitulo{
-  text-align: center;
+  text-align: left;
+  margin-top: 10px;
+
+}
+.stocktitulo h2{ 
+  padding-left:  10px;
+}
+.stocktitulo a{ 
+  color:white;
+  text-decoration: none;
+}
+.stocktitulo a:hover{ 
+  color:#e06a3d;
+  text-decoration: none;
+}
+.ofertastitulo{
+  text-align: left;
+  
+
+}
+.ofertastitulo h2{ 
+  padding-left:  10px;
+}
+.ofertastitulo a{ 
+  color:white;
+  text-decoration: none;
+}
+.ofertastitulo a:hover{ 
+  color:#e06a3d;
+  text-decoration: none;
 }
 .stock h2{
   color:white;
   font-size: 18px;
   background-color: #1c4a6b;
   line-height: 20px;
+
 
 }
 .stockprimeracolumna{
@@ -1045,15 +1084,26 @@ width:120px;
   padding-right:  5px;
   padding-top:  5px;
 }
-.preciostock img{
-  border:1px solid black;
-}
+
 .preciostock{
-  margin-top:5px;
+  margin-top:0px;
   text-align: center;
   line-height: 12px;
   
 }
+
+#tituloseccion{
+  color:white;
+  background-color: #134263;
+  padding-left: 10px;
+}
+
+.precioazul{
+  color:#1d4a6b; 
+  font-size:24px; 
+  float:right;
+}
+
 /********* MOVIL ESTILOS **************/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -1076,6 +1126,7 @@ width:120px;
   }
   .telefonodiv{
     padding:5px;
+    margin-right: 10px;
   }
     .telefono{
   
@@ -1152,9 +1203,10 @@ width:120px;
 }
 
 #sliderContainer{
-    height:160px;
-    margin-top:20px;
+  height:280px;
+    margin-top:0px;
 }
+
 .titulo {
     width:15% !important;
 }
@@ -1167,7 +1219,7 @@ width:120px;
   font-size: 20px;
 }
 .cuerofertas img{
-height:50px;
+height:50px!important;
  margin-top: 10px;
  
 }
@@ -1195,13 +1247,58 @@ td{
   font-size: 10px !important;
 }
 
-.plat {
-  width:60px !important;
-  min-width: 60px !important;
-  height:72px !important;
+
+#fototelefono{
+  display:none;
 }
-#espacioizquierda{
-  margin-left: 40px;
+#filastock{
+  display:none;
+}
+#espacioformulario{
+  width:650px;
+}
+.mensajeimportante h1{
+  line-height: 10px;
+  margin-top: 33px;
+}
+.proyectossuministrados li{
+  font-size:10px;
+}
+.proyectossuministrados h2{
+  margin-top: 20px;
+}
+.stocktitulo h2{
+margin-top: 0px;
+}
+#cantidadminimastock{
+  display: none;
+}
+.precioazul{
+  font-size:20px;
+}
+
+.margenceroizda{
+  margin-left:10px!important;
+}
+.arriba{
+  font-size:14px;
+}
+.abajo{
+  font-size:12px;
+}
+.servicios h2{
+  line-height: 15px;
+  margin-bottom:20px!important;
+}
+.servicios p{
+  font-size: 9px;
+}
+#textolargo{
+  width:200px!important;
+  text-align:left;
+}
+.plat{
+  margin-left:7px;
 }
 }
 
@@ -1289,10 +1386,14 @@ td{
   display:none;
   
 }
+.stock{
+  margin-top: -15px;
+}
+
 #sliderContainer {
-height: 310px;
-top:30px;
-left:0px;
+height: 348px;
+top:0px;
+left:15px;
 margin-right:30px;
   }
 .jFlowNext {  top:80px;}
@@ -1307,14 +1408,8 @@ margin-right:30px;
 	line-height:14px;
 }
 
-.plat {
-  width:88px !important;
-  min-width: 60px !important;
-  height:75px !important;
-}
-#espacioizquierda{
-  margin-left: 40px;
-}
+
+
 .individualstock{
   line-height: 13px;
   font-size: 12px;
@@ -1322,21 +1417,21 @@ margin-right:30px;
   padding-right:  5px;
 
 }
-.preciostock img{
-  border:1px solid black;
-}
-.preciostock{
-  margin-top:5px;
-  text-align: center;
-  line-height: 11px;
-  
-}
+
 .arriba{
   font-size: 20px;
 }
 .abajo{
   font-size: 14px;
 }
-
+.proyectossuministrados{
+  line-height: 24px;
+}
+.proyectossuministrados h2{
+  margin-top: 10px;
+}
+.titulopaginaweb h1{
+  line-height:  14px;
+}
 }
 
