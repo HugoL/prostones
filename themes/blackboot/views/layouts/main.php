@@ -85,7 +85,7 @@ Yii::app()->clientscript
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id/12'),'active'=> Yii::app()->controller->id == "simulador"),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
 						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),
-						array('label'=>'Empresa', 'url'=>array('/site/page','view'=>'reformas')),								
+						array('label'=>'Empresa', 'url'=>array('/site/page','view'=>'empresa')),								
 						/*array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
 							array('label'=>'Edificación - Unifamiliares', 'url'=>array('/site/page','view'=>'edificacion_unifamiliares')),

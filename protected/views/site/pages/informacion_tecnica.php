@@ -11,7 +11,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 	'Reformas',
 );*/
 ?>
-<h1>Información técnica</h1>
+<h1  id="tituloseccion">Información técnica</h1>
 
 
 

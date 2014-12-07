@@ -18,7 +18,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 ?>
 
 
-<h1>Diseñador virtual:  <?php echo $tipo->nombre; ?></h1>
+<h1  id="tituloseccion">Diseñador virtual:  <?php echo $tipo->nombre; ?></h1>
 
 
 <div class="span8">

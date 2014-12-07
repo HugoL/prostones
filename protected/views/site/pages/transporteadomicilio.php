@@ -17,11 +17,8 @@ Yii::app()->clientScript->registerMetaTag("Entrega, tiempo, Marmol , Granito ,Ba
 
 <div class="span12">
 	<div class="span12">
-		<div class="span1 iconoser">
-			<img alt="Transporte a domicilio - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/servicios/transporte.png">
-		</div>
-
-		<h1>Transporte a domicilio.</h1> 
+		
+		<h1  id="tituloseccion">Transporte a domicilio.</h1> 
 	</div>
 	
 	<div class="span12">

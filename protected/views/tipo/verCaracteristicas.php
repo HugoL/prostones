@@ -8,7 +8,7 @@ Yii::app()->clientScript->registerMetaTag("Catálogo,  Marmol , Granito ," .$tip
 
 ?>
 
-<h1><?php echo $tipo->nombre; ?>.</h1> 
+<h1  id="tituloseccion"><?php echo $tipo->nombre; ?>.</h1> 
 
 
 

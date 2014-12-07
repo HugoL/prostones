@@ -11,11 +11,9 @@ Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,
 );*/
 ?>
 
-<div class="span1 iconoser">
-			<img alt="Atencion personalizada - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png">
-			</div class="span10"><h1>Atención personalizada.</h1> 
+<div class="span12"><h1  id="tituloseccion">Atención personalizada</h1> </div>
 
-<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp;</div>
 
 <div class="span6 aten">
 <p>
@@ -55,5 +53,5 @@ Yii::app()->clientScript->registerMetaTag("atencion, asesoramiento,ayuda ,obra ,
 <br>
 <p align="center"><font size="1" >Localización geografica. Plataforma proSton.</font></p>
 </div>
-<div class="clearfix">&nbsp</div>
+<div class="clearfix">&nbsp;</div>
 

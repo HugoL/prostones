@@ -5,7 +5,7 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 );*/
 ?>
 
-<h1><?php echo UserModule::t("Inicio de sesión"); ?></h1>
+<h1  id="tituloseccion"><?php echo UserModule::t("Inicio de sesión"); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
 

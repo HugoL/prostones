@@ -649,6 +649,7 @@ font-size: 15px;
 }
 .buttons input{
   background-color: #134263;
+  color:white!important;
 }
 .captcha{
   margin-top: 0px;
@@ -908,7 +909,7 @@ background-color:white;
 
 .ofertaseccion h2{
   font-size: 18px;
-  border-bottom: 1px solid #134263;
+
 
 }
 
@@ -924,12 +925,20 @@ background-color:white;
 }
 
 .ofertaindividual{
-  border:1px solid grey;
+  border:1px solid transparent;
   padding: 5px;
   margin-bottom: 10px;
 }
 .ofertaindividual:hover{
-border:1px solid orange;
+border:1px solid #134263;
+}
+.ofertaindividual2{
+  border:1px solid transparent;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.ofertaindividual2:hover{
+border:1px solid #d44711;
 }
 .texto24{
   font-size: 24px;
@@ -1005,7 +1014,6 @@ width:120px;
 
 .texto16{
   font-size: 16px;
-  margin-left: 2%;
 }
 .proyectossuministrados h2{
   margin-top: 25px;
@@ -1099,11 +1107,39 @@ width:120px;
 }
 
 .precioazul{
-  color:#1d4a6b; 
+  color:#134263; 
   font-size:24px; 
   float:right;
 }
+.precioofertas{
+  color:#134263; 
+  font-size:20px; 
+  
+}
+.form input{
+  border: 1px solid #134263;
+  color:#363636;
+}
+.form select{
+   border: 1px solid #134263;
+   color:#363636!important;
+}
+.form textarea{
+  border: 1px solid #134263;
+  color:#363636!important;
+}
+.tituloempresa{
+  font-size:18px; 
+  color:#134263;
+}
 
+.ofertaresaltada{
+  font-size: 26px;
+   color:#134263;
+   
+}
+
+}
 /********* MOVIL ESTILOS **************/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -1218,6 +1254,8 @@ width:120px;
 .texto24{
   font-size: 20px;
 }
+
+
 .cuerofertas img{
 height:50px!important;
  margin-top: 10px;
@@ -1299,6 +1337,10 @@ margin-top: 0px;
 }
 .plat{
   margin-left:7px;
+}
+
+.infoofertas{
+  margin-left: 12px!important;
 }
 }
 

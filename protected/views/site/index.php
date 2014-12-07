@@ -99,7 +99,7 @@
 		
 			<div class="span12 cuerofertas oferta" id="oferta1">
 					<div class="span12">
-						<img  style="height:75px; width:100%%;" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ofertas/rojo_coralito.jpg">
+						<img  style="height:75px; width:100%%;" alt="Oferta Mármol Rojo Coralito - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ofertas/rojo_coralito.jpg">
 					</div>
 					<div class="span12 " style="margin-top:10px; margin-left:0px;"><strong><span  style="color:grey; font-size:12px"> MÁRMOL</span><span style="font-size:20px; color:#1d4a6b"> Rojo Coralito</span></strong></div>
 					
@@ -113,7 +113,7 @@
 
 			<div class="span12 cuerofertas oferta" id="oferta2">
 					<div class="span12">
-						<img  style=" height:75px; width:100%%;" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ofertas/g664.jpg">
+						<img  style=" height:75px; width:100%%;" alt="Oferta Granito G664 - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/ofertas/g664.jpg">
 					</div>
 					<div class="span12 " style="margin-top:10px; margin-left:0px;"><strong><span  style="color:grey; font-size:12px"> GRANITO</span><span style="font-size:20px; color:#1d4a6b"> G664</span></strong></div>
 				<div class="span12" style=";margin-left:0px;">
@@ -141,7 +141,7 @@
 
 				<div class="span6" style="margin-left:0px;">
 					<div class="span5 preciostock" style:"padding-top:0px">
-						<img heigth="100%" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/emperador_claro.jpg">
+						<img heigth="100%" alt="Stock Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/emperador_claro.jpg">
 						
 						
 					</div>
@@ -155,7 +155,7 @@
 				
 				<div class="span6" >
 					<div class="span5 preciostock">
-						<img heigth="100%" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/blanco_macael.jpg">
+						<img heigth="100%" alt="Stock Marmol Blanco Macael - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/blanco_macael.jpg">
 						
 						
 					</div>
@@ -179,7 +179,7 @@
 
 				<div class="span6" >
 					<div class="span5 preciostock">
-						<img heigth="100%" alt="Oferta Marmol Emperador Claro - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/crema_marfil.jpg">
+						<img heigth="100%" alt="Stock Marmol Crema Marfil - proSton.es " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/stock/crema_marfil.jpg">
 						
 						
 					</div>
@@ -222,7 +222,7 @@
 
 						<div id="slide1" class="slide">    
 					
-							<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Catálogo de materiales - proSton.es" />
+							<img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>1.jpg" alt="Reforma - proSton.es" />
 					
 							<!--<div class="slideContent">
 								<h2>¿Vas a reformar?</h2>
@@ -233,9 +233,9 @@
 						</div>    
 
 						<div id="slide2" class="slide">
-							<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/simulador/index/id/12">
+							<a href="#">
 							<figure>
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>2.jpg" alt="Diseñador virtual - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>2.jpg" alt="Nueva vivienda - proSton.es" />
 						    </figure>
 							</a>
 
@@ -249,7 +249,7 @@
 
 						<div id="slide3" class="slide">
 							<figure>
-							<img width="370px" height="330px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>4.jpg" alt="Presupuesto online - proSton.es" />
+							<img width="370px" height="330px" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>4.jpg" alt="Encimera mármol granito - proSton.es" />
 						    </figure>
 							<!--<div class="slideContent">
 								<p style="font-size:16px;">Te ofertamos las mejores soluciones.</p>
@@ -264,7 +264,7 @@
 					
 						<div id="slide4" class="slide">
 							<figure>
-							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>3.jpg" alt="Transporte a domicilio - proSton.es" />
+							<img  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>3.jpg" alt="Adoquines - proSton.es" />
 							</figure>
 						
 							<!--<div class="slideContent">
@@ -322,7 +322,7 @@
 	<div class="span2 margenceroizda">
 		<div align="center">
 		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=atencionpersonalizada">	
-		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png';"/>
+		<img alt="Atención personalizada- proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/atencion.png';"/>
 		</a>
 		</div>
 		<div>
@@ -336,7 +336,7 @@
 	<div class="span2 margenceroizda">
 		<div align="center">
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/tipo/verCaracteristicas/id/12">	
-		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png';"/>
+		<img alt="Catálogo de materiales mármol granito- proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/catalogo.png';"/>
 
 		</a>
 		</div>
@@ -351,7 +351,7 @@
 	<div class="span2 margenceroizda">
 		<div align="center">
 		<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/preciounitario/index">	
-		<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png';"/>
+		<img alt="Tarifas y ofertas marmol granito - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/tarifas.png';"/>
 		</a>
 		
 		</div>
@@ -380,7 +380,7 @@
 	<div class="span2 margenceroizda">
 		<div align="center">
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/presupuesto">	
-				<img alt="Servicio Presuspuesto online - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png';"/>
+				<img alt="Presuspuesto online mármol granito- proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/presupuesto.png';"/>
 			</a>
 	
 		</div>
@@ -397,7 +397,7 @@
 	<div class="span2">
 		<div align="center">
 			<a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=transporteadomicilio">	
-			<img alt="Catálogo de materiales - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png';"/>
+			<img alt="Transporte a domicilio - proSton.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png" onmouseover="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte2.png';" onmouseout="this.src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>servicios/transporte.png';"/>
 			</a>
 		
 		</div>

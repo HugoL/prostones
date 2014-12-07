@@ -19,8 +19,8 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
 
-
-    <h1>Presupuesto online.</h1> 
+<h1 id="tituloseccion">Presupuesto online</h1>
+    
 
     <?php
 //Galeria de imágenes
