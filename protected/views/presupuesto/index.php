@@ -80,7 +80,7 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                          <div class="span2">
                         <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/transpresu.png"/>
                        <p>
-                        <span id="textonce"><strong>Camiones con grua integrada.</strong></span>            
+                        <span id="textonce"><strong>Camiones con rampa de descarga.</strong></span>            
                         </p>
                         </div>
                          <div class="span2">

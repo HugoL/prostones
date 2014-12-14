@@ -179,10 +179,10 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
    
 
 	$( "#botonreformas" ).mouseover(function() {
- 		$("#botonreformas").attr("src","http://localhost/yii/prostones/images/segmentos/reforma2.png");
- 		$("#botonedificacion").attr("src","http://localhost/yii/prostones/images/segmentos/edificacion.png");
- 		$("#botonurbanizacion").attr("src","http://localhost/yii/prostones/images/segmentos/urbanizacion.png");
- 		$("#botoninteriorismo").attr("src","http://localhost/yii/prostones/images/segmentos/interiorismo.png");
+ 		$("#botonreformas").attr("src","/images/segmentos/reforma2.png");
+ 		$("#botonedificacion").attr("src","/images/segmentos/edificacion.png");
+ 		$("#botonurbanizacion").attr("src","/images/segmentos/urbanizacion.png");
+ 		$("#botoninteriorismo").attr("src","/images/segmentos/interiorismo.png");
  		 $("#botonreformas").attr("style","cursor: pointer; cursor: hand;");
 });
     $("#botonreformas").click(function(){
@@ -190,17 +190,17 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
         $("#edificacion").hide();
         $("#urbanizacion").hide();
         $("#interiorismo").hide();
-        $("#botonreformas").attr("src","http://localhost/yii/prostones/images/segmentos/reforma2.png");
+        $("#botonreformas").attr("src","/images/segmentos/reforma2.png");
  		
 	});       
     
 
 
     $( "#botonedificacion" ).mouseover(function() {
- 		$("#botonedificacion").attr("src","http://localhost/yii/prostones/images/segmentos/edificacion2.png");
- 	$("#botonreformas").attr("src","http://localhost/yii/prostones/images/segmentos/reforma.png");
-       	$("#botonurbanizacion").attr("src","http://localhost/yii/prostones/images/segmentos/urbanizacion.png");
- 		$("#botoninteriorismo").attr("src","http://localhost/yii/prostones/images/segmentos/interiorismo.png");
+ 		$("#botonedificacion").attr("src","/images/segmentos/edificacion2.png");
+ 	$("#botonreformas").attr("src","/images/segmentos/reforma.png");
+       	$("#botonurbanizacion").attr("src","/images/segmentos/urbanizacion.png");
+ 		$("#botoninteriorismo").attr("src","/images/segmentos/interiorismo.png");
  		 $("#botonedificacion").attr("style","cursor: pointer; cursor: hand;");
 	});
     $("#botonedificacion").click(function(){
@@ -208,15 +208,15 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
         $("#edificacion").show();
         $("#urbanizacion").hide();
         $("#interiorismo").hide();
-       $("#botonedificacion").attr("src","http://localhost/yii/prostones/images/segmentos/edificacion2.png");
+       $("#botonedificacion").attr("src","/images/segmentos/edificacion2.png");
        
     });
 
   $( "#botonurbanizacion" ).mouseover(function() {
- 		$("#botonedificacion").attr("src","http://localhost/yii/prostones/images/segmentos/edificacion.png");
- 	$("#botonreformas").attr("src","http://localhost/yii/prostones/images/segmentos/reforma.png");
-       	$("#botonurbanizacion").attr("src","http://localhost/yii/prostones/images/segmentos/urbanizacion2.png");
- 		$("#botoninteriorismo").attr("src","http://localhost/yii/prostones/images/segmentos/interiorismo.png");
+ 		$("#botonedificacion").attr("src","/images/segmentos/edificacion.png");
+ 	$("#botonreformas").attr("src","/images/segmentos/reforma.png");
+       	$("#botonurbanizacion").attr("src","/images/segmentos/urbanizacion2.png");
+ 		$("#botoninteriorismo").attr("src","/images/segmentos/interiorismo.png");
 		 $("#botonurbanizacion").attr("style","cursor: pointer; cursor: hand;");
 	});
     $("#botonurbanizacion").click(function(){
@@ -224,15 +224,15 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
         $("#edificacion").hide();
         $("#urbanizacion").show();
         $("#interiorismo").hide();
-        $("#botonurbanizacion").attr("src","http://localhost/yii/prostones/images/segmentos/urbanizacion2.png");
+        $("#botonurbanizacion").attr("src","/images/segmentos/urbanizacion2.png");
        
     });
 
  $( "#botoninteriorismo" ).mouseover(function() {
- 		$("#botonedificacion").attr("src","http://localhost/yii/prostones/images/segmentos/edificacion.png");
- 	$("#botonreformas").attr("src","http://localhost/yii/prostones/images/segmentos/reforma.png");
-       	$("#botonurbanizacion").attr("src","http://localhost/yii/prostones/images/segmentos/urbanizacion.png");
- 		$("#botoninteriorismo").attr("src","http://localhost/yii/prostones/images/segmentos/interiorismo2.png");
+ 		$("#botonedificacion").attr("src","/images/segmentos/edificacion.png");
+ 	$("#botonreformas").attr("src","/images/segmentos/reforma.png");
+       	$("#botonurbanizacion").attr("src","/images/segmentos/urbanizacion.png");
+ 		$("#botoninteriorismo").attr("src","/images/segmentos/interiorismo2.png");
 	
 		$("#botoninteriorismo").attr("style","cursor: pointer; cursor: hand;");
 	});
@@ -242,7 +242,7 @@ Yii::app()->clientScript->registerMetaTag("Reforma, Rehabilitación, Marmol , Gr
         $("#edificacion").hide();
         $("#urbanizacion").hide();
         $("#interiorismo").show();
-        $("#botoninteriorismo").attr("src","http://localhost/yii/prostones/images/segmentos/interiorismo2.png");
+        $("#botoninteriorismo").attr("src","/images/segmentos/interiorismo2.png");
     });
     });
 </script>

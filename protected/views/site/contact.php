@@ -79,7 +79,7 @@ var google_remarketing_only = false;
 					<div class="row">			
 					<div class="tituloform textodiez">¿QUE NECESITA?</div>
 					<?php // echo $form->labelEx($model,'Seleccione que necesita'); ?>
-					<?php echo	$form->dropDownList($model,'subject',array('Reforma'=>'Reforma','Colocación'=>'Colocación','Pedir Material'=>'Pedir Material','Incidencia'=>'Incidencia','Sugerencia'=>'Sugerencia','Otros'=>'Otros'), array('options' => array('1'=>array('selected'=>true))));?>
+					<?php echo	$form->dropDownList($model,'subject',array('Reforma'=>'Reforma','Colocación'=>'Colocación','Pedir Material'=>'Material','Incidencia'=>'Incidencia','Sugerencia'=>'Sugerencia','Otros'=>'Otros'), array('options' => array('1'=>array('selected'=>true))));?>
 					<?php echo $form->error($model,'subject'); ?>
 					</div>
 

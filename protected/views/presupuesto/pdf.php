@@ -546,7 +546,12 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
-                <td><h6 style="color:white;">Consulta <?php echo $o;?></h6></td>
+                <td> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
+                 if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
+                  }else{
+                   echo " m. ";
+                  } 
+                  echo $pieza->pieza->nombre; ?> de <?php echo $pieza->tipo->nombre; ?><font color="#b44f18"> | </font></h6></td>
                 <?php $o = $o + 1; ?>
                 <td colspan="7"></td></tr>
 
@@ -611,7 +616,12 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr >
-                <td style="background-color:#134263; "><h6 style="color:white;">Consulta <?php echo $u?></h6></td>
+                <td style="background-color:#134263; "> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
+                 if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
+                  }else{
+                   echo " m. ";
+                  } 
+                  echo $pieza->pieza->nombre; ?> de <?php echo $pieza->tipo->nombre; ?><font color="#b44f18"> | </font></h6></td>
                 <?php $u = $u + 1; ?>
            <td align="right" style="padding-right:5px;">Material ( <?php
             $tottrans = round(($pieza->preciotransporte/100)*21 + $pieza->preciotransporte,2);
@@ -643,7 +653,7 @@
               <td></td>
               <td style="border:1px solid black">
                Transportista: PalletWay<br>
-              Destino: <?php echo $pieza->provincia->nombre; ?> (Concretar destino)</td>
+              Destino: <?php echo $pieza->provincia->nombre; ?> (Concretar dirección)</td>
             </tr>
           </table>
      

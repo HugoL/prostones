@@ -60,31 +60,26 @@
 				</div>
 			</div>-->
 		</div> <!--fin botones-->
-		<div class="span12 mensajeimportante" align="center" style="margin-left:0px;">
-		<h1 style="height:11px;  border:0px;"><span class="textodiez" style="color:#7c7c7c; line-height:10px; " >Compra mármol, granito u otras rocas ornamentales a la mejor relación calidad-precio</span></h1>
+		<div class="span12 mensajeimportante" align="center" style="margin-left:0px; margin-top:18px;">
+		<span class="textodiez" style="color:#7c7c7c; line-height:10px; " >Compra mármol, granito u otras rocas ornamentales a la mejor relación calidad-precio</span>
 		</div>
 
 		<div class="span12 proyectossuministrados " style="margin-left:0px;"><!--ofertas-->
 					
 			<div class="span12">
-				<span style="width:100%; margin-left:0px;  color:white; line-height:12px; font-size:16px; background-color:#134263"><h2>Proyectos sumninistrados</h2></span>
-				<span class="textodiez" > (del 22 al 28 de Noviembre de 2014)</span>
+				<span style="width:100%; margin-left:0px;  color:white; line-height:12px; font-size:16px; background-color:#134263"><h2>Proyectos suministrados</h2></span>
+				<span class="textodiez" > (Estos son algunos de los pedidos que hemos gestionado en Noviembre de 2014)</span>
 			</div>
 			
-			<div class="span6" style="margin-left:0px; margin-top: 7px;">
-				<ul>
-				<li>Valdemoro (Madrid)</li>
-				<li>S. S. de los Reyes (Madrid)</li>
-				<li>Oliva (Valencia)</li>
+			<div class="span12" style="margin-left:0px; margin-top: 7px;">
+				<ul >
+				<li>Urbanizar cuartel Guardias Jovenes (Valdemoro). Granitos G687 y Gris Parga.</li>
+				<li>Aplacar fachada de chalet. Cabo de Palos (Murcia) / Granito Albero.</li>
+				<li>Suelos para unifamiliar en <em>La Floresta</em> (Zaragoza) / Marmol Ulldecona.</li>
+				<li>Reformar portal en S. S. de los Reyes (Madrid) / Granito Blanco Cristal.</li>
 				</ul>
 			</div>
-			<div class="span6" style="margin-top: 7px;">
-				<ul>
-				<li>Cabo de Palos (Murcia)</li>
-				<li>Zaragoza</li>
-				<li>Marbella (Málaga)</li>
-				</ul>
-			</div>
+			
 		
 		</div>
 	</div>
@@ -133,7 +128,7 @@
 		<!--STOCK-->
 		<div class="span12 stock " style="margin-left:0px!important;">
 			
-			<div class="span12 stocktitulo" ><h2>Stock<span style="float:right; font-size:10px; font-weight: normal; margin-right:10px;"><a href="#">Ver más stock</a></h2></span></div>
+			<div class="span12 stocktitulo" ><h2>Stock<span style="float:right; font-size:10px; font-weight: normal; margin-right:10px;"><a  href="<?php echo Yii::app()->baseUrl?>/index.php/site/page?view=stock">Ver más stock</a></h2></span></div>
 			<div class="span12 row stockprimeracolumna" style="  margin-left:0px!important ">
 				<!--<div class="span2" style="width:20px; margin-left:-17px; ">
 					<img alt="Barra lateral mármol " src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>marmol_lateral.jpg">
@@ -147,9 +142,9 @@
 					</div>
 					<div class="span7 individualstock" style="padding:0px;">	
 						<strong>Emperador Claro</strong><br>
-						<strong><span class="textodiez" style="color:#7c7c7c">20000 m<sup>2</sup> 60x30x2 (al corte)</span></strong><br>
+						<span class="textodiez" style="color:#7c7c7c">20000 m<sup>2</sup> 60x30x2 (al corte)</span><br>
 						<strong><span class="arriba" style="font-size:16px;" >10,35 </span><span style="font-size:10px;">€/m<sup>2</sup></span></strong><br>
-						<strong><span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (65  m<sup>2</sup>)</span></strong>
+						<span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (65  m<sup>2</sup>)</span>
 					</div>
 				</div>
 				
@@ -161,9 +156,9 @@
 					</div>
 					<div class="span7 individualstock" style="padding:0px;">	
 						<strong>Blanco Macael</strong><br>
-						<strong><span class="textodiez" style="color:#7c7c7c">500 m<sup>2</sup> 40x30x2 (al corte)</span></strong><br>
+						<span class="textodiez" style="color:#7c7c7c">500 m<sup>2</sup> 40x30x2 (al corte)</span><br>
 						<strong><span class="arriba" style="font-size:16px;" >15,20 </span><span style="font-size:10px;">€/m<sup>2</sup></span></strong><br>
-						<strong><span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (60  m<sup>2</sup>)</span></strong>
+						<span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (60  m<sup>2</sup>)</span>
 					</div>
 				</div>
 			
@@ -185,9 +180,9 @@
 					</div>
 					<div class="span7 individualstock" style="padding:0px;">	
 						<strong>Crema Marfil</strong><br>
-						<strong><span class="textodiez" style="color:#7c7c7c">3200 m<sup>2</sup> 40x40x1,5 (pulidas)</span></strong><br>
+						<span class="textodiez" style="color:#7c7c7c">3200 m<sup>2</sup> 40x40x1,5 (pulidas)</span><br>
 						<strong><span class="arriba" style="font-size:16px;" >19,55 </span><span style="font-size:10px;">€/m<sup>2</sup></span></strong><br>
-						<strong><span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">18,40 adquiriendo 3200 m<sup>2</sup> </span></strong>
+						<span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">18,40 adquiriendo 3200 m<sup>2</sup> </span>
 					</div>
 				</div>
 				
@@ -199,9 +194,9 @@
 					</div>
 					<div class="span7 individualstock" style="padding:0px;">	
 						<strong>Blanco Macael</strong><br>
-						<strong><span class="textodiez" style="color:#7c7c7c">1000 m<sup>2</sup> 40x40x2 (al corte)</span></strong><br>
+						<span class="textodiez" style="color:#7c7c7c">1000 m<sup>2</sup> 40x40x2 (al corte)</span><br>
 						<strong><span class="arriba" style="font-size:16px;" >13,20 </span><span style="font-size:10px;">€/m<sup>2</sup></span></strong><br>
-						<strong><span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (60  m<sup>2</sup>)</span></strong>
+						<span class="textodiez" id="cantidadminimastock" style="color:#7c7c7c">Mínimo 4 palets (60  m<sup>2</sup>)</span>
 					</div>
 				</div>				
 			
@@ -420,7 +415,7 @@
 
 
 
-								<div class=" span12 " style="padding:10px;width:98%; border: 1px solid #1c4a6b;	">  
+								<div class=" span12 " style="padding:10px;width:98%; border: 1px solid #d44711;	">  
 								<div class="titulo " style="width:12%">
 					<span style="margin-left:10px">Plataforma</span><br>
 		<span style="margin-left:95px; color:#bcbcbc ; font-size:20px;">proSton</span>

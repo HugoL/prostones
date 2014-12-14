@@ -84,7 +84,17 @@ Yii::app()->clientscript
 						array('label'=>'Presupuesto online', 'url'=>array('/presupuesto'), 'active'=> Yii::app()->controller->id == "presupuesto"),
 						array('label'=>'Diseñador', 'url'=>array('/simulador/index/id/12'),'active'=> Yii::app()->controller->id == "simulador"),
 						array('label'=>'Catálogo', 'url'=>array('/tipo/verCaracteristicas/id/12'),'active'=> Yii::app()->controller->id == "tipo"),
-						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index')),
+						array('label'=>'Tarifas', 'url'=>array('/preciounitario/index'),'items'=>array(
+							array('label'=>'Ofertas', 'url'=>array('/site/page','view'=>'ofertas')),
+							array('label'=>'Stock', 'url'=>array('/site/page','view'=>'stock')),
+						 ), ),
+						/*array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
+							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
+							array('label'=>'Edificación - Unifamiliares', 'url'=>array('/site/page','view'=>'edificacion_unifamiliares')),
+							array('label'=>'Interiorismo - Cocinas y baños', 'url'=>array('/site/page','view'=>'interiorismo_cocinas')),
+							array('label'=>'Mamposteria - Urbanización', 'url'=>array('/site/page','view'=>'mamposteria_urbanizacion')),
+							
+							),),*/
 						array('label'=>'Empresa', 'url'=>array('/site/page','view'=>'empresa')),								
 						/*array('label'=>'Empresa', 'url'=>('#'),'items'=>array(
 							array('label'=>'Reformas - Rehabilitación', 'url'=>array('/site/page','view'=>'reformas')),
@@ -159,7 +169,7 @@ Yii::app()->clientscript
 
 					<div class="span8 infomenu" style="float:right; margin-right:35px; width:790px;">
 						<div class="span2">
-							<h4><img   alt="Informacion - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/info.png"> proSton.es</h4>
+							<h4><!--<img   alt="Informacion - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/info.png">--> proSton.es</h4>
 							<ul>
 								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#quienesomos">QUIENES SOMOS</a></li>
 								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#avisolegal">AVISO LEGAL</a></li>
@@ -168,7 +178,7 @@ Yii::app()->clientscript
 							</ul>
 						</div> 
 						<div class="span2">
-						<h4><img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png"> 
+						<h4><!--<img   alt="Comprar - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/comprar.png">--> 
 							Comprar</h4>
 							<ul>
 								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#condicionesdeventa">CONDICIONES DE VENTA</a></li>
@@ -178,7 +188,7 @@ Yii::app()->clientscript
 
 							</ul>
 						</div> 
-						<div class="span2"><h4><img   alt="Envios - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/envio.png"> 
+						<div class="span2"><h4><!--<img   alt="Envios - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/envio.png"> -->
 							Suministros</h4>
 							<ul>
 								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#envios">ENVIOS</a></li>
@@ -192,7 +202,7 @@ Yii::app()->clientscript
 
 
 
-						<div class="span2"><h4><img   alt="Ayuda - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ayuda.png">
+						<div class="span2"><h4><!--<img   alt="Ayuda - www.proston.es" class="iconofoot" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ayuda.png">-->
 							Ayuda</h4>
 							<ul style="width:170px;">
 								<li><span class="dot" style="color:#134263">•</span><a href="<?php echo Yii::app()->request->baseUrl?>/index.php/site/page?view=condiciones_privacidad#preguntasfrecuentes">PREGUNTAS FRECUENTES</a></li>

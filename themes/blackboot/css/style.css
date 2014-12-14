@@ -9,7 +9,7 @@
  
 body {
 	padding-top: 40px;
-
+  overflow-x: hidden;
   }
 
 div.cont {
@@ -509,7 +509,7 @@ p.hint { float:left; display:block;}
   color: #666;
 }
 .extra h4 {
-  margin-bottom: 0em;
+  margin-bottom: .4em;
   font-weight: 400;
 }
 .extra ul {
@@ -518,7 +518,7 @@ p.hint { float:left; display:block;}
 }
 .extra ul li {
   margin-bottom: .6em;
-  margin-left: 30px;
+  /*margin-left: 30px;*/
   list-style: none;
   line-height: 15px;
 }
