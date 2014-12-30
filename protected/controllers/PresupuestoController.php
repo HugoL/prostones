@@ -28,7 +28,7 @@ class PresupuestoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario','ajaxTamanos','ajaxTerminaciones','ajaxPrecioTermCara'),
+				'actions'=>array('index','view','tipos','generar','ajaxPreciounitario', 'ajaxPrecioHuella','ajaxTamanos','ajaxHuellas','ajaxTerminaciones','ajaxPrecioTermCara'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -179,36 +179,83 @@ class PresupuestoController extends Controller
 
 			$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);	
 
-			//número de piezas necesarias
+			//NUMERO DE PIEZAS NECESARIAS
 			switch ($valorPieza->id_pieza) {
 				case 1: //baldosas
 					$tamano2 = $tamano->tamanopieza;
+					$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano2);
 					break;
 				case 2: // rodapies
 					$tamano2 = $tamano->tamanolineal;
+					$numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano2);
 					break;
-				
+				case 3: // huellas
+					$numeropiezas = $valorPieza->cantidad;
+					break;
+				case 4: // tabicas
+					$numeropiezas = $valorPieza->cantidad;
+					break;					
+				case 5: // zanquines
+					$numeropiezas = $valorPieza->cantidad;
+					break;			
 				default:
 					$tamano2 = $tamano->tamanopieza;
+					$numeropiezas = $valorPieza->cantidad;
 					break;
 			}
 			 
-            $numeropiezas = $this->calcularNumeroPiezas($valorPieza->cantidad, $tamano2);
-            
-        	
+            $valorPieza->numeropiezas = $numeropiezas;
 
-        	$valorPieza->numeropiezas = $numeropiezas;
 
-        	//precio de la pieza del tamaño dado:
-			$criteria=new CDbCriteria;        
-        	$criteria->compare('id_tipo',$valorPieza->id_tipo);
-        	$criteria->addCondition( 'id_tamano >= '.$valorPieza->id_tamano );	
-        	$criteria->select = '*';
-			$preciounitario = Preciounitario::model()->find( $criteria );
+        	//PRECIO DE LA PIEZA DEL TAMAÑO DADO
+        	if( $valorPieza->id_pieza == 1 || $valorPieza->id_pieza == 2  || $valorPieza->id_pieza == 5   ){
+				$criteria=new CDbCriteria;        
+	        	$criteria->compare('id_tipo',$valorPieza->id_tipo);
+	        	$criteria->addCondition( 'id_tamano >= '.$valorPieza->id_tamano );	
+	        	$criteria->select = '*';
+				$preciounitario = Preciounitario::model()->find( $criteria );
 
-			$valorPieza->preciounitario = $preciounitario->precio;
+				$valorPieza->preciounitario = $preciounitario->precio;
 
-        	//tamaño en metros de todas las piezas. m2 baldosa ; ml rodapies
+			}
+			if( $valorPieza->id_pieza == 3 || $valorPieza->id_pieza == 4   ){
+
+				$largoi = strip_tags($_POST['largo']);
+				$anchoi = strip_tags($_POST['ancho']);
+				$grosor = strip_tags($_POST['grosor'])+1;
+				$valorPieza->largo = $largoi;
+				$valorPieza->ancho = $anchoi;
+				$valorPieza->grosor = $grosor;
+				$criteria=new CDbCriteria;        
+	        	$criteria->compare('id_tipo',$valorPieza->id_tipo);
+	        	$criteria->addCondition( 'id_tamano >= 8');	
+	        	$criteria->select = '*';
+				$preciounitario = Preciounitario::model()->find( $criteria );
+				$largo = $largoi /100;
+				$ancho = $anchoi/100;
+				if ($largo<= 1.15 && $grosor == 2){
+					$preciobasehuella = 1.7 * $preciounitario->precio;
+				}
+				if ($largo <= 1.15 && $grosor == 3){
+					$preciobasehuella = 2.04 * $preciounitario->precio;
+				}
+				if ($largo > 1.15 && $grosor == 2){
+					$preciobasehuella = 1.955 * $preciounitario->precio;
+				}
+				if ($largo > 1.15 && $grosor == 3){
+					$preciobasehuella = 2.346 * $preciounitario->precio;
+				}
+
+				$areahuella = $largo * $ancho;
+				$preciohuella= ($largo * $ancho * $preciobasehuella) + ($largo * 2.8);
+				
+
+				$valorPieza->preciounitario = $preciohuella;
+
+			}
+
+
+        	//TAMAÑO EN METROS de todas las piezas. m2 baldosa ; ml rodapies
 
 			switch ($valorPieza->id_pieza) {
 				case 1: //baldosas
@@ -217,7 +264,15 @@ class PresupuestoController extends Controller
 				case 2: // rodapies
 					$tamano3 = $tamano->tamanolineal;
 					break;
-				
+				case 3: //huellas
+					$tamano3 = $areahuella;
+					break; 
+				case 4: //tabicas
+					$tamano3 = $areahuella;
+					break; 
+				case 4: //zanquines
+					$tamano3 = $areahuella;
+					break; 					
 				default:
 					$tamano3 = $tamano->tamanopieza;
 					break;
@@ -229,7 +284,7 @@ class PresupuestoController extends Controller
         	$valorPieza->tamanoreal = $tamanoreal;
 
         	//precio de los metros correspondientes
-			$precio = $tamanoreal * $preciounitario->precio;
+			$precio = $tamanoreal * $valorPieza->preciounitario;
 
 			//guardo las variables desglosadas
 			$preciopieza = $precio;
@@ -264,11 +319,26 @@ class PresupuestoController extends Controller
 
 					break;
 				case 2: // rodapies
-					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal * $tamano->tamanopieza;
+					$precioterminacion=$valorPieza->terminacion->precio * ($numeropiezas * $tamano->tamanopieza) ;
 					$precioterminacionCanto=0;
 					$precioterminacionArista=0;
 					break;
-				
+
+				case 3: //huellas
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+				case 4: //tabicas
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;
+				case 5: //zanquines
+					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
+					$precioterminacionCanto=0;
+					$precioterminacionArista=0;
+					break;				
 				default:
 					$precioterminacion=$valorPieza->terminacion->precio * $tamanoreal;
 					$precioterminacionCanto=0;
@@ -412,10 +482,51 @@ class PresupuestoController extends Controller
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
 		echo $this->renderPartial('_ajaxPreciounitario', array(
-					'precioajax' => $preciounitario->precio,'tipo' => $preciounitario->tamano->pieza->id), true, false);
+					'precioajax' => $preciounitario->precio,'tipo' => $preciounitario->tamano->pieza->id, 'nombretipo' => $preciounitario->tamano->pieza->nombre, 'tamano' => $preciounitario->tamano->nombre, 'nombre' => $preciounitario->tipo->nombre ), true, false);
 
 		Yii::app()->end();
 	}
+	public function actionAjaxPrecioHuella(){
+
+		//HACER CALCULO DE LAS HUELLAS
+		$id_tipo = strip_tags($_POST['id_tipo']);
+		$id_pieza = strip_tags($_POST['id_pieza']);
+
+		$largo_huella = strip_tags($_POST['largo'])/100;
+		$ancho_huella = strip_tags($_POST['ancho'])/100;
+		$grosor = strip_tags($_POST['grosor']);
+		$criteria=new CDbCriteria; 
+		$criteria->addCondition( 'id_tamano = 8 AND id_tipo = '.$id_tipo);	
+        $criteria->select = '*';
+		$preciounitario = Preciounitario::model()->find( $criteria );
+		$criteria2=new CDbCriteria; 
+		$criteria2->addCondition( 'id = '.$id_pieza);	
+        $criteria2->select = '*';
+		$pieza = Pieza::model()->find( $criteria2 );		
+
+
+
+		if ($largo_huella <= 1.15 && $grosor == 1){
+			$preciobasehuella = 1.7 * $preciounitario->precio;
+		}
+		if ($largo_huella <= 1.15 && $grosor == 2){
+			$preciobasehuella = 2.04 * $preciounitario->precio;
+		}
+		if ($largo_huella > 1.15 && $grosor == 1){
+			$preciobasehuella = 1.955 * $preciounitario->precio;
+		}
+		if ($largo_huella > 1.15 && $grosor == 2){
+			$preciobasehuella = 2.346 * $preciounitario->precio;
+		}
+		
+
+		$preciohuella= ($largo_huella * $ancho_huella * $preciobasehuella) + ($largo_huella * 2.8);
+		
+		echo $this->renderPartial('_ajaxPrecioHuella', array(
+					'area' => $preciohuella, 'largohuella' => $largo_huella, 'anchohuella' => $ancho_huella, 'grosor' => $grosor, 'nombre' => $preciounitario->tipo->nombre,'nombrepieza' => $pieza->nombre), true, false);
+
+		Yii::app()->end();
+	}	
 	public function actionAjaxPrecioTermCara(){
 		$id_terminacion = strip_tags($_POST['id_terminacion']);
 		$criteria=new CDbCriteria;        
@@ -442,6 +553,9 @@ class PresupuestoController extends Controller
         $criteria->join = 'INNER JOIN ehp_preciosunitarios ON t.id = ehp_preciosunitarios.id_tamano AND ehp_preciosunitarios.id_tipo = '.$id_tipo.' AND ehp_preciosunitarios.precio IS NOT NULL';
         $criteria->select = '*';
 		$tamanos = Tamano::model()->findAll( $criteria );
+
+
+
 		//$this->renderPartial('index',array('preciounitario'=>$preciounitario))
 		//$this->renderPartial('_ajaxPreciounitario', array('preciounitario'=>$preciounitario));
 
@@ -450,7 +564,19 @@ class PresupuestoController extends Controller
 
 		Yii::app()->end();
 	}
+	public function actionAjaxHuellas(){
+		$id_tipo = strip_tags($_POST['id_tipo']);
+		$id_pieza = strip_tags($_POST['id_pieza']);
+		$criteria=new CDbCriteria; 
+		$criteria->addCondition( 'id_pieza = '.$id_pieza );
+        $criteria->select = '*';
+		$tamanos = Tamano::model()->findAll( $criteria );
 
+		echo $this->renderPartial('_ajaxHuellas', array(
+					'tamanos' => $tamanos, 'id_pieza' => $id_pieza), true, false);
+
+		Yii::app()->end();
+	}
 
 	public function actionAjaxTerminaciones(){
 		$id_material = strip_tags($_POST['id_material']);
@@ -540,17 +666,26 @@ class PresupuestoController extends Controller
 
 	protected function calcularPesoPiezas( $valorPieza, $numeropiezas ){
 		/***** PESO DEL PEDIDO *****/
-
 		$tipo = Tipo::model()->find('id ='.$valorPieza->id_tipo);
-
 		$tamano = Tamano::model()->find('id = '.$valorPieza->id_tamano);
+
+		if ($valorPieza->id_pieza == 1 || $valorPieza->id_pieza == 2 || $valorPieza->id_pieza == 5) {
+
+			$pesopieza = $tamano->tamanocubico * $tipo->masa_volumica * 1000;
+		
+	}else{
+
+		$tamanocubico = ($valorPieza->largo/100) * ($valorPieza->ancho/100) * ($valorPieza->grosor/100);
+		//$pesopieza = $tamanocubico * $tipo->masa_volumica * 1000;
+		$pesopieza =$tamanocubico * $tipo->masa_volumica * 1000;
+	}
 
     	//$peso = 0;
 		//	$tamanocubico = 0.0036;//  tabla : "ehp_tamano",  y el dato en "tamanocubico"
 
 		//	$masavolumica = 2700;// tabla : "ehp_tipos",  y el dato en "masa_volumica"
 
-		$pesopieza = $tamano->tamanocubico * $tipo->masa_volumica * 1000;
+	
 
 		return $pesopieza * $numeropiezas;
 
@@ -630,84 +765,6 @@ class PresupuestoController extends Controller
         //$this->render('generado');
     }
 
-
-	/*
-	public function creaPdf2( $presupuestoPdf ){ //no se usa
-		# PDF
-		$html2pd = Yii::app()->ePdf->HTML2PDF();
-
-		# You can easily override default constructor's params
-		$html2pd = Yii::app()->ePdf->mpdf('', 'A4');
-		$title = 'proSton.es';
-
-		# Load a stylesheet
-		$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.themes')."/blackboot/css/bootstrap.css");
-		$html2pd->WriteHTML($stylesheet, 1);
-
-		# Renders image
-		$html2pd->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.img').'/logo.png' ));
-
-		# render (full page)
-		$html2pd->WriteHTML($this->renderPartial('pdf', array('presupuesto'=>$presupuestoPdf),true));			
-
-		# Outputs ready PDF
-		$html2pd->Output(); //DESCOMENTAR PARA 
-
-		enviarEmail2( $html2pdf );
-	}*/
-
-
-/*
-	protected function enviarEmail( $email, $path ){
-		$message = 'Le enviamos el presupuesto que ha solicitado en Proston.es';
-		Yii::app()->mailer->Host = 'mail.proston.es';
-		Yii::app()->mailer->IsSMTP();
-		Yii::app()->mailer->From = 'info@proston.es';
-		Yii::app()->mailer->FromName = 'Proston.es';
-		Yii::app()->mailer->AddReplyTo('info@proston.es');
-		Yii::app()->mailer->AddAddress( $email );
-		Yii::app()->mailer->Subject = 'Presupuesto Proston.es';
-		Yii::app()->mailer->Body = $message;
-		//adjunto el pdf
-		AddAttachment($path, $name = "Presupuesto", $encoding = "base64",$type = "application/octet-stream");
-		Yii::app()->mailer->Send();
-	}
-	
-	protected function enviarEmail2( $html2pdf ){
-		# Example from HTML2PDF wiki: Send PDF by email
-        $content_PDF = $html2pdf->Output('', EYiiPdf::OUTPUT_TO_STRING);
-        require_once(dirname(__FILE__).'/pjmail/pjmail.class.php');
-        $mail = new PJmail();
-        $mail->setAllFrom(Yii::app()->params['prostonesEmail'], "proSton.es");
-        $mail->addrecipient('hugoepila@gmail.com');
-        $mail->addsubject("Presupuesto proSton.es");
-        $mail->text = "proSton.es le envía el presupuesto solicitado";
-        $mail->addbinattachement("presupuesto.pdf", $content_PDF);
-        $res = $mail->sendmail();
-	}
-
-	protected function enviarEmailYiiMailer( $email ){
-		$mail = new YiiMailer();
-		$mail->setFrom('info@proston.es');
-		$mail->setTo('hugoepila@gmail.com');
-		$mail->setSubject('Presupuesto proSton.es');
-		$mail->setBody('presupuesto ad as ad as a');
-		//$mail->setView('mail');
-		//$mail->setData(array('message' => 'Presupuesto de proSton.es', 'name' => 'proSton.es', 'description' => 'Presupuesto'));
-
-		//$mail->setAttachment($pdf);
-
-		if ($mail->send()) {
-			echo "<p>SE ENVIA</p>";
-		    Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');		    
-		} else {
-			echo "<p>NO SE ENVIA</p>";
-		    Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
-		}
-		//$this->render('generado');
-
-	}
-*/
 	protected function damePrecioPale( $procedencia, $destino, $peso ){
 		$criteria2 = new CdbCriteria;
 		$criteria2->addCondition( 'id_zona_destino = '.$destino. ' AND id_zona_procedencia = '.$procedencia.' AND pesomaximo >= '.$peso );

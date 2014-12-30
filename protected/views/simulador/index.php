@@ -12,9 +12,9 @@ $this->breadcrumbs=array(
 );*/
 
 
-$this->pageTitle= 'Diseñador.  '. $tipo->material->nombre . " ". $tipo->nombre .' - '. Yii::app()->name . ' Marmolistas';
+$this->pageTitle= 'Diseñador  '. $tipo->material->nombre . " ". $tipo->nombre .' -  Conoce tu material';
 Yii::app()->clientScript->registerMetaTag("Diseñador virtual. Portal de ".$tipo->material->nombre ." ". $tipo->nombre .". Multitud de materiales para elegir.", 'description');
-Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", Acabado,Simulador,". $tipo->material->nombre .", Precio, Ofertas, Baldosa, Rodapie, Pulido, Flameado, Abujardado, mármolistas proston", 'keywords');
+Yii::app()->clientScript->registerMetaTag("Diseñador marmol ". $tipo->nombre . ", Acabado ". $tipo->material->nombre ." ". $tipo->nombre .",Simulador, Precio ". $tipo->material->nombre .", ". $tipo->nombre . " www.proston.es ", 'keywords');
 ?>
 
 
@@ -41,7 +41,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 
     <div class="span3 textosimulador">
       <br>
-      <h2> Portal en <?php echo $tipo->nombre; ?>
+      <h2> Portal en <?php echo $tipo->nombre; ?></h2>
       <br>
       
       <div id="botonsimulador">
@@ -66,7 +66,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 
     <div class="span6 imagensimulador"> 
     <figure> 
-    <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" width="80%" height="80%"  id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
+    <img  alt="<?php echo $tipo->nombre; ?> - proSton.es" id="zoom_01" src='<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>' data-zoom-image="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/<?php echo $tipo->textura; ?>"/>
     <figcaption id="textofoto">* Pase el ratón para hacer zoom en la imágen.</figcaption>
     </figure>
     </div>
@@ -83,7 +83,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
       <div class="clearfix"></div>
       <?php foreach ($tipos as $key => $tipo):     ?>
             <div class="span2 ">
-                <a href="<?php echo Yii::app()->request->baseUrl."/index.php/simulador/index/id/".$tipo->id?>">
+                <a href="<?php echo Yii::app()->request->baseUrl."/diseñador/marmol/".$tipo->nombreURL?>">
 
                     <img  alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
@@ -96,7 +96,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
     <div class="clearfix"></div>
      <?php foreach ($tipos2 as $key => $tipo):     ?>
             <div class="span2">
-                <a href="<?php echo Yii::app()->request->baseUrl."/index.php/simulador/index/id/".$tipo->id?>">
+                <a href="<?php echo Yii::app()->request->baseUrl."/diseñador/granito/".$tipo->nombreURL?>">
 
                     <img  alt="<?php echo $tipo->nombre; ?> - www.proston.es" title=" <?php echo $tipo->nombre; ?>" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $tipo->imagen; ?>"/>
                 </a>
@@ -108,10 +108,7 @@ Yii::app()->clientScript->registerMetaTag("Diseñador, 3d,". $tipo->nombre . ", 
 </div>
 
 
-
-<div class="clearfix">&nbsp</div>
-<div class="clearfix">&nbsp</div>
-
+<div class="clearfix">&nbsp;</div>
     <script>
     $('#zoom_01').elevateZoom({
     zoomType: "inner",

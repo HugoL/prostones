@@ -1,7 +1,5 @@
 
 
-
-
          	<?php if( !empty($tamanos) ): ?>
          		<select id="Valorpieza_id_tamano" name="Valorpieza[id_tamano]">
          			<option value="">Selecciona tamaño</option>

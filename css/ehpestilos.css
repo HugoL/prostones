@@ -1,6 +1,4 @@
-
 ::selection      { color: gold;  background: grey; } 
-/*------Lo de abajo creado por Edu---------*/
 @font-face { 
  font-family: "eras"; 
  src: url("../fonts/ERASDEMI.TTF") format("truetype");
@@ -97,7 +95,7 @@ padding:10px;
   float:left;
 }
 #menu-top ul {  font-family: "eras";}
-  
+ /* 
  #menu-top ul li { display: block; height: 28px; float: left; overflow: visible; }
  #menu-top ul li:hover > ul { display: block; }
  
@@ -112,7 +110,7 @@ padding:10px;
 #menu-top ul li ul li.active a,
 #menu-top ul li ul li a:hover { color: #134263;height:100%; width:100%; background: #FFFFFF; text-decoration: none;}
 
-
+*/
 #menu-bot {
   font-family:"eras";
 }
@@ -331,7 +329,7 @@ height:90px;
 
 
 .bordepresu li{
-border: 1px solid black;
+border: 2px solid #134263;
 text-align: center;
 }
 .bordepresu a{
@@ -351,25 +349,22 @@ color:black;
 margin-bottom: 10px;
 
 }
-
-.ini li{
+.ini :hover{
+ 
+  cursor: pointer;
+}
+.ini h2{
 border: 1px solid black;
 text-align: center;
 list-style:none; 
 }
-.ini a{
-color:black;
-}
-.ini a:hover{
-color:white;
-}
-.ini li:hover{
+
+.ini h2:hover{
+
 color:white;
 background-color: #134263;
 list-style:none; 
 }
-
-
 
 .ejemplo {
   float:left;
@@ -448,14 +443,14 @@ border:1px solid black;
   padding: 19px;
   margin-bottom: 20px;
 
-  background-color: #f8f8f8;
+  /*background-color: #f8f8f8;
   border: 1px solid  #134263;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);*/
 }
 
 .pa select{
@@ -464,7 +459,13 @@ border:1px solid black;
 .po input{
   width:70px;
 }
+.plataforma{
+   border: 1px solid #d44711;
+   padding:10px;
+  width:98% !important; 
+}
 .servicios{
+
   padding:10px;
   width:98% !important; 
   border: 1px solid #d44711;
@@ -475,7 +476,10 @@ border-radius: 4px;*/
 .servicios img{
   width: 100px;
 }
+
 .servicios h2{
+  line-height: 15px;
+  margin-bottom:10px!important;
   text-align: center;
 }
 .servicios p{
@@ -528,21 +532,45 @@ text-align: center;
 }
 .tituloweb{
   text-align: center;
+
 }
 .tituloweb h1{
  border-bottom: 1px transparent !important; 
  margin-bottom: 10px !important;
  font-weight: normal;
+ font-size:14px;
+color:#bbbbbb;
 }
 .tituloweb p{
 font-size:20px;
 
 }
-
+.segundotitulo{
+  margin-left:0px; 
+  margin-top:18px;
+}
+.segundotitulo p{
+  text-align:center; 
+  color:#7c7c7c; 
+  line-height:10px;
+}
+.tituloproyectos h2{
+  width:100%;
+  margin-left:0px;
+  color:white;
+  line-height:12px;
+  font-size:16px;
+  background-color:#134263;
+}
+.cuerpoproyectos{
+  margin-left:0px;
+  margin-top: 7px;
+}
 .presprecio{
-  border: 1px solid #6d6d6d;
-
-  }
+   background-color:#134263;
+   color:white;
+  text-align: center;
+}
 
 .display {
     display: none;
@@ -551,6 +579,9 @@ font-size:20px;
 .matpresu p{
 
   margin: 0 0 5px !important;
+}
+.matpresu table{
+  float:right;
 }
 .titulofoot h3{
   font-size: 20px;
@@ -630,6 +661,8 @@ font-size:20px;
 }
 .imagensimulador img{
 border:1px solid black;
+width: 80%;
+height: 80%;
 }
 .form_contacto{
 
@@ -683,27 +716,38 @@ font-size: 15px;
 .tarifas{
   margin-left:40px;
 }
-.tarifas td{
+
+#textomaterial{
+  text-align: justify;
+}
+.datoresaltado{
   font-size: 12px;
+  font-weight: bold;
+  /*border:1px solid #8f8c8c;
+  background-color: white;*/
+  text-align: center;
 }
-#datoresaltado{
-  font-size: 12px;
-  border:1px solid #8f8c8c;
-  background-color: white;
+.etiqueta{
+ /* background-color: #e8e8e8;
+  border-bottom:1px solid #c4c4c4;*/
+  text-align: right;
+  font-size: 10px;
 }
-#etiqueta{
-  background-color: #e8e8e8;
-  border-bottom:1px solid #c4c4c4;
+.etiqueta2{
+ /* background-color: #e8e8e8;
+  border-bottom:1px solid #c4c4c4;*/
+  text-align: left;
 }
-#etiquetazul{
+.etiquetazul{
   font-size: 13px;
   background-color: #e8e8e8;
   border:1px solid #c4c4c4;
    font-weight: bold;
   color: #134263;
   padding-right:2px;
+  text-align: center;
 }
-#black{
+.black{
   color:black;
 }
 .utilizaciones table{
@@ -730,7 +774,11 @@ float:right;
  
 }
 
-
+.infomenu{
+  float:right;
+  margin-right:35px; 
+  width:790px;
+}
 .infomenu li{
   
 font-size: 10px;
@@ -766,7 +814,7 @@ th,td {
 .textodiez{
   font-size: 10px;
 }
-#textonce{
+.textonce{
   font-size: 11px;
 }
 #textodiez{
@@ -783,59 +831,79 @@ th,td {
 /*ESTILOS PRESUPUESTO (ir poniendolos debajo) */
 #imgpresubot img{
   padding-right:5px;
+  float:left;
 }
 .titulopcion{
  /* font-size:16px;*/
   color:#134263;
   font-weight: bold;
 }
-#titulopaso{
+.titulopaso{
   font-size:12px;
   font-weight: bold;
   float:left;
 }
 
 #pregunta1{
-float:right;
+float:left;
 }
 #pregunta2{
-float:right;
+float:left;
 }
 #pregunta3{
-float:right;
+float:left;
 }
 #pregunta4{
-float:right;
+float:left;
 }
-
+#pregunta5{
+float:left;
+}
 #ok1{
   display:none;
+  float:left;
+}
 }
 #ok1 img{
-  float: right;
+  float: left;
 }
 #ok2{
   display:none;
+  float:left;
+}
 }
 #ok2 img{
-  float: right;
-}abor
+  float: left;
+}
 #ok3{
   display:none;
+  float:left;
+}
 }
 #ok3 img{
-  float: right;
+  float: left;
 }
 #ok4{
   display:none;
+  float:left;
+}
 }
 #ok4 img{
-  float: right;
+  float: left;
+}
+#ok5{
+  display:none;
+  float:left;
+}
+}
+#ok5 img{
+  float: left;
 }
 #material{
   
   display:none;
 }
+
 #tipo_piezas{
   display:none;
 }
@@ -852,10 +920,23 @@ float:right;
 #boton{
   display:none;
 }
-
+.iconopresupuesto img{
+  float:left;
+}
+.textoiniciopresupuesto{
+  margin-top:5px;
+   margin-left:40px
+}
 /*estilos pedido*/
 
+.titulopasos h2{
+  margin:0px!important;
+}
+
 #azul{
+  color: #134263!important;
+}
+.azul{
   color: #134263!important;
 }
 .cuadropedido{
@@ -875,9 +956,24 @@ background-color:white;
   border-left: 1px solid grey;
   border-right:1px solid grey;
   border-bottom: 1px solid black;
+  text-align: center;
 }
-
-
+.titulo{
+  width: 10%;
+}
+.titulopri{
+  margin-left:10px;
+}
+.titulosec{
+  margin-left:70px;
+  color:#bcbcbc ;
+  font-size:20px;
+}
+.titulosec2{
+  margin-left:95px;
+  color:#bcbcbc ;
+  font-size:20px;
+}
 .inicio p{
   text-align: justify;
 }
@@ -989,11 +1085,21 @@ border:1px solid #d44711;
 #redes h4{
   color:#2D2C2B;
 }
+.redes{
+  margin-left:70px;
+}
+#footer-terms{
+  margin-right:55px; margin-top:8px;
+}
+.bancos{
+ margin-left:60px; 
+}
 .bancos img{
 width:120px;
 }
 .bancos h4{
   color:#2D2C2B;
+  font-size:12px;
 }
 
 .lineanaranja{
@@ -1068,6 +1174,7 @@ width:120px;
 }
 .ofertastitulo h2{ 
   padding-left:  10px;
+
 }
 .ofertastitulo a{ 
   color:white;
@@ -1077,6 +1184,86 @@ width:120px;
   color:#e06a3d;
   text-decoration: none;
 }
+.titdechofertas{
+  float:right;
+   font-size:10px; 
+   font-weight: normal; 
+   margin-right:10px;
+}
+.cuerofertas img{
+height:71px!important;
+ margin-top: 4px;
+ width:100%;
+}
+.nombrematerialoferta{
+  margin-left: 0px;
+  margin-top: 10px!important;
+}
+.texto10gris{
+  color:#7c7c7c;
+  font-size:10px;
+}
+.texto10grisoscuro{
+  color:#5b5959;
+  font-size:10px;
+}
+.texto10naranja{
+   font-size:10px;
+   color:#d44711;
+}
+.textoazul{
+  color:#134263;
+}
+.texto12gris{
+  color:#7c7c7c;
+  font-size:12px;
+}
+.texto16gris{
+  font-size:16px;
+   color:#7c7c7c;
+}
+.texto16azul{
+  font-size:16px;
+   color:#134263;
+}
+.texto16naranja{
+   font-size:16px;
+   color:#d44711;
+}
+.texto18{
+  font-size: 18px;
+}
+.texto18azul{
+  font-size: 18px;
+  color:#134263;
+}
+.texto20azul{
+  font-size:20px;
+   color:#134263;
+}
+.texto22{
+  font-size: 22px;
+}
+.numeropresupuesto{
+  width:50px!important;
+  height:50px;
+  background-color:#d44711;
+  color:white;
+  font-size:40px;
+  text-align:center;
+  padding-top:15px;
+}
+.margencero{
+  margin-left: 0px!important;
+}
+
+.jFlowPrev{
+  display: none;
+}
+.jFlowNext{
+  display: none;
+}
+
 .stock h2{
   color:white;
   font-size: 18px;
@@ -1106,14 +1293,14 @@ width:120px;
   font-size: 14px;
   text-align: right;
   padding-right:  5px;
-  padding-top:  5px;
+  padding: 0px;
 }
 
 .preciostock{
   margin-top:0px;
   text-align: center;
   line-height: 12px;
-  
+  padding-top:0px
 }
 
 #tituloseccion{
@@ -1154,39 +1341,73 @@ width:120px;
    color:#134263;
    
 }
+.servicioindividual{
+  text-align: center;;
+}
 
+
+
+
+.textoempresa p{
+  text-align: justify;
+}
+.marginceroi{
+  margin-left: 0px!important;
+}
+
+.telefonodiv2{
+  display:none;
+}
+
+.oficinas{
+  margin-left:60px; 
+  line-height:12px;
+}
+.oficinas img{
+  float:left
+}
+.oficinas p{
+  margin-top:15px!important;
+  margin-left:86px;
+  color:#666666;
+}
+
+.paddingdech{
+  padding-right: 5px;
+}
+.transportepresupuesto{
+  background-color:white;
+  padding:5px;
+  border:1px solid #134263;
+  margin-bottom:10px;
+} 
 }
 /********* MOVIL ESTILOS **************/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
 
-  #sliderContainer{
-    display: none;
-  }
-
-  
- 
-  #menusegmentos img{
+#menusegmentos img{
     margin-bottom: 10px;
 
   }
+
  #logomini{
  display:none;
 }
+
  #caja_flotante{
     display: none;
   }
+
   .telefonodiv{
     padding:5px;
     margin-right: 10px;
   }
-    .telefono{
-  
-  
+
+  .telefono{
   width:250px;
   height:28px;
-  
-}
+  }
   
 .telefonodiv2{
   display:none;
@@ -1198,9 +1419,14 @@ width:120px;
 
 
 /**** cuando el menu desparece*/
-
+@media screen and (min-width: 0px) and (max-width: 768px) {
+ #sliderContainer{
+    display:none!important;
+    }
+  }
 @media screen and (min-width: 768px) and (max-width: 980px) {
 
+  }
  #caja_flotante{
     display: none;
   }
@@ -1272,11 +1498,7 @@ width:120px;
 }
 
 
-.cuerofertas img{
-height:50px!important;
- margin-top: 10px;
- 
-}
+
 
  select{
   width:150px;
@@ -1311,10 +1533,7 @@ td{
 #espacioformulario{
   width:650px;
 }
-.mensajeimportante h1{
-  line-height: 10px;
-  margin-top: 33px;
-}
+
 .proyectossuministrados li{
   font-size:10px;
 }
@@ -1327,6 +1546,7 @@ margin-top: 0px;
 #cantidadminimastock{
   display: none;
 }
+
 .precioazul{
   font-size:20px;
 }
@@ -1334,20 +1554,25 @@ margin-top: 0px;
 .margenceroizda{
   margin-left:10px!important;
 }
+
+
 .arriba{
   font-size:14px;
 }
 .abajo{
   font-size:12px;
 }
-.servicios h2{
-  line-height: 15px;
-  margin-bottom:20px!important;
-}
+
 .servicios p{
   font-size: 9px;
 }
+
 #textolargo{
+  width:200px!important;
+  text-align:left;
+  
+}
+#textolargo2{
   width:200px!important;
   text-align:left;
 }
@@ -1358,6 +1583,12 @@ margin-top: 0px;
 .infoofertas{
   margin-left: 12px!important;
 }
+.plataforma{
+  padding:10px;
+  width:98%; 
+  border: 1px solid #d44711;
+}
+
 }
 
 
@@ -1397,7 +1628,8 @@ margin-top: 0px;
   width:200px;
 }
 .presprecio{
-  font-size: 11px;
+  font-size: 14px;
+  text-align: center;
 }
 
 .telefonodiv2{

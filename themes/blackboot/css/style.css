@@ -83,7 +83,7 @@ fieldset {
 }
 form label{
 float: left;
-width: 200px;
+/*width: 200px;*/
 padding-top: 5px;
 text-align: right;
 }
@@ -290,7 +290,8 @@ input[type="file"] {
 }
 select {
   width: 220px;
-  border: 1px solid #bbb;
+  border: 1px solid #134263;
+  color:#363636!important;
 }
 select[multiple],
 select[size] {
@@ -303,6 +304,9 @@ input[type="checkbox"]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+input{
+    border: 1px solid #134263!important;
 }
 .radio,
 .checkbox {
@@ -328,6 +332,9 @@ input[type="checkbox"]:focus {
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
   margin-left: 10px;
+}
+.input-supermini{
+  width: 40px;
 }
 .input-mini {
   width: 60px;

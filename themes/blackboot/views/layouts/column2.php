@@ -11,7 +11,7 @@
     				  }
     			?>
 			</div>        
-		</div><!-- sidebar span3 -->
+		</div>sidebar span3 -->
 
 	<div class="span12">
 		<div class="main">

@@ -36,7 +36,7 @@ class Valorpieza extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto,id_tipo_canto, cantidad', 'required'),
-			array('id_tipo, id_pieza, id_tamano, id_terminacion, id_terminacion_arista, id_terminacion_canto,id_tipo_canto precio, cantidad, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'numerical', 'integerOnly'=>true),
+			array('id_tipo, id_pieza, id_tamano, id_terminacion, id_terminacion_arista, id_terminacion_canto,id_tipo_canto, precio, cantidad, id_presupuesto, tamanoreal, numeropiezas, peso, largo, ancho, grosor, destino', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_tipo, id_pieza, id_tamano, id_terminacion,id_terminacion_arista, id_terminacion_canto,id_tipo_canto, precio, id_presupuesto, tamanoreal, numeropiezas, peso, destino', 'safe', 'on'=>'search'),

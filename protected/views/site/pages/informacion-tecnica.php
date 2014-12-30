@@ -4,7 +4,7 @@
 
 
 
-$this->pageTitle= 'Información técnica - '. Yii::app()->name  . ' Marmolistas';
+$this->pageTitle= 'Información técnica - '. Yii::app()->name  . ' Mármol y Granito';
 Yii::app()->clientScript->registerMetaTag("Información técnica sobre diferentes conocimientos y uso de rocas ornamentales", 'description');
 Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir baldosas, medir obra, resbalabilidad,atencion, asesoramiento,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(
@@ -293,7 +293,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure >
-				<img   alt="Abujardado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/abujardado.jpg">
+				<img   alt="Abujardado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/abujardado.jpg">
 			</figure>
 			</div>
 
@@ -315,7 +315,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure  >
-				<img   alt="Granallado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/granallado.jpg">
+				<img   alt="Granallado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/granallado.jpg">
 			</figure>
 			</div>
 
@@ -335,7 +335,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Flameado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/abujardado.jpg">
+				<img   alt="Flameado- Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/abujardado.jpg">
 			</figure>
 			</div>
 
@@ -356,7 +356,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Envejecido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/granito/envejecido.jpg">
+				<img   alt="Envejecido - Acabado superficial granito - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/granito/envejecido.jpg">
 			</figure>
 			</div>
 
@@ -380,7 +380,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Al corte de sierra - Acabado superficial mármol- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/alcorte.jpg">
+				<img   alt="Al corte de sierra - Acabado superficial mármol- www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/marmol/alcorte.jpg">
 			</figure>
 			</div>
 
@@ -400,7 +400,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Al corte de disco- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/no.jpg">
+				<img   alt="Al corte de disco- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/no.jpg">
 			</figure>
 			</div>
 
@@ -421,7 +421,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Apomazado- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/apomazado.jpg">
+				<img   alt="Apomazado- Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/marmol/apomazado.jpg">
 			</figure>
 			</div>
 
@@ -458,7 +458,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Arenado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/no.jpg">
+				<img   alt="Arenado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/no.jpg">
 			</figure>
 			</div>
 
@@ -475,7 +475,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Flameado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/flameado.jpg">
+				<img   alt="Flameado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/marmol/flameado.jpg">
 			</figure>
 			</div>
 
@@ -492,7 +492,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Abujardado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/abujardado.jpg">
+				<img   alt="Abujardado - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/marmol/abujardado.jpg">
 			</figure>
 			</div>
 
@@ -511,7 +511,7 @@ Yii::app()->clientScript->registerMetaTag("Informacion, materiales, rocas, medir
 			<div class="span2">
 				
 				<figure>
-				<img   alt="Envejecido - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>/textura/acabados/terminaciones/marmol/envejecido.jpg">
+				<img   alt="Envejecido - Acabado superficial mármol - www.proston.es"  class="" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/acabados/terminaciones/marmol/envejecido.jpg">
 			</figure>
 			</div>
 

@@ -1,12 +1,10 @@
 
-<div class="row span9">
+<div class="row span12">
     <div class="span12">
         <div class="span4">
-
             <div class="span12">
                 <strong>Cara</strong>
             </div>
-
             <div class="span12">
                 <div class="span12">
                 <?php if( !empty($terminaciones) ): ?>
@@ -34,18 +32,28 @@
         <?php if( $tipo_pieza == 2 ){?>
 
         <div class="span7">
-            
-            <strong>Canto: </strong>Si la terminacion es pulido el canto sera pulido, las demas terminaciones el canto es apomazado.<br>
-            <strong>Arista: </strong> Todo rodapie viene con bisel en una arista larga. 
+            <strong>Canto: </strong>Si la cara es pulida el canto sera pulido, las demas terminaciones el canto es apomazado.<br>
+            <strong>Arista: </strong>El rodapié viene con bisel de 3mm en una arista larga. 
         </div>       
-        <?php  }else{?>                  
-         <?php   }  ?>
+        <?php   }  ?>
+        <?php if( $tipo_pieza == 3  ){?>
 
+        <div class="span7">
+            <strong>Canto: </strong>Si la terminacion es pulido el canto sera pulido, las demas terminaciones el canto es apomazado.<br>
+            <strong>Arista: </strong>La huella viene con bisel de 3mm en una arista larga.  
+        </div>       
+        <?php   }  ?>
+        <?php if( $tipo_pieza == 5){?>
 
+        <div class="span7">
+            <strong>Canto: </strong>Si la terminacion es pulido el canto sera pulido, las demas terminaciones el canto es apomazado.<br>
+            <strong>Arista: </strong>El zanquin viene con bisel de 3mm en las aristas visibles. 
+        </div>       
+        <?php   }  ?>
         <!--HABRA QUE CONTROLAR SI ES BALDOSA O RODAPIE POR QUE SE CALCULA DIFERENTE-->
         <div class="span4" style="display:none" id="termaristas">
             <div class="span12">
-                 <strong>Arista</strong>
+                <strong>Arista</strong>
             </div>
             
             <div class="span12">                          
@@ -107,52 +115,15 @@
 
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div class="clearfix">&nbsp;</div>    <!--poner los precios unitarios-->
+    <div class="clearfix">&nbsp;</div>
 
-    <div class="offset1 span11">
-        <font color="grey">Consulte la ayuda técnica para asegurarse que material y  terminacion es el más indicado. </font>
-    </div>
 
 </div>
 
-<div class="span3">
-
-
-    
-        <div class="span12" style="float:right"  >
-        <?php if( $tipo_pieza == 1 ){?>
-            <figure>
-            <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/baldosa.png"/>
-            <figcaption style="font-size:10px; float:right;">Baldosa con bisel.</figcaption>
-            </figure>
-        <?php  }else{?>
-            <figure>
-            <img style="float:right;" alt"Render baldosa - proSton.es" src="<?php echo Yii::app()->request->baseUrl?>/images/render_piezas/rodapie.png"/>
-            <figcaption style="font-size:10px; float:right;">Rodapié con bisel.<br> Detalle del canto del rodapié.</figcaption>
-            </figure>
-         <?php   }  ?>
-            
-        </div>
-        <div><!--Se completa con AJAX-->  
-                                
-        </div>  
-    
-</div>
-
-
-
-           
- 
-
-
- 
-
-
- <?php echo "<script>";
+<?php echo "<script>";
     echo "
 $('#Valorpieza_id_term').change(function(){
        
@@ -169,9 +140,7 @@ $('#Valorpieza_id_term').change(function(){
              $('#pretermcara').show('slow');
     }
      
-      
-
-      
+   
 
 
     });
@@ -190,7 +159,7 @@ $('#Valorpieza_id_term_arista').change(function(){
 $('#Valorpieza_id_term_canto').change(function(){
       
         $('#pregunta3').attr('style','display:block');
-            $('#ok3').attr('style','display:none');
+        $('#ok3').attr('style','display:none');
         
         $('#Valorpieza_id_terminacion_canto').val($(this).attr('value'));
         $('#destino').hide();
@@ -198,6 +167,7 @@ $('#Valorpieza_id_term_canto').change(function(){
         if ( $('#Valorpieza_id_term_canto').val() == 40   || $('#Valorpieza_id_term_canto').val() == 41  ){
              $('#pregunta3').attr('style','display:none');
             $('#ok3').attr('style','display:block');
+            $('#tipocantos').hide();
              $('#destino').show('slow');
         }else{
         $('#tipocantos').show('slow');

@@ -3,7 +3,7 @@
 
 $this->pageTitle=Yii::app()->name . ' - Condiciones y privacidad de uso';
 
-$this->pageTitle= 'Condiciones y privacidad de uso - '. Yii::app()->name . ' Marmolistas';
+$this->pageTitle= 'Condiciones y privacidad de uso - '. Yii::app()->name . '';
 
 Yii::app()->clientScript->registerMetaTag("Información de la empresa www.proston.es . Dedicada a la venta de mármoles y granitos", 'description');
 Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Granito ,Barato, Precio, Obra, Reforma, Oferta, Baldosa, Rodapie, Mármol proston, Granito proston,  Marmolistas", 'keywords');
@@ -398,31 +398,25 @@ Yii::app()->clientScript->registerMetaTag("condiciones, privacidad, Marmol , Gra
 
 		<h4>Envíos en la Península (España):</h4>
 		Venta de material que tengamos en el stock / Plazo de entrega: 5 a 7 días laborables.<br>
-		Venta de un material cortado a medida / 	Plazo de entrega: 13 a 15 días. <br>
-		Portes gratis en pedidos de importe superior a ... € (IVA incluido). <br><br>
+		Venta de un material cortado a medida / Plazo de entrega: 13 a 15 días. <br>
+
 
 
 		<strong>Envíos en la Península (Portugal):</strong><br>
-		Venta de material que tengamos en el stock / Plazo de entrega: ¿5 a 7? días laborables.<br>
-		Venta de un material cortado a medida / 	Plazo de entrega: 13 a 15 días. <br>
-		Portes gratis en pedidos de importe superior a ... € (Exento de IVA). <br><br>
+		Venta de material que tengamos en el stock / Plazo de entrega: 5 a 7 días laborables.<br>
+		Venta de un material cortado a medida / Plazo de entrega: 13 a 15 días. <br>
+
 
 		<strong>Envios en Ceuta y Melilla:</strong><br>
-		Venta de material que tengamos en el stock / Plazo de entrega: .. a .. días laborables.<br>
-		Venta de un material cortado a medida / 	Plazo de entrega: .. a .. días. <br>
-		Portes gratis en pedidos de importe superior a ... € (IVA incluido). <br><br>
+		Consultar<br><br>
 
 		<strong>Envios en Baleares:</strong><br>
-		Venta de material que tengamos en el stock / Plazo de entrega: .. a .. días laborables.<br>
-		Venta de un material cortado a medida / 	Plazo de entrega: .. a .. días. <br>
-		Portes gratis en pedidos de importe superior a ... € (IVA incluido). <br><br>
+		Consultar<br><br>
 
 		<strong>Envios en Canarias:</strong><br>
-		Venta de material que tengamos en el stock / Plazo de entrega: .. a .. días laborables.<br>
-		Venta de un material cortado a medida / 	Plazo de entrega: .. a .. días. <br>
-		Portes gratis en pedidos de importe superior a ... € (IVA incluido). <br><br>
+		Consultar<br><br>
 
-		 <strong>NOTA:</strong> En las ventas a Ceuta,  Melilla y Canarias no se repercutirá IVA (21%), no obstante el sistema aduanero aplicará la s cargas impositivas correspondientes. En ningún caso podremos determinar el importe de los impuestos a pagar por el cliente al recibir su pedido ya que, en el caso de Canarias por ejemplo, depende del "I.G.C" y "aduanas de Canarias". A modo ORIENTATIVO, y en ningún caso con carácter fijo, suelen cobrar entre 25 y 40 Euros por Derechos de Importación y Papeles Administrativos de aduanas, además del porcentaje correspondiente al I.G.I.C. Canario. (No nos responsabilizamos de las posibles variaciones que desde aduanas realicen sin previo aviso). <br><br>
+		 <strong>NOTA:</strong> En las ventas a Ceuta,  Melilla y Canarias no se repercutirá IVA (21%), no obstante el sistema aduanero aplicará las cargas impositivas correspondientes. En ningún caso podremos determinar el importe de los impuestos a pagar por el cliente al recibir su pedido ya que, en el caso de Canarias por ejemplo, depende del "I.G.C" y "aduanas de Canarias". A modo ORIENTATIVO, y en ningún caso con carácter fijo, suelen cobrar entre 25 y 40 Euros por Derechos de Importación y Papeles Administrativos de aduanas, además del porcentaje correspondiente al I.G.I.C. Canario. (No nos responsabilizamos de las posibles variaciones que desde aduanas realicen sin previo aviso). <br><br>
 
 		 <strong>ATENCIÓN:</strong> 
 		•	En fechas señaladas como Navidad, Reyes y puentes especiales, no garantizamos que la entrega se efectúe en plazo, debido al volumen de mercancía de las agencias de transporte. 

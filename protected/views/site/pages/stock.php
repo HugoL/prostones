@@ -3,7 +3,7 @@
 
 
 
-$this->pageTitle= 'Stock - '. Yii::app()->name . ' Marmolistas';
+$this->pageTitle= 'Stock - '. Yii::app()->name . ' Mármol y Granito';
 Yii::app()->clientScript->registerMetaTag("Stock de mármol y granito. Compra con los mejores precios", 'description');
 Yii::app()->clientScript->registerMetaTag("Stock, stock marmol, stock granito,ayuda ,obra ,reforma , mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(

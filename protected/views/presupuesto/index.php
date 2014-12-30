@@ -11,288 +11,197 @@
     array('label'=>'Manage Material', 'url'=>array('admin')),
     );*/
 
-$this->pageTitle= 'Presupuesto online - '. Yii::app()->name . 'Marmoles y Granitos';
-Yii::app()->clientScript->registerMetaTag("Presupuesto online a medida de mármoles y granitos.", 'description');
-Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barato, Precio, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
+$this->pageTitle= 'Presupuesto online de Mármol y Granito';
+Yii::app()->clientScript->registerMetaTag("Presupuesto sin compromiso. Precio marmol y granito  barato", 'description');
+Yii::app()->clientScript->registerMetaTag("Presupuesto marmol, presupuesto Granito, Granito Barato, marmol baranto, Precio granito, precio marmol, Oferta, Baldosa, Rodapie, Pulido, Flameado, Abujardado, Mármol proston, Marmolistas", 'keywords');
     ?>
-
-
-
-
 <h1 id="tituloseccion">Presupuesto online</h1>
-    
-
-    <?php
-//Galeria de imágenes
-    $imageArray = array(
-        array(Yii::app()->request->baseUrl.Yii::app()->params['images'].'image1.jpg', 'alt'=>'first image is missing', 'htmlOptions'=>array('title'=>'First image')),
-        array(Yii::app()->request->baseUrl.Yii::app()->params['images'].'image2.jpg', 'htmlOptions'=>array('title'=>'Second image')),
-     );?>
-
+<div class="row pres">
     <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'valorpieza-form',
             'action'=>Yii::app()->createUrl('presupuesto/index'),
             'enableAjaxValidation'=>true,
-    )); ?>
-
-<div class="row pres">
-         
+    )); ?>    
     <div class="span8 panel">   <!-- DIV CENTRAL -->
-
         <div id="inicio" class="span12" ><!--BOTON INICIO-->
             <?php if(Yii::app()->user->hasFlash('success')):?>
-            <div class="alert alert-success">
-                <?php echo Yii::app()->user->getFlash('success'); ?>
-            </div>
+                <div class="alert alert-success">
+                    <?php echo Yii::app()->user->getFlash('success'); ?>
+                </div>
             <?php endif; ?>
 
             <?php if(Yii::app()->user->hasFlash('danger')):?>
-            <div class="alert alert-error">
-                <?php echo Yii::app()->user->getFlash('danger'); ?>
-            </div>
+                <div class="alert alert-error">
+                    <?php echo Yii::app()->user->getFlash('danger'); ?>
+                </div>
             <?php endif; ?>
-                    <div  class="span12">
-                <h4>¿Cómo obtener tu presupuesto con <img  alt="www.proSton.es - Suministro de materiales"  src="<?php echo Yii::app()->baseUrl; ?>/images/logoletra.png" />?</h4>
-                    <br>
-                   
-                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>pasospresu.png"/>
-                    </div>
-                    <a href="#"> 
-                    <div class="span4 offset2 ini">
-                       <h2> <li align="center"> Haz <span id="naranja">click</span> para añadir un material al presupuesto</li></h2>
-                    </div>
-                    </a>
-                    <div class="span10" id="imgpresubot">
-                        <!--<p>Para comenzar el presupuesto haga click en <strong>Añadir pieza</strong> para obtener un presupuesto <em>sin compromiso</em> alguno. Podrá seleccionar los materiales que necesite y analizar el presupuesto en el pdf que le daremos. Si no encuentra el material deseado, contactenos para colicitarlo.</p>-->
-                        <br>
-                        <div class="span2">
-                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/catapresu.png"/>
-                       <p>
-                        <span id="textonce"><strong>Catálogo con las mejores soluciones.</strong></span>
-                        </p>
-                        </div>
-                         <div class="span2">
-                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/enviospresu.png"/>
-                       <p>
-                        <span id="textonce"><strong>Envios a toda España.</strong></span>
-                        </p>
-                        </div>
-                         <div class="span2">
-                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/transpresu.png"/>
-                       <p>
-                        <span id="textonce"><strong>Camiones con rampa de descarga.</strong></span>            
-                        </p>
-                        </div>
-                         <div class="span2">
-                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/seguridadpresu.png"/>
-                       <p>
-                       <span id="textonce"> <strong>Confianza online y total seguridad.</strong></span>
-                        </p>
-                        </div>
-                         <div class="span2">
-                        <img style="float:left;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>presupuesto/rapidedpresu.png"/>
-                       <p>
-                       <span id="textonce"> <strong>Envio rápido y eficiente.</strong></span>
-                        </p>
-                        </div>
 
-                       
+            <div  class="span12">
+                    <h4>¿Cómo obtener presupuesto sin compromiso con <img  alt="www.proSton.es - Suministro de materiales"  src="<?php echo Yii::app()->baseUrl; ?>/images/logoletra.png" />?</h4>
+            </div>
+            <div class="clearfix">&nbsp;</div>  
+            <div class="span12" >
+                <div class="span12">
+                    <div class="span1 numeropresupuesto">
+                        1
                     </div>
-                    
+                    <div class="span10">
+                        <p class="texto22"><strong>Elige el material</strong></p>
+                        <p>Seleccione el material que necesita mediante  un sencillo formulario.</p>
+                    </div>
+                </div>
+                <div class="span12 marginceroi">
+                    <div class="span1 numeropresupuesto">
+                        2
+                    </div>
+                    <div class="span10">
+                        <p class="texto22"><strong>Agregalo al presupuesto</strong></p>
+                        <p>A la derecha aparecerá su material, añada otro o finalice el presupuesto.</p>
+                    </div>
+                </div> 
+                <div class="span12 marginceroi">
+                    <div class="span1 numeropresupuesto">
+                        3
+                    </div>
+                    <div class="span10">
+                        <p class="texto22"><strong>Recibe tu precio</strong></p>
+                        <p>Rellene sus datos para facilitar el contacto. Recibira un pdf al instante en su email con su presupuesto.</p>
+                    </div>
+                </div>                                          
+            </div>
+           
+            <div class="span5 offset2 ini">
+                <h2> Haz <span id="naranja">click</span> para añadir un material al presupuesto</h2>
+            </div>
         </div>
 
-                
-        <div class="span12 row" id="material" ><!-- PASO 1 MATERIAL-->
-                    <div class="span2 pasos" >
-                        <div class="span6 titulopcion"><h2>Material</h2>
-                        </div>
-
-                       <div class="span6" id="pregunta1">
-                            <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-                        </div> 
-                        <div class="span6" id="ok1">
-                           <img alt="Ok- www.proston.es"  src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
-                        </div> 
-
-                       <div class="span12">
-                        <p id="titulopaso">Paso 1</p>
-                       </div>
+        <div class="span12 row" id="material"><!-- PASO 1 MATERIAL-->
+            
+            <div class="span12 titulopasos">
+                <h2><span class="texto16naranja ">Paso 1</span> <span class="texto18azul">MATERIAL</span></h2>
+            </div>
+            <div class="span12 marginceroi">
+                <div class="span1">
+                     <img alt="Pregunta - www.proston.es" id="pregunta1" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Ok- www.proston.es" id="ok1" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                </div>
+                <div class="span11 texto12gris">
+                    Seleccione su material.
+                </div>
+            </div>
+            <div class="cuadropresu span11 marginceroi">
+                <div class="span12">
+                    <div class=" span6 bordepresu">
+                        <?php if( !empty($materiales) ):?> 
+                        <ul>   
+                            <?php foreach ( $materiales as $key => $material ): ?>
+                               <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);">  <li class="span4 offset1 color<?php echo $material->id; ?>">
+                                    <?php echo $material->nombre; ?>
+                                </li></a>
+                                        
+                                        <?php //echo CHtml::link($material->nombre,array('presupuesto/index/idMaterial/'.$material->id),array('class'=>'thumbnail mate','rel'=>'tooltip','data-title'=>'Tooltip')); ?>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php endif; ?>
                     </div>
 
-                    <div class="cuadropresu span10">
+                    <div class="span6 textogris">
+                        <p>- Tambien trabajamos con Calizas, Travertinos... Indiquenos que desea, próximamente estarán disponibles online.
+                    </div>
+                </div>
 
-                        <div class="span12">
-                            Seleccione el <strong>material</strong>.
-                        </div>
+                <div class="clearfix">&nbsp;</div>    
 
-                        <div class="span12">
-                            <div class=" span6 bordepresu">
-                                <?php if( !empty($materiales) ):?> 
-
-                                    <ul>   
-                                        <?php foreach ( $materiales as $key => $material ): ?>
-                                           <a href="#" id="material<?php echo $material->id; ?>" onclick="vermaterial(<?php echo $material->id; ?>);">   
-                                            <li class="span4 offset1 color<?php echo $material->id; ?>">
-                                                <?php echo $material->nombre; ?>
-                                            </li>
-                                        </a>
-                                        <?php //echo CHtml::link($material->nombre,array('presupuesto/index/idMaterial/'.$material->id),array('class'=>'thumbnail mate','rel'=>'tooltip','data-title'=>'Tooltip')); ?>
-
-
-                                        <?php endforeach; ?>
-
-                                     </ul>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="span6 textogris">
-                              <p>- Tambien trabajamos con Calizas, Travertinos... Indiquenos que desea, próximamente estarán disponibles online.
-
-                            </div>
-
-                        </div>
-
-                        <div class="clearfix">&nbsp;</div>    
-
-
-                        <div class="span12" id="tipos">
-
-                            <?php if( !empty($tipos) ): ?>
-                                <div class="ejemplo span12">
-                                   <div class="clearfix"></div>
-
-                                        <?php foreach ( $tipos as $key => $tipo ): ?>  
-                                        <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?> ti<?php echo $tipo->id; ?>" id="<?php echo $tipo->id; ?>">
-                                            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."ancha/".$tipo->imagen; ?>"alt="<?php echo $tipo->nombre; ?>"  /></a>
-                                            <div class="ejemplo_img_cont cont<?php echo $tipo->id; ?>">
+                <div class="span12" id="tipos">
+                    <?php if( !empty($tipos) ): ?>
+                        <div class="ejemplo span12">
+                            <div class="clearfix">&nbsp;</div>
+                            <?php foreach ( $tipos as $key => $tipo ): ?>  
+                                <div class="span2  ejemplo_img tipos tipo<?php echo $tipo->id_material; ?> ti<?php echo $tipo->id; ?>" id="<?php echo $tipo->id; ?>">
+                                    <a href="#"><img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['imagenes']."ancha/".$tipo->imagen; ?>" alt="<?php echo $tipo->nombre; ?>"  /></a>
+                                    <div class="ejemplo_img_cont cont<?php echo $tipo->id; ?>">
                                                <?php echo $tipo->nombre; ?>
-                                            </div>
-                                        </div>
-                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
-                                <div class="clearfix">&nbsp;</div>
-                            <?php endif; ?>
+                                <?php endforeach; ?>
                         </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div> <!--FIN PASO 1-->
 
-                    </div>     
-        </div><!--FIN PASO 1-->
+  
+    
 
 
         <div class="span12 row" id="tipo_piezas"> <!-- PASO 2 TIPO DE PIEZA: Baldosa, rodapie...; tamaños y precios-->
-
-                    <div class="span2 pasos" >
-                        <div class="span6 titulopcion"><h2>Formato</h2>
-                        </div>
-
-                        <div class="span6" id="pregunta2">
-                            <img  alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-                        </div> 
-                        <div class="span6" id="ok2">
-                            <img alt="Ok - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
-                        </div> 
-
-                        <div class="span12">
-                            <p id="titulopaso">Paso 2</p>
-                        </div>
-                    </div>
+            
+            <div class="span12 titulopasos">
+                <h2><span class="texto16naranja ">Paso 2</span> <span class="texto18azul">FORMATO Y  TAMAÑO</span></h2>
+            </div>
+            <div class="span12 marginceroi" >
+                <img alt="Pregunta" id="pregunta2" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                <img alt="Ok" id="ok2" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+            </div>
+         
 
 
-                    
-                    <div class="cuadropresu span10">
-                        <div class="span12">
-                            Seleccione el <strong>formato de pieza</strong> y el <strong>tamaño</strong>.
-                        </div>
-                        <div class="span12">
-                        <div class="span4 pa">
-                            <?php if( !empty($piezas) ): ?>
-                                <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
-                                array('class'=>'piezas','prompt'=>'Selecciona formato'));?>
-                            <?php endif; ?>
-
-                        </div>
-
-                        
-
-                        <div id="tamanos" class="span4"></div>
-
-                        <!-- tamaños -->
-                        
-                        <div id="preciounitario" class="span3"></div>
-
-                        <!--precio unitario-->
-                        </div>
-                    </div>
-        </div><!-- FIN PASO 2-->        
-
-
-        <div class="span12" id="terminaciones"><!--PASO 3-->
-
-            <div class="span2 pasos" >
-                <div class="span6 titulopcion"><h2>Acabado</h2></div>
-
-                <div class="span6" id="pregunta3">
-                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-                </div> 
-                <div class="span6" id="ok3">
-                    <img alt="Ok- www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
-                </div> 
+            <div class="cuadropresu span12">
 
                 <div class="span12">
-                     <p id="titulopaso"><strong>Paso 3</strong></p>
+                    <div class="span4 pa">
+                        <?php if( !empty($piezas) ): ?>
+                        <?php echo CHtml::activeDropDownList($valorpieza, 'id_pieza', CHtml::listData($piezas,'id', 'nombre'),
+                                    array('class'=>'piezas', 'prompt'=>'Formato de pieza'));?>
+                        <?php endif; ?>
+
+                    </div>
+
+                    <div id="tamanos" class="span4"></div>
+                    <div id="preciounitario" class="span3"></div>
                 </div>
             </div>
+        </div><!-- FIN PASO 2-->        
 
-
-
-    
-            <div class="cuadropresu span10">
-
-                <div class="span12">
-                    Seleccione la <strong>terminacion</strong> de la pieza.
+        <div class="span12" id="terminaciones"><!--PASO 3-->
+            <div class="span12 titulopasos">
+                <h2><span class="texto16naranja ">Paso 3</span> <span class="texto18azul">TERMINACIÓN</span></h2>
+            </div>
+            <div class="span12 marginceroi">
+                <div class="span1 marginceroi">
+                     <img alt="Pregunta" id="pregunta3" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Ok" id="ok3" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div>
-
-
-               
+                <div class="span11 texto12gris">
+                    Seleccione la terminación. Consulte la informacion técnica si necesita asegurarse que terminación es la mas adecuada para cada material.
+                </div>
+            </div>
+  
+            <div class="cuadropresu span12">
+          
                 <div id="term" class="span12 "><!--Se completa con AJAX-->  
                             
                 </div>
-                    
-      
-      
-                
-
-
-    
-
             </div>
         </div><!--FIN PASO 3-->
 
 
         <div class="span12" id="destino" ><!--PASO 4-->
-
-            <div class="span2 pasos" >
-                <div class="span6 titulopcion"><h2>Destino</h2>
+            <div class="span12 titulopasos" >
+            <h2><span class="texto16naranja ">Paso 4</span> <span class="texto18azul">DESTINO</span></h2>
+            </div>
+            <div class="span12 marginceroi" >
+                <div class="span1">
+                    <img alt="Pregunta" id="pregunta4" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Ok" id="ok4" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
                 </div>
-
-                <div class="span6" id="pregunta4">
-                    <img alt="Pregunta - www.proston.es"src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-                </div> 
-                <div class="span6" id="ok4">
-                    <img alt="Ok - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
-                </div> 
-
-                <div class="span12">
-                  <p id="titulopaso">Paso 4</p>
+                <div class="span11 texto12gris">
+                    Seleccione el destino del material.
                 </div>
             </div>
-
-
-
     
-            <div class="cuadropresu span10">
-                <div class="span12">
-                    Seleccione el destino del material.
-                 </div>
+            <div class="cuadropresu span12">
+
                 <div class="span5">
                     <div class="span12">
                         <div class="span12 pa" id="destino2">
@@ -300,7 +209,6 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                         </div>
                     </div>
                 </div>
-
                 <div class="span6 textogris">
                     <p>Proston envia sus materiales a todo el territorio nacional. El transporte es opcional. Usted puede recoger el material en origen sin coste alguno.</p>
                 </div>
@@ -309,28 +217,21 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
 
         <div class="span12" id="cantidad"><!--PASO 5-->
-            <div class="span2 pasos" >
-                <div class="span6 titulopcion"><h2>Cantidad</h2></div>
-
-                <div class="span6" id="pregunta4">
-                    <img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-                </div> 
-                <div class="span6" id="ok4">
-                    <img alt="ok- www.proston.es"src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
-                </div> 
-
-                <div class="span12">
-                    <p id="titulopaso">Paso 5</p>
-                </div>
+    <div class="span12 titulopasos" >
+            <h2><span class="texto16naranja ">Paso 5</span> <span class="texto18azul">CANTIDAD</span></h2>
             </div>
-
-
-
-    
-            <div class="cuadropresu span10">
-                <div class="span12">
+            <div class="span12 marginceroi" >
+                <div class="span1">
+                    <img alt="Pregunta" id="pregunta5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
+                    <img alt="Ok" id="ok5" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/ok.png"/>
+                </div>
+                <div class="span11 texto12gris">
                     Seleccione la cantidad de material.
                 </div>
+            </div>
+    
+            <div class="cuadropresu span12">
+
                 <div class="span12">
                     <div class="span6">
                         <div class="span12 po">
@@ -344,6 +245,8 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
 
                     <div class="span6" id="boton" >
                         <div class="row">
+                         
+
                             <?php echo $form->hiddenField($valorpieza,'id_material',array('value'=>'0')); ?>
                             <?php echo $form->hiddenField($valorpieza,'id_tipo',array('value'=>'0')); ?>
                             <?php //echo $form->hiddenField($valorpieza,'id_tamano',array('value'=>'0')); ?>
@@ -367,21 +270,19 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
                     </div>
                 </div>
             </div>
-        <?php $this->endWidget(); ?>
         </div><!--FIN PASO 5-->
-
     </div><!--FIN DIV CENTRAL-->
+    <?php $this->endWidget(); ?>
 
     <div class="span4"><!--DIV LATERAL - LISTA DE PIEZAS EN EL PRESUPUESTO-->
-
-        
-
-                
         <div id="piezasguardadas" class="span12"><!-- piezas guardadas -->
-           <div><img style="float:left; " width="30px;" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/compra.png"/></div>
- <div style="margin-top:5px; margin-left:40px"><strong>Tu presupuesto:</strong>  <span id="textodiez">(Aquí aparecera su material). Todos los presupuestos son gratuitos y sin ningún tipo de compromiso. Conozca el precio de su material y guarde el pdf para futuras consultas.</span></<div>
-
-           
+            <div class="iconopresupuesto">
+                <img width="40" alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>icon_footer/palet.png"/>
+            </div>
+            <div class="textoiniciopresupuesto">
+                <strong>Tu presupuesto:</strong>  <span id="textodiez">(Aquí aparecera su material. Agregue el material que necesita para obtener su precio sin ningún tipo de compromiso.)</span>
+            </div>
+     
             <?php if( isset($presupuesto) && $presupuesto->id != 0 ):
             $criteria=new CDbCriteria;                      
             $criteria->compare('id_presupuesto',$presupuesto->id);  
@@ -389,256 +290,257 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             $piezas = Valorpieza::model()->findAll($criteria);  
             $i = 1;?>
 
-            <?php foreach ($piezas as $key => $pieza): ?>
+                <?php foreach ($piezas as $key => $pieza): ?>
 
-            <div class="well span11">
-                <div class="clearfix"></div> 
-                <span id="azul">Constulta <?php echo $i ; $i = $i + 1;?>     </span>
-                <div class="span12 cuadropedido">
-                    <div class="span12"><font><strong>Material</strong></font></div>
-
-                    <div class="span12">
-                        <div class="span2">
-                            <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $pieza->tipo->imagen; ?> "/>
-                            <strong><font size="3"><?php echo str_replace(".",",",$pieza->tamanoreal); ?></font><?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?></strong>
+                <div class="well span11">
+                    <span id="azul">Constulta <?php echo $i ; $i = $i + 1;?>     </span>
+                    <div class="span12 cuadropedido">
+                        <div class="span12">
+                            <div class="span2">
+                                <img src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>textura/mini/<?php echo $pieza->tipo->imagen; ?> "/>
+                                <strong><span class="texto16naranja"><?php echo str_replace(".",",",$pieza->tamanoreal); ?><?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?></span></strong>
                        
-                        </div>
-                        <div class="span10 matpresu">
+                            </div>
+                            <div class="span10 matpresu">
 
-                            <p><font size="3"><?php echo $pieza->tipo->nombre; ?>. <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){echo '';}else{echo $pieza->numeropiezas;}?> <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>. </font> </p>
+                                <p ><span class="texto18azul"><?php echo $pieza->tipo->nombre; ?></span><span class="texto16gris"> <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){echo '';}else{echo $pieza->numeropiezas;}?> <?php echo $pieza->pieza->nombre; ?>s de <?php echo $pieza->tamano->nombre; ?>.</span></p>
                             
-                            <table style="float:right">
-                                <tr><td align="right" colspan="2"><em><font size="2">Descripción</font></em></td><td align="right" style="padding-right:5px"><em>Precio</em></td></tr>
+                                <table>
+                                    <tr>
+                                        <td align="right" colspan="2"><em>Descripción</em></td>
+                                        <td align="right" class="paddingdech"><em>Precio</em></td>
+                                    </tr>
 
-                                <tr>
-                                    <td align="right" colspan="2">
+                                    <tr>
+                                        <td align="right" colspan="2">
+                                        <!--CONTROLAR SI ES UNIDADES O m2-->
+                                        <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2 ){echo str_replace(".",",",$pieza->tamanoreal);
+                                            if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup>";}else{echo  "m.";
+                                            }
+                                        }?>
+                                        <?php if( $pieza->id_pieza == 3 || $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                                            echo str_replace(".",",",$pieza->cantidad);
+                                            echo " unidades.";
+                                        }?>
 
-                                    <?php echo str_replace(".",",",$pieza->tamanoreal); ?> <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?>
-                                     a  
-                                    <?php echo $pieza->preciounitario; ?> €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?>
-                                    </td>
-                                    <td align="right" style="padding-right:5px">
-                                     <?php
-                                     $prema = round($pieza->tamanoreal * $pieza->preciounitario,2);
-                                    $prema2 =number_format((float)$prema, 2, '.', '');
-                                    echo str_replace(".",",",$prema2) . " € "; 
-
-                                    
-                                    ?>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td align="right" colspan="2" >
-                                        <em>Cara:</em> <?php echo $pieza->terminacion->nombre; ?>.
-                                        <?php echo $pieza->terminacion->precio; ?> €/m<sup>2</sup>
-                                    </td>
-                                    <td align="right" style="padding-right:5px">
-                                        <?php if( $pieza->id_pieza == 1 ){
-                                            $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal,2);
-                                            $termcara2 =number_format((float)$termcara, 2, '.', '');
-                                            echo str_replace(".",",",$termcara2) . " € ";
+                                         a  
+                                        <?php echo $pieza->preciounitario; ?> €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";}else{echo "m.";}?>
+                                        </td>
+                                        <td align="right" class="paddingdech">
+                                         <?php
+                                         if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2 ){
+                                            $prema = round($pieza->tamanoreal * $pieza->preciounitario,2);
                                         }else{
-                                            $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
+                                            $prema = round($pieza->cantidad * $pieza->preciounitario,2);
+                                        }
+                                        $prema2 =number_format((float)$prema, 2, '.', '');
+                                        echo str_replace(".",",",$prema2) . " € "; 
+                                       
+                                        ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" colspan="2" >
+                                            <em>Cara:</em> <?php echo $pieza->terminacion->nombre; ?>.
+                                            <?php echo $pieza->terminacion->precio; ?> €/m<sup>2</sup>
+                                        </td>
+                                        <td align="right" class="paddingdech">
+                                            <?php if( $pieza->id_pieza == 1 ){
+                                                $termcara = round($pieza->terminacion->precio * $pieza->tamanoreal,2);
+                                            }
+                                            if( $pieza->id_pieza == 2 ){
+                                                $termcara = round($pieza->terminacion->precio * ($pieza->tamano->tamanopieza *$pieza->numeropiezas),2);
+                                              
+                                            } 
+                                             if( $pieza->id_pieza == 3 || $pieza->id_pieza == 4 || $pieza->id_pieza == 5 ){
+                                                $termcara = round($pieza->terminacion->precio * ($pieza->tamanoreal),2);
+                                              
+                                            } 
                                             $termcara2 =number_format((float)$termcara, 2, '.', '');
-                                            echo str_replace(".",",",$termcara2) . " € "; 
-                                        } ?>
+                                                echo str_replace(".",",",$termcara2) . " € "; 
+                                            ?>                          
+                                        </td>
+                                    </tr>
+                                    <?php if ($pieza->id_tipo_canto == 1 || $pieza->id_tipo_canto == 2){ ?>
+                                    <tr>
+                                        <td align="right" colspan="2" >
+                                            <em>Canto</em> 
+                                            <!--crear que si es largo libre no salga el tamaño-->
+                                            <?php  if( $pieza->id_tipo_canto== 1 ){
+                                            echo 'largo ' . $pieza->tamano->cantolargo * 100 . ' cm.';
+                                            }
 
-                                                                    
-                                    </td>
-                                </tr>
+                                            if( $pieza->id_tipo_canto== 2 ){ 
+                                           echo 'corto ' . $pieza->tamano->cantocorto * 100 . ' cm. ';
+                                            }?>
+                                            <?php if( $pieza->id_pieza == 1 ){
+                                             echo "- " . $pieza->terminacioncanto->nombre . ".";  
+                                             }else{
+                                            if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
+                                            echo "- Pulido";
+                                            }else{
+                                            echo "- Apomazado";
+                                            }}?>  
+                                        </td>
 
+                                        <td align="right"  class="paddingdech">
+                                                 
+                                             <?php if( $pieza->id_pieza == 1 ){
 
-                                 <tr>
-                                    <td align="right" colspan="2" >
-                                        <em>Canto</em> 
-                                        <!--crear que si es largo libre no salga el tamaño-->
-                                      <?php   
-
-
-                  if( $pieza->id_tipo_canto== 1 ){
-                  echo 'largo ' . $pieza->tamano->cantolargo * 100 . ' cm.';
-
-
-                 }
-
-                 if( $pieza->id_tipo_canto== 2 ){ 
-
-                   echo 'corto ' . $pieza->tamano->cantocorto * 100 . ' cm. ';
-                 } 
-
-                 ?>
-
-
-
-                 <?php if( $pieza->id_pieza == 1 ){
-                  echo "- " . $pieza->terminacioncanto->nombre . ".";  
-                  }else{
-
-                  if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
-
-                   echo "- Pulido";
-                  }else{
-                    echo "- Apomazado";
-                  }        
-
-                 }  ?>  
-                                    </td>
-
-                                    <td align="right"  style="padding-right:5px">
-                                             
-                                         <?php if( $pieza->id_pieza == 1 ){
-
-                                                    if( $pieza->id_tipo_canto== 2 ){
-                                                        
-                                                        $longitudcanto = $pieza->tamano->cantocorto;
-                                                    }else{
-                                                        $longitudcanto = $pieza->tamano->cantolargo;
-                                                    }
-                                            $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);
-                                            $termcanto2 =number_format((float)$termcanto, 2, '.', '');
-                                            echo str_replace(".",",",$termcanto2) . " € ";  
+                                                        if( $pieza->id_tipo_canto== 2 ){
+                                                            
+                                                            $longitudcanto = $pieza->tamano->cantocorto;
+                                                        }else{
+                                                            $longitudcanto = $pieza->tamano->cantolargo;
+                                                        }
+                                                $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);
+                                                $termcanto2 =number_format((float)$termcanto, 2, '.', '');
+                                                echo str_replace(".",",",$termcanto2) . " € ";  
 
 
-                                        }else{
+                                            }else{
 
-                                              if( $pieza->id_tipo_canto== 2 ){
-                                                        $longitudcanto = $pieza->tamano->cantocorto;
-                                                    }else{
-                                                        $longitudcanto = $pieza->tamano->cantolargo;
+                                                  if( $pieza->id_tipo_canto== 2 ){
+                                                            $longitudcanto = $pieza->tamano->cantocorto;
+                                                        }else{
+                                                            $longitudcanto = $pieza->tamano->cantolargo;
 
-                                                    }
-                                            $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);   
+                                                        }
+                                                $termcanto = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);   
 
 
-                                            echo "0 € ";
-                                        }  ?> 
-                                    </td>
-                                </tr>
+                                                echo "0 € ";
+                                            }  ?> 
+                                        </td>
+                                    </tr>
 
-                                <tr>
+                                    <?php }else{
+                                        $termcanto = 0;
+                                    }
+                                        ?>
 
-                                    <td align="right" colspan="2" >
-                                    <em>Arista:</em>
-                                        <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacionarista->nombre . ".";  
-                                         }else{
-                                            echo "Bisel 1,5 mm";       
 
-                                        }  ?> 
-                                         <?php if( $pieza->id_pieza == 1 ){
-                                         echo $pieza->terminacionarista->precio . " €/m<sup>2</sup>" ;
-                                         }else{
-                                         echo "";
-                                        }  ?> 
-                                    </td>
+                                <?php if ($pieza->id_terminacion_arista == 33 || $pieza->id_terminacion_arista == 34){ ?>        
+                                    <tr>
+                                        <td align="right" colspan="2" >
+                                        <em>Arista:</em>
+                                            <?php if( $pieza->id_pieza == 1 ){
+                                             echo $pieza->terminacionarista->nombre . ".";  
+                                             }else{
+                                                echo "Bisel 1,5 mm";       
 
-                                    <td align="right" style="padding-right:5px">
-                                    <?php
+                                            }  ?> 
+                                             <?php if( $pieza->id_pieza == 1 ){
+                                             echo $pieza->terminacionarista->precio . " €/m<sup>2</sup>" ;
+                                             }else{
+                                             echo "";
+                                            }  ?> 
+                                        </td>
 
-                                        $termarista = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
-                                        $termarista2 =number_format((float)$termarista, 2, '.', '');
+                                        <td align="right" class="paddingdech">
+                                        <?php
+
+                                            $termarista = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
+                                            $termarista2 =number_format((float)$termarista, 2, '.', '');
+                                                
                                             
-                                        
-                                        ?>                      
+                                            ?>                      
 
-                                        <?php if( $pieza->id_pieza == 1 ){
-                                            echo str_replace(".",",",$termarista2) . " € ";  
-                                        }else{
-                                            echo "0 € ";
-                                        } ?>
-                                    </td>
-                                </tr>
+                                            <?php if( $pieza->id_pieza == 1 ){
+                                                echo str_replace(".",",",$termarista2) . " € ";  
+                                            }else{
+                                                echo "0 € ";
+                                            } ?>
+                                        </td>
+                                    </tr>
+                                    <?php }else{
+                                        $termarista = 0;
+                                    }
+                                        ?>
 
 
-                               
-                                <tr>
-                                    <td align="right" colspan="2" >
-                                       <strong> Precio material:</strong>
-                                    </td>
-                                    <td align="right" style="padding-right:5px; " >
-                                    <strong>
-                                        
-                                        <?php $preciomat = round( $prema + $termcara + $termarista + $termcanto,2)?>
-                                        <?php echo str_replace(".",",",$preciomat); ?> €
-                                    </strong>
-                                    </td>
-                                </tr>
-                            </table>
-                                                           
+                                    <tr>
+                                        <td align="right" colspan="2" >
+                                           <strong> Precio material:</strong>
+                                        </td>
+                                        <td align="right" class="paddingdech">
+                                        <strong>
+                                            
+                                            <?php $preciomat = round( $prema + $termcara + $termarista + $termcanto,2)?>
+                                            <?php echo str_replace(".",",",$preciomat); ?> €
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
+
+                    <div class="span12 transportepresupuesto">
+                        <strong>Transporte</strong> (opcional)<br>
+                        <table align="right">
+                            <tr>
+                                <td>
+                                Peso: <?php echo $pieza->peso; ?> Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>. <?php echo $pieza->pales ?> pales.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                <strong>Precio transporte:</strong>
+                                    <?php
+                                        $pretrans = round($pieza->preciotransporte,2);
+                                       $pretrans2 =number_format((float)$pretrans, 2, '.', '');
+                                        echo str_replace(".",",",$pretrans2) . " € ";
+                                     ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="span12 transportepresupuesto" align="right">
+                        <table align="right">
+                            <tr>
+                                <td align="right">
+
+                                Material + transporte:
+                                  <?php $prematrans = round($preciomat + $pieza->preciotransporte ,2);
+                                       $prematrans2 =number_format((float)$prematrans, 2, '.', '');
+                                        echo str_replace(".",",",$prematrans2) . " € ";
+                                 ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="right">
+                                IVA:21%: <?php 
+                                $preiva = round((21 * $prematrans / 100),2);
+                                $preiva2 = number_format((float)$preiva, 2, '.', '');
+                                echo str_replace(".",",",$preiva2) . " € ";
+                                ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="right" class="texto22">
+                                <strong> Total: <?php $pretot = round($prematrans + $preiva,2);
+                                $pretot2 =number_format((float)$pretot, 2, '.', '');
+                                echo str_replace(".",",",$pretot2) . " € ";
+                                ?></strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-
-
-                <div class="span12" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
-                <strong>Transporte</strong> (opcional)<br>
-                    <table align="right">
-                        <tr>
-                            <td>
-                                
-                    Peso: <?php echo $pieza->peso; ?> Kg. De <?php echo $pieza->tipo->provincia->nombre ?>  a <?php echo $pieza->provincia->nombre; ?>. <?php echo $pieza->pales ?> pales.
-                            </td>
-                        <tr>
-                         <tr>
-                            <td align="right">
-                            <strong>Precio transporte:
-                          <?php
-                            $pretrans = round($pieza->preciotransporte,2);
-                           $pretrans2 =number_format((float)$pretrans, 2, '.', '');
-                            echo str_replace(".",",",$pretrans2) . " € ";
-                         ?>
-                            </td>
-                        <tr>
-
-                    </table>
-                                    
-                </div>
-
-                <div class="span12" align="right" style="background-color:white; padding:5px; border:1px solid #134263; margin-bottom:10px;">
-                    <table align="right">
-                        <tr>
-                            <td align="right">
-
-                     Material + transporte:
-                      <?php $prematrans = round($preciomat + $pieza->preciotransporte ,2);
-                           $prematrans2 =number_format((float)$prematrans, 2, '.', '');
-                            echo str_replace(".",",",$prematrans2) . " € ";
-                     ?></td>
-                     </tr>
-
-                        <tr>
-                            <td align="right">
-                     IVA:21%: <?php 
-                            $preiva = round((21 * $prematrans / 100),2);
-                           $preiva2 = number_format((float)$preiva, 2, '.', '');
-                            echo str_replace(".",",",$preiva2) . " € ";
-                            ?>
-                        </td>
-                        </tr>
-
-                        <tr>
-                            <td align="right">
-                     <font size="3"><strong> Total: <?php $pretot = round($prematrans + $preiva,2);
-                           $pretot2 =number_format((float)$pretot, 2, '.', '');
-                            echo str_replace(".",",",$pretot2) . " € ";
-
-                     ?></strong></font>
-                     </td>
-                     </tr>
-                     </table>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
         <?php if (isset($presupuesto) ): ?>
         <div class="span11"><img alt="Pregunta - www.proston.es" src="<?php echo Yii::app()->request->baseUrl.Yii::app()->params['images'] ?>iconos/pregunta.png"/>
-        <strong>Finalizar presupuesto</strong><br>
-        <p>Introduzca su nombre y su email. Le enviaremos un Pdf del presupuesto a su email. El teléfono es opcional, incluyalo si quiere que nos pongamos en contacto más rapidamente.</p></div>
+            <strong>Finalizar presupuesto</strong><br>
+            <p>Introduzca su nombre y su email. Le enviaremos un Pdf del presupuesto a su email. El teléfono es opcional, incluyalo si quiere que nos pongamos en contacto más rapidamente.</p>
+        </div>
         <div class="span4">
             
 
@@ -665,46 +567,63 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
             <?php echo CHtml::submitButton('Generar Presupuesto'); ?>
             </div>
             <?php $this->endWidget(); ?>
-            <?php endif; ?>
+            
         </div>
+        <?php endif; ?>
     </div><!-- FIN LISTA DE PIEZAS EN EL PRESUPUESTO-->
-
 </div><!-- /row -->
 
 <div class="clearfix">&nbsp;</div>    
 <!--SCRIPTS -->
-
 <script type="text/javascript"> 
-    $(document).ready(function(){
-        $(".ejemplo_img").mouseenter(function() {
-            $(".ejemplo_img_cont", this).stop().animate({ top:'51px' },{ queue:false, duration:300 });
-        });
-        $(".ejemplo_img").mouseleave(function() {
-            $(".ejemplo_img_cont", this).stop().animate({ top:'70px' },{ queue:false, duration:300 });
-        });
+$(document).ready(function(){
+    $(".ejemplo_img").mouseenter(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'51px' },{ queue:false, duration:300 });
     });
-
-
-}
+    $(".ejemplo_img").mouseleave(function() {
+        $(".ejemplo_img_cont", this).stop().animate({ top:'71px' },{ queue:false, duration:300 });
+    });
+});
 </script>
 
 <?php $url_action = CHtml::normalizeUrl(array('/presupuesto/ajaxTamanos')); ?>
+<?php $url_action2 = CHtml::normalizeUrl(array('/presupuesto/ajaxHuellas')); ?>
 <?php Yii::app()->getClientScript()->registerScript("tamano_precio",
     "
     $('#Valorpieza_id_pieza').change(function(){
 
         idtipo = $('#Valorpieza_id_tipo').val();
         idpieza = $('#Valorpieza_id_pieza').val();
-        $.ajax({
-            url: '$url_action', type: 'post', 
-            data: { id_tipo: idtipo, id_pieza: idpieza },
-            success: function(response){
-                $('#tamanos').html(response);
-            },
-            error: function(e){
-                $('#tamanos').html(e.responseText);
-            }
-        });
+
+
+        if( $('#Valorpieza_id_pieza').val() == 3 || $('#Valorpieza_id_pieza').val() == 4 ){
+            
+            $.ajax({
+                url: '$url_action2', type: 'post', 
+                data: { id_tipo: idtipo, id_pieza: idpieza },
+                success: function(response){
+                    $('#tamanos').html(response);
+                },
+                error: function(e){
+                    $('#tamanos').html(e.responseText);
+                }
+            });          
+
+        }else{
+            $.ajax({
+                url: '$url_action', type: 'post', 
+                data: { id_tipo: idtipo, id_pieza: idpieza },
+                success: function(response){
+                    $('#tamanos').html(response);
+                },
+                error: function(e){
+                    $('#tamanos').html(e.responseText);
+                }
+            });            
+        }
+
+
+
 
         $('#terminaciones').hide();
         $('#destino').hide();
@@ -717,19 +636,18 @@ Yii::app()->clientScript->registerMetaTag("Presupuesto,  Marmol , Granito ,Barat
         $('.tamano'+$('#Valorpieza_id_pieza').val()).attr('style','display:block');
         if( $('#Valorpieza_id_pieza').val() == 1 ){
             $('#medida').html('m2.');
-        }else{
+        }
+        if( $('#Valorpieza_id_pieza').val() == 2 ){
             $('#medida').html('m.');
+        }
+        if( $('#Valorpieza_id_pieza').val() == 3 ){
+            $('#medida').html('unidades.');
         }
         });  
     ",CClientScript::POS_LOAD)  ?>
 <script>
 $(document).ready(function($){
-
-  /*  $.each($("[id^='Valorpieza_']"), function(index, obj){
-        obj.value = "";
-    });*/
-
-    $("#Valorpieza_cantidad").val(" ");
+    $("#Valorpieza_cantidad").val("");
     $("#Valorpieza_id_pieza").val("");
     $("#Valorpieza_id_tamano").val("");
     $("#Valorpieza_id_terminacion").val("");
@@ -737,13 +655,7 @@ $(document).ready(function($){
     $("#inicio").click(function(){
         $("#inicio").hide();
         $("#material").show('slow');
-
-        //$(document).scrollTop( $("#piezas").offset().top );  
-        //$("#Valorpieza_id_pieza").value("1");        
     });
-
-
-
 
     $(".tipos").fadeOut();
     $(".tipos").click(function(){
@@ -761,33 +673,22 @@ $(document).ready(function($){
             $(".ti"+$(this).attr("id")).attr("style","display:block; border-left:3px solid black; border-right:3px solid black;");
         }
         
-        
-
-
         $("#tipo_piezas").show('slow');
         $("#pregunta1").attr('style','display:none');
         $("#ok1").attr('style','display:block');
-        //id="<?php echo $tipo->id; ?>
-        //$(".tipos, .id").attr("style","border:1 px solid black;");
         $("#Valorpieza_id_pieza").val("");
         $("#Valorpieza_id_tamano").val("");
         $('#terminaciones').hide();
         $('#destino').hide();
         $('#cantidad').hide();
         $('#preuni').hide();
-        //$(document).scrollTop( $("#tipo_piezas")().offset().top);
-        //$('html, body').animate({scrollTop: $('#tipo_piezas').offset().top -70 }, 'slow');
-        // $('#tipo_piezas').scrollView();
-        //$("#Valorpieza_id_pieza").value("1");        
     });
 
     $("#destino").change(function(){
         $("#pregunta4").attr('style','display:none');
         $("#ok4").attr('style','display:block');
         $("#cantidad").show('slow');
-        //console.log("cambio de destino");
         $("#Valorpieza_cantidad").display = "block";
-        //$("#Valorpieza_cantidad").attr("iplaceholder","0");
         $("#Valorpieza_cantidad").keyup(function(){
         if(parseInt($("#Valorpieza_cantidad").val()) >0){
             $("#boton").show('slow');    
@@ -797,21 +698,10 @@ $(document).ready(function($){
         });
     });
 
-  /*  $("#Presupuesto_email").keyup(function(){
-        
-
-        if(parseInt($("#Presupuesto_email").val()) != null){
-            $("#botonpresu").show('slow');    
-        }else{
-            $("#botonpresu").fadeOut('slow');
-        }
-        });*/
-
-
-
-    
 
 });
+
+
 </script>
 
 <script type="text/javascript">
@@ -826,13 +716,11 @@ $(document).ready(function($){
              $(".color4").attr("style","background-color:#134263;color:white;");
             $(".color2").attr("style","background-color:white;color:black");
         }
-
-        
-
-       $(".tipos").show('slow');
-       $(".tipos").attr("style","display:none;");
-       $(".tipo"+idmaterial).attr("style","display:block; border:1px solid black;");
-       $('#tipo_piezas').hide();
+       
+        $(".tipos").show('slow');
+        $(".tipos").attr("style","display:none;");
+        $(".tipo"+idmaterial).attr("style","display:block; border:1px solid black;");
+        $('#tipo_piezas').hide();
         $('#terminaciones').hide();
         $('#destino').hide();
         $('#cantidad').hide();

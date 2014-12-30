@@ -88,7 +88,10 @@ class SiteController extends Controller
 
 
 				Yii::app()->user->setFlash('contact','Gracias por contactar con nosotros. Te responderemos lo más pronto posible.');
+
+
 				$this->refresh();
+
 			}
 		}
 		$this->render('contact',array('model'=>$model));

@@ -143,14 +143,79 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+            'showScriptName'=>false,
 			'rules'=>array(
-				'gii'=>'gii',
+                'home' => 'site/index',
+                'tarifas/precio/marmol-granito' => 'preciounitario/index',
+                'contacto' => 'site/contact',
+                'presupuesto-online' => 'presupuesto',
+                '<view:[a-zA-Z0-9-_-]+>/'=>'site/page',
+                
+                /*array(
+                    'class' => 'application.components.ProductURLRule',
+                    'connectionID' = 'db',
+                   ),*/
+
+                'catalogo/marmol/blanco-macael' => 'tipo/verCaracteristicas/id/12',
+                'catalogo/marmol/crema-marfil' => 'tipo/verCaracteristicas/id/14',
+                'catalogo/marmol/crema-levante' => 'tipo/verCaracteristicas/id/15',
+                'catalogo/marmol/beige-levante' => 'tipo/verCaracteristicas/id/16',
+                'catalogo/marmol/emperador-claro' => 'tipo/verCaracteristicas/id/17',
+                'catalogo/marmol/marron-emperador' => 'tipo/verCaracteristicas/id/18',
+                'catalogo/marmol/rosa-zarci' => 'tipo/verCaracteristicas/id/19',
+                'catalogo/marmol/rojo-alicante' => 'tipo/verCaracteristicas/id/20',
+                'catalogo/marmol/negro-marquina' => 'tipo/verCaracteristicas/id/34',
+                'catalogo/marmol/rojo-coralito' => 'tipo/verCaracteristicas/id/35',
+
+                'catalogo/granito/g664' => 'tipo/verCaracteristicas/id/27',
+                'catalogo/granito/g687' => 'tipo/verCaracteristicas/id/28',
+                'catalogo/granito/gris-parga' => 'tipo/verCaracteristicas/id/29',
+                'catalogo/granito/rosa-porrino' => 'tipo/verCaracteristicas/id/30',
+                'catalogo/granito/mondariz' => 'tipo/verCaracteristicas/id/31',
+                'catalogo/granito/gran-perla' => 'tipo/verCaracteristicas/id/32',
+                'catalogo/granito/pedras-salgadas' => 'tipo/verCaracteristicas/id/37',
+                'catalogo/granito/azul-extremadura' => 'tipo/verCaracteristicas/id/39',
+                'catalogo/granito/negro-ochavo' => 'tipo/verCaracteristicas/id/40',
+                'catalogo/granito/amarillo-restaurador' => 'tipo/verCaracteristicas/id/42',
+
+				
+                'diseñador/marmol/blanco-macael' => 'simulador/index/id/12',
+                'diseñador/marmol/crema-marfil' => 'simulador/index/id/14',
+                'diseñador/marmol/crema-levante' => 'simulador/index/id/15',
+                'diseñador/marmol/beige-levante' => 'simulador/index/id/16',
+                'diseñador/marmol/emperador-claro' => 'simulador/index/id/17',
+                'diseñador/marmol/marron-emperador' => 'simulador/index/id/18',
+                'diseñador/marmol/rosa-zarci' => 'simulador/index/id/19',
+                'diseñador/marmol/rojo-alicante' => 'simulador/index/id/20',
+                'diseñador/marmol/negro-marquina' => 'simulador/index/id/34',
+                'diseñador/marmol/rojo-coralito' => 'simulador/index/id/35',
+
+                'diseñador/granito/g664' => 'simulador/index/id/27',
+                'diseñador/granito/g687' => 'simulador/index/id/28',
+                'diseñador/granito/gris-parga' => 'simulador/index/id/29',
+                'diseñador/granito/rosa-porrino' => 'simulador/index/id/30',
+                'diseñador/granito/mondariz' => 'simulador/index/id/31',
+                'diseñador/granito/gran-perla' => 'simulador/index/id/32',
+                'diseñador/granito/pedras-salgadas' => 'simulador/index/id/37',
+                'diseñador/granito/azul-extremadura' => 'simulador/index/id/39',
+                'diseñador/granito/negro-ochavo' => 'simulador/index/id/40',
+                'diseñador/granito/amarillo-restaurador' => 'simulador/index/id/42',
+
+
+
+
+
+
+                'gii'=>'gii',
             	'gii/<controller:\w+>'=>'gii/<controller>',
             	'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+             
 			),
+
+        
 		),
 		//Yii-PDF
 		 'ePdf' => array(

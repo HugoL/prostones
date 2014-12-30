@@ -4,10 +4,8 @@
   <div class="">
     
     <div class="row-fluid ">
-      
       <div class="span12">
-          
-        <a href="http://www.proston.es"> <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
+          <a href="http://www.proston.es"> <img  class="brand logo" width="200px" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" />
         <img style="float:right" class="brand logo"  src="<?php echo Yii::app()->baseUrl; ?>/images/telefono.png" /></a>
       </div>
     </div>
@@ -97,20 +95,43 @@
 
               <tr style="background-color:#134263; ">
                 <td colspan="3">
-                <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
-                 if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
+                <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font>
+
+                <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2){ 
+                  echo $pieza->tamanoreal;
+                  if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
                   }else{
                    echo " m. ";
                   } 
+                 }else{
+                  echo $pieza->numeropiezas . " ";
+                  echo " unidades de ";
+                 }
+
+                 
                   echo $pieza->pieza->nombre; ?> de <?php echo $pieza->tipo->nombre; ?><font color="#b44f18"> | </font></h6> </td>
                 <?php $i=$i+1; ?>
                 <td colspan="6"></td></tr>
               <tr class="success"> 
                 <td><h6>Concepto </h6></td>             
-                <td><h6>Nº Piezas</h6></td>
+                <td><h6>
+                 <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2) {
+                echo 'Nº Piezas';
+              }else{
+                echo 'Cantidad';
+              }
+              ?>
+                </h6></td>
                 <td><h6>Tamaño</h6></td>
-                <td><h6>Cantidad</h6></td>
-                <td  align="center"><h6>Precio</h6></td>
+                <td><h6>
+                 <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2) {
+                echo 'Cantidad';
+              }else{
+                echo 'Nº Piezas';
+              }
+              ?>
+                </h6></td>
+                <td  align="center" width="80px"><h6>Precio</h6></td>
                 <td  align="center"><h6>Base</h6></td>  
                 <td  align="center"><h6>21 % IVA</h6></td>  
                 <td  align="center"><h6>Total</h6></td>            
@@ -119,30 +140,66 @@
               <tr> 
                 <td>
                  <?php echo $pieza->pieza->nombre; ?> de <?php echo $pieza->tipo->nombre; ?>
-                 </td>
+                </td>
+
                   <?php $tareal = str_replace(".",",",$pieza->tamanoreal)?>
                 <td align="center">
-                  <?php if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){
+                <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2) {
+                
+                    if( $pieza->tamano->id == 14 || $pieza->tamano->id == 15 ){
                      echo '';
                   }else{
                    echo $pieza->numeropiezas;
-                  }  ?>
-                </td>
-           
-                <td><?php echo $pieza->tamano->nombre; ?></td>
-                <td align="right">
+                  } 
 
-                  <?php $tareal2 = round($pieza->tamanoreal,2);
+              }else{
+                   $tareal2 = round($pieza->tamanoreal,2);
                   $tareal3 =number_format((float)$tareal2, 2, '.', '');
                   echo str_replace(".",",",$tareal3) ;?>
                   <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
                   }else{
                    echo "m.";
-                  }  ?>
-                     
+                  }  
+              }
+             ?>
+                </td>
+           
+                <td>
+                   <?php
+                    if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2 || $pieza->id_pieza == 5){
+                      echo $pieza->tamano->nombre; 
+                    }
+                    if( $pieza->id_pieza == 3) {
+                      echo $pieza->largo;?>x<?php echo $pieza->ancho;?>x<?php echo $pieza->grosor;
+                      echo ' cm';
+                    }
+                    if( $pieza->id_pieza == 4) {
+                      echo $pieza->largo;?>x<?php echo $pieza->ancho;?>x<?php echo $pieza->grosor;
+                      echo ' cm';
+                    }
+                    ?>
 
+                    
+                </td>
+                <td align="right">
 
-                  
+                  <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 2) {
+                        $tareal2 = round($pieza->tamanoreal,2);
+                  $tareal3 =number_format((float)$tareal2, 2, '.', '');
+                  echo str_replace(".",",",$tareal3) ;?>
+                  <?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
+                  }else{
+                   echo "m.";
+                  }               
+                   }else{
+                      echo $pieza->numeropiezas;
+                      echo " uds.";
+                  } 
+
+             
+                  ?>
+
+                 
 
                 </td>
                  <td align="right">
@@ -150,15 +207,26 @@
                  <?php $preuni = round($pieza->preciounitario,2);
                   $preuni2 =number_format((float)$preuni, 2, '.', '');
                   echo str_replace(".",",",$preuni2) ;?>
-
-
                  €/<?php if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
-                }else{
+                }
+                if( $pieza->id_pieza == 2){
                 echo "m.";
-                 }  ?></td>
+                 }  
+                if( $pieza->id_pieza == 3 || $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                echo "ud";
+                 } 
+                 ?></td>
 
                  
-                <td align="right" ><?php $preciomat = round($pieza->preciounitario * $pieza->tamanoreal,2);
+                <td align="right" >
+                <?php if( $pieza->id_pieza == 1  ||  $pieza->id_pieza == 2){
+                  $preciomat = round($pieza->preciounitario * $pieza->tamanoreal,2);
+                }
+                if( $pieza->id_pieza == 3 || $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                  $preciomat = round($pieza->preciounitario * $pieza->numeropiezas,2);
+                 }
+
+                
 
                     $preciomat2 =number_format((float)$preciomat, 2, '.', '');
 
@@ -166,13 +234,13 @@
                 </td>
 
                 <td align="right">
-                  <?php $precioivamat = round(((($pieza->preciounitario * $pieza->tamanoreal))/100)*21,2);
+                  <?php $precioivamat = round(((($preciomat))/100)*21,2);
                   $precioivamat2 =number_format((float)$precioivamat, 2, '.', '');
                   echo str_replace(".",",",$precioivamat2) ;?> €
                  </td>
 
                  <td align="right"> 
-                  <?php $pmat = round((($pieza->preciounitario * $pieza->tamanoreal)/100)*21  + ($pieza->preciounitario * $pieza->tamanoreal),2);
+                  <?php $pmat = round((($preciomat)/100)*21  + ($preciomat),2);
                   $pmat2 =number_format((float)$pmat, 2, '.', '');
                   echo str_replace(".",",",$pmat2) ;?> €
                 </td>
@@ -187,8 +255,10 @@
                  
 
                 <td colspan="2">
-                 
-        
+                <?php if( $pieza->id_pieza == 3  ||  $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                 echo str_replace(".",",",$tareal3) ;
+                 echo " m<sup>2</sup>";
+                }?>
                  </td>
 
 
@@ -196,15 +266,20 @@
                 <td align="right"> 
                   <?php if( $pieza->id_pieza == 1 ){
                     $tareal = round($pieza->tamanoreal,2);
-                  }else{
+                    $tareal2 =number_format((float)$tareal, 2, '.', '');
+                    echo str_replace(".",",",$tareal2) ;
+                    echo 'm<sup>2</sup>';
+                  }
+                  if( $pieza->id_pieza == 2 ){
                     $tareal = round($pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
-                  }  ?>
-
-                 <?php 
-                  $tareal2 =number_format((float)$tareal, 2, '.', '');
-                  echo str_replace(".",",",$tareal2) ;?>
-
-                  m<sup>2</sup>
+                    $tareal2 =number_format((float)$tareal, 2, '.', '');
+                    echo str_replace(".",",",$tareal2) ;
+                    echo 'm<sup>2</sup>';
+                  }
+                  if( $pieza->id_pieza == 3  ||  $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                    echo '';
+                  }
+                    ?>
                 </td>
 
                 <td align="right">
@@ -216,12 +291,15 @@
 
                 <td align="right">
 
-                   <?php if( $pieza->id_pieza == 1 ){
+                   <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 3  ||  $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
                       $precioter = round($pieza->terminacion->precio * $pieza->tamanoreal,2);
-                }else{
-                    $precioter = round($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza,2);
+                }
+                if( $pieza->id_pieza == 2  ){
+                    $precioter = round($pieza->terminacion->precio * $pieza->tamano->tamanopieza * $pieza->numeropiezas,2);
                     
-                 }  ?> 
+                 } 
+
+                 ?> 
 
                   <?php $precioter2 =number_format((float)$precioter, 2, '.', '');
                      if ($pieza->terminacion->precio == 0 ){
@@ -235,11 +313,12 @@
 
 
                 <td align="right">
-                  <?php if( $pieza->id_pieza == 1 ){
-                    $precioivater = round((($pieza->terminacion->precio * $pieza->tamanoreal)/100)*21,2);
+                  
+                   <?php if( $pieza->id_pieza == 1 || $pieza->id_pieza == 3  ||  $pieza->id_pieza == 4 || $pieza->id_pieza == 5){
+                    $precioivater = round((($precioter)/100)*21,2);
                   }else{
                    
-                    $precioivater = round((($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza)/100)*21,2);
+                    $precioivater = round(($precioter/100)*21,2);
                     
                  }  ?> 
                  <?php 
@@ -255,11 +334,11 @@
 
                  <td align="right">
 
-                <?php if( $pieza->id_pieza == 1 ){
-                    $pcara= ($pieza->terminacion->precio * $pieza->tamanoreal) + (((($pieza->terminacion->precio * $pieza->tamanoreal))/100)*21);
+                <?php if( $pieza->id_pieza == 1  || $pieza->id_pieza == 3  ||  $pieza->id_pieza == 4 || $pieza->id_pieza == 5 ){
+                    $pcara= $precioter + (((($pieza->terminacion->precio * $pieza->tamanoreal))/100)*21);
                       $preciototer= round($pcara,2);
                 }else{
-                  $pcara = ($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza)+(((($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza))/100)*21);
+                  $pcara = $precioter+(((($pieza->terminacion->precio * $pieza->tamanoreal * $pieza->tamano->tamanopieza))/100)*21);
                     $preciototer=round($pcara,2);
                     
                  }  ?> 
@@ -287,12 +366,16 @@
                   echo 'largo ' . $pieza->tamano->cantolargo * 100 . ' cm.';
 
 
-                 }
-
-                 if( $pieza->id_tipo_canto== 2 ){ 
+                 }else if( $pieza->id_tipo_canto== 2 ){ 
 
                    echo 'corto ' . $pieza->tamano->cantocorto * 100 . ' cm. ';
-                 } 
+                 }else {
+                  if( $pieza->id_pieza == 1 ){
+                    echo '';
+                  }else {
+                  echo 'largo';
+                  }
+                 }
 
                  ?>
 
@@ -302,7 +385,7 @@
                   echo "- " . $pieza->terminacioncanto->nombre . ".";  
                   }else{
 
-                  if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17){
+                  if( $pieza->terminacion->id == 32 ||  $pieza->terminacion->id == 17 || $pieza->terminacion->id == 31 ||  $pieza->terminacion->id == 55 || $pieza->terminacion->id == 64 || $pieza->terminacion->id == 73 || $pieza->terminacion->id == 12  || $pieza->terminacion->id == 46 || $pieza->terminacion->id == 50  ){
 
                    echo "- Pulido";
                   }else{
@@ -324,36 +407,30 @@
 
                
                 <td align="right">
+               
                   <?php  
                  
 
                     if( $pieza->id_tipo_canto== 1 ){
                       $longitudcanto = $pieza->tamano->cantolargo;
-                      }else{
-                      $longitudcanto = $pieza->tamano->cantocorto;
-                      } 
-                     if( $pieza->id_pieza == 2 ){
-                        $tareal = str_replace(".",",",$pieza->tamanoreal);
-                      }else{
-                        $ta = $pieza->numeropiezas * $longitudcanto;
+                      $ta = $pieza->numeropiezas * $longitudcanto;
 
                         $tareal = str_replace(".",",",$ta);
+                      if( $pieza->terminacioncanto->id == 41 || $pieza->terminacioncanto->id == 40 ){
+                                      
+                      }else{
 
-
+                      $tareal2 =number_format((float)$tareal, 2, '.', '');
+                                       echo str_replace(".",",",$tareal2) . " m.";
                       } 
+
+                    }
+                      
+                      
                     
                     ?>
 
-                  <?php 
 
-                     if( $pieza->terminacioncanto->id == 41 || $pieza->terminacioncanto->id == 40 ){
-                  
-                  }else{
-
-                    $tareal2 =number_format((float)$tareal, 2, '.', '');
-                   echo str_replace(".",",",$tareal2) . " m.";
-                 } 
-                  ?>
 
                 </td>
 
@@ -364,7 +441,7 @@
                  $precarto2 =number_format((float)$precarto, 2, '.', '');
 
                  if ($pieza->terminacioncanto->precio == 0 ){
-                    echo ("0 €");
+                    echo ("");
                   }else{
                    echo str_replace(".",",",$precarto2); 
                       if( $pieza->id_pieza == 1 ){
@@ -384,10 +461,11 @@
                   <?php $precioterca = round($pieza->terminacioncanto->precio * $pieza->numeropiezas * $longitudcanto,2);
                   $precioterca2 =number_format((float)$precioterca, 2, '.', '');
                   if ($pieza->terminacioncanto->precio == 0 ){
-                    echo ("0");
+                    echo ("");
                   }else{
                  echo str_replace(".",",",$precioterca2); 
-                  }?> €
+                 echo '€';
+                  }?> 
                 </td>
 
 
@@ -396,10 +474,11 @@
                     $precioivaterca2 =number_format((float)$precioivaterca, 2, '.', '');?>
 
                    <?php    if ($pieza->terminacioncanto->precio == 0 ){
-                    echo ("0");
+                    echo ("");
                   }else{
                 echo str_replace(".",",",$precioivaterca2);  
-                }?> €
+                echo '€';
+                }?> 
                  </td>
 
 
@@ -433,24 +512,30 @@
 
                
                 <td align="right">
+
+
                 <?php $tareal = round($pieza->tamanoreal,2)?>
 
 
-                  <?php if( $pieza->terminacionarista->id == 42 || $pieza->terminacionarista->id == 43 ){
-                  
-                  }else{
-                     $tareal2 =number_format((float)$tareal, 2, '.', '');
-                   echo str_replace(".",",",$tareal2);
+                  <?php 
+                    if( $pieza->id_pieza == 1 ){
+                      if( $pieza->terminacionarista->id == 42 || $pieza->terminacionarista->id == 43 ){
+                      
+                      }else{
+                         $tareal2 =number_format((float)$tareal, 2, '.', '');
+                       echo str_replace(".",",",$tareal2);
 
-                    
-                 
-                      if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
-                        }else{
-                       echo " m.";
-                      }  
+                        
+                     
+                          if( $pieza->id_pieza == 1 ){echo "m<sup>2</sup>";
+                            }else{
+                           echo " m.";
+                          }  
 
 
-                 }?>
+                      }
+                    }
+                 ?>
                  </td>
 
 
@@ -459,9 +544,11 @@
                     $termari2 =number_format((float)$termari, 2, '.', '');
 
                     if ($pieza->terminacioncanto->precio == 0 ){
-                    echo ("0 €");
+                    echo ("");
                   }else{
-                   echo str_replace(".",",",$termari2);?> €
+                   echo str_replace(".",",",$termari2);
+                     echo ("€");
+                   ?>
                   <?php if( $pieza->id_pieza == 1 ){echo "/m<sup>2</sup>";
                   }else{
                   echo "";
@@ -474,9 +561,11 @@
                   <?php $precioterari = round($pieza->terminacionarista->precio * $pieza->tamanoreal,2);
                   $precioterari2 =number_format((float)$precioterari, 2, '.', '');?>
                    <?php  if ($pieza->terminacionarista->precio == 0 ){
-                    echo ("0");
+                    echo ("");
                   }else{
-                  echo str_replace(".",",",$preciototerari2); }?> €
+                  echo str_replace(".",",",$preciototerari2); 
+                    echo ("€");
+                    }?> 
 
                 </td>
 
@@ -486,9 +575,11 @@
                   $precioivaterari2 =number_format((float)$precioivaterari, 2, '.', '');?>
                   
                   <?php  if ($pieza->terminacionarista->precio == 0 ){
-                    echo ("0");
+                    echo ("");
                   }else{
-                  echo str_replace(".",",",$precioivaterari2); }?> €
+                  echo str_replace(".",",",$precioivaterari2);
+                    echo ("€");
+                   }?> 
 
                 </td>
 
@@ -546,7 +637,7 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr style="background-color:#134263; ">
-                <td> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
+                <td> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $o;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
                  if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
                   }else{
                    echo " m. ";
@@ -616,7 +707,7 @@
               <?php foreach ($piezas as $key => $pieza): ?>
 
               <tr >
-                <td style="background-color:#134263; "> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $i;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
+                <td style="background-color:#134263; "> <h6 style="color:white;">•<font color="#abdeff">Consulta <?php echo $u;?></font><font color="#b44f18"> | </font><?php echo $pieza->tamanoreal;
                  if( $pieza->id_pieza == 1 ){echo " m<sup>2</sup> ";
                   }else{
                    echo " m. ";

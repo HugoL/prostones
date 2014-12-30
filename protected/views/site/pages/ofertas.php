@@ -3,7 +3,7 @@
 
 
 
-$this->pageTitle= 'Ofertas - '. Yii::app()->name . ' Marmolistas';
+$this->pageTitle= 'Ofertas - Precios baratos de marmol y granito';
 Yii::app()->clientScript->registerMetaTag("Ofertas de mármol y granito. Compra con los mejores precios", 'description');
 Yii::app()->clientScript->registerMetaTag("Oferta, oferta marmol, oferta granito,ayuda ,obra ,reforma ,web, mármol, granito, mármol proston", 'keywords');
 /*$this->breadcrumbs=array(

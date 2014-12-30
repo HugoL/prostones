@@ -1,15 +1,15 @@
 
 
-<div class="presprecio" id="preuni" align="center">Precio base: <strong>
-	<font color="#134263"><?php 	$precioajax = round($precioajax,2);
+<div class="presprecio" id="preuni" align="center">Precio base: 
+	<span class="texto16naranja"><?php 	$precioajax = round($precioajax,2);
 			echo preg_replace('/\./', ',', $precioajax);
 			
-	?> </font>
+	?> </span>
 	<?php if ($tipo == 1){
 			echo '€/m<sup>2</sup>';
 			}else{
 				echo '€/m';
 			}
-			?>
-
-</strong></div>
+			?><br>
+<span class="textodiez"> <?php echo $nombretipo;?> de <?php echo $tamano;?>. <?php echo $nombre;?></span>	
+</div>
